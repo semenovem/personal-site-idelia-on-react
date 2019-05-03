@@ -1,15 +1,22 @@
 import React from 'react';
+import Header from 'mod/Header';
+
+import { MOD } from 'types/routes';
 
 
-export default class SinglePage extends React.Component {
+const SinglePage: React.FC = () => {
 
-    render() {
-        return (
-            <>
-                <header>header</header>
-                <main>main</main>
-                <footer>footer</footer>
-            </>
-        );
-    }
-}
+  return (
+    <>
+      <Header
+        htmlId={MOD.HEADER.htmlId}
+      />
+
+      <header>header</header>
+      <main>main</main>
+      <footer>footer</footer>
+    </>
+  );
+};
+
+export default SinglePage;
