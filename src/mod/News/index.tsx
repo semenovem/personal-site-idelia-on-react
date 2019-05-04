@@ -1,11 +1,13 @@
 import React from 'react';
 
+import { MOD_HTML_ID } from 'types/routes';
+
 
 export default class News extends React.Component {
 
     render() {
         return (
-            <div>
+            <div id={MOD_HTML_ID.NEWS}>
                 News
             </div>
         );
