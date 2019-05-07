@@ -1,3 +1,31 @@
-.ham-menu {
-    color: red;
+.hamMenu {
+  color: red;
+
+  width: 40px;
+  height: 20px;
+
+  background-image: url(../../assets/icons/ham_menu_mob.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
 }
+
+
+/* sm */
+@media (min-width: 576px) {}
+
+
+
+/* md */
+@media (min-width: 768px) {}
+
+
+
+/* lg */
+@media (min-width: 992px) {}
+
+
+
+/* xl */
+@media (min-width: 1200px) {}
