@@ -16,7 +16,6 @@
   /* beg font size */
   --font-size-next-base: 18px;
   --font-size-promo: 40px;
-  --font-size-menu-item: 40px;
   --font-size-footer: 24px;
   --font-size-mod-title: 40px;
   --font-size-mod-contact-title: 60px;
@@ -46,23 +45,6 @@
   --el-bg-promo-h: 35vw;
   --el-bg-promo-min-h: 200px;
   --el-bg-promo-max-h: 40vh;
-
-  /* space */
-  --indent-xxs-const: 2px;
-  --indent-xs-const: 4px;
-  --indent-s-const: 8px;
-  --indent-m-const: 16px;
-  --indent-l-const: 24px;
-  --indent-xl-const: 36px;
-  --indent-xxl-const: 48px;
-
-  --indent-xxs: var(--indent-xxs-const);
-  --indent-xs: var(--indent-xs-const);
-  --indent-s: var(--indent-s-const);
-  --indent-m: var(--indent-m-const);
-  --indent-l: var(--indent-l-const);
-  --indent-xl: var(--indent-xl-const);
-  --indent-xxl: var(--indent-xxl-const);
 
 
   /* prev old @deprecated */
@@ -94,7 +76,6 @@
   :root {
     --font-size-next-base: 5vw;
     --font-size-promo: 7vw;
-    --font-size-menu-item: 7vw;
     --font-size-mod-title: 7vw;
     --font-size-music-listen: 14px;
     --font-size-music-btn-action: 24px;
@@ -120,14 +101,6 @@
 @media (min-width: 992px) {
   :root {
     --font-size-responsive: 1.5vw;
-
-    --indent-xs:  calc(var(--indent-xs-const) + 1px);
-    --indent-s:   calc(var(--indent-s-const) + 2px);
-    --indent-m:   calc(var(--indent-m-const) + 3px);
-    --indent-l:   calc(var(--indent-l-const) + 4px);
-    --indent-xl:  calc(var(--indent-xl-const) + 5px);
-    --indent-xxl: calc(var(--indent-xxl-const) + 6px);
-
     --font-size-music-listen: 12px;
   }
 }
@@ -139,7 +112,6 @@
   :root {
     --font-size-next-base: 60px;
     --font-size-promo: 84px;
-    --font-size-menu-item: 80px;
     --font-size-responsive: 1.3vw;
     --font-size-mod-title: 84px;
 

@@ -1,11 +1,56 @@
 .header {
   height: 100vh;
 
-
-  border: 3px solid gold;
+  display: flex;
+  flex-direction: column;
 }
 
 .hamMenu {
   position: absolute;
 
+  top: 30px;
+  right: 30px;
 }
+
+
+.cover {
+  flex-grow: 1;
+
+  display: flex;
+  align-items: center;
+
+
+  background-image: url(../../assets/bg/header_mob.jpg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.titleSite {
+  margin-left: var(--indent-m);
+}
+
+
+.navMenu {
+}
+
+
+
+/* sm */
+@media (min-width: 576px) {}
+
+
+
+/* md */
+@media (min-width: 768px) {}
+
+
+
+/* lg */
+@media (min-width: 992px) {}
+
+
+
+/* xl */
+@media (min-width: 1200px) {}
