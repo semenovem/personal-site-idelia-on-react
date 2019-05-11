@@ -17,7 +17,6 @@
   --font-size-next-base: 18px;
   --font-size-promo: 40px;
   --font-size-footer: 24px;
-  --font-size-mod-title: 40px;
   --font-size-mod-contact-title: 60px;
   --font-size-music-listen: 10px;
   --font-size-music-btn-action: 18px;
@@ -76,7 +75,6 @@
   :root {
     --font-size-next-base: 5vw;
     --font-size-promo: 7vw;
-    --font-size-mod-title: 7vw;
     --font-size-music-listen: 14px;
     --font-size-music-btn-action: 24px;
   }
@@ -113,7 +111,6 @@
     --font-size-next-base: 60px;
     --font-size-promo: 84px;
     --font-size-responsive: 1.3vw;
-    --font-size-mod-title: 84px;
 
     --font-size-music-listen: 16px;
   }

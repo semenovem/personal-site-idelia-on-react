@@ -2,7 +2,7 @@
 
 .hamMenuItem {
   color: white;
-  font-size: var(--font-size-menu-item);
+  font-size: var(--font-size-ham-menu-item);
   font-weight: 500;
   letter-spacing: 2px;
 }
@@ -20,6 +20,23 @@
 }
 
 
+.navMenuItem {
+  color: white;
+  font-size: var(--font-size-nav-menu-item);
+  letter-spacing: 8px;
+}
+
+.navMenuItem:hover {
+  text-decoration: underline;
+}
+
+
+.modTitle {
+  color: white;
+  text-align: center;
+  font-size: var(--font-size-mod-title);
+}
+
 
 
 /* sm */
@@ -28,7 +45,11 @@
 
 
 /* md */
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+  .navMenuItem {
+    letter-spacing: 2px;
+  }
+}
 
 
 

@@ -1,7 +1,9 @@
 :root {
 
-  --font-size-menu-item: 40px;
+  --font-size-ham-menu-item: 40px;
   --font-size-title-site: 70px;
+  --font-size-nav-menu-item: 22px;
+  --font-size-mod-title: 30px;
 
 
   --indent-xxs: 2px;
@@ -18,7 +20,9 @@
 /* sm */
 @media (min-width: 576px) {
   :root {
-    --font-size-menu-item: 7vw;
+    --font-size-title-site: 15vw;
+    --font-size-ham-menu-item: 7vw;
+    --font-size-nav-menu-item: 5vw;
 
   }
 }
@@ -28,6 +32,7 @@
 /* md */
 @media (min-width: 768px) {
   :root {
+    --font-size-nav-menu-item: 3vw;
 
   }
 }
@@ -45,7 +50,7 @@
 /* xl */
 @media (min-width: 1200px) {
   :root {
-    --font-size-menu-item: 80px;
+    --font-size-ham-menu-item: 80px;
 
     --indent-xxs: 3px;
     --indent-xs: 6px;
@@ -66,7 +71,7 @@
 /* sm */
 @media (min-width: 576px) {
   :root {
-    --font-size-menu-item: 7vw;
+    --font-size-ham-menu-item: 7vw;
   }
 }
 
@@ -85,7 +90,7 @@
 /* xl */
 @media (min-width: 1200px) {
   :root {
-    --font-size-menu-item: 80px;
+    --font-size-ham-menu-item: 80px;
   }
 }
 

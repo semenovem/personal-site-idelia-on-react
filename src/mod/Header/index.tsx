@@ -5,7 +5,7 @@ import BtnHamMenu from 'cmp/BtnHamMenu';
 
 import NavMenu from 'cmp/NavMenu';
 
-import {MOD_HTML_ID} from 'types/routes';
+import {MOD} from 'types/routes';
 
 import cssCommon from 'styles/typography.module.css';
 import css from './style.module.css';
@@ -21,7 +21,7 @@ export default class Header extends React.Component<IProps> {
 
 
   private handleSelectNavMenu = () => {
-
+    console.log('handleSelectNavMenu');
   };
 
 
@@ -29,7 +29,7 @@ export default class Header extends React.Component<IProps> {
     const {onActOpenHamMenu} = this.props;
 
     return (
-      <div id={MOD_HTML_ID.HEADER} className={css.header}>
+      <div id={MOD.HEADER.ROUTE} className={css.header}>
 
         <div className={css.cover}>
 

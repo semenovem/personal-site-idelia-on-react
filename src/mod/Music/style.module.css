@@ -1,0 +1,29 @@
+.music {
+
+  height: 100vh;
+
+  background-image: url(../../assets/bg/music_mob.jpg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+
+/* sm */
+@media (min-width: 576px) {}
+
+
+
+/* md */
+@media (min-width: 768px) {}
+
+
+
+/* lg */
+@media (min-width: 992px) {}
+
+
+
+/* xl */
+@media (min-width: 1200px) {}

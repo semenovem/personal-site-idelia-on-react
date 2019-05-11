@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from 'mod/Header';
+import Music from 'mod/Music';
 import HamMenu from 'mod/HamMenu';
+import {IModItem} from 'types/routes';
 
 interface IProps {}
 
@@ -19,19 +21,29 @@ class SinglePage extends React.Component<IProps, IState> {
   private handleCloseHamMenu = () => this.setState({ isOpenHamMenu: false });
 
 
+  private handleSelectMenuItem = (id: IModItem['ID']) => {
+    console.log('handleSelectMenuItem: ' + id);
+  };
+
+
   public render() {
     const { isOpenHamMenu } = this.state;
 
     return (
       <>
         <Header onActOpenHamMenu={this.handleOpenHamMenu} hasUserInteraction={!isOpenHamMenu}/>
+        <Music hasUserInteraction={!isOpenHamMenu}/>
 
         <header>header</header>
         <main>main</main>
         <footer>footer</footer>
 
 
-        <HamMenu isOpen={isOpenHamMenu} onClose={this.handleCloseHamMenu}/>
+        <HamMenu
+          isOpen={isOpenHamMenu}
+          onClose={this.handleCloseHamMenu}
+          onSelect={this.handleSelectMenuItem}
+        />
       </>
     );
   }
