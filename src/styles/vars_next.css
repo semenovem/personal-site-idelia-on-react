@@ -1,0 +1,98 @@
+:root {
+
+  --font-size-ham-menu-item: 40px;
+  --font-size-title-site: 70px;
+  --font-size-nav-menu-item: 22px;
+  --font-size-mod-title: calc(18px + 3vw);
+
+
+  --indent-xxs: 2px;
+  --indent-xs: 4px;
+  --indent-s: 8px;
+  --indent-m: 16px;
+  --indent-l: 24px;
+  --indent-xl: 36px;
+  --indent-xxl: 48px;
+
+  --max-width-limit: 1400px;
+}
+
+
+
+/* sm */
+@media (min-width: 576px) {
+  :root {
+    --font-size-title-site: 15vw;
+    --font-size-ham-menu-item: 7vw;
+    --font-size-nav-menu-item: 5vw;
+
+  }
+}
+
+
+
+/* md */
+@media (min-width: 768px) {
+  :root {
+    --font-size-nav-menu-item: 3vw;
+
+  }
+}
+
+
+
+/* lg */
+@media (min-width: 992px) {
+  :root {
+  }
+}
+
+
+
+/* xl */
+@media (min-width: 1200px) {
+  :root {
+    --font-size-ham-menu-item: 80px;
+
+    --indent-xxs: 3px;
+    --indent-xs: 6px;
+    --indent-s: 12px;
+    --indent-m: 24px;
+    --indent-l: 36px;
+    --indent-xl: 48px;
+    --indent-xxl: 52px;
+  }
+}
+
+
+
+
+
+
+
+/* sm */
+@media (min-width: 576px) {
+  :root {
+    --font-size-ham-menu-item: 7vw;
+  }
+}
+
+
+
+/* md */
+@media (min-width: 768px) {}
+
+
+
+/* lg */
+@media (min-width: 992px) {}
+
+
+
+/* xl */
+@media (min-width: 1200px) {
+  :root {
+    --font-size-ham-menu-item: 80px;
+  }
+}
+

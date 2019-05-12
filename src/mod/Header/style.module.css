@@ -1,0 +1,51 @@
+.header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cover {
+  flex-grow: 1;
+
+  display: flex;
+  align-items: center;
+
+  padding-left: var(--indent-m);
+
+  background-image: url(../../assets/bg/header_mob.jpg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.titleSite {
+  margin-left: var(--indent-m);
+}
+
+
+/* sm */
+@media (min-width: 576px) {}
+
+
+
+/* md */
+@media (min-width: 768px) {}
+
+
+
+/* lg */
+@media (min-width: 992px) {}
+
+
+
+/* xl */
+@media (min-width: 1200px) {}
+
+
+/* xxl */
+@media (min-width: 1400px) {
+  .cover {
+    padding-left: calc((100vw - var(--max-width-limit)) / 2 + var(--indent-m));
+  }
+}
