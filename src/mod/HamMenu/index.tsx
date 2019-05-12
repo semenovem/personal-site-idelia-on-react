@@ -1,9 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
 
-import {MOD} from 'types/routes';
+import {ROUTES, IRouteItem} from 'types/routes';
 import findValueByDataAttr from 'utils/findValueByElemAttr';
-import { IModItem } from 'types/routes';
 
 import cssTypography from 'styles/typography.module.css';
 import cssCommon from 'styles/common.module.css';
@@ -13,7 +12,7 @@ interface IOwnProps {
   isOpen: boolean;
   className?: string;
   onClose: () => void;
-  onSelect: (id: IModItem['ID']) => void;
+  onSelect: (id: IRouteItem['ID']) => void;
 }
 
 interface IProps extends IOwnProps {
@@ -23,7 +22,6 @@ interface IState {
 }
 
 class HamMenu extends React.Component<IProps, IState> {
-
   public componentWillMount(): void {
     window.addEventListener('keyup', this.handleKeyUp)
   }
@@ -52,8 +50,16 @@ class HamMenu extends React.Component<IProps, IState> {
   private renderItems() {
     const style = cn(cssTypography.hamMenuItem, cssCommon.resetLinkStyles);
 
-    return MOD.ORDER.map(it => (
-      <a href={it.ROUTE} className={style} data-id={it.ID} key={it.ID}>
+    const hash = window.location.hash;
+    const routeItem = ROUTES.ALL.find(it => it.HASH === hash) || ROUTES.HEADER;
+
+    return ROUTES.ORDER_HAM_MENU.map(it => (
+      <a
+        href={it.HASH}
+        className={cn(style, routeItem.ID === it.ID && css.selected)}
+        data-id={it.ID}
+        key={it.ID}
+      >
         {it.MENU_ITEM_NAME}
       </a>
     ));

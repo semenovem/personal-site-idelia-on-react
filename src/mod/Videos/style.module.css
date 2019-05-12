@@ -1,11 +1,11 @@
-.music {
+.video {
 
-  height: 100vh;
+  height: 400px;
 
-  background-image: url(../../assets/bg/music_mob.jpg);
+  background-image: url(../../assets/bg/videos_mob.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: left ;
 
 }
 

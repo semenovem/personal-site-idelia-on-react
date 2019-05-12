@@ -16,7 +16,7 @@
   color: white;
   font-size: var(--font-size-title-site);
   font-family: 'Pathway Gothic One', sans-serif;
-  letter-spacing: 27px;
+  letter-spacing: 5vw;
 }
 
 
@@ -35,8 +35,20 @@
   color: white;
   text-align: center;
   font-size: var(--font-size-mod-title);
+  font-weight: 300;
+  letter-spacing: 3px;
 }
 
+
+.footerCopyright {
+  color: #979797;
+  font-size: 14px;
+}
+
+
+.textBio {
+  font-size: 18px;
+}
 
 
 /* sm */

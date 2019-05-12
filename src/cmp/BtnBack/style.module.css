@@ -1,7 +1,7 @@
-.hamMenu {
+.btn {
   color: red;
 
-  background-image: url(../../assets/icons/btn_ham_menu_red.svg);
+  background-image: url(../../assets/icons/btn_back_red.png);
   background-size: contain;
   background-repeat: no-repeat;
 
@@ -16,8 +16,8 @@
 
 /* md */
 @media (min-width: 768px) {
-  .hamMenu {
-    background-image: url(../../assets/icons/btn_ham_menu_white.svg);
+  .btn {
+    background-image: url(../../assets/icons/btn_back_white.png);
   }
 }
 

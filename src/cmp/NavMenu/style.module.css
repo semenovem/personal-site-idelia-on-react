@@ -2,8 +2,15 @@
   background-color: #7F1527;
 }
 
+.content {
+  max-width: var(--max-width-limit);
+  margin: auto;
+  overflow: hidden;
+}
+
 .row {
   display: flex;
+  padding: 3px;
 }
 
 .navMenu a {
@@ -56,7 +63,7 @@
     display: none;
   }
 
-  .navMenu {
+  .content {
     display: flex;
     justify-content: center;
   }

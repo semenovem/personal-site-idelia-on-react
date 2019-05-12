@@ -8,12 +8,16 @@ import css from './style.module.css';
 interface IOwnProps {
   className: string;
   onOpen: () => void;
+  offUserInteraction?: boolean;
 }
 
-const BtnHamMenu: React.FC<IOwnProps> = ({ className, onOpen }) => (
+interface IProps extends IOwnProps {}
+
+const BtnHamMenu: React.FC<IProps> = ({ className, onOpen, offUserInteraction }) => (
   <button
     className={cn(cssCommon.resetBtnStyles, css.hamMenu, className)}
     onClick={onOpen}
+    {...(offUserInteraction && { tabIndex: -1})}
   />
 );
 

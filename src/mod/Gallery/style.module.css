@@ -1,8 +1,8 @@
-.music {
+.gallery {
 
   height: 100vh;
 
-  background-image: url(../../assets/bg/music_mob.jpg);
+  background-image: url(../../assets/bg/gallery.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;

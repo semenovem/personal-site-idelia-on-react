@@ -1,13 +1,32 @@
-.music {
+.bio {
+  min-height: 100vh;
 
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
 
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.content {
   background-image: url(../../assets/bg/music_mob.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: top center;
+
+  flex-grow: 1;
+}
+
+
+.note {
+  margin-top: 50vh;
+  width: 90%;
+  background-color: white;
 
 }
+
 
 
 /* sm */

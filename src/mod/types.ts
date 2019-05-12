@@ -2,6 +2,7 @@
 export interface IModProps {
   /**
    * Может ли пользователь взаимодействовать с элементами
+   * @default false
    */
-  hasUserInteraction: boolean;
+  offUserInteraction?: boolean;
 }

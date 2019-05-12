@@ -23,9 +23,6 @@
   /* end font size */
 
 
-  --max-width-limit: 1300px;
-
-
   --font-size-base: 20px;
   --font-size-responsive: calc(var(--font-size-base) - 4px);
 

@@ -1,14 +1,30 @@
 import React from 'react';
+import cn from 'classnames';
 
-import { MOD } from 'types/routes';
+import {ROUTES} from 'types/routes';
+import {IModProps} from 'mod/types';
 
-export default class Gallery extends React.Component {
+import cssTypography from 'styles/typography.module.css';
+import cssMod from 'mod/style.module.css';
+import css from './style.module.css';
 
-    render() {
-        return (
-            <div id={MOD.GALLERY.HTML_ID}>
-                Gallery
-            </div>
-        );
-    }
+interface IOwnProps extends IModProps {
+  offUserInteraction: boolean;
 }
+
+interface IProps extends IOwnProps {
+}
+
+class Gallery extends React.Component<IProps> {
+
+  render() {
+    return (
+      <div id={ROUTES.GALLERY.HTML_ID} className={cn(cssMod.mod, css.gallery)}>
+        <h2 className={cssTypography.modTitle}>{ROUTES.GALLERY.TITLE}</h2>
+
+      </div>
+    );
+  }
+}
+
+export default Gallery;

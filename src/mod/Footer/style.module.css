@@ -1,0 +1,21 @@
+.footer {
+  background-color: #1D1C22;
+}
+
+.copyright {
+  background-color: #333237;
+  text-align: center;
+  padding: var(--indent-xs) var(--indent-m);
+}
+
+.links {
+  padding: var(--indent-m) var(--indent-m);
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.links a {
+  display: inline-block;
+  height: 100%;
+}

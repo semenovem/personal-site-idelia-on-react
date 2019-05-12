@@ -5,9 +5,10 @@ import BtnHamMenu from 'cmp/BtnHamMenu';
 
 import NavMenu from 'cmp/NavMenu';
 
-import {MOD} from 'types/routes';
+import {ROUTES} from 'types/routes';
 
 import cssCommon from 'styles/typography.module.css';
+import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
 
 interface IOwnProps extends IModProps {
@@ -17,37 +18,31 @@ interface IOwnProps extends IModProps {
 interface IProps extends IOwnProps {
 }
 
-export default class Header extends React.Component<IProps> {
-
-
-  private handleSelectNavMenu = () => {
-    console.log('handleSelectNavMenu');
-  };
-
-
+class Header extends React.Component<IProps> {
   render() {
-    const {onActOpenHamMenu} = this.props;
+    const {onActOpenHamMenu, offUserInteraction} = this.props;
 
     return (
-      <div id={MOD.HEADER.ROUTE} className={css.header}>
-
+      <div id={ROUTES.HEADER.HTML_ID} className={css.header}>
         <div className={css.cover}>
-
           <BtnHamMenu
-            className={css.hamMenu}
+            className={cssMod.btnHamMenu}
             onOpen={onActOpenHamMenu}
+            offUserInteraction={offUserInteraction}
           />
 
           <div className={cn(cssCommon.titleSite, css.titleSite)}>
             <div>IDELIA</div>
             <div>MARS</div>
           </div>
-
         </div>
 
-
-        <NavMenu className={css.navMenu} onSelect={this.handleSelectNavMenu}/>
+        <NavMenu onSelect={noop} offUserInteraction={offUserInteraction}/>
       </div>
     );
   }
 }
+
+export default Header;
+
+function noop() {}

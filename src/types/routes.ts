@@ -1,39 +1,41 @@
 import uniqueHtmlId from 'utils/uniqueHtmlId';
 
-export interface IModItem {
+export interface IRouteItem {
   readonly ID: string,
   readonly HTML_ID: string,
-  readonly ROUTE: string,
+  readonly HASH: string,
   readonly MENU_ITEM_NAME: string,
   readonly TITLE: string;
-  readonly FIRST?: true,
 }
 
-export interface IMod {
-  readonly HEADER: IModItem;
-  readonly BIO: IModItem;
-  readonly CONTACT: IModItem;
-  readonly GALLERY: IModItem;
-  readonly MUSIC: IModItem;
-  readonly NEWS: IModItem;
-  readonly VIDEOS: IModItem;
-  readonly ORDER: Array<IModItem>;
+export interface IRoute {
+  readonly HEADER: IRouteItem;
+  readonly BIO: IRouteItem;
+  readonly CONTACT: IRouteItem;
+  readonly GALLERY: IRouteItem;
+  readonly MUSIC: IRouteItem;
+  readonly NEWS: IRouteItem;
+  readonly VIDEOS: IRouteItem;
+  // readonly HAM_MENU: IRouteItem;
+
+  readonly ORDER_NAV_MENU: Array<IRouteItem>;
+  readonly ORDER_HAM_MENU: Array<IRouteItem>;
+  readonly ALL: Array<IRouteItem>;
 }
 
-export const MOD: IMod = {
+export const ROUTES: IRoute = {
   HEADER: {
     ID: 'HEADER',
     HTML_ID: uniqueHtmlId(),
-    ROUTE: '#header',
+    HASH: '#home',
     TITLE: '',
     MENU_ITEM_NAME: 'Home',
-    FIRST: true,
   },
 
   BIO: {
     ID: 'BIO',
     HTML_ID: uniqueHtmlId(),
-    ROUTE: '#bio',
+    HASH: '#bio',
     TITLE: 'BIO',
     MENU_ITEM_NAME: 'Bio',
   },
@@ -41,7 +43,7 @@ export const MOD: IMod = {
   GALLERY: {
     ID: 'GALLERY',
     HTML_ID: uniqueHtmlId(),
-    ROUTE: '#gallery',
+    HASH: '#gallery',
     TITLE: 'Gallery',
     MENU_ITEM_NAME: 'Gallery',
   },
@@ -49,7 +51,7 @@ export const MOD: IMod = {
   MUSIC: {
     ID: 'MUSIC',
     HTML_ID: uniqueHtmlId(),
-    ROUTE: '#music',
+    HASH: '#music',
     TITLE: 'Music',
     MENU_ITEM_NAME: 'Music',
   },
@@ -57,7 +59,7 @@ export const MOD: IMod = {
   NEWS: {
     ID: 'NEWS',
     HTML_ID: uniqueHtmlId(),
-    ROUTE: '#news',
+    HASH: '#news',
     TITLE: 'News',
     MENU_ITEM_NAME: 'News',
   },
@@ -65,7 +67,7 @@ export const MOD: IMod = {
   VIDEOS: {
     ID: 'VIDEOS',
     HTML_ID: uniqueHtmlId(),
-    ROUTE: '#videos',
+    HASH: '#videos',
     TITLE: 'Videos',
     MENU_ITEM_NAME: 'Videos',
   },
@@ -73,20 +75,50 @@ export const MOD: IMod = {
   CONTACT: {
     ID: 'CONTACT',
     HTML_ID: uniqueHtmlId(),
-    ROUTE: '#contact',
+    HASH: '#contact',
     TITLE: 'Contact',
     MENU_ITEM_NAME: 'Contact',
   },
+  //
+  // HAM_MENU: {
+  //   ID: 'HAM_MENU',
+  //   HTML_ID: uniqueHtmlId(),
+  //   HASH: '#menu',
+  //   TITLE: '',
+  //   MENU_ITEM_NAME: '',
+  // },
 
-  ORDER: [],
+  ORDER_NAV_MENU: [],
+  ORDER_HAM_MENU: [],
+  ALL: [],
 };
 
-MOD.ORDER.push(
-  MOD.HEADER,
-  MOD.BIO,
-  MOD.NEWS,
-  MOD.MUSIC,
-  MOD.VIDEOS,
-  MOD.GALLERY,
-  MOD.CONTACT,
+ROUTES.ORDER_HAM_MENU.push(
+  ROUTES.HEADER,
+  ROUTES.BIO,
+  ROUTES.NEWS,
+  ROUTES.MUSIC,
+  ROUTES.VIDEOS,
+  ROUTES.GALLERY,
+  ROUTES.CONTACT,
+);
+
+ROUTES.ORDER_NAV_MENU.push(
+  ROUTES.BIO,
+  ROUTES.NEWS,
+  ROUTES.MUSIC,
+  ROUTES.VIDEOS,
+  ROUTES.GALLERY,
+  ROUTES.CONTACT,
+);
+
+ROUTES.ALL.push(
+  ROUTES.HEADER,
+  ROUTES.BIO,
+  ROUTES.NEWS,
+  ROUTES.MUSIC,
+  ROUTES.VIDEOS,
+  ROUTES.GALLERY,
+  ROUTES.CONTACT,
+  // ROUTES.HAM_MENU,
 );

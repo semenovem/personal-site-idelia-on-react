@@ -1,17 +1,8 @@
 .header {
   height: 100vh;
-
   display: flex;
   flex-direction: column;
 }
-
-.hamMenu {
-  position: absolute;
-
-  top: 30px;
-  right: 30px;
-}
-
 
 .cover {
   flex-grow: 1;
@@ -19,6 +10,7 @@
   display: flex;
   align-items: center;
 
+  padding-left: var(--indent-m);
 
   background-image: url(../../assets/bg/header_mob.jpg);
   background-size: auto 100%;
@@ -30,11 +22,6 @@
 .titleSite {
   margin-left: var(--indent-m);
 }
-
-
-.navMenu {
-}
-
 
 
 /* sm */
@@ -54,3 +41,11 @@
 
 /* xl */
 @media (min-width: 1200px) {}
+
+
+/* xxl */
+@media (min-width: 1400px) {
+  .cover {
+    padding-left: calc((100vw - var(--max-width-limit)) / 2 + var(--indent-m));
+  }
+}

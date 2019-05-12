@@ -3,7 +3,7 @@
   --font-size-ham-menu-item: 40px;
   --font-size-title-site: 70px;
   --font-size-nav-menu-item: 22px;
-  --font-size-mod-title: 30px;
+  --font-size-mod-title: calc(18px + 3vw);
 
 
   --indent-xxs: 2px;
@@ -13,6 +13,8 @@
   --indent-l: 24px;
   --indent-xl: 36px;
   --indent-xxl: 48px;
+
+  --max-width-limit: 1400px;
 }
 
 
