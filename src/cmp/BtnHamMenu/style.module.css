@@ -1,4 +1,4 @@
-.hamMenu {
+.btnHamMenu {
   color: red;
 
   background-image: url(../../assets/icons/btn_ham_menu_red.svg);
@@ -16,7 +16,7 @@
 
 /* md */
 @media (min-width: 768px) {
-  .hamMenu {
+  .btnHamMenu {
     background-image: url(../../assets/icons/btn_ham_menu_white.svg);
   }
 }

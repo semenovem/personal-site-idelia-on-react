@@ -15,7 +15,7 @@ interface IProps extends IOwnProps {}
 
 const BtnHamMenu: React.FC<IProps> = ({ className, onOpen, offUserInteraction }) => (
   <button
-    className={cn(cssCommon.resetBtnStyles, css.hamMenu, className)}
+    className={cn(cssCommon.resetBtnStyles, css.btnHamMenu, className)}
     onClick={onOpen}
     {...(offUserInteraction && { tabIndex: -1})}
   />

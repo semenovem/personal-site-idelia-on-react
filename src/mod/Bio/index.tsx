@@ -22,12 +22,22 @@ interface IProps extends IOwnProps {
 }
 
 class Bio extends React.Component<IProps> {
+  refCnt: any;
+
+  private setRefContainer = (elem: any) => this.refCnt = elem;
+
   public componentWillMount(): void {
     window.addEventListener('keyup', this.handleKeyUp)
   }
 
   public componentWillUnmount(): void {
     window.removeEventListener('keyup', this.handleKeyUp);
+  }
+
+  public componentDidMount() {
+    if (this.refCnt) {
+      this.refCnt.classList.add(css.showUp);
+    }
   }
 
   private handleKeyUp = (event: KeyboardEvent): void => {
@@ -41,7 +51,9 @@ class Bio extends React.Component<IProps> {
     const { className, onActOpenHamMenu, onClose } = this.props;
 
     return (
-      <div id={ROUTES.BIO.HTML_ID} className={cn(css.bio, className)}>
+      <div id={ROUTES.BIO.HTML_ID} className={cn(css.bio, className)} ref={this.setRefContainer}>
+
+
         <div className={cn(cssMod.mod, css.content)}>
           <BtnBack
             className={cssMod.btnBack}
@@ -69,8 +81,6 @@ class Bio extends React.Component<IProps> {
               lacus vel facilisis.
             </p>
           </div>
-
-
         </div>
 
 

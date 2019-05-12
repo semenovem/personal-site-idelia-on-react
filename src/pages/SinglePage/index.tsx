@@ -40,7 +40,6 @@ class SinglePage extends React.Component<IProps, IState> {
     window.removeEventListener('hashchange', this.handleHashChange);
   }
 
-
   private defOpenedSingleRoute(): OPENED_SINGLE_ROUTE | null {
     switch (window.location.hash) {
       case ROUTES.BIO.HASH:

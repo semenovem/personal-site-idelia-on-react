@@ -16,10 +16,9 @@ export interface IRoute {
   readonly MUSIC: IRouteItem;
   readonly NEWS: IRouteItem;
   readonly VIDEOS: IRouteItem;
-  // readonly HAM_MENU: IRouteItem;
-
   readonly ORDER_NAV_MENU: Array<IRouteItem>;
   readonly ORDER_HAM_MENU: Array<IRouteItem>;
+  readonly SINGLE_PAGE: Array<IRouteItem>;
   readonly ALL: Array<IRouteItem>;
 }
 
@@ -79,17 +78,10 @@ export const ROUTES: IRoute = {
     TITLE: 'Contact',
     MENU_ITEM_NAME: 'Contact',
   },
-  //
-  // HAM_MENU: {
-  //   ID: 'HAM_MENU',
-  //   HTML_ID: uniqueHtmlId(),
-  //   HASH: '#menu',
-  //   TITLE: '',
-  //   MENU_ITEM_NAME: '',
-  // },
 
   ORDER_NAV_MENU: [],
   ORDER_HAM_MENU: [],
+  SINGLE_PAGE: [],
   ALL: [],
 };
 
@@ -120,5 +112,12 @@ ROUTES.ALL.push(
   ROUTES.VIDEOS,
   ROUTES.GALLERY,
   ROUTES.CONTACT,
-  // ROUTES.HAM_MENU,
+);
+
+ROUTES.SINGLE_PAGE.push(
+  ROUTES.HEADER,
+  ROUTES.NEWS,
+  ROUTES.MUSIC,
+  ROUTES.VIDEOS,
+  ROUTES.GALLERY,
 );
