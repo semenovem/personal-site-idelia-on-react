@@ -24,7 +24,7 @@ class VideoPlayer extends React.Component<IProps> {
         className={cn(css.videoPlayer, className)}
         style={{ backgroundImage: `url(${urlCover})`}}
       >
-        <img src={urlCover} className={css.img}/>
+        <img src={urlCover} className={css.img} alt=''/>
 
         <button className={cn(cssCommon.resetBtnStyles, css.btn, styleBtn)}/>
       </div>

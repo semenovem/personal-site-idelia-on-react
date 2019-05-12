@@ -36,7 +36,7 @@ class Gallery extends React.Component<IProps> {
 
           <div className={css.content}>
 
-            <img src={photo006} />
+            <img src={photo006} alt='' />
 
           </div>
 

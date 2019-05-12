@@ -54,7 +54,7 @@ class Music extends React.Component<IProps> {
             className={css.shop}
             style={{ backgroundImage: `url(${itunes})`}}
             {...(offUserInteraction && { tabIndex: -1})}
-          />
+          > </a>
           <a
             href={SOCIAL.SPOTIFY.URL}
             target="_blank"
@@ -62,7 +62,7 @@ class Music extends React.Component<IProps> {
             className={css.shop}
             style={{ backgroundImage: `url(${spotify})`}}
             {...(offUserInteraction && { tabIndex: -1})}
-          />
+          > </a>
         </div>
       </div>
     );
