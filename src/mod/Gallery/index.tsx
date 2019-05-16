@@ -25,7 +25,7 @@ class Gallery extends React.Component<IProps> {
 
     return (
       <div id={ROUTES.GALLERY.HTML_ID} className={cn(cssMod.mod, css.gallery)}>
-        <h2 className={cssTypography.modTitle}>{ROUTES.GALLERY.TITLE}</h2>
+        <h2 className={cn(cssTypography.modTitle, cssMod.title)}>{ROUTES.GALLERY.TITLE}</h2>
 
 
         <div className={css.wrap}>

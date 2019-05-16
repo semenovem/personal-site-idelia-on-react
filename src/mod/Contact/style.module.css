@@ -2,11 +2,9 @@
 
   height: 400px;
 
-  background-image: url(../../assets/bg/videos_mob.jpg);
+  background-image: url(assets/bg_xs.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: left ;
-
 }
 
 

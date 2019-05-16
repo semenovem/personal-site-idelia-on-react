@@ -1,22 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Pathway+Gothic+One');
-
 .hamMenuItem {
   color: white;
   font-size: var(--font-size-ham-menu-item);
   font-weight: 500;
-  letter-spacing: 2px;
+  letter-spacing: 15px;
 }
 
 .hamMenuItem:hover {
   text-decoration: underline;
-}
-
-
-.titleSite {
-  color: white;
-  font-size: var(--font-size-title-site);
-  font-family: 'Pathway Gothic One', sans-serif;
-  letter-spacing: 5vw;
 }
 
 
@@ -31,12 +21,16 @@
 }
 
 
-.modTitle {
+.modTitle, .modTitleVideo {
   color: white;
   text-align: center;
   font-size: var(--font-size-mod-title);
   font-weight: 300;
   letter-spacing: 3px;
+}
+
+.modTitleVideo {
+  letter-spacing: 12px;
 }
 
 

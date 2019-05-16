@@ -8,7 +8,7 @@
   left: 0;
   right: 0;
 
-  background-color: #2A0505;
+  background-color: #801628;
 
 
   justify-content: center;
@@ -18,7 +18,6 @@
 
 .items {
   list-style: none;
-  /*line-height: 1.7em;*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,13 +34,6 @@
 
 
 .btnClose {
-  width: 24px;
-  height: 24px;
-  position: absolute;
-
-  top: 20px;
-  right: 20px;
-
   background-image: url(../../assets/icons/x.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -51,6 +43,30 @@
 
 .selected {
   color: #666;
+}
+
+
+
+
+
+.showUp {
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-name: anim-show-up;
+  animation-timing-function: ease-out;
+}
+
+
+
+
+@keyframes anim-show-up {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 

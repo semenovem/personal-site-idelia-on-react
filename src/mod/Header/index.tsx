@@ -7,7 +7,6 @@ import NavMenu from 'cmp/NavMenu';
 
 import {ROUTES} from 'types/routes';
 
-import cssCommon from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
 
@@ -25,15 +24,14 @@ class Header extends React.Component<IProps> {
     return (
       <div id={ROUTES.HEADER.HTML_ID} className={css.header}>
         <div className={css.cover}>
-          <BtnHamMenu
-            className={cssMod.btnHamMenu}
-            onOpen={onActOpenHamMenu}
-            offUserInteraction={offUserInteraction}
-          />
+          <div className={css.sticky}>
+            <BtnHamMenu
+              className={cssMod.btnHamMenu}
+              onOpen={onActOpenHamMenu}
+              offUserInteraction={offUserInteraction}
+            />
 
-          <div className={cn(cssCommon.titleSite, css.titleSite)}>
-            <div>IDELIA</div>
-            <div>MARS</div>
+            <div className={cn(css.titleSite)}/>
           </div>
         </div>
 

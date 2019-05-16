@@ -1,22 +1,21 @@
 .music {
-  background-image: url(../../assets/bg/music_mob.jpg);
+  background-image: url(assets/bg_xs.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
 }
 
-
-.wrap {
+.covers {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: var(--indent-m);
+  margin-top: calc(var(--indent-m) * -1);
 }
 
 .coverItem {
   width: calc(100vw / 2 - var(--indent-m) * 3 );
   height: calc(100vw / 2 - var(--indent-m) * 3 );
-  margin: var(--indent-m) var(--indent-m);
+  margin: var(--indent-m);
 }
 
 .row {

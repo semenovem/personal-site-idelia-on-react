@@ -3,14 +3,18 @@
   padding: var(--indent-l) var(--indent-m) var(--indent-xxl) var(--indent-m);
 }
 
+.title {
+  margin-bottom: var(--indent-l);
+}
 
-.btnHamMenu {
+
+.btnHamMenu, .btnCloseHamMenu {
   position: absolute;
-  top: 30px;
+  top: var(--indent-xl);
   right: var(--indent-xl);
 
-  width: calc(6vw + 40px);
-  height: calc(6vw + 20px);
+  width: calc(2vw + 30px);
+  height: calc(2vw + 15px);
 }
 
 .btnBack {
@@ -30,7 +34,11 @@
 
 
 /* md */
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+  .btnHamMenu {
+    display: none;
+  }
+}
 
 
 

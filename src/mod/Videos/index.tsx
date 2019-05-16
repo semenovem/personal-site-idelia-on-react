@@ -25,7 +25,7 @@ class Videos extends React.Component<IProps> {
 
     return (
       <div id={ROUTES.VIDEOS.HTML_ID} className={cn(cssMod.mod, css.video)}>
-        <h2 className={cssTypography.modTitle}>{ROUTES.VIDEOS.TITLE}</h2>
+        <h2 className={cn(cssTypography.modTitleVideo, cssMod.title)}>{ROUTES.VIDEOS.TITLE}</h2>
 
         <div className={css.wrap}>
           <button

@@ -8,19 +8,34 @@
   flex-grow: 1;
 
   display: flex;
-  align-items: center;
+  flex-direction: column;
 
-  padding-left: var(--indent-m);
-
-  background-image: url(../../assets/bg/header_mob.jpg);
-  background-size: auto 100%;
+  background-image: url(assets/bg_xs.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 
 .titleSite {
-  margin-left: var(--indent-m);
+  background-image: url(assets/title_xs.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  width: 50vw;
+  height: 25vw;
+
+  margin-left: var(--indent-l);
+  margin-top: calc(var(--indent-xl) - 5px);
+  margin-bottom: calc(var(--indent-xl) - 5px);
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 
@@ -30,8 +45,18 @@
 
 
 /* md */
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+  .titleSite {
+    background-image: url(assets/title_md.png);
 
+    width: calc(130px + 33vw);
+    height: 30vw;
+  }
+
+  .cover {
+    background-image: url(assets/bg.jpg);
+  }
+}
 
 
 /* lg */

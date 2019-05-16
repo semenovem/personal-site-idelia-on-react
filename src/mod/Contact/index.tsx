@@ -18,7 +18,7 @@ class Contact extends React.Component<IProps> {
   render() {
     return (
       <div id={ROUTES.CONTACT.HTML_ID} className={cn(cssMod.mod, css.contact)}>
-        <h2 className={cssTypography.modTitle}>{ROUTES.CONTACT.TITLE}</h2>
+        <h2 className={cn(cssTypography.modTitle, cssMod.title)}>{ROUTES.CONTACT.TITLE}</h2>
 
       </div>
     );

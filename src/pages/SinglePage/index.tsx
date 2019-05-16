@@ -6,6 +6,7 @@ import Videos from 'mod/Videos';
 import Gallery from 'mod/Gallery';
 import Bio from 'mod/Bio';
 import Contact from 'mod/Contact';
+import News from 'mod/News';
 
 import Footer from 'mod/Footer';
 
@@ -17,18 +18,10 @@ interface IProps {
 
 interface IState {
   isOpenHamMenu: boolean;
-  openedSingleRoute: OPENED_SINGLE_ROUTE | null;
-}
-
-enum OPENED_SINGLE_ROUTE {
-  HAM_MENU,
-  CONTACT,
-  BIO,
 }
 
 class SinglePage extends React.Component<IProps, IState> {
   state = {
-    openedSingleRoute: this.defOpenedSingleRoute(),
     isOpenHamMenu: false,
   };
 
@@ -40,39 +33,20 @@ class SinglePage extends React.Component<IProps, IState> {
     window.removeEventListener('hashchange', this.handleHashChange);
   }
 
-  private defOpenedSingleRoute(): OPENED_SINGLE_ROUTE | null {
-    switch (window.location.hash) {
-      case ROUTES.BIO.HASH:
-        return OPENED_SINGLE_ROUTE.BIO;
-      case ROUTES.CONTACT.HASH:
-        return OPENED_SINGLE_ROUTE.CONTACT;
-      default:
-        return null;
-    }
-  }
 
   private handleHashChange = () => {
-    const openedSingleRoute = this.defOpenedSingleRoute();
+    const hash = window.location.hash || ROUTES.HEADER.HASH;
+    const routeItem = ROUTES.ALL.find(it => it.HASH === hash);
 
-    if (openedSingleRoute !== this.state.openedSingleRoute) {
-      this.setState({
-        openedSingleRoute,
-      });
+    if (!routeItem) {
+      return;
     }
 
-    if (!openedSingleRoute) {
-      const hash = window.location.hash;
-      const routeItem = ROUTES.ALL.find(it => it.HASH === hash);
-
-      if (!routeItem) {
-        return;
-      }
-
-      const el = document.getElementById(routeItem.HTML_ID);
-      if (el) {
-        el.scrollIntoView({behavior: 'smooth'});
-      }
+    const el = document.getElementById(routeItem.HTML_ID);
+    if (el) {
+      el.scrollIntoView({behavior: 'smooth'});
     }
+
 
     if (this.state.isOpenHamMenu) {
       setTimeout(() => {
@@ -87,36 +61,26 @@ class SinglePage extends React.Component<IProps, IState> {
   private handleOpenHamMenu = () => this.setState({isOpenHamMenu: true,});
   private handleCloseHamMenu = () => this.setState({isOpenHamMenu: false});
 
-  private handleCloseSingleRoute = () => {
-    window.history.back();
-  };
-
   public render() {
-    const {isOpenHamMenu, openedSingleRoute} = this.state;
-    const offUserInteraction = Boolean(isOpenHamMenu || openedSingleRoute);
+    const {isOpenHamMenu} = this.state;
 
     return (
       <>
         <Header
           onActOpenHamMenu={this.handleOpenHamMenu}
-          offUserInteraction={offUserInteraction}
+          offUserInteraction={isOpenHamMenu}
         />
         <main>
-          <Music offUserInteraction={offUserInteraction}/>
-          <Videos offUserInteraction={offUserInteraction}/>
-          <Gallery offUserInteraction={offUserInteraction}/>
+          <Music offUserInteraction={isOpenHamMenu}/>
+          <Bio offUserInteraction={isOpenHamMenu}/>
+          <Videos offUserInteraction={isOpenHamMenu}/>
+          <Gallery offUserInteraction={isOpenHamMenu}/>
+          <News offUserInteraction={isOpenHamMenu}/>
+
+          <Contact />
         </main>
 
-        <Footer offUserInteraction={offUserInteraction}/>
-
-        {
-          openedSingleRoute === OPENED_SINGLE_ROUTE.BIO
-          && <Bio
-            onActOpenHamMenu={this.handleOpenHamMenu}
-            onClose={this.handleCloseSingleRoute}
-          />
-        }
-        {openedSingleRoute === OPENED_SINGLE_ROUTE.CONTACT && <Contact />}
+        <Footer offUserInteraction={isOpenHamMenu}/>
 
         <HamMenu
           isOpen={isOpenHamMenu}

@@ -75,7 +75,7 @@ export const ROUTES: IRoute = {
     ID: 'CONTACT',
     HTML_ID: uniqueHtmlId(),
     HASH: '#contact',
-    TITLE: 'Contact',
+    TITLE: 'Contact Me',
     MENU_ITEM_NAME: 'Contact',
   },
 
@@ -86,20 +86,17 @@ export const ROUTES: IRoute = {
 };
 
 ROUTES.ORDER_HAM_MENU.push(
-  ROUTES.HEADER,
-  ROUTES.BIO,
-  ROUTES.NEWS,
   ROUTES.MUSIC,
+  ROUTES.BIO,
   ROUTES.VIDEOS,
   ROUTES.GALLERY,
+  ROUTES.NEWS,
   ROUTES.CONTACT,
 );
 
 ROUTES.ORDER_NAV_MENU.push(
-  ROUTES.BIO,
-  ROUTES.NEWS,
   ROUTES.MUSIC,
-  ROUTES.VIDEOS,
+  ROUTES.BIO,
   ROUTES.GALLERY,
   ROUTES.CONTACT,
 );

@@ -6,6 +6,7 @@ import findValueByDataAttr from 'utils/findValueByElemAttr';
 
 import cssTypography from 'styles/typography.module.css';
 import cssCommon from 'styles/common.module.css';
+import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
 
 interface IOwnProps {
@@ -71,7 +72,7 @@ class HamMenu extends React.Component<IProps, IState> {
     return (
       <div className={cn(css.hamMenu, className, isOpen && css.open)}>
 
-        <button className={cn(cssCommon.resetBtnStyles, css.btnClose)} onClick={onClose}/>
+        <button className={cn(cssCommon.resetBtnStyles, cssMod.btnCloseHamMenu, css.btnClose)} onClick={onClose}/>
 
         <nav className={cn(css.items)} onClick={this.handleSelect}>
           {this.renderItems()}

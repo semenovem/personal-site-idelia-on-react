@@ -31,7 +31,7 @@ class Music extends React.Component<IProps> {
 
     return (
       <div id={ROUTES.MUSIC.HTML_ID} className={cn(cssMod.mod, css.music)}>
-        <h2 className={cssTypography.modTitle}>{ROUTES.MUSIC.TITLE}</h2>
+        <h2 className={cn(cssTypography.modTitle, cssMod.title)}>{ROUTES.MUSIC.TITLE}</h2>
 
         <div className={css.covers}>
           <div className={css.row}>

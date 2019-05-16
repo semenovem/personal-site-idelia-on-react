@@ -1,7 +1,6 @@
 :root {
 
   --font-size-ham-menu-item: 40px;
-  --font-size-title-site: 70px;
   --font-size-nav-menu-item: 22px;
   --font-size-mod-title: calc(18px + 3vw);
 
@@ -22,7 +21,6 @@
 /* sm */
 @media (min-width: 576px) {
   :root {
-    --font-size-title-site: 15vw;
     --font-size-ham-menu-item: 7vw;
     --font-size-nav-menu-item: 5vw;
 

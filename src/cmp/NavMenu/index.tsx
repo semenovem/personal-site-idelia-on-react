@@ -64,14 +64,12 @@ const NavMenu: React.FC<IOwnProps> = ({className, offUserInteraction}) => {
       </div>
     </div>
   );
-}
+};
 
 function renderDivider() {
   return (
     <div className={css.divider}>
-      <span className={css.dividerLeft}/>
       <span className={css.dividerCenter}/>
-      <span className={css.dividerRight}/>
     </div>
   );
 }

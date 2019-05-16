@@ -3,9 +3,6 @@ import cn from 'classnames';
 
 import {ROUTES} from 'types/routes';
 import {IModProps} from 'mod/types';
-import Footer from 'mod/Footer';
-import BtnHamMenu from "cmp/BtnHamMenu";
-import BtnBack from "cmp/BtnBack";
 
 import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
@@ -14,77 +11,33 @@ import css from './style.module.css';
 
 interface IOwnProps extends IModProps {
   className?: string;
-  onActOpenHamMenu: () => void;
-  onClose: () => void;
 }
 
 interface IProps extends IOwnProps {
 }
 
 class Bio extends React.Component<IProps> {
-  refCnt: any;
-
-  private setRefContainer = (elem: any) => this.refCnt = elem;
-
-  public componentWillMount(): void {
-    window.addEventListener('keyup', this.handleKeyUp)
-  }
-
-  public componentWillUnmount(): void {
-    window.removeEventListener('keyup', this.handleKeyUp);
-  }
-
-  public componentDidMount() {
-    if (this.refCnt) {
-      this.refCnt.classList.add(css.showUp);
-    }
-  }
-
-  private handleKeyUp = (event: KeyboardEvent): void => {
-    if (event.code === 'Escape') {
-      this.props.onClose();
-    }
-  };
-
-
   render() {
-    const { className, onActOpenHamMenu, onClose } = this.props;
+    const { className } = this.props;
 
     return (
-      <div id={ROUTES.BIO.HTML_ID} className={cn(css.bio, className)} ref={this.setRefContainer}>
+      <div id={ROUTES.BIO.HTML_ID} className={cn(cssMod.mod, css.bio, className)}>
+        <h2 className={cn(cssTypography.modTitle, cssMod.title)}>{ROUTES.BIO.TITLE}</h2>
 
 
-        <div className={cn(cssMod.mod, css.content)}>
-          <BtnBack
-            className={cssMod.btnBack}
-            onBack={onClose}
-          />
+        <div className={cn(cssTypography.textBio, css.note)}>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+            lacus vel facilisis.
+          </p>
 
-          <BtnHamMenu
-            className={cssMod.btnHamMenu}
-            onOpen={onActOpenHamMenu}
-          />
-
-          <h2 className={cssTypography.modTitle}>{ROUTES.BIO.TITLE}</h2>
-
-
-          <div className={cn(cssTypography.textBio, css.note)}>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
-              lacus vel facilisis.
-            </p>
-
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
-              lacus vel facilisis.
-            </p>
-          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+            lacus vel facilisis.
+          </p>
         </div>
-
-
-        <Footer disableTagFooter/>
       </div>
     );
   }
