@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c18c124cebb91c90dfd7c0e3e7515f52",
+    "revision": "b617fe9e22c5aa4e7ae5ada481d491c2",
     "url": "/index.html"
   },
   {
-    "revision": "63fe542e6ba13768ad99",
-    "url": "/static/css/main.0cf71a2b.chunk.css"
+    "revision": "821020c4438732c9a3aa",
+    "url": "/static/css/main.ea3fcfcd.chunk.css"
   },
   {
-    "revision": "7813841f49e92be3f38f",
-    "url": "/static/js/2.601d2c0d.chunk.js"
+    "revision": "e61cf20bdde4b48f726c",
+    "url": "/static/js/2.1dce923e.chunk.js"
   },
   {
-    "revision": "63fe542e6ba13768ad99",
-    "url": "/static/js/main.be3c4fd2.chunk.js"
+    "revision": "821020c4438732c9a3aa",
+    "url": "/static/js/main.791b33ab.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -32,8 +32,32 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/arrow_right.0d6282b8.svg"
   },
   {
-    "revision": "93e71863d604851a981c9156233a83bc",
-    "url": "/static/media/btn_ham_menu_red.93e71863.svg"
+    "revision": "4d19ad2d2a4b7ed973de58075f8dac31",
+    "url": "/static/media/bg.4d19ad2d.jpg"
+  },
+  {
+    "revision": "0621f0ff1f642a4c1aa992ec61d08e5a",
+    "url": "/static/media/bg_xs.0621f0ff.jpg"
+  },
+  {
+    "revision": "54aa7b7fd453e25ef0e3bf93978949d4",
+    "url": "/static/media/bg_xs.54aa7b7f.jpg"
+  },
+  {
+    "revision": "6367ae9f271d8a41e75eacbe0d7421c4",
+    "url": "/static/media/bg_xs.6367ae9f.jpg"
+  },
+  {
+    "revision": "9ea92dfe6ed454c3b568468f395baf7c",
+    "url": "/static/media/bg_xs.9ea92dfe.jpg"
+  },
+  {
+    "revision": "d85dafc62ec0ef98c645233889d3466d",
+    "url": "/static/media/bg_xs.d85dafc6.jpg"
+  },
+  {
+    "revision": "f07f5d8bf43b0fcfc7b5a2761340f662",
+    "url": "/static/media/bg_xs.f07f5d8b.jpg"
   },
   {
     "revision": "f47025618853efa07955755923958066",
@@ -68,20 +92,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/gallery.75119663.jpg"
   },
   {
-    "revision": "fd3c204f93cd0f4e463ce54bc252b6cf",
-    "url": "/static/media/header_mob.fd3c204f.jpg"
-  },
-  {
     "revision": "72384eb9b6cd02f8986971cd581804f9",
     "url": "/static/media/instagram_bw.72384eb9.svg"
   },
   {
     "revision": "3b86b4d1d2bbdee10216d6851fa4af0e",
     "url": "/static/media/itunes_buy.3b86b4d1.png"
-  },
-  {
-    "revision": "c3f259893a3ed73437f9f481d37376b1",
-    "url": "/static/media/music_mob.c3f25989.jpg"
   },
   {
     "revision": "2449d65e098f0ca3cc7de879cf05c497",
@@ -96,11 +112,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/spotify_white.782dbe3f.svg"
   },
   {
-    "revision": "83dc2dfbf0282475d0ef36015bddbba7",
-    "url": "/static/media/video0.83dc2dfb.jpg"
+    "revision": "79f0844aba279c8ac033dc085c6df018",
+    "url": "/static/media/title_md.79f0844a.png"
   },
   {
-    "revision": "7c80c338dbf5c1ed7d3d5f21c73599fd",
-    "url": "/static/media/videos_mob.7c80c338.jpg"
+    "revision": "dadc39bbbd86b39c32c813477eaf039e",
+    "url": "/static/media/title_xs.dadc39bb.png"
+  },
+  {
+    "revision": "83dc2dfbf0282475d0ef36015bddbba7",
+    "url": "/static/media/video0.83dc2dfb.jpg"
   }
 ]);
