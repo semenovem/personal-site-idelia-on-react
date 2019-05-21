@@ -10,11 +10,25 @@
   background-position: top center;
 }
 
-.note {
-  margin-top: 50vh;
-  width: 90%;
-  background-color: white;
+.title {
+  text-align: right;
 }
+
+.lastName {
+  padding-right: 40px;
+}
+
+.extended {
+}
+
+.hide {
+  display: none;
+}
+
+
+.readMore {
+}
+
 
 /* sm */
 @media (min-width: 576px) {}

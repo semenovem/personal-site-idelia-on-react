@@ -1,7 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
 
-import cssCommon from 'styles/common.module.css';
 import css from './style.module.css';
 
 interface IOwnProps {
@@ -26,7 +25,7 @@ class VideoPlayer extends React.Component<IProps> {
       >
         <img src={urlCover} className={css.img} alt=''/>
 
-        <button className={cn(cssCommon.resetBtnStyles, css.btn, styleBtn)}/>
+        <button className={cn(css.btn, styleBtn)}/>
       </div>
     );
   }

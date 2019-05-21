@@ -7,7 +7,6 @@ import VideoPlayer from 'cmp/VideoPlayer';
 
 import video0 from './assets/covers/video0.jpg';
 
-import cssCommon from 'styles/common.module.css';
 import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
@@ -29,7 +28,7 @@ class Videos extends React.Component<IProps> {
 
         <div className={css.wrap}>
           <button
-            className={cn(cssCommon.resetBtnStyles, css.arrowL)}
+            className={css.arrowL}
             {...(offUserInteraction && {tabIndex: -1})}
           />
 
@@ -38,7 +37,7 @@ class Videos extends React.Component<IProps> {
           </div>
 
           <button
-            className={cn(cssCommon.resetBtnStyles, css.arrowR)}
+            className={css.arrowR}
             {...(offUserInteraction && {tabIndex: -1})}
           />
 

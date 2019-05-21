@@ -1,11 +1,48 @@
 .contact {
-
-  height: 400px;
-
   background-image: url(assets/bg_xs.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-left: var(--indent-m);
+  padding-right: var(--indent-m);
+}
+
+.field {
+  border: none;
+  background: none;
+  font-size: 24px;
+  color: rgba(255, 255, 255);
+  border-bottom: 1px solid rgba(255, 255, 255, .6);
+}
+
+.field::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.email {
+  margin-top: var(--indent-xl);
+
+}
+
+.msg {
+  margin-top: var(--indent-xl);
+}
+
+
+.sendWrap {
+  text-align: center;
+}
+
+.send {
+  margin-top: var(--indent-xl);
+}
+
+
 
 
 /* sm */

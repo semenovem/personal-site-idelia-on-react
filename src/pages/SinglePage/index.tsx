@@ -27,11 +27,27 @@ class SinglePage extends React.Component<IProps, IState> {
 
   public componentWillMount() {
     window.addEventListener('hashchange', this.handleHashChange);
+    window.addEventListener('keydown', this.handleKeyDown);
   }
 
   public componentWillUnmount() {
     window.removeEventListener('hashchange', this.handleHashChange);
+    window.removeEventListener('keydown', this.handleKeyDown);
   }
+
+  private handleKeyDown = (e: any) => {
+    if (e.code === 'Space') {
+      const el = document.activeElement as HTMLLinkElement | null;
+
+      /**
+       * Не прокручиваем страницу на space, если фокус на теге '<a>'
+       */
+      if (el && el.tagName === 'A' && el.tabIndex > -1) {
+        e.preventDefault();
+        el.click();
+      }
+    }
+  };
 
 
   private handleHashChange = () => {
@@ -83,10 +99,12 @@ class SinglePage extends React.Component<IProps, IState> {
         <Footer offUserInteraction={isOpenHamMenu}/>
 
         <HamMenu
-          isOpen={isOpenHamMenu}
+          isShow={isOpenHamMenu}
           onClose={this.handleCloseHamMenu}
           onSelect={noop}
         />
+
+
       </>
     );
   }

@@ -7,6 +7,10 @@
   margin-bottom: var(--indent-l);
 }
 
+.titleHigh {
+  margin-bottom: var(--indent-xxl);
+}
+
 
 .btnHamMenu, .btnCloseHamMenu {
   position: absolute;

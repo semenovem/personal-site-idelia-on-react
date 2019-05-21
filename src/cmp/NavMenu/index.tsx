@@ -3,7 +3,6 @@ import cn from 'classnames';
 
 import {ROUTES, IRouteItem} from 'types/routes';
 
-import cssCommon from 'styles/common.module.css';
 import cssTypography from 'styles/typography.module.css';
 import css from './style.module.css';
 
@@ -14,7 +13,7 @@ interface IOwnProps {
 }
 
 function getGroup(offUserInteraction?: boolean) {
-  const styleItem = cn(cssCommon.resetLinkStyles, cssTypography.navMenuItem);
+  const styleItem = cssTypography.navMenuItem;
 
   return ROUTES.ORDER_NAV_MENU
     .map((it: IRouteItem): React.ReactNode => (
