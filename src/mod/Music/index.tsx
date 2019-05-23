@@ -2,8 +2,8 @@ import React from 'react';
 import cn from 'classnames';
 
 import {ROUTES} from 'types/routes';
-import {IModProps} from 'mod/types';
 import MusicCover from 'cmp/MusicCover';
+import { withOffTabIndexCtx, IOffTabIndex } from 'ctx/OffTabIndex';
 
 import {SOCIAL} from 'types/social';
 
@@ -18,11 +18,8 @@ import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
 
-interface IOwnProps extends IModProps {
-}
+interface IOwnProps extends IOffTabIndex {}
 
-interface IProps extends IOwnProps {
-}
 
 interface IState {
   playedSongId: string | null;
@@ -46,7 +43,7 @@ const songs = {
   },
 };
 
-class Music extends React.Component<IProps, IState> {
+class Music extends React.Component<IOwnProps, IState> {
 
   state = {
     playedSongId: null,
@@ -70,7 +67,7 @@ class Music extends React.Component<IProps, IState> {
   };
 
   render() {
-    const { offUserInteraction } = this.props;
+    const { offTabIndex } = this.props;
     const {playedSongId} = this.state;
 
     return (
@@ -101,7 +98,7 @@ class Music extends React.Component<IProps, IState> {
             rel="noopener noreferrer"
             className={css.shop}
             style={{ backgroundImage: `url(${itunes})`}}
-            {...(offUserInteraction && { tabIndex: -1})}
+            {...(offTabIndex && { tabIndex: -1})}
           > </a>
           <a
             href={SOCIAL.SPOTIFY.URL}
@@ -109,7 +106,7 @@ class Music extends React.Component<IProps, IState> {
             rel="noopener noreferrer"
             className={css.shop}
             style={{ backgroundImage: `url(${spotify})`}}
-            {...(offUserInteraction && { tabIndex: -1})}
+            {...(offTabIndex && { tabIndex: -1})}
           > </a>
         </div>
       </div>
@@ -117,4 +114,4 @@ class Music extends React.Component<IProps, IState> {
   }
 }
 
-export default Music;
+export default withOffTabIndexCtx(Music);

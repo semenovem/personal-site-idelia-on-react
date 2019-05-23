@@ -18,24 +18,7 @@ interface IOwnProps {
 interface IProps extends IOwnProps {
 }
 
-interface IState {
-}
-
-class HamMenu extends React.Component<IProps, IState> {
-  public componentWillMount(): void {
-    window.addEventListener('keyup', this.handleKeyUp)
-  }
-
-  public componentWillUnmount(): void {
-    window.removeEventListener('keyup', this.handleKeyUp);
-  }
-
-  private handleKeyUp = (event: KeyboardEvent): void => {
-    if (event.code === 'Escape') {
-      this.props.onClose();
-    }
-  };
-
+class HamMenu extends React.Component<IProps> {
   private handleSelect = (event: React.MouseEvent) => {
     const id = findValueByDataAttr(event.target as HTMLElement, event.currentTarget as HTMLElement, 'data-id');
 

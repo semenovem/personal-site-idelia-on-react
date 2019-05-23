@@ -17,7 +17,7 @@ interface IProps extends IOwnProps {
 class News extends React.Component<IProps> {
 
   render() {
-    const { offUserInteraction } = this.props;
+    const { offTabIndex } = this.props;
 
     return (
       <div id={ROUTES.NEWS.HTML_ID} className={cn(cssMod.mod, css.news)}>

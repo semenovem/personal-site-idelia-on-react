@@ -2,8 +2,8 @@ import React from 'react';
 import cn from 'classnames';
 
 import {ROUTES} from 'types/routes';
-import {IModProps} from 'mod/types';
 import VideoPlayer from 'cmp/VideoPlayer';
+import { withOffTabIndexCtx, IOffTabIndex} from 'ctx/OffTabIndex';
 
 import video0 from './assets/covers/video0.jpg';
 
@@ -11,16 +11,12 @@ import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
 
-interface IOwnProps extends IModProps {
-}
+interface IOwnProps extends IOffTabIndex {}
 
-interface IProps extends IOwnProps {
-}
-
-class Videos extends React.Component<IProps> {
+class Videos extends React.Component<IOwnProps> {
 
   render() {
-    const { offUserInteraction } = this.props;
+    const { offTabIndex } = this.props;
 
     return (
       <div id={ROUTES.VIDEOS.HTML_ID} className={cn(cssMod.mod, css.video)}>
@@ -29,7 +25,7 @@ class Videos extends React.Component<IProps> {
         <div className={css.wrap}>
           <button
             className={css.arrowL}
-            {...(offUserInteraction && {tabIndex: -1})}
+            {...(offTabIndex && {tabIndex: -1})}
           />
 
           <div className={css.content}>
@@ -38,7 +34,7 @@ class Videos extends React.Component<IProps> {
 
           <button
             className={css.arrowR}
-            {...(offUserInteraction && {tabIndex: -1})}
+            {...(offTabIndex && {tabIndex: -1})}
           />
 
         </div>
@@ -47,5 +43,4 @@ class Videos extends React.Component<IProps> {
   }
 }
 
-
-export default Videos;
+export default withOffTabIndexCtx(Videos);

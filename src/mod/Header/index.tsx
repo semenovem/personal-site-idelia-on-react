@@ -1,41 +1,39 @@
 import React from 'react';
 import cn from 'classnames';
-import {IModProps} from 'mod/types';
-import BtnHamMenu from 'cmp/BtnHamMenu';
-
-import NavMenu from 'cmp/NavMenu';
-
+import BtnHamMenuCmp, { IProps as IBtnHamMenuProps } from 'cmp/BtnHamMenu';
+import NavMenuCmp, { IProps as INavMenuProps } from 'cmp/NavMenu';
 import {ROUTES} from 'types/routes';
+import { withOffTabIndexCtx } from 'ctx/OffTabIndex';
 
 import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
+import dataAttrImgBg from "./dataAttrImgBg";
 
-interface IOwnProps extends IModProps {
+interface IOwnProps {
   onActOpenHamMenu: () => void;
 }
 
-interface IProps extends IOwnProps {
-}
+const NavMenu = withOffTabIndexCtx<INavMenuProps>(NavMenuCmp);
+const BtnHamMenu = withOffTabIndexCtx<IBtnHamMenuProps>(BtnHamMenuCmp);
 
-class Header extends React.Component<IProps> {
+class Header extends React.Component<IOwnProps> {
   render() {
-    const {onActOpenHamMenu, offUserInteraction} = this.props;
+    const {onActOpenHamMenu} = this.props;
 
     return (
-      <div id={ROUTES.HEADER.HTML_ID} className={css.header}>
+      <div id={ROUTES.HEADER.HTML_ID} className={css.header} data-img-bg={dataAttrImgBg}>
         <div className={css.cover}>
           <div className={css.sticky}>
             <BtnHamMenu
               className={cssMod.btnHamMenu}
               onOpen={onActOpenHamMenu}
-              offUserInteraction={offUserInteraction}
             />
 
             <div className={cn(css.titleSite)}/>
           </div>
         </div>
 
-        <NavMenu onSelect={noop} offUserInteraction={offUserInteraction}/>
+        <NavMenu onSelect={noop} />
       </div>
     );
   }

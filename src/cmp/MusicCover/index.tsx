@@ -9,23 +9,19 @@ interface IOwnProps {
   active?: boolean;
   isPlayed?: boolean;
   id: string;
-
+  offTabIndex?: boolean;
   onPlayerControl:(id: string) => void;
 }
 
-interface IProps extends IOwnProps {}
-
-
-class MusicCover extends React.Component<IProps> {
+class MusicCover extends React.Component<IOwnProps> {
   private handleAActionBtn = () => {
     const { onPlayerControl, id } = this.props;
 
     onPlayerControl(id);
   };
 
-
   render() {
-    const { urlCover, className, isPlayed, active } = this.props;
+    const { urlCover, className, isPlayed, active, offTabIndex } = this.props;
     const styleBtn = isPlayed ? css.pause : css.play;
 
     return (
@@ -34,11 +30,14 @@ class MusicCover extends React.Component<IProps> {
       >
         <img src={urlCover} className={cn(css.img, !active && css.grayscale)} alt=''/>
 
-        <button className={cn(css.btn, styleBtn)} onClick={this.handleAActionBtn}/>
+        <button
+          className={cn(css.btn, styleBtn)}
+          onClick={this.handleAActionBtn}
+          {...(offTabIndex && { tabIndex: -1 })}
+        />
       </div>
     );
   }
 }
-
 
 export default MusicCover;

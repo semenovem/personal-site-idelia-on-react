@@ -9,10 +9,12 @@ import css from './style.module.css';
 interface IOwnProps {
   className?: string;
   onSelect: () => void;
-  offUserInteraction?: boolean;
+  offTabIndex?: boolean;
 }
 
-function getGroup(offUserInteraction?: boolean) {
+export interface IProps extends IOwnProps {}
+
+function getGroup(offTabIndex?: boolean) {
   const styleItem = cssTypography.navMenuItem;
 
   return ROUTES.ORDER_NAV_MENU
@@ -21,7 +23,7 @@ function getGroup(offUserInteraction?: boolean) {
           href={it.HASH}
           className={styleItem}
           key={it.ID}
-          { ...(offUserInteraction && { tabIndex: -1})}
+          { ...(offTabIndex && { tabIndex: -1})}
         >
           {it.MENU_ITEM_NAME}
         </a>
@@ -45,8 +47,8 @@ function getGroup(offUserInteraction?: boolean) {
 
 }
 
-const NavMenu: React.FC<IOwnProps> = ({className, offUserInteraction}) => {
-  const groups = getGroup(offUserInteraction);
+const NavMenu: React.FC<IProps> = ({className, offTabIndex}) => {
+  const groups = getGroup(offTabIndex);
 
 
   return (

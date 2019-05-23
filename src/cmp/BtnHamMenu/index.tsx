@@ -3,20 +3,17 @@ import cn from 'classnames';
 
 import css from './style.module.css';
 
-
-interface IOwnProps {
-  className: string;
+export interface IProps {
+  className?: string;
   onOpen: () => void;
-  offUserInteraction?: boolean;
+  offTabIndex?: boolean;
 }
 
-interface IProps extends IOwnProps {}
-
-const BtnHamMenu: React.FC<IProps> = ({ className, onOpen, offUserInteraction }) => (
+const BtnHamMenu: React.FC<IProps> = ({ className, onOpen, offTabIndex }) => (
   <button
     className={cn(css.btnHamMenu, className)}
     onClick={onOpen}
-    {...(offUserInteraction && { tabIndex: -1})}
+    {...(offTabIndex && { tabIndex: -1})}
   />
 );
 
