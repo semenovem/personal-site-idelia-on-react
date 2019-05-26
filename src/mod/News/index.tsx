@@ -2,19 +2,16 @@ import React from 'react';
 import cn from 'classnames';
 
 import {ROUTES} from 'types/routes';
-import {IModProps} from 'mod/types';
+import { withOffTabIndexCtx, IOffTabIndex} from 'ctx/OffTabIndex';
 
 import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
 
-interface IOwnProps extends IModProps {
+interface IOwnProps extends IOffTabIndex {
 }
 
-interface IProps extends IOwnProps {
-}
-
-class News extends React.Component<IProps> {
+class News extends React.Component<IOwnProps> {
 
   render() {
     const { offTabIndex } = this.props;
@@ -31,4 +28,4 @@ class News extends React.Component<IProps> {
   }
 }
 
-export default News;
+export default withOffTabIndexCtx(News);

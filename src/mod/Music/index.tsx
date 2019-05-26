@@ -4,114 +4,106 @@ import cn from 'classnames';
 import {ROUTES} from 'types/routes';
 import MusicCover from 'cmp/MusicCover';
 import { withOffTabIndexCtx, IOffTabIndex } from 'ctx/OffTabIndex';
+import { withMusicPlayerCtx, IMusicPlayerProps } from 'ctx/MusicPlayer';
 
-import {SOCIAL} from 'types/social';
-
-import cover0 from './assets/covers/cover0.jpg';
-import cover1 from './assets/covers/cover1.jpg';
-import different from './assets/covers/different.jpg';
-import myVoice from './assets/covers/my_voice.jpg';
 import itunes from 'assets/icons/shops/itunes_buy.png';
 import spotify from 'assets/icons/shops/spotify_buy.png';
+
+import { songs, ISong } from './songs';
 
 import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
 
-interface IOwnProps extends IOffTabIndex {}
+interface IOwnProps {}
 
+interface IProps extends IOwnProps, IOffTabIndex, IMusicPlayerProps {}
 
 interface IState {
   playedSongId: string | null;
 }
 
-const songs = {
-  different: {
-    id: 'different',
-  },
-
-  myVoice: {
-    id: 'myVoice'
-  },
-
-  first: {
-    id: 'first'
-  },
-
-  second: {
-    id: 'second',
-  },
-};
-
-class Music extends React.Component<IOwnProps, IState> {
-
+class Music extends React.Component<IProps, IState> {
   state = {
     playedSongId: null,
   };
 
-
+  public shouldComponentUpdate(nextProps: IProps, nextState: IState) {
+    const { offTabIndex } = this.props;
+    const { playedSongId } = this.state;
+    return nextProps.offTabIndex !== offTabIndex || nextState.playedSongId !== playedSongId;
+  }
 
   private handlePlayerControl = (id: string) => {
-    const { playedSongId } = this.state;
+    const { playedSongId, } = this.state;
+    const { musicPlayer } = this.props;
 
     if (id === playedSongId) {
       this.setState({
         playedSongId: null,
       });
+
+      musicPlayer.pause();
     } else {
       this.setState({
         playedSongId: id,
       });
-    }
 
+      if (playedSongId) {
+        musicPlayer.change(songs[playedSongId]);
+      }
+    }
   };
 
-  render() {
+  private renderSong(song: ISong) {
     const { offTabIndex } = this.props;
-    const {playedSongId} = this.state;
+    const { playedSongId } = this.state;
 
+    return (
+      <div className={css.song}>
+        <MusicCover
+          urlCover={song.coverUrl}
+          className={css.cover}
+          onPlayerControl={this.handlePlayerControl}
+          id={song.id}
+          isPlayed={playedSongId === song.id}
+          offTabIndex={offTabIndex}
+        />
+
+        <div className={css.buy}>
+          <a
+            href={song.itunes}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={css.store}
+            style={{ backgroundImage: `url(${itunes})`}}
+            {...offTabIndex && { tabIndex: -1 }}
+          />
+          <a
+            href={song.spotify}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={css.store}
+            style={{ backgroundImage: `url(${spotify})`}}
+            {...offTabIndex && { tabIndex: -1 }}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  public render() {
     return (
       <div id={ROUTES.MUSIC.HTML_ID} className={cn(cssMod.mod, css.music)}>
         <h2 className={cn(cssTypography.modTitle, cssMod.title)}>{ROUTES.MUSIC.TITLE}</h2>
 
-        <div className={css.covers}>
-          <div className={css.row}>
-            <MusicCover urlCover={cover1} className={css.coverItem} onPlayerControl={this.handlePlayerControl}
-                        id={songs.first.id} isPlayed={playedSongId===songs.first.id} active/>
-            <MusicCover urlCover={cover0} className={css.coverItem} onPlayerControl={this.handlePlayerControl}
-                        id={songs.myVoice.id} isPlayed={playedSongId===songs.myVoice.id} />
-          </div>
-
-          <div className={css.row}>
-            <MusicCover urlCover={different} className={css.coverItem} onPlayerControl={this.handlePlayerControl}
-                        id={songs.different.id} isPlayed={playedSongId === songs.second.id}/>
-            <MusicCover urlCover={myVoice} className={css.coverItem} onPlayerControl={this.handlePlayerControl}
-                        id={songs.second.id} isPlayed={playedSongId === songs.second.id}/>
-          </div>
-        </div>
-
-
-        <div className={css.shops}>
-          <a
-            href={SOCIAL.ITUNES.URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={css.shop}
-            style={{ backgroundImage: `url(${itunes})`}}
-            {...(offTabIndex && { tabIndex: -1})}
-          > </a>
-          <a
-            href={SOCIAL.SPOTIFY.URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={css.shop}
-            style={{ backgroundImage: `url(${spotify})`}}
-            {...(offTabIndex && { tabIndex: -1})}
-          > </a>
+        <div className={css.songs}>
+          {this.renderSong(songs.different)}
+          {this.renderSong(songs.myVoice)}
         </div>
       </div>
     );
   }
 }
 
-export default withOffTabIndexCtx(Music);
+export default withMusicPlayerCtx(withOffTabIndexCtx(Music));

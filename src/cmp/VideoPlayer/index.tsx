@@ -8,6 +8,7 @@ interface IOwnProps {
   urlCover: string;
   active?: boolean;
   isPlayed?: boolean;
+  offTabIndex?: boolean;
 }
 
 interface IProps extends IOwnProps {}
@@ -15,7 +16,7 @@ interface IProps extends IOwnProps {}
 
 class VideoPlayer extends React.Component<IProps> {
   render() {
-    const { urlCover, className, isPlayed } = this.props;
+    const { urlCover, className, isPlayed, offTabIndex } = this.props;
     const styleBtn = isPlayed ? css.pause : css.play;
 
     return (
@@ -25,7 +26,10 @@ class VideoPlayer extends React.Component<IProps> {
       >
         <img src={urlCover} className={css.img} alt=''/>
 
-        <button className={cn(css.btn, styleBtn)}/>
+        <button
+          className={cn(css.btn, styleBtn)}
+          {...offTabIndex && { tabIndex: -1 }}
+        />
       </div>
     );
   }

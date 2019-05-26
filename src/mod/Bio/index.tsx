@@ -2,7 +2,8 @@ import React from 'react';
 import cn from 'classnames';
 
 import {ROUTES} from 'types/routes';
-import {IModProps} from 'mod/types';
+import { withOffTabIndexCtx, IOffTabIndex} from 'ctx/OffTabIndex';
+import { withWinSizeCtx, IWinSizeProps} from 'ctx/WinSize';
 
 import cssCommon from 'styles/common.module.css';
 import cssTypography from 'styles/typography.module.css';
@@ -10,11 +11,8 @@ import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
 
 
-interface IOwnProps extends IModProps {
+interface IOwnProps extends IOffTabIndex, IWinSizeProps {
   className?: string;
-}
-
-interface IProps extends IOwnProps {
 }
 
 interface IState {
@@ -22,7 +20,7 @@ interface IState {
   addedAnim: boolean,
 }
 
-class Bio extends React.Component<IProps, IState> {
+class Bio extends React.Component<IOwnProps, IState> {
 
   public state = {
     shownAdditionalText: false,
@@ -36,7 +34,7 @@ class Bio extends React.Component<IProps, IState> {
   };
 
   public render() {
-    const {className} = this.props;
+    const {className, offTabIndex } = this.props;
     const {shownAdditionalText: shown} = this.state;
 
     return (
@@ -116,8 +114,12 @@ class Bio extends React.Component<IProps, IState> {
           </div>
 
 
-          <button className={cn(cssCommon.btnGrape, cssTypography.btnOrange, css.readMore)}
-                  onClick={this.handleReadMore}>Read more
+          <button
+            className={cn(cssCommon.btnGrape, cssTypography.btnOrange, css.readMore)}
+            onClick={this.handleReadMore}
+            {...offTabIndex && {tabIndex:-1}}
+          >
+            {shown ? 'Collapse' : 'Read more' }
           </button>
 
         </div>
@@ -126,6 +128,6 @@ class Bio extends React.Component<IProps, IState> {
   }
 }
 
-export default Bio;
+export default withWinSizeCtx(withOffTabIndexCtx(Bio));
 
 

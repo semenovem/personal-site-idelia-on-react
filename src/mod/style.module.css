@@ -1,10 +1,10 @@
 
 .mod {
-  padding: var(--indent-l) var(--indent-m) var(--indent-xxl) var(--indent-m);
+  padding: var(--indent-xl) var(--indent-m) var(--indent-xxl) var(--indent-m);
 }
 
 .title {
-  margin-bottom: var(--indent-l);
+  margin-bottom: var(--indent-xl);
 }
 
 .titleHigh {

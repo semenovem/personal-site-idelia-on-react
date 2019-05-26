@@ -1,11 +1,15 @@
-/**
- * Команды упраления воспроизведением плеера
- */
-export enum PlaybackControl {
+
+export enum Actions {
   PLAY,
   PAUSE,
-  RESUME,
-  STOP,
+  NEXT,
+  PREV,
+  CHANGE,
+}
+
+export enum Status {
+  PLAY,
+  PAUSE,
 }
 
 export enum Volume {
@@ -13,4 +17,15 @@ export enum Volume {
   DOWN,
   MUTE,
   UNMUTE,
+}
+
+export interface IPlayer {
+  status: Status
+  play(): void;
+  pause(): void;
+  change(url: string | string[]): void;
+}
+
+export interface IMusicPlayer extends IPlayer {
+  url: string | null;
 }

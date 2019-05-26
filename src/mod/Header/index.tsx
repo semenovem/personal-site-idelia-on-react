@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
-import BtnHamMenuCmp, { IProps as IBtnHamMenuProps } from 'cmp/BtnHamMenu';
-import NavMenuCmp, { IProps as INavMenuProps } from 'cmp/NavMenu';
+import CmpBtnHamMenu, { IProps as IBtnHamMenuProps } from 'cmp/BtnHamMenu';
+import CmpNavMenu, { IProps as INavMenuProps } from 'mod/NavMenu';
 import {ROUTES} from 'types/routes';
 import { withOffTabIndexCtx } from 'ctx/OffTabIndex';
 
@@ -13,8 +13,8 @@ interface IOwnProps {
   onActOpenHamMenu: () => void;
 }
 
-const NavMenu = withOffTabIndexCtx<INavMenuProps>(NavMenuCmp);
-const BtnHamMenu = withOffTabIndexCtx<IBtnHamMenuProps>(BtnHamMenuCmp);
+const NavMenu = withOffTabIndexCtx<INavMenuProps>(CmpNavMenu);
+const BtnHamMenu = withOffTabIndexCtx<IBtnHamMenuProps>(CmpBtnHamMenu);
 
 class Header extends React.Component<IOwnProps> {
   render() {

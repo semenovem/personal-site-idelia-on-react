@@ -13,7 +13,7 @@ const BtnHamMenu: React.FC<IProps> = ({ className, onOpen, offTabIndex }) => (
   <button
     className={cn(css.btnHamMenu, className)}
     onClick={onOpen}
-    {...(offTabIndex && { tabIndex: -1})}
+    {...(offTabIndex && { tabIndex: -1 })}
   />
 );
 

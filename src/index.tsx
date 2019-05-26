@@ -1,6 +1,6 @@
 import React from 'react';
 import { hydrate, render } from 'react-dom';
-import App from './App';
+import App0CtxResize from './App0CtxResize';
 import * as serviceWorker from './serviceWorker';
 
 const rootElement: HTMLElement | null = document.getElementById("root");
@@ -10,9 +10,9 @@ if (!rootElement) {
 }
 
 if (rootElement.hasChildNodes()) {
-    hydrate(<App />, rootElement);
+    hydrate(<App0CtxResize />, rootElement);
 } else {
-    render(<App />, rootElement);
+    render(<App0CtxResize />, rootElement);
 }
 
 // If you want your app to work offline and load faster, you can change

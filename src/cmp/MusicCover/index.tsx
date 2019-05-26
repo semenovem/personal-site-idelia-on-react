@@ -14,10 +14,15 @@ interface IOwnProps {
 }
 
 class MusicCover extends React.Component<IOwnProps> {
-  private handleAActionBtn = () => {
+  private handleAction = () => {
     const { onPlayerControl, id } = this.props;
 
     onPlayerControl(id);
+  };
+
+  private handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+    this.handleAction();
   };
 
   render() {
@@ -27,13 +32,14 @@ class MusicCover extends React.Component<IOwnProps> {
     return (
       <div
         className={cn(css.musicCover, className)}
+        onClick={this.handleClick}
       >
         <img src={urlCover} className={cn(css.img, !active && css.grayscale)} alt=''/>
 
         <button
           className={cn(css.btn, styleBtn)}
-          onClick={this.handleAActionBtn}
-          {...(offTabIndex && { tabIndex: -1 })}
+          onClick={this.handleAction}
+          {...offTabIndex && { tabIndex: -1 }}
         />
       </div>
     );

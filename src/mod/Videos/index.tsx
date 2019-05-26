@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 import {ROUTES} from 'types/routes';
 import VideoPlayer from 'cmp/VideoPlayer';
-import { withOffTabIndexCtx, IOffTabIndex} from 'ctx/OffTabIndex';
+import { withOffTabIndexCtx, IOffTabIndex } from 'ctx/OffTabIndex';
 
 import video0 from './assets/covers/video0.jpg';
 
@@ -25,22 +25,25 @@ class Videos extends React.Component<IOwnProps> {
         <div className={css.wrap}>
           <button
             className={css.arrowL}
-            {...(offTabIndex && {tabIndex: -1})}
+            {...offTabIndex && {tabIndex: -1}}
           />
 
           <div className={css.content}>
-            <VideoPlayer urlCover={video0} className={css.player}/>
+            <VideoPlayer
+              urlCover={video0}
+              className={css.player}
+              offTabIndex
+            />
           </div>
 
           <button
             className={css.arrowR}
-            {...(offTabIndex && {tabIndex: -1})}
+            {...offTabIndex && {tabIndex: -1}}
           />
-
         </div>
       </div>
     );
   }
 }
 
-export default withOffTabIndexCtx(Videos);
+export default withOffTabIndexCtx<IOwnProps>(Videos);

@@ -2,18 +2,15 @@ import React, {ChangeEvent} from 'react';
 import cn from 'classnames';
 
 import {ROUTES} from 'types/routes';
-import {IModProps} from 'mod/types';
+import { withOffTabIndexCtx, IOffTabIndex} from 'ctx/OffTabIndex';
 
 import cssCommon from 'styles/common.module.css';
 import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
 
-interface IOwnProps extends IModProps {
-}
+interface IOwnProps extends IOffTabIndex {}
 
-interface IProps extends IOwnProps {
-}
 
 interface IState {
   name: string;
@@ -21,7 +18,7 @@ interface IState {
   message: string;
 }
 
-class Contact extends React.Component<IProps, IState> {
+class Contact extends React.Component<IOwnProps, IState> {
   public state = {
     name: '',
     email: '',
@@ -34,9 +31,12 @@ class Contact extends React.Component<IProps, IState> {
 
   private handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    console.log('submit form');
   };
 
   public render() {
+    const { offTabIndex } = this.props;
     const { name, email, message, } = this.state;
 
     return (
@@ -44,12 +44,43 @@ class Contact extends React.Component<IProps, IState> {
         <h2 className={cn(cssTypography.modTitle, cssMod.titleHigh)}>{ROUTES.CONTACT.TITLE}</h2>
 
         <form className={cn(css.form, cssTypography.modContactInput)} onSubmit={this.handleSubmit}>
-          <input className={cn(css.field, css.name)} name='name' value={name} placeholder='Name' onChange={this.handleChangeName}/>
-          <input className={cn(css.field, css.email)} name='email' value={email} placeholder='Email ID' onChange={this.handleChangeEmail} type='email'/>
-          <textarea className={cn(css.field, css.msg)} name='message' value={message} placeholder='message' onChange={this.handleChangeMessage} rows={4}/>
+          <input
+            className={cn(css.field, css.name)}
+            name='name'
+            value={name}
+            placeholder='Name'
+            onChange={this.handleChangeName}
+            {...offTabIndex && {tabIndex: -1}}
+          />
+
+          <input
+            className={cn(css.field, css.email)}
+            name='email'
+            value={email}
+            placeholder='Email ID'
+            onChange={this.handleChangeEmail}
+            type='email'
+            {...offTabIndex && {tabIndex: -1}}
+          />
+
+          <textarea
+            className={cn(css.field, css.msg)}
+            name='message'
+            value={message}
+            placeholder='message'
+            onChange={this.handleChangeMessage}
+            rows={4}
+            {...offTabIndex && {tabIndex: -1}}
+          />
 
           <div className={css.sendWrap}>
-            <button type='submit' className={cn(cssCommon.btnGrape, cssTypography.btnOrange, css.send)}>Send</button>
+            <button
+              type='submit'
+              className={cn(cssCommon.btnGrape, cssTypography.btnOrange, css.send)}
+              {...offTabIndex && {tabIndex: -1}}
+            >
+              Send
+            </button>
           </div>
         </form>
       </div>
@@ -57,4 +88,4 @@ class Contact extends React.Component<IProps, IState> {
   }
 }
 
-export default Contact;
+export default withOffTabIndexCtx(Contact);

@@ -25,18 +25,16 @@ class Gallery extends React.Component<IOwnProps> {
         <div className={css.wrap}>
           <button
             className={css.arrowL}
-            {...(offTabIndex && {tabIndex: -1})}
+            {...offTabIndex && {tabIndex: -1}}
           />
 
           <div className={css.content}>
-
             <img src={photo006} alt='' />
-
           </div>
 
           <button
             className={css.arrowR}
-            {...(offTabIndex && {tabIndex: -1})}
+            {...offTabIndex && {tabIndex: -1}}
           />
         </div>
       </div>

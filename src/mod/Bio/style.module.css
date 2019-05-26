@@ -1,5 +1,5 @@
 .bio {
-  min-height: 100vh;
+  /*min-height: 100vh;*/
 
   display: flex;
   flex-direction: column;
@@ -36,7 +36,11 @@
 
 
 /* md */
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+  .extended {
+    display: block;
+  }
+}
 
 
 
