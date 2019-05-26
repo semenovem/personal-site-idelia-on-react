@@ -23,7 +23,7 @@ export interface IPlayer {
   status: Status
   play(): void;
   pause(): void;
-  change(url: string | string[]): void;
+  change(url: string | string[] | null): void;
 }
 
 export interface IMusicPlayer extends IPlayer {

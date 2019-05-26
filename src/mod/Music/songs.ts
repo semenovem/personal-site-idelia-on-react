@@ -17,25 +17,29 @@ export interface ISong {
   url: string;
 }
 
-export interface ISongs {
-  different: ISong,
-  myVoice: ISong;
-}
-
-export const songs: ISongs = {
-  different: {
+export const songs = [
+  {
     id: 'different',
     spotify: 'https://open.spotify.com/album/4VY70aiWv6YMzJeCIBBVF1',
     itunes: 'https://music.apple.com/us/album/different/1443586279?i=1443586280',
     coverUrl: different,
-    url: 'musDifferent',
+    url: '/songs/different.mp3',
   },
-
-  myVoice: {
+  {
     id: 'myVoice',
     spotify: 'https://open.spotify.com/album/3SOvjES7pbP2ovIduUHD8w',
     itunes: 'https://music.apple.com/us/album/my-voice-from-see-my-voice/1447994568?i=1447994576',
     coverUrl: myVoice,
-    url: 'musMyVoice'
+    url: '/songs/tm_002.mp3',
   },
-};
+];
+
+export function findUrl(id: string | null): string | null {
+
+  if (!id) { return null; }
+
+  const song = songs.find(it => it.id === id);
+
+  return song ? song.url : null;
+
+}

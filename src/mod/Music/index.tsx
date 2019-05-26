@@ -9,7 +9,7 @@ import { withMusicPlayerCtx, IMusicPlayerProps } from 'ctx/MusicPlayer';
 import itunes from 'assets/icons/shops/itunes_buy.png';
 import spotify from 'assets/icons/shops/spotify_buy.png';
 
-import { songs, ISong } from './songs';
+import { songs, ISong, findUrl } from './songs';
 
 import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
@@ -38,21 +38,13 @@ class Music extends React.Component<IProps, IState> {
     const { playedSongId, } = this.state;
     const { musicPlayer } = this.props;
 
-    if (id === playedSongId) {
-      this.setState({
-        playedSongId: null,
+    this.setState(
+      {
+        playedSongId: id === playedSongId ? null : id,
+      },
+      () => {
+        musicPlayer.change(findUrl(this.state.playedSongId));
       });
-
-      musicPlayer.pause();
-    } else {
-      this.setState({
-        playedSongId: id,
-      });
-
-      if (playedSongId) {
-        musicPlayer.change(songs[playedSongId]);
-      }
-    }
   };
 
   private renderSong(song: ISong) {
@@ -60,7 +52,7 @@ class Music extends React.Component<IProps, IState> {
     const { playedSongId } = this.state;
 
     return (
-      <div className={css.song}>
+      <div className={css.song} key={song.id}>
         <MusicCover
           urlCover={song.coverUrl}
           className={css.cover}
@@ -98,8 +90,7 @@ class Music extends React.Component<IProps, IState> {
         <h2 className={cn(cssTypography.modTitle, cssMod.title)}>{ROUTES.MUSIC.TITLE}</h2>
 
         <div className={css.songs}>
-          {this.renderSong(songs.different)}
-          {this.renderSong(songs.myVoice)}
+          {songs.map(it => this.renderSong(it))}
         </div>
       </div>
     );

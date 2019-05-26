@@ -3,7 +3,7 @@ import App2 from './App2';
 
 import MusicPlayerCtx from 'ctx/MusicPlayer';
 
-import { Status, IMusicPlayer} from "types/player";
+import {IMusicPlayer, Status} from "types/player";
 
 interface IProps {}
 
@@ -28,15 +28,19 @@ class App1CtxMusicPlayer extends React.Component<{}, IState> {
 
 
   handlePlay = () => {
-    debugger;
   };
 
   handlePause = () => {
-    debugger;
   };
 
-  handleChange = () => {
-    debugger;
+  handleChange = (url: string | null) => {
+    this.setState({
+      player: {
+        ...this.state.player,
+        url,
+        status: url ? Status.PLAY : Status.PAUSE,
+      }
+    });
   };
 
 

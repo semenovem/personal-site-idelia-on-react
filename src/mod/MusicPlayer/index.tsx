@@ -4,9 +4,6 @@ import cn from 'classnames';
 import { withOffTabIndexCtx, IOffTabIndex } from 'ctx/OffTabIndex';
 import { withMusicPlayerCtx, IMusicPlayerProps } from 'ctx/MusicPlayer';
 
-// import musDifferent from 'assets/songs/tm_7_2.mp3';
-
-
 import css from './style.module.css';
 
 interface IOwnProps {}
@@ -22,21 +19,42 @@ class Music extends React.Component<IProps, IState> {
     playedSongId: null,
   };
 
-  public shouldComponentUpdate(nextProps: IProps, nextState: IState) {
-    const { offTabIndex } = this.props;
-    const { playedSongId } = this.state;
-    return nextProps.offTabIndex !== offTabIndex || nextState.playedSongId !== playedSongId;
+  private refAudio: HTMLAudioElement | null = null;
+  private setRefAudio = (el: HTMLAudioElement) => this.refAudio = el;
+
+  public componentDidUpdate(): void {
+    const { musicPlayer } = this.props;
+
+    if (!this.refAudio) {
+      return;
+    }
+
+    this.refAudio.load();
+
+    if (musicPlayer.url) {
+      this.refAudio.play();
+    }
   }
 
+  private renderSource(url: string | null) {
+    if (!url) {
+      return null;
+    }
+
+    return (
+      <source src={url} type="audio/mpeg"/>
+    );
+  }
 
   public render() {
     const { musicPlayer } = this.props;
 
+    console.log(musicPlayer);
+
     return (
-      <div className={css.musicPlayer}>
-        <audio controls className={cn(css.controls)}>
-          <source src={musicPlayer.url || ''} type="audio/mpeg"/>
-            {/*<source src="myAudio.ogg" type="audio/ogg"/>*/}
+      <div className={cn(css.musicPlayer, musicPlayer.url && css.show)}>
+        <audio controls className={cn(css.controls)} ref={this.setRefAudio}>
+          {this.renderSource(musicPlayer.url)}
         </audio>
       </div>
     );

@@ -14,16 +14,37 @@ interface IOwnProps {
 }
 
 class MusicCover extends React.Component<IOwnProps> {
+  private flag: boolean = false;
+  private timer: number | null = null;
+
+  public componentWillUnmount() {
+    this.clearTimer();
+  }
+
   private handleAction = () => {
     const { onPlayerControl, id } = this.props;
-
     onPlayerControl(id);
   };
 
   private handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.stopPropagation();
+    if (this.flag) {
+      this.flag = false;
+      return;
+    }
     this.handleAction();
   };
+
+  private handleBtnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    this.flag = true;
+    this.clearTimer();
+    this.timer = window.setTimeout(this.resetFlag, 20);
+
+    this.handleAction();
+  };
+
+  private resetFlag = () => this.flag = false;
+
+  private clearTimer = () => this.timer && clearTimeout(this.timer);
 
   render() {
     const { urlCover, className, isPlayed, active, offTabIndex } = this.props;
@@ -38,7 +59,7 @@ class MusicCover extends React.Component<IOwnProps> {
 
         <button
           className={cn(css.btn, styleBtn)}
-          onClick={this.handleAction}
+          onClick={this.handleBtnClick}
           {...offTabIndex && { tabIndex: -1 }}
         />
       </div>
