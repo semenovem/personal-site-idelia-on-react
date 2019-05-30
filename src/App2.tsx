@@ -9,6 +9,9 @@ import MusicPlayer from 'mod/MusicPlayer';
 
 import {ROUTES} from "types/routes";
 import OffTabIndexCtx from 'ctx/OffTabIndex';
+import { withMusicPlayerCtx, IMusicPlayerProps } from 'ctx/MusicPlayer';
+
+interface IProps extends IMusicPlayerProps {}
 
 interface IState {
   /**
@@ -23,7 +26,7 @@ interface IState {
 }
 
 
-class App2 extends React.Component<{}, IState> {
+class App2 extends React.Component<IProps, IState> {
   public state = {
     offTabIndexSinglePage: false,
     isOpenHamMenu: false,
@@ -42,9 +45,13 @@ class App2 extends React.Component<{}, IState> {
   private handleKey = (e: KeyboardEvent) => {
     const {isOpenHamMenu} = this.state;
 
-    if (e.code === 'Escape' && isOpenHamMenu) {
-      this.handleCloseHamMenu();
-      return;
+    if (e.code === 'Escape') {
+      if (isOpenHamMenu) {
+        this.handleCloseHamMenu();
+        return;
+      }
+
+      this.props.musicPlayer.pause();
     }
 
     if (e.code === 'Space') {
@@ -123,6 +130,6 @@ class App2 extends React.Component<{}, IState> {
   }
 }
 
-export default App2;
+export default withMusicPlayerCtx(App2);
 
 function noop() {}

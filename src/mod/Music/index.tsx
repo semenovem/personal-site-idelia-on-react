@@ -3,13 +3,14 @@ import cn from 'classnames';
 
 import {ROUTES} from 'types/routes';
 import MusicCover from 'cmp/MusicCover';
-import { withOffTabIndexCtx, IOffTabIndex } from 'ctx/OffTabIndex';
-import { withMusicPlayerCtx, IMusicPlayerProps } from 'ctx/MusicPlayer';
+import {IOffTabIndex, withOffTabIndexCtx} from 'ctx/OffTabIndex';
+import {IMusicPlayerProps, withMusicPlayerCtx} from 'ctx/MusicPlayer';
+import {Status} from 'types/player';
 
 import itunes from 'assets/icons/shops/itunes_buy.png';
 import spotify from 'assets/icons/shops/spotify_buy.png';
 
-import { songs, ISong, findUrl } from './songs';
+import {findUrl, ISong, songs} from './songs';
 
 import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
@@ -29,14 +30,19 @@ class Music extends React.Component<IProps, IState> {
   };
 
   public shouldComponentUpdate(nextProps: IProps, nextState: IState) {
-    const { offTabIndex } = this.props;
+    const { offTabIndex, musicPlayer } = this.props;
     const { playedSongId } = this.state;
-    return nextProps.offTabIndex !== offTabIndex || nextState.playedSongId !== playedSongId;
+    return nextProps.offTabIndex !== offTabIndex || nextState.playedSongId !== playedSongId || musicPlayer.status !== nextProps.musicPlayer.status;
   }
 
   private handlePlayerControl = (id: string) => {
     const { playedSongId, } = this.state;
     const { musicPlayer } = this.props;
+
+    if (musicPlayer.status === Status.PAUSE && musicPlayer.url) {
+      musicPlayer.play();
+      return;
+    }
 
     this.setState(
       {
@@ -48,8 +54,9 @@ class Music extends React.Component<IProps, IState> {
   };
 
   private renderSong(song: ISong) {
-    const { offTabIndex } = this.props;
+    const { offTabIndex, musicPlayer: { status } } = this.props;
     const { playedSongId } = this.state;
+    const isPlayed = status === Status.PLAY && song.id === playedSongId;
 
     return (
       <div className={css.song} key={song.id}>
@@ -58,7 +65,7 @@ class Music extends React.Component<IProps, IState> {
           className={css.cover}
           onPlayerControl={this.handlePlayerControl}
           id={song.id}
-          isPlayed={playedSongId === song.id}
+          isPlayed={isPlayed}
           offTabIndex={offTabIndex}
         />
 

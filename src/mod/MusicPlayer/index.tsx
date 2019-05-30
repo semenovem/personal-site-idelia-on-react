@@ -1,10 +1,11 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { withOffTabIndexCtx, IOffTabIndex } from 'ctx/OffTabIndex';
-import { withMusicPlayerCtx, IMusicPlayerProps } from 'ctx/MusicPlayer';
+import {IOffTabIndex, withOffTabIndexCtx} from 'ctx/OffTabIndex';
+import {IMusicPlayerProps, withMusicPlayerCtx} from 'ctx/MusicPlayer';
 
 import css from './style.module.css';
+import {Status} from "../../types/player";
 
 interface IOwnProps {}
 
@@ -32,7 +33,11 @@ class Music extends React.Component<IProps, IState> {
     this.refAudio.load();
 
     if (musicPlayer.url) {
-      this.refAudio.play();
+      if (musicPlayer.status === Status.PLAY) {
+        this.refAudio.play();
+      } else {
+        this.refAudio.pause();
+      }
     }
   }
 
@@ -49,10 +54,8 @@ class Music extends React.Component<IProps, IState> {
   public render() {
     const { musicPlayer } = this.props;
 
-    console.log(musicPlayer);
-
     return (
-      <div className={cn(css.musicPlayer, musicPlayer.url && css.show)}>
+      <div className={cn(css.musicPlayer, musicPlayer.status === Status.PLAY && css.show)}>
         <audio controls className={cn(css.controls)} ref={this.setRefAudio}>
           {this.renderSource(musicPlayer.url)}
         </audio>

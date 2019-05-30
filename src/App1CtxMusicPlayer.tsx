@@ -28,9 +28,21 @@ class App1CtxMusicPlayer extends React.Component<{}, IState> {
 
 
   handlePlay = () => {
+    this.setState({
+      player: {
+        ...this.state.player,
+        status: Status.PLAY,
+      }
+    });
   };
 
   handlePause = () => {
+    this.setState({
+      player: {
+        ...this.state.player,
+        status: Status.PAUSE,
+      }
+    });
   };
 
   handleChange = (url: string | null) => {

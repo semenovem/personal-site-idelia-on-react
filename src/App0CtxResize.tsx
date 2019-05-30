@@ -55,9 +55,6 @@ class App0CtxResize extends React.Component<{}, IState> {
     const winSize = defWinSize(window.innerWidth);
 
     if (this.state.winSize !== winSize) {
-
-      console.log(`winSize: ${winSize}`);
-
       this.setState({
         winSize,
       });

@@ -40,6 +40,11 @@
   .extended {
     display: block;
   }
+
+
+  .readMore {
+    display: none;
+  }
 }
 
 
