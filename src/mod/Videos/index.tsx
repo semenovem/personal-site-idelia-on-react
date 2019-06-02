@@ -37,26 +37,29 @@ class Videos extends React.Component<IProps> {
           isPause={musicPlayer.isPlay()}
         />
 
-        <div className={css.wrap}>
-          <button
-            className={css.arrowL}
-            {...offTabIndex && {tabIndex: -1}}
-          />
-
-          <div className={css.content}>
-            <VideoPlayer
-              urlCover={video0}
-              className={css.player}
-              offTabIndex
-            />
-          </div>
 
 
-          <button
-            className={css.arrowR}
-            {...offTabIndex && {tabIndex: -1}}
-          />
-        </div>
+
+        {/*<div className={css.wrap}>*/}
+        {/*  <button*/}
+        {/*    className={css.arrowL}*/}
+        {/*    {...offTabIndex && {tabIndex: -1}}*/}
+        {/*  />*/}
+
+        {/*  <div className={css.content}>*/}
+        {/*    <VideoPlayer*/}
+        {/*      urlCover={video0}*/}
+        {/*      className={css.player}*/}
+        {/*      offTabIndex*/}
+        {/*    />*/}
+        {/*  </div>*/}
+
+
+        {/*  <button*/}
+        {/*    className={css.arrowR}*/}
+        {/*    {...offTabIndex && {tabIndex: -1}}*/}
+        {/*  />*/}
+        {/*</div>*/}
 
 
       </div>

@@ -44,24 +44,27 @@ class Contact extends React.Component<IOwnProps, IState> {
         <h2 className={cn(cssTypography.modTitle, cssMod.titleHigh)}>{ROUTES.CONTACT.TITLE}</h2>
 
         <form className={cn(css.form, cssTypography.modContactInput)} onSubmit={this.handleSubmit}>
-          <input
-            className={cn(css.field, css.name)}
-            name='name'
-            value={name}
-            placeholder='Name'
-            onChange={this.handleChangeName}
-            {...offTabIndex && {tabIndex: -1}}
-          />
 
-          <input
-            className={cn(css.field, css.email)}
-            name='email'
-            value={email}
-            placeholder='Email ID'
-            onChange={this.handleChangeEmail}
-            type='email'
-            {...offTabIndex && {tabIndex: -1}}
-          />
+          <div className={css.rowOne}>
+            <input
+              className={cn(css.field, css.name)}
+              name='name'
+              value={name}
+              placeholder='Name'
+              onChange={this.handleChangeName}
+              {...offTabIndex && {tabIndex: -1}}
+            />
+
+            <input
+              className={cn(css.field, css.email)}
+              name='email'
+              value={email}
+              placeholder='Email ID'
+              onChange={this.handleChangeEmail}
+              type='email'
+              {...offTabIndex && {tabIndex: -1}}
+            />
+          </div>
 
           <textarea
             className={cn(css.field, css.msg)}
