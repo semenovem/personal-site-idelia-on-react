@@ -1,10 +1,15 @@
 .video {
-  height: 400px;
-
   background-image: url(assets/bg_xs.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left ;
+}
+
+.player {
+  width: 100%;
+  height: 350px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .arrowL, .arrowR {
@@ -40,19 +45,39 @@
 
 
 /* sm */
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+  .player {
+    width: 90%;
+    height: 400px;
+  }
+}
 
 
 
 /* md */
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+  .player {
+    width: 80%;
+    height: 450px;
+  }
+}
 
 
 
 /* lg */
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+  .player {
+    width: 70%;
+    height: 500px;
+  }
+}
 
 
 
 /* xl */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+  .player {
+    width: 1000px;
+    height: 600px;
+  }
+}

@@ -1,10 +1,8 @@
-import React from 'react';
+import WinSize, {defWinSize} from "../../types/WinSize";
+import React from "react";
+import WinSizeCtx from "./WinSizeCtx";
 
-import App1CtxMusicPlayer from './App1CtxMusicPlayer';
-
-import WinSizeCtx from 'ctx/WinSize';
-import WinSize, { defWinSize } from 'types/WinSize';
-
+type IProps = {}
 
 interface IState {
   winSize: WinSize,
@@ -12,17 +10,19 @@ interface IState {
 
 const DELAY_RESIZE = 100;
 
-class App0CtxResize extends React.Component<{}, IState> {
+class WinSizeCtxCmp extends React.Component<IProps, IState> {
   public state = {
     winSize: defWinSize(window.innerWidth),
   };
 
+  constructor(props: IProps) {
+    super(props);
+    window.addEventListener('resize', this.handleResize);
+  }
+
   private resizeTimer: number | null = null;
   private resizeLast: number = 0;
 
-  public componentWillMount() {
-    window.addEventListener('resize', this.handleResize);
-  }
 
   public componentWillUnmount() {
     window.removeEventListener('resize', this.handleResize);
@@ -38,7 +38,6 @@ class App0CtxResize extends React.Component<{}, IState> {
       this.resizeCallback(DELAY_RESIZE);
     }
   };
-
 
   private resizeCallback(t: number) {
     this.resizeTimer = window.setTimeout(this.resizeCheckAct, t) as number;
@@ -62,14 +61,15 @@ class App0CtxResize extends React.Component<{}, IState> {
   };
 
   render() {
+    const { children } = this.props;
     const {winSize } = this.state;
 
     return (
       <WinSizeCtx.Provider value={winSize}>
-        <App1CtxMusicPlayer />
+        {children}
       </WinSizeCtx.Provider>
     );
   }
 }
 
-export default App0CtxResize;
+export default WinSizeCtxCmp;

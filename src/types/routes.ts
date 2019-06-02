@@ -12,7 +12,7 @@ export interface IRouteItem {
 export interface IRoute {
   readonly HEADER: IRouteItem;
   readonly BIO: IRouteItem;
-  readonly BIO_FULL: IRouteItem;
+  readonly BIO_FULLY: IRouteItem;
   readonly CONTACT: IRouteItem;
   readonly GALLERY: IRouteItem;
   readonly MUSIC: IRouteItem;
@@ -43,7 +43,7 @@ export const ROUTES: IRoute = {
     MENU_ITEM_NAME: 'Bio',
   },
 
-  BIO_FULL: {
+  BIO_FULLY: {
     ID: 'BIO',
     HTML_ID: uniqueHtmlId(),
     HASH: '#bio-full',
@@ -129,5 +129,5 @@ ROUTES.ALL.push(
 );
 
 ROUTES.SINGLE_PAGE.push(
-  ROUTES.BIO_FULL,
+  ROUTES.BIO_FULLY,
 );

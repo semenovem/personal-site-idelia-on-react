@@ -1,17 +1,14 @@
-import React from 'react';
-import App2 from './App2';
-
-import MusicPlayerCtx from 'ctx/MusicPlayer';
-
 import {IMusicPlayer, Status} from "types/player";
+import React from "react";
+import MusicPlayerCtx from "./MusicPlayerCtx";
 
-interface IProps {}
+type IProps = {}
 
 interface IState {
   player: IMusicPlayer,
 }
 
-class App1CtxMusicPlayer extends React.Component<{}, IState> {
+class MusicPlayerCtxCmp extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
 
@@ -22,10 +19,10 @@ class App1CtxMusicPlayer extends React.Component<{}, IState> {
         pause: this.handlePause,
         change: this.handleChange,
         url: null,
+        isPlay: this.handleIsPlay,
       }
     }
   }
-
 
   handlePlay = () => {
     this.setState({
@@ -55,16 +52,17 @@ class App1CtxMusicPlayer extends React.Component<{}, IState> {
     });
   };
 
+  handleIsPlay = () => this.state.player.status === Status.PLAY;
 
   render() {
     const { player } = this.state;
 
     return (
       <MusicPlayerCtx.Provider value={player}>
-        <App2 />
+        {this.props.children}
       </MusicPlayerCtx.Provider>
     );
   }
 }
 
-export default App1CtxMusicPlayer;
+export default MusicPlayerCtxCmp;

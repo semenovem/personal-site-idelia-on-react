@@ -7,6 +7,8 @@ import findValueByDataAttr from 'utils/findValueByElemAttr';
 import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
+import {IBodyScrollProps, withCtxBodyScroll} from "ctx/BodyScroll";
+
 
 interface IOwnProps {
   isShow: boolean;
@@ -15,10 +17,25 @@ interface IOwnProps {
   onSelect: (id: IRouteItem['ID']) => void;
 }
 
-interface IProps extends IOwnProps {
-}
+type IProps = IOwnProps & IBodyScrollProps
 
 class HamMenu extends React.Component<IProps> {
+  constructor(props: IProps) {
+    super(props);
+
+    if (props.isShow) {
+      props.bodyScroll.off();
+    }
+  }
+
+  public componentDidUpdate(prevProps: Readonly<IOwnProps & IBodyScrollProps>): void {
+    const {isShow, bodyScroll} = this.props;
+
+    if (prevProps.isShow !== isShow) {
+      isShow ? bodyScroll.off() : bodyScroll.on();
+    }
+  }
+
   private handleSelect = (event: React.MouseEvent) => {
     const id = findValueByDataAttr(event.target as HTMLElement, event.currentTarget as HTMLElement, 'data-id');
 
@@ -28,7 +45,6 @@ class HamMenu extends React.Component<IProps> {
 
     this.props.onSelect(id);
   };
-
 
   private renderItems() {
     const style = cssTypography.hamMenuItem;
@@ -63,4 +79,4 @@ class HamMenu extends React.Component<IProps> {
   }
 }
 
-export default HamMenu;
+export default withCtxBodyScroll<IOwnProps>(HamMenu);

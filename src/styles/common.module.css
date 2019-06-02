@@ -3,4 +3,5 @@
 .btnGrape {
   border: 1px solid white;
   padding: 0 var(--indent-s);
+  cursor: pointer;
 }

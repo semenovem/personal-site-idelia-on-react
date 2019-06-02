@@ -2,8 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 
 import {ROUTES} from 'types/routes';
-import { withOffTabIndexCtx, IOffTabIndex} from 'ctx/OffTabIndex';
-import { withWinSizeCtx, IWinSizeProps} from 'ctx/WinSize';
+import {IOffTabIndex, withOffTabIndexCtx} from 'ctx/OffTabIndex';
 
 import cssCommon from 'styles/common.module.css';
 import cssTypography from 'styles/typography.module.css';
@@ -11,16 +10,18 @@ import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
 
 
-interface IOwnProps extends IOffTabIndex, IWinSizeProps {
+interface IOwnProps {
   className?: string;
 }
+
+type IProps = IOwnProps & IOffTabIndex;
 
 interface IState {
   shownAdditionalText: boolean;
   addedAnim: boolean,
 }
 
-class Bio extends React.Component<IOwnProps, IState> {
+class Bio extends React.Component<IProps, IState> {
 
   public state = {
     shownAdditionalText: false,
@@ -128,6 +129,6 @@ class Bio extends React.Component<IOwnProps, IState> {
   }
 }
 
-export default withWinSizeCtx(withOffTabIndexCtx(Bio));
+export default withOffTabIndexCtx(Bio);
 
 

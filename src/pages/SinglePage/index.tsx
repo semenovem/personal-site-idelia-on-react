@@ -13,7 +13,7 @@ interface IOwnProps {
   onOpenHamMenu: () => void;
 }
 
-interface IProps extends IOwnProps {}
+type IProps = IOwnProps
 
 class SinglePage extends React.Component<IProps> {
   state = {

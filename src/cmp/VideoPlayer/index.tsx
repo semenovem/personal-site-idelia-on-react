@@ -11,10 +11,7 @@ interface IOwnProps {
   offTabIndex?: boolean;
 }
 
-interface IProps extends IOwnProps {}
-
-
-class VideoPlayer extends React.Component<IProps> {
+class VideoPlayer extends React.Component<IOwnProps> {
   render() {
     const { urlCover, className, isPlayed, offTabIndex } = this.props;
     const styleBtn = isPlayed ? css.pause : css.play;
@@ -24,6 +21,7 @@ class VideoPlayer extends React.Component<IProps> {
         className={cn(css.videoPlayer, className)}
         style={{ backgroundImage: `url(${urlCover})`}}
       >
+
         <img src={urlCover} className={css.img} alt=''/>
 
         <button

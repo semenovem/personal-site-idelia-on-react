@@ -4,7 +4,7 @@ import cn from 'classnames';
 import {ROUTES} from 'types/routes';
 import MusicCover from 'cmp/MusicCover';
 import {IOffTabIndex, withOffTabIndexCtx} from 'ctx/OffTabIndex';
-import {IMusicPlayerProps, withMusicPlayerCtx} from 'ctx/MusicPlayer';
+import {IMusicPlayerProps, withCtxMusicPlayer} from 'ctx/MusicPlayer';
 import {Status} from 'types/player';
 
 import itunes from 'assets/icons/shops/itunes_buy.png';
@@ -104,4 +104,4 @@ class Music extends React.Component<IProps, IState> {
   }
 }
 
-export default withMusicPlayerCtx(withOffTabIndexCtx(Music));
+export default withCtxMusicPlayer(withOffTabIndexCtx(Music));

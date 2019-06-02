@@ -1,27 +1,22 @@
 import React from 'react';
 import cn from 'classnames';
 
-import {IOffTabIndex, withOffTabIndexCtx} from 'ctx/OffTabIndex';
-import {IMusicPlayerProps, withMusicPlayerCtx} from 'ctx/MusicPlayer';
+import {IMusicPlayerProps, withCtxMusicPlayer} from 'ctx/MusicPlayer';
 
 import css from './style.module.css';
-import {Status} from "../../types/player";
+import {Status} from "types/player";
 
-interface IOwnProps {}
+type IProps = IMusicPlayerProps;
 
-interface IProps extends IOwnProps, IOffTabIndex, IMusicPlayerProps {}
-
-interface IState {
-  playedSongId: string | null;
-}
-
-class Music extends React.Component<IProps, IState> {
-  state = {
-    playedSongId: null,
-  };
-
+class Music extends React.Component<IProps> {
   private refAudio: HTMLAudioElement | null = null;
   private setRefAudio = (el: HTMLAudioElement) => this.refAudio = el;
+
+  public shouldComponentUpdate({ musicPlayer }: Readonly<IMusicPlayerProps>): boolean {
+    const { musicPlayer: { status, url } } = this.props;
+
+    return status !== musicPlayer.status || url !== musicPlayer.url;
+  }
 
   public componentDidUpdate(): void {
     const { musicPlayer } = this.props;
@@ -64,4 +59,4 @@ class Music extends React.Component<IProps, IState> {
   }
 }
 
-export default withMusicPlayerCtx(withOffTabIndexCtx(Music));
+export default withCtxMusicPlayer(Music);

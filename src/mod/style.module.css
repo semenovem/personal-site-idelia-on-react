@@ -3,6 +3,10 @@
   padding: var(--indent-xl) var(--indent-m) var(--indent-xxl) var(--indent-m);
 }
 
+.modFreePaddingSides {
+  padding: var(--indent-xl) 0 var(--indent-xxl) 0;
+}
+
 .title {
   margin-bottom: var(--indent-xl);
 }
