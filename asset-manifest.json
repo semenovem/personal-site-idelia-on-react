@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.23ba18d3.chunk.css",
-    "main.js": "/static/js/main.274ff3cd.chunk.js",
-    "main.js.map": "/static/js/main.274ff3cd.chunk.js.map",
+    "main.css": "/static/css/main.818f3e08.chunk.css",
+    "main.js": "/static/js/main.4e86c4a3.chunk.js",
+    "main.js.map": "/static/js/main.4e86c4a3.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
     "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.42eaf609.chunk.js": "/static/js/2.42eaf609.chunk.js",
-    "static/js/2.42eaf609.chunk.js.map": "/static/js/2.42eaf609.chunk.js.map",
+    "static/js/2.11526393.chunk.js": "/static/js/2.11526393.chunk.js",
+    "static/js/2.11526393.chunk.js.map": "/static/js/2.11526393.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.ebcb4d67ad58f3cda89b4488a6fd7471.js": "/precache-manifest.ebcb4d67ad58f3cda89b4488a6fd7471.js",
+    "precache-manifest.c284aa0b6c241a59695d20bf8dc4633f.js": "/precache-manifest.c284aa0b6c241a59695d20bf8dc4633f.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.23ba18d3.chunk.css.map": "/static/css/main.23ba18d3.chunk.css.map",
+    "static/css/main.818f3e08.chunk.css.map": "/static/css/main.818f3e08.chunk.css.map",
     "static/media/006.jpg": "/static/media/006.26a58145.jpg",
     "static/media/style.module.css": "/static/media/title_xs.dadc39bb.png",
     "static/media/bg_lg.jpg": "/static/media/bg_lg.4f7b5311.jpg",
@@ -23,7 +23,6 @@
     "static/media/itunes_buy.png": "/static/media/itunes_buy.3b86b4d1.png",
     "static/media/my_voice.jpg": "/static/media/my_voice.2449d65e.jpg",
     "static/media/spotify_buy.png": "/static/media/spotify_buy.3cfa8e86.png",
-    "static/media/spotify_white.svg": "/static/media/spotify_white.782dbe3f.svg",
-    "static/media/video0.jpg": "/static/media/video0.83dc2dfb.jpg"
+    "static/media/spotify_white.svg": "/static/media/spotify_white.782dbe3f.svg"
   }
 }
