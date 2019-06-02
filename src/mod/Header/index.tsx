@@ -1,43 +1,39 @@
 import React from 'react';
 import cn from 'classnames';
-import {IModProps} from 'mod/types';
-import BtnHamMenu from 'cmp/BtnHamMenu';
-
-import NavMenu from 'cmp/NavMenu';
-
+import CmpBtnHamMenu, { IProps as IBtnHamMenuProps } from 'cmp/BtnHamMenu';
+import CmpNavMenu, { IProps as INavMenuProps } from 'mod/NavMenu';
 import {ROUTES} from 'types/routes';
+import { withOffTabIndexCtx } from 'ctx/OffTabIndex';
 
-import cssCommon from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
+import dataAttrImgBg from "./dataAttrImgBg";
 
-interface IOwnProps extends IModProps {
+interface IOwnProps {
   onActOpenHamMenu: () => void;
 }
 
-interface IProps extends IOwnProps {
-}
+const NavMenu = withOffTabIndexCtx<INavMenuProps>(CmpNavMenu);
+const BtnHamMenu = withOffTabIndexCtx<IBtnHamMenuProps>(CmpBtnHamMenu);
 
-class Header extends React.Component<IProps> {
+class Header extends React.Component<IOwnProps> {
   render() {
-    const {onActOpenHamMenu, offUserInteraction} = this.props;
+    const {onActOpenHamMenu} = this.props;
 
     return (
-      <div id={ROUTES.HEADER.HTML_ID} className={css.header}>
+      <div id={ROUTES.HEADER.HTML_ID} className={css.header} data-img-bg={dataAttrImgBg}>
         <div className={css.cover}>
-          <BtnHamMenu
-            className={cssMod.btnHamMenu}
-            onOpen={onActOpenHamMenu}
-            offUserInteraction={offUserInteraction}
-          />
+          <div className={css.sticky}>
+            <BtnHamMenu
+              className={cssMod.btnHamMenu}
+              onOpen={onActOpenHamMenu}
+            />
 
-          <div className={cn(cssCommon.titleSite, css.titleSite)}>
-            <div>IDELIA</div>
-            <div>MARS</div>
+            <div className={cn(css.titleSite)}/>
           </div>
         </div>
 
-        <NavMenu onSelect={noop} offUserInteraction={offUserInteraction}/>
+        <NavMenu onSelect={noop} />
       </div>
     );
   }

@@ -1,35 +1,39 @@
 .music {
-  background-image: url(../../assets/bg/music_mob.jpg);
+  background-image: url(assets/bg_xs.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
 }
 
-
-.wrap {
+.songs {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: var(--indent-m);
 }
 
-.coverItem {
-  width: calc(100vw / 2 - var(--indent-m) * 3 );
-  height: calc(100vw / 2 - var(--indent-m) * 3 );
-  margin: var(--indent-m) var(--indent-m);
+.song:not(:first-child) {
+  margin-top: var(--indent-xxl);
 }
 
-.row {
-  display: flex;
+
+.song {
+  margin: 0 var(--indent-m);
 }
 
-.shops {
-  display: flex;
-  justify-content: center;
-  margin-top: var(--indent-l);
+.cover {
+  width: calc(100vw - var(--indent-m) * 3 );
+  height: calc(100vw - var(--indent-m) * 3 );
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.shop {
+.buy {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--indent-l);
+}
+
+.store {
   width: calc(100vw / 2 - var(--indent-m) * 3);
   height: calc((100vw / 2 - var(--indent-m) * 3) / 3);
 
@@ -42,13 +46,38 @@
 }
 
 
+
 /* sm */
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+  .cover {
+    width: calc(100vw - var(--indent-xl) * 3);
+    height: calc(100vw - var(--indent-xl) * 3);
+  }
+}
 
 
 
 /* md */
 @media (min-width: 768px) {
+  .songs {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .song:not(:first-child) {
+    margin-top: 0;
+  }
+
+  .cover {
+    width: 300px;
+    height: 300px;
+  }
+
+  .store {
+    width: 100px;
+    height: 100px;
+  }
+
 }
 
 

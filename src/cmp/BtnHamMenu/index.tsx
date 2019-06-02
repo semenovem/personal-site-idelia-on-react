@@ -1,23 +1,19 @@
 import React from 'react';
 import cn from 'classnames';
 
-import cssCommon from 'styles/common.module.css';
 import css from './style.module.css';
 
-
-interface IOwnProps {
-  className: string;
+export interface IProps {
+  className?: string;
   onOpen: () => void;
-  offUserInteraction?: boolean;
+  offTabIndex?: boolean;
 }
 
-interface IProps extends IOwnProps {}
-
-const BtnHamMenu: React.FC<IProps> = ({ className, onOpen, offUserInteraction }) => (
+const BtnHamMenu: React.FC<IProps> = ({ className, onOpen, offTabIndex }) => (
   <button
-    className={cn(cssCommon.resetBtnStyles, css.btnHamMenu, className)}
+    className={cn(css.btnHamMenu, className)}
     onClick={onOpen}
-    {...(offUserInteraction && { tabIndex: -1})}
+    {...(offTabIndex && { tabIndex: -1 })}
   />
 );
 

@@ -5,36 +5,36 @@ import {ROUTES, IRouteItem} from 'types/routes';
 import findValueByDataAttr from 'utils/findValueByElemAttr';
 
 import cssTypography from 'styles/typography.module.css';
-import cssCommon from 'styles/common.module.css';
+import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
+import {IBodyScrollProps, withCtxBodyScroll} from "ctx/BodyScroll";
+
 
 interface IOwnProps {
-  isOpen: boolean;
+  isShow: boolean;
   className?: string;
   onClose: () => void;
   onSelect: (id: IRouteItem['ID']) => void;
 }
 
-interface IProps extends IOwnProps {
-}
+type IProps = IOwnProps & IBodyScrollProps
 
-interface IState {
-}
+class HamMenu extends React.Component<IProps> {
+  constructor(props: IProps) {
+    super(props);
 
-class HamMenu extends React.Component<IProps, IState> {
-  public componentWillMount(): void {
-    window.addEventListener('keyup', this.handleKeyUp)
-  }
-
-  public componentWillUnmount(): void {
-    window.removeEventListener('keyup', this.handleKeyUp);
-  }
-
-  private handleKeyUp = (event: KeyboardEvent): void => {
-    if (event.code === 'Escape') {
-      this.props.onClose();
+    if (props.isShow) {
+      props.bodyScroll.off();
     }
-  };
+  }
+
+  public componentDidUpdate(prevProps: Readonly<IOwnProps & IBodyScrollProps>): void {
+    const {isShow, bodyScroll} = this.props;
+
+    if (prevProps.isShow !== isShow) {
+      isShow ? bodyScroll.off() : bodyScroll.on();
+    }
+  }
 
   private handleSelect = (event: React.MouseEvent) => {
     const id = findValueByDataAttr(event.target as HTMLElement, event.currentTarget as HTMLElement, 'data-id');
@@ -46,9 +46,8 @@ class HamMenu extends React.Component<IProps, IState> {
     this.props.onSelect(id);
   };
 
-
   private renderItems() {
-    const style = cn(cssTypography.hamMenuItem, cssCommon.resetLinkStyles);
+    const style = cssTypography.hamMenuItem;
 
     const hash = window.location.hash;
     const routeItem = ROUTES.ALL.find(it => it.HASH === hash) || ROUTES.HEADER;
@@ -66,12 +65,11 @@ class HamMenu extends React.Component<IProps, IState> {
   }
 
   public render() {
-    const {className, isOpen, onClose} = this.props;
+    const {className, isShow, onClose} = this.props;
 
     return (
-      <div className={cn(css.hamMenu, className, isOpen && css.open)}>
-
-        <button className={cn(cssCommon.resetBtnStyles, css.btnClose)} onClick={onClose}/>
+      <div className={cn(css.hamMenu, className, isShow && css.visible)}>
+        <button className={cn(cssMod.btnCloseHamMenu, css.btnClose)} onClick={onClose}/>
 
         <nav className={cn(css.items)} onClick={this.handleSelect}>
           {this.renderItems()}
@@ -81,4 +79,4 @@ class HamMenu extends React.Component<IProps, IState> {
   }
 }
 
-export default HamMenu;
+export default withCtxBodyScroll<IOwnProps>(HamMenu);

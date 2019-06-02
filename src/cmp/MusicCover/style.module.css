@@ -9,6 +9,14 @@
   align-items: center;
 }
 
+.img {
+  position: absolute;
+}
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
 .btn {
   background-size: cover;
   background-repeat: no-repeat;
@@ -17,8 +25,10 @@
   min-width: 20px;
   min-height: 20px;
 
-  width: 30%;
-  height: 30%;
+  width: 40%;
+  height: 40%;
+
+  position: absolute;
 }
 
 .play {

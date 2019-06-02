@@ -1,7 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
 
-import cssCommon from 'styles/common.module.css';
 import css from './style.module.css';
 
 interface IOwnProps {
@@ -9,14 +8,12 @@ interface IOwnProps {
   urlCover: string;
   active?: boolean;
   isPlayed?: boolean;
+  offTabIndex?: boolean;
 }
 
-interface IProps extends IOwnProps {}
-
-
-class VideoPlayer extends React.Component<IProps> {
+class VideoPlayer extends React.Component<IOwnProps> {
   render() {
-    const { urlCover, className, isPlayed } = this.props;
+    const { urlCover, className, isPlayed, offTabIndex } = this.props;
     const styleBtn = isPlayed ? css.pause : css.play;
 
     return (
@@ -24,9 +21,13 @@ class VideoPlayer extends React.Component<IProps> {
         className={cn(css.videoPlayer, className)}
         style={{ backgroundImage: `url(${urlCover})`}}
       >
+
         <img src={urlCover} className={css.img} alt=''/>
 
-        <button className={cn(cssCommon.resetBtnStyles, css.btn, styleBtn)}/>
+        <button
+          className={cn(css.btn, styleBtn)}
+          {...offTabIndex && { tabIndex: -1 }}
+        />
       </div>
     );
   }

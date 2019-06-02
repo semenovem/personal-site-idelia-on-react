@@ -2,71 +2,106 @@ import React from 'react';
 import cn from 'classnames';
 
 import {ROUTES} from 'types/routes';
-import {IModProps} from 'mod/types';
 import MusicCover from 'cmp/MusicCover';
+import {IOffTabIndex, withOffTabIndexCtx} from 'ctx/OffTabIndex';
+import {IMusicPlayerProps, withCtxMusicPlayer} from 'ctx/MusicPlayer';
+import {Status} from 'types/player';
 
-import {SOCIAL} from 'types/social';
-
-import cover0 from './assets/covers/cover0.jpg';
-import cover1 from './assets/covers/cover1.jpg';
-import different from './assets/covers/different.jpg';
-import myVoice from './assets/covers/my_voice.jpg';
 import itunes from 'assets/icons/shops/itunes_buy.png';
 import spotify from 'assets/icons/shops/spotify_buy.png';
+
+import {findUrl, ISong, songs} from './songs';
 
 import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
 
-interface IOwnProps extends IModProps {
+interface IOwnProps {}
+
+interface IProps extends IOwnProps, IOffTabIndex, IMusicPlayerProps {}
+
+interface IState {
+  playedSongId: string | null;
 }
 
-interface IProps extends IOwnProps {
-}
+class Music extends React.Component<IProps, IState> {
+  state = {
+    playedSongId: null,
+  };
 
-class Music extends React.Component<IProps> {
+  public shouldComponentUpdate(nextProps: IProps, nextState: IState) {
+    const { offTabIndex, musicPlayer } = this.props;
+    const { playedSongId } = this.state;
+    return nextProps.offTabIndex !== offTabIndex || nextState.playedSongId !== playedSongId || musicPlayer.status !== nextProps.musicPlayer.status;
+  }
 
-  render() {
-    const { offUserInteraction } = this.props;
+  private handlePlayerControl = (id: string) => {
+    const { playedSongId, } = this.state;
+    const { musicPlayer } = this.props;
+
+    if (musicPlayer.status === Status.PAUSE && musicPlayer.url) {
+      musicPlayer.play();
+      return;
+    }
+
+    this.setState(
+      {
+        playedSongId: id === playedSongId ? null : id,
+      },
+      () => {
+        musicPlayer.change(findUrl(this.state.playedSongId));
+      });
+  };
+
+  private renderSong(song: ISong) {
+    const { offTabIndex, musicPlayer: { status } } = this.props;
+    const { playedSongId } = this.state;
+    const isPlayed = status === Status.PLAY && song.id === playedSongId;
 
     return (
-      <div id={ROUTES.MUSIC.HTML_ID} className={cn(cssMod.mod, css.music)}>
-        <h2 className={cssTypography.modTitle}>{ROUTES.MUSIC.TITLE}</h2>
+      <div className={css.song} key={song.id}>
+        <MusicCover
+          urlCover={song.coverUrl}
+          className={css.cover}
+          onPlayerControl={this.handlePlayerControl}
+          id={song.id}
+          isPlayed={isPlayed}
+          offTabIndex={offTabIndex}
+        />
 
-        <div className={css.covers}>
-          <div className={css.row}>
-            <MusicCover urlCover={cover1} className={css.coverItem} isPlayed active/>
-            <MusicCover urlCover={cover0} className={css.coverItem}/>
-          </div>
-
-          <div className={css.row}>
-            <MusicCover urlCover={different} className={css.coverItem}/>
-            <MusicCover urlCover={myVoice} className={css.coverItem}/>
-          </div>
-        </div>
-
-
-        <div className={css.shops}>
+        <div className={css.buy}>
           <a
-            href={SOCIAL.ITUNES.URL}
+            href={song.itunes}
             target="_blank"
             rel="noopener noreferrer"
-            className={css.shop}
+            className={css.store}
             style={{ backgroundImage: `url(${itunes})`}}
-            {...(offUserInteraction && { tabIndex: -1})}
-          > </a>
+            {...offTabIndex && { tabIndex: -1 }}
+          />
           <a
-            href={SOCIAL.SPOTIFY.URL}
+            href={song.spotify}
             target="_blank"
             rel="noopener noreferrer"
-            className={css.shop}
+            className={css.store}
             style={{ backgroundImage: `url(${spotify})`}}
-            {...(offUserInteraction && { tabIndex: -1})}
-          > </a>
+            {...offTabIndex && { tabIndex: -1 }}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  public render() {
+    return (
+      <div id={ROUTES.MUSIC.HTML_ID} className={cn(cssMod.mod, css.music)}>
+        <h2 className={cn(cssTypography.modTitle, cssMod.title)}>{ROUTES.MUSIC.TITLE}</h2>
+
+        <div className={css.songs}>
+          {songs.map(it => this.renderSong(it))}
         </div>
       </div>
     );
   }
 }
 
-export default Music;
+export default withCtxMusicPlayer(withOffTabIndexCtx(Music));

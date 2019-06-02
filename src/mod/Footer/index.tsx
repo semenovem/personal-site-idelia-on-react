@@ -1,6 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
 
+import { withOffTabIndexCtx, IOffTabIndex} from 'ctx/OffTabIndex';
+
 import iconsFacebook from 'assets/icons/social/facefook_bw.svg';
 import iconsInstagram from 'assets/icons/social/instagram_bw.svg';
 import iconsSpotify from 'assets/icons/shops/spotify_white.svg';
@@ -11,16 +13,15 @@ import {SOCIAL} from 'types/social';
 import cssTypography from 'styles/typography.module.css';
 import css from './style.module.css';
 
-interface IOwnProps {
+interface IOwnProps extends IOffTabIndex {
   disableTagFooter?: true,
-  offUserInteraction?: boolean;
 }
 
 interface IProps extends IOwnProps {}
 
 class Footer extends React.Component<IProps> {
   private renderContentFooter() {
-    const offUserInteraction = this.props.offUserInteraction;
+    const { offTabIndex } = this.props;
 
     return (
       <>
@@ -29,7 +30,7 @@ class Footer extends React.Component<IProps> {
             href={SOCIAL.FACEBOOK.URL}
             target="_blank"
             rel="noopener noreferrer"
-            {...(offUserInteraction && { tabIndex: -1})}
+            {...offTabIndex && { tabIndex: -1}}
           >
             <img src={iconsFacebook} alt={SOCIAL.FACEBOOK.ALT}/>
           </a>
@@ -38,7 +39,7 @@ class Footer extends React.Component<IProps> {
             href={SOCIAL.INSTAGRAM.URL}
             target="_blank"
             rel="noopener noreferrer"
-            {...(offUserInteraction && { tabIndex: -1})}
+            {...offTabIndex && { tabIndex: -1}}
           >
             <img src={iconsInstagram} alt={SOCIAL.INSTAGRAM.ALT}/>
           </a>
@@ -47,7 +48,7 @@ class Footer extends React.Component<IProps> {
             href={SOCIAL.SPOTIFY.URL}
             target="_blank"
             rel="noopener noreferrer"
-            {...(offUserInteraction && { tabIndex: -1})}
+            {...offTabIndex && { tabIndex: -1}}
           >
             <img src={iconsSpotify} alt={SOCIAL.SPOTIFY.ALT}/>
           </a>
@@ -56,14 +57,14 @@ class Footer extends React.Component<IProps> {
             href={SOCIAL.ITUNES.URL}
             target="_blank"
             rel="noopener noreferrer"
-            {...(offUserInteraction && { tabIndex: -1})}
+            {...offTabIndex && { tabIndex: -1}}
           >
             <img src={iconsITunes} alt={SOCIAL.ITUNES.ALT}/>
           </a>
         </div>
 
         <div className={cn(cssTypography.footerCopyright, css.copyright)}>
-          ©2019
+          an Eden park design
         </div>
       </>
     );
@@ -80,4 +81,4 @@ class Footer extends React.Component<IProps> {
   }
 }
 
-export default Footer;
+export default withOffTabIndexCtx(Footer);
