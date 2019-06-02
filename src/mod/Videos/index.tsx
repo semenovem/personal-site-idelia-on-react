@@ -22,8 +22,12 @@ class Videos extends React.Component<IProps> {
   private handlePlay = () => this.props.musicPlayer.pause();
 
 
+  // https://fns01.ru
+  // http://localhost:3000
+
+
   render() {
-    const { offTabIndex, musicPlayer } = this.props;
+    const { musicPlayer } = this.props;
 
     return (
       <div id={ROUTES.VIDEOS.HTML_ID} className={cn(cssMod.modFreePaddingSides, css.video)}>
@@ -32,7 +36,7 @@ class Videos extends React.Component<IProps> {
         <VideoPlayerYoutube
           htmlId={HTML_ID_PLAYER}
           className={css.player}
-          src='https://www.youtube.com/embed/_qQYNjPbboM?controls=0&modestbranding=1&enablejsapi=1'
+          src='https://www.youtube.com/embed/_qQYNjPbboM?controls=0&modestbranding=1&enablejsapi=1&origin=https://fns01.ru'
           onPlay={this.handlePlay}
           isPause={musicPlayer.isPlay()}
         />
