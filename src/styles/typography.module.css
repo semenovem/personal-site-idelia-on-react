@@ -1,12 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Pathway+Gothic+One');
+
 .hamMenuItem {
   color: white;
   font-size: var(--font-size-ham-menu-item);
   font-weight: 500;
-  letter-spacing: 15px;
+  letter-spacing: 2px;
 }
 
 .hamMenuItem:hover {
   text-decoration: underline;
+}
+
+
+.titleSite {
+  color: white;
+  font-size: var(--font-size-title-site);
+  font-family: 'Pathway Gothic One', sans-serif;
+  letter-spacing: 5vw;
 }
 
 
@@ -21,37 +31,14 @@
 }
 
 
-.modTitle, .modTitleVideo {
+.modTitle {
   color: white;
   text-align: center;
   font-size: var(--font-size-mod-title);
-  font-weight: 500;
+  font-weight: 300;
   letter-spacing: 3px;
 }
 
-.modTitleVideo {
-  letter-spacing: 12px;
-}
-
-.modTitleBioLastName, .modTitleBioFirstName {
-  color: white;
-  font-weight: 400;
-  letter-spacing: 25px;
-}
-
-.modTitleBioLastName {
-  font-size: calc(var(--font-size-mod-title) * 1.5);
-}
-
-.modTitleBioFirstName {
-  font-size: calc(var(--font-size-mod-title) * 1.1);
-}
-
-.modContactInput {
-  color: white;
-  font-size: 26px;
-  letter-spacing: 3px;
-}
 
 .footerCopyright {
   color: #979797;
@@ -60,21 +47,9 @@
 
 
 .textBio {
-  font-size: 24px;
-  color: #fff;
-  text-align: justify;
+  font-size: 18px;
 }
 
-.textBio p {
-  text-indent: 1em
-}
-
-
-.btnOrange {
-  color: white;
-  font-size: 22px;
-  letter-spacing: 3px;
-}
 
 /* sm */
 @media (min-width: 576px) {}

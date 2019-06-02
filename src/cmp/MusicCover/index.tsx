@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
+import cssCommon from 'styles/common.module.css';
 import css from './style.module.css';
 
 interface IOwnProps {
@@ -8,60 +9,22 @@ interface IOwnProps {
   urlCover: string;
   active?: boolean;
   isPlayed?: boolean;
-  id: string;
-  offTabIndex?: boolean;
-  onPlayerControl:(id: string) => void;
 }
 
-class MusicCover extends React.Component<IOwnProps> {
-  private flag: boolean = false;
-  private timer: number | null = null;
+interface IProps extends IOwnProps {}
 
-  public componentWillUnmount() {
-    this.clearTimer();
-  }
 
-  private handleAction = () => {
-    const { onPlayerControl, id } = this.props;
-    onPlayerControl(id);
-  };
-
-  private handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (this.flag) {
-      this.flag = false;
-      return;
-    }
-    this.handleAction();
-  };
-
-  private handleBtnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    this.flag = true;
-    this.clearTimer();
-    this.timer = window.setTimeout(this.resetFlag, 20);
-
-    this.handleAction();
-  };
-
-  private resetFlag = () => this.flag = false;
-
-  private clearTimer = () => this.timer && clearTimeout(this.timer);
-
+class MusicCover extends React.Component<IProps> {
   render() {
-    const { urlCover, className, isPlayed, active, offTabIndex } = this.props;
+    const { urlCover, className, isPlayed } = this.props;
     const styleBtn = isPlayed ? css.pause : css.play;
 
     return (
       <div
         className={cn(css.musicCover, className)}
-        onClick={this.handleClick}
+        style={{ backgroundImage: `url(${urlCover})`}}
       >
-        <img src={urlCover} className={cn(css.img, !active && css.grayscale)} alt=''/>
-
-        <button
-          className={cn(css.btn, styleBtn)}
-          onClick={this.handleBtnClick}
-          {...offTabIndex && { tabIndex: -1 }}
-        />
+        <button className={cn(cssCommon.resetBtnStyles, css.btn, styleBtn)}/>
       </div>
     );
   }

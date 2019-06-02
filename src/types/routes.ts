@@ -6,23 +6,19 @@ export interface IRouteItem {
   readonly HASH: string,
   readonly MENU_ITEM_NAME: string,
   readonly TITLE: string;
-  readonly SINGLE?: true;
 }
 
 export interface IRoute {
   readonly HEADER: IRouteItem;
   readonly BIO: IRouteItem;
-  readonly BIO_FULLY: IRouteItem;
   readonly CONTACT: IRouteItem;
   readonly GALLERY: IRouteItem;
   readonly MUSIC: IRouteItem;
   readonly NEWS: IRouteItem;
   readonly VIDEOS: IRouteItem;
-
   readonly ORDER_NAV_MENU: Array<IRouteItem>;
   readonly ORDER_HAM_MENU: Array<IRouteItem>;
   readonly SINGLE_PAGE: Array<IRouteItem>;
-
   readonly ALL: Array<IRouteItem>;
 }
 
@@ -41,15 +37,6 @@ export const ROUTES: IRoute = {
     HASH: '#bio',
     TITLE: 'BIO',
     MENU_ITEM_NAME: 'Bio',
-  },
-
-  BIO_FULLY: {
-    ID: 'BIO',
-    HTML_ID: uniqueHtmlId(),
-    HASH: '#bio-full',
-    TITLE: 'BIO',
-    MENU_ITEM_NAME: 'Bio',
-    SINGLE: true,
   },
 
   GALLERY: {
@@ -88,7 +75,7 @@ export const ROUTES: IRoute = {
     ID: 'CONTACT',
     HTML_ID: uniqueHtmlId(),
     HASH: '#contact',
-    TITLE: 'Contact Me',
+    TITLE: 'Contact',
     MENU_ITEM_NAME: 'Contact',
   },
 
@@ -99,21 +86,20 @@ export const ROUTES: IRoute = {
 };
 
 ROUTES.ORDER_HAM_MENU.push(
-  ROUTES.MUSIC,
+  ROUTES.HEADER,
   ROUTES.BIO,
+  ROUTES.NEWS,
+  ROUTES.MUSIC,
   ROUTES.VIDEOS,
   ROUTES.GALLERY,
-  ROUTES.NEWS,
   ROUTES.CONTACT,
 );
 
 ROUTES.ORDER_NAV_MENU.push(
-  ROUTES.MUSIC,
   ROUTES.BIO,
-
-  ROUTES.VIDEOS,
   ROUTES.NEWS,
-
+  ROUTES.MUSIC,
+  ROUTES.VIDEOS,
   ROUTES.GALLERY,
   ROUTES.CONTACT,
 );
@@ -129,5 +115,9 @@ ROUTES.ALL.push(
 );
 
 ROUTES.SINGLE_PAGE.push(
-  ROUTES.BIO_FULLY,
+  ROUTES.HEADER,
+  ROUTES.NEWS,
+  ROUTES.MUSIC,
+  ROUTES.VIDEOS,
+  ROUTES.GALLERY,
 );

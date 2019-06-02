@@ -1,8 +1,8 @@
 
 export interface IModProps {
   /**
-   * Может ли пользователь взаимодействовать с элементами с помощью клавиатуры
+   * Может ли пользователь взаимодействовать с элементами
    * @default false
    */
-  offTabIndex?: boolean;
+  offUserInteraction?: boolean;
 }

@@ -1,39 +1,43 @@
 import React from 'react';
 import cn from 'classnames';
-import CmpBtnHamMenu, { IProps as IBtnHamMenuProps } from 'cmp/BtnHamMenu';
-import CmpNavMenu, { IProps as INavMenuProps } from 'mod/NavMenu';
-import {ROUTES} from 'types/routes';
-import { withOffTabIndexCtx } from 'ctx/OffTabIndex';
+import {IModProps} from 'mod/types';
+import BtnHamMenu from 'cmp/BtnHamMenu';
 
+import NavMenu from 'cmp/NavMenu';
+
+import {ROUTES} from 'types/routes';
+
+import cssCommon from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
-import dataAttrImgBg from "./dataAttrImgBg";
 
-interface IOwnProps {
+interface IOwnProps extends IModProps {
   onActOpenHamMenu: () => void;
 }
 
-const NavMenu = withOffTabIndexCtx<INavMenuProps>(CmpNavMenu);
-const BtnHamMenu = withOffTabIndexCtx<IBtnHamMenuProps>(CmpBtnHamMenu);
+interface IProps extends IOwnProps {
+}
 
-class Header extends React.Component<IOwnProps> {
+class Header extends React.Component<IProps> {
   render() {
-    const {onActOpenHamMenu} = this.props;
+    const {onActOpenHamMenu, offUserInteraction} = this.props;
 
     return (
-      <div id={ROUTES.HEADER.HTML_ID} className={css.header} data-img-bg={dataAttrImgBg}>
+      <div id={ROUTES.HEADER.HTML_ID} className={css.header}>
         <div className={css.cover}>
-          <div className={css.sticky}>
-            <BtnHamMenu
-              className={cssMod.btnHamMenu}
-              onOpen={onActOpenHamMenu}
-            />
+          <BtnHamMenu
+            className={cssMod.btnHamMenu}
+            onOpen={onActOpenHamMenu}
+            offUserInteraction={offUserInteraction}
+          />
 
-            <div className={cn(css.titleSite)}/>
+          <div className={cn(cssCommon.titleSite, css.titleSite)}>
+            <div>IDELIA</div>
+            <div>MARS</div>
           </div>
         </div>
 
-        <NavMenu onSelect={noop} />
+        <NavMenu onSelect={noop} offUserInteraction={offUserInteraction}/>
       </div>
     );
   }

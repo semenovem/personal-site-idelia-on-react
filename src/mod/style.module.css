@@ -1,28 +1,16 @@
 
 .mod {
-  padding: var(--indent-xl) var(--indent-m) var(--indent-xxl) var(--indent-m);
-}
-
-.modFreePaddingSides {
-  padding: var(--indent-xl) 0 var(--indent-xxl) 0;
-}
-
-.title {
-  margin-bottom: var(--indent-xl);
-}
-
-.titleHigh {
-  margin-bottom: var(--indent-xxl);
+  padding: var(--indent-l) var(--indent-m) var(--indent-xxl) var(--indent-m);
 }
 
 
-.btnHamMenu, .btnCloseHamMenu {
+.btnHamMenu {
   position: absolute;
-  top: var(--indent-xl);
+  top: 30px;
   right: var(--indent-xl);
 
-  width: calc(2vw + 30px);
-  height: calc(2vw + 15px);
+  width: calc(6vw + 40px);
+  height: calc(6vw + 20px);
 }
 
 .btnBack {
@@ -42,11 +30,7 @@
 
 
 /* md */
-@media (min-width: 768px) {
-  .btnHamMenu {
-    display: none;
-  }
-}
+@media (min-width: 768px) {}
 
 
 
