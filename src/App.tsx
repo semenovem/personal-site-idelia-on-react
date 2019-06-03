@@ -14,7 +14,6 @@ import {IRouteItem, ROUTES} from "types/routes";
 import OffTabIndexCtx from 'ctx/OffTabIndex';
 import {IMusicPlayerProps, withCtxMusicPlayer} from 'ctx/MusicPlayer';
 import {IWinSizeProps, withCtxWinSize} from 'ctx/WinSize';
-import WinSize from "./types/WinSize";
 
 type IProps  = IMusicPlayerProps & IWinSizeProps;
 
@@ -43,15 +42,6 @@ class App extends React.Component<IProps, IState> {
     window.removeEventListener('hashchange', this.handleHashChange);
     window.removeEventListener('keydown', this.handleKey);
   }
-
-  // public componentDidUpdate(prevProps: Readonly<IMusicPlayerProps & IWinSizeProps>, prevState: Readonly<IState>, snapshot?: any): void {
-  //   const { isOpenHamMenu } = this.state;
-  //
-  //   if (isOpenHamMenu !== prevState.isOpenHamMenu) {
-  //     document.body.style.overflow = isOpenHamMenu ? 'hidden' : null;
-  //   }
-  // }
-
 
   private handleKey = (e: KeyboardEvent) => {
     const {isOpenHamMenu} = this.state;
@@ -94,9 +84,6 @@ class App extends React.Component<IProps, IState> {
     if (!routeItem) {
       return;
     }
-
-    console.log(routeItem.HASH);
-
 
     if (routeItem.SINGLE) {
       const ind = this.splashPages.indexOf(routeItem);

@@ -1,20 +1,4 @@
-/**
- * Размеры экранов
- * минимальные точки для переключения
- *
- * @example 0 >= XS < 567
- * @example 567 >= SM < 768
- */
-enum WinSize {
-  XS = 0,
-  SM = 576,
-  MD = 768,
-  LG = 992,
-  XL = 1200,
-  XXL = 1400,
-}
-
-export default WinSize;
+import { WinSize } from "./types";
 
 export function defWinSize(w: number): WinSize {
   if (w < WinSize.SM) { return WinSize.XS; }
@@ -24,4 +8,13 @@ export function defWinSize(w: number): WinSize {
   if (w < WinSize.XXL) { return WinSize.XL; }
 
   return WinSize.XXL;
+}
+
+/**
+ * Find relevant screen resolution
+ */
+export function defRelevant(target: WinSize, one: WinSize, two: WinSize): WinSize | null {
+  const t = Math.max(target - one, target - two);
+
+  return t < 0 ? null : t + target;
 }

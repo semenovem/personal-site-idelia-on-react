@@ -72,13 +72,14 @@ class VideoPlayerYoutube extends React.Component<IOwnProps> {
   }
 
   public componentDidMount() {
-    VideoPlayerYoutube.isLoadedScriptApi.then(this.createPlayer);
+   VideoPlayerYoutube.isLoadedScriptApi.then(this.createPlayer);
   }
 
   public componentDidUpdate(prevProps: Readonly<IOwnProps>): void {
     const { isPause } = this.props;
     if (isPause !== prevProps.isPause && isPause && this.player) {
 
+      debugger;
       this.player.pauseVideo();
     }
   }
@@ -101,6 +102,7 @@ class VideoPlayerYoutube extends React.Component<IOwnProps> {
   };
 
   private handlePlayerStateChange = (event: any) => {
+    debugger;
     // @ts-ignore
     if (event.data === window.YT.PlayerState.PLAYING) {
       this.props.onPlay();
@@ -112,10 +114,12 @@ class VideoPlayerYoutube extends React.Component<IOwnProps> {
     const { urlCover, className, isPlayed, offTabIndex, src, htmlId } = this.props;
     const styleBtn = isPlayed ? css.pause : css.play;
 
+    const style = {...urlCover && {backgroundImage: urlCover}};
+
     return (
       <div
         className={cn(css.videoPlayer, className)}
-        style={{ backgroundImage: `url(${urlCover})`}}
+        style={style}
       >
 
         {/*<img src={urlCover} className={css.img} alt=''/>*/}

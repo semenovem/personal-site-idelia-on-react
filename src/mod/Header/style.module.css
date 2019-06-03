@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
 
-  background-image: url(assets/bg_xs.jpg);
+  background-image: url(assets/bg_low.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -54,7 +54,7 @@
   }
 
   .cover {
-    background-image: url(assets/bg_md.jpg);
+    /*background-image: url(assets/bg_md.jpg);*/
   }
 }
 

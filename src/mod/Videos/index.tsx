@@ -36,7 +36,7 @@ class Videos extends React.Component<IProps> {
         <VideoPlayerYoutube
           htmlId={HTML_ID_PLAYER}
           className={css.player}
-          src='https://www.youtube.com/embed/_qQYNjPbboM?controls=0&modestbranding=1&enablejsapi=1&origin=https://fns01.ru'
+          src='https://www.youtube.com/embed/_qQYNjPbboM?controls=0&modestbranding=1&enablejsapi=1&origin=http://localhost:3000'
           onPlay={this.handlePlay}
           isPause={musicPlayer.isPlay()}
         />

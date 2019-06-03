@@ -1,4 +1,5 @@
-import WinSize, {defWinSize} from "../../types/WinSize";
+import { WinSize } from "./types";
+import { defWinSize } from "./utils";
 import React from "react";
 import WinSizeCtx from "./WinSizeCtx";
 
