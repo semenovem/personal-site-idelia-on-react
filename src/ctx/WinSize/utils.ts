@@ -11,10 +11,13 @@ export function defWinSize(w: number): WinSize {
 }
 
 /**
- * Find relevant screen resolution
+ * relevant screen resolution
  */
-export function defRelevant(target: WinSize, one: WinSize, two: WinSize): WinSize | null {
-  const t = Math.max(target - one, target - two);
+export function howRelevant(target: WinSize, winSize: WinSize | null): number | null {
+  if (winSize === null) {
+    return null;
+  }
 
-  return t < 0 ? null : t + target;
+  const d = target - winSize;
+  return d < 0 ? null : d;
 }

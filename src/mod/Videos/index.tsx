@@ -2,12 +2,12 @@ import React from 'react';
 import cn from 'classnames';
 
 import {ROUTES} from 'types/routes';
-import VideoPlayer from 'cmp/VideoPlayer';
+// import VideoPlayer from 'cmp/VideoPlayer';
 import VideoPlayerYoutube from 'cmp/VideoPlayerYoutube';
 import { withOffTabIndexCtx, IOffTabIndex } from 'ctx/OffTabIndex';
 import { withCtxMusicPlayer, IMusicPlayerProps } from 'ctx/MusicPlayer';
 
-import video0 from './assets/covers/video0.jpg';
+// import video0 from './assets/covers/video0.jpg';
 
 import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';

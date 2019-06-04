@@ -1,9 +1,9 @@
-import {IDefLevWin, IProgressiveImgParam} from './types';
+import {ILevWin, IProgressiveImgParams} from './types';
 
-import {CountdownLevel} from "ctx/Countdown";
-import {WinSize} from "ctx/WinSize";
+import {CountdownLevel, howRelevant as levHowRelevant} from "ctx/Countdown";
+import {WinSize, howRelevant as winHowRelevant} from "ctx/WinSize";
 
-type IParam = IProgressiveImgParam | IProgressiveImgParam[];
+type IArgs = IProgressiveImgParams | IProgressiveImgParams[];
 
 interface IEmpty {
   lev: CountdownLevel | null;
@@ -12,51 +12,117 @@ interface IEmpty {
 }
 
 
-export function findRelevantImg(args: IParam, countdownLevel: CountdownLevel, winSize: WinSize): string | null {
-  const obj: IEmpty | IDefLevWin = {
-    lev: null,
-    win: null,
-    img: null,
+
+
+const argsss: IProgressiveImgParams = {
+  lev: CountdownLevel.CRITICAL,
+  win: [
+    {
+      win: WinSize.MD,
+      img: 'bg_xs.jpg',
+    },
+    {
+      win: WinSize.LG,
+      img: 'bg_lg.jpg',
+    },
+  ]
+};
+
+
+
+
+
+interface ISt {
+  cur: IEmpty | ILevWin;
+  lev: CountdownLevel;
+  win: WinSize;
+}
+
+
+
+
+
+export function findRelevantImg(args: IArgs, countdownLevel: CountdownLevel, winSize: WinSize): string | null {
+  const st: ISt = {
+    cur: {
+      lev: null,
+      win: null,
+      img: null,
+    },
+    lev: countdownLevel,
+    win: winSize,
   };
 
-  obj.lev = CountdownLevel.CRITICAL;
+  // todo for development
+  args = argsss;
+
 
   if (Array.isArray(args)) {
     args.forEach(it => {});
 
     return null;
   } else {
-      return (pre(args, countdownLevel, winSize)).img;
+      return (defItem(st, args)).cur.img;
   }
 }
 
-function pre(a: IProgressiveImgParam, lev: CountdownLevel, win: WinSize): IEmpty | IDefLevWin {
-  if (Array.isArray(lev)) {
+function defItem(st: ISt, a: IProgressiveImgParams): ISt {
+  if (Array.isArray(a.lev)) {
+
+    return {} as ISt
+  }
+
+  if (Array.isArray(a.win)) {
+
+    return {} as ISt
+  }
+
+  if ('win' in a) {
 
   }
 
-  if (Array.isArray(win)) {
-
-  }
-
-  return { lev: null, win: null, img: null };
+  return defLevWin(st, a);
 }
 
 
 
 /**
- * for IDefLevWin
+ * for ILevWin
  */
-function defLevWin(levWin: IDefLevWin | IEmpty, lev: CountdownLevel, win: WinSize) {
+function defLevWin(st: ISt, a: ILevWin): ISt {
+  const levPrev = levHowRelevant(st.lev, st.cur.lev);
+  const levNext = levHowRelevant(st.lev, a.lev);
 
+  if (levNext === null || (levPrev !== null && levNext > levPrev)) {
+    // not actual for level
+    return st;
+  }
+
+  const winPrev = winHowRelevant(st.win, st.cur.win);
+  const winNext = winHowRelevant(st.win, a.win);
+
+  if (winNext === null) {
+    // not actual for win size
+    return st;
+  }
+
+
+  if (levPrev && winPrev) {
+    if (levNext === levPrev && winNext > winPrev) {
+      return st;
+    }
+  }
+
+  st.cur = {
+    ...a
+  };
+  return st;
 }
 
 
 
 
-
-
-const arg: IProgressiveImgParam = {
+const arg: IProgressiveImgParams = {
   lev: CountdownLevel.CRITICAL,
   win: [
     {
@@ -74,7 +140,7 @@ const arg: IProgressiveImgParam = {
 /**
  * @example
  */
-const argsss: IProgressiveImgParam[] = [
+const argsss: IProgressiveImgParams[] = [
   {
     // if not passed - apply to all
     lev: CountdownLevel.CORE,
@@ -93,7 +159,6 @@ const argsss: IProgressiveImgParam[] = [
       }
     ],
   },
-
   {
     lev: CountdownLevel.CRITICAL,
     win: [

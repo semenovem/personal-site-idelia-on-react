@@ -1,43 +1,46 @@
 import {CountdownLevel} from "ctx/Countdown";
 import {WinSize} from "ctx/WinSize";
 
-export interface IDefLevWin {
+export interface ILevWin {
   lev: CountdownLevel;
   win: WinSize;
   img: string;
 }
 
+interface ILevWinKit {
+  lev: CountdownLevel;
+  win: IDefWin[];
+}
+
+interface ILevKitWin {
+  lev: IDefLev[]
+  win: WinSize,
+}
+
+interface ILevDefWinKit {
+  lev: CountdownLevel;
+  win: WinSize[];
+  img: string;
+}
+
+// if root, then apply to all sizes of window
+// and as child
 interface IDefLev {
   lev: CountdownLevel;
   img: string;
 }
 
+// only as child
 interface IDefWin {
   win: WinSize,
   img: string;
 }
 
 
-interface IKitDefWin {
-  lev: CountdownLevel;
-  win: IDefWin[];
-}
-
-interface IKitWin {
-  lev: CountdownLevel;
-  win: WinSize[];
-  img: string;
-}
-
-interface IWinLevKit {
-  win: WinSize,
-  lev: IDefLev[]
-}
-
-export type IProgressiveImgParam =
-  IDefLevWin
-  | IKitDefWin
-  | IDefLev
-  | IWinLevKit
-  | IKitWin;
+export type IProgressiveImgParams =
+  ILevWin
+  | ILevWinKit
+  | ILevKitWin
+  | ILevDefWinKit
+  | IDefLev;
 

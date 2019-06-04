@@ -14,7 +14,7 @@ interface IOwnProps extends IOffTabIndex {
 class News extends React.Component<IOwnProps> {
 
   render() {
-    const { offTabIndex } = this.props;
+    // const {  } = this.props;
 
     return (
       <div id={ROUTES.NEWS.HTML_ID} className={cn(cssMod.mod, css.news)}>

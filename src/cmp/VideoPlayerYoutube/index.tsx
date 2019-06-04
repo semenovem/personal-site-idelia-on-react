@@ -111,8 +111,8 @@ class VideoPlayerYoutube extends React.Component<IOwnProps> {
 
 
   public render() {
-    const { urlCover, className, isPlayed, offTabIndex, src, htmlId } = this.props;
-    const styleBtn = isPlayed ? css.pause : css.play;
+    const { urlCover, className, src, htmlId } = this.props;
+    // const styleBtn = isPlayed ? css.pause : css.play;
 
     const style = {...urlCover && {backgroundImage: urlCover}};
 
@@ -125,6 +125,7 @@ class VideoPlayerYoutube extends React.Component<IOwnProps> {
         {/*<img src={urlCover} className={css.img} alt=''/>*/}
 
         <iframe
+          title="youtube"
           id={htmlId}
           ref={this.refEl}
           className={css.iframe}

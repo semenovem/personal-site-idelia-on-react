@@ -5,7 +5,7 @@ import {CountdownLevel, ICountdownProps, withCtxCountdown} from 'ctx/Countdown';
 import {IWinSizeProps, WinSize, withCtxWinSize} from 'ctx/WinSize';
 
 
-import {IProgressiveImgParam} from "./types";
+import {IProgressiveImgParams} from "./types";
 
 interface IOwnProps {
   className?: string;
@@ -33,7 +33,7 @@ export default withCtxCountdown<IOwnProps>(withCtxWinSize<IOwnProps>(Background)
 
 
 
-const args: IProgressiveImgParam = {
+const args: IProgressiveImgParams = {
   lev: CountdownLevel.CRITICAL,
   win: [
     {

@@ -77,7 +77,7 @@ class Music extends React.Component<IProps, IState> {
             className={css.store}
             style={{ backgroundImage: `url(${itunes})`}}
             {...offTabIndex && { tabIndex: -1 }}
-          />
+          > </a>
           <a
             href={song.spotify}
             target="_blank"
@@ -85,7 +85,7 @@ class Music extends React.Component<IProps, IState> {
             className={css.store}
             style={{ backgroundImage: `url(${spotify})`}}
             {...offTabIndex && { tabIndex: -1 }}
-          />
+          > </a>
         </div>
       </div>
     );

@@ -29,27 +29,27 @@ export default OffTabIndexCtx;
 
 // @example
 
-interface IChildProps {
-  offTabIndex: boolean;
-  anythings: string;
-}
+// interface IChildProps {
+//   offTabIndex: boolean;
+//   anythings: string;
+// }
 
-const Child: React.FC<IChildProps> = ({ offTabIndex }) => {
-  return (<div>child: {offTabIndex && 'offTabIndex'} </div>);
-};
+// const Child: React.FC<IChildProps> = ({ offTabIndex }) => {
+//   return (<div>child: {offTabIndex && 'offTabIndex'} </div>);
+// };
 
-const ChildWithCtx = withOffTabIndexCtx<IChildProps>(Child);
+// const ChildWithCtx = withOffTabIndexCtx<IChildProps>(Child);
 
 
 // @usage
 
 
-function Test() {
-  return (
-    // требует передачу свойства `offTabIndex`, а оно добавляется в обертке
-    <ChildWithCtx anythings="" offTabIndex />
-  );
-}
+// function Test() {
+//   return (
+//     // требует передачу свойства `offTabIndex`, а оно добавляется в обертке
+//     <ChildWithCtx anythings="" offTabIndex />
+//   );
+// }
 
 /*
 

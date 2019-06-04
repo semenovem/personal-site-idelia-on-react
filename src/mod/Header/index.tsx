@@ -6,7 +6,7 @@ import {ROUTES} from 'types/routes';
 import { withOffTabIndexCtx } from 'ctx/OffTabIndex';
 import { Background } from 'cnt/ProgressiveImg';
 
-import bgXs from './assets/bg_xs.jpg';
+// import bgXs from './assets/bg_xs.jpg';
 
 import cssMod from 'mod/style.module.css';
 import css from './style.module.css';

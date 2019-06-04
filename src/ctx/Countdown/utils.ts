@@ -1,10 +1,13 @@
 import {CountdownLevel} from "./types";
 
 /**
- * Find relevant level
+ * relevant level
  */
-export function defRelevant(target: CountdownLevel, one: CountdownLevel, two: CountdownLevel): CountdownLevel | null {
-  const t = Math.max(target - one, target - two);
+export function howRelevant(target: CountdownLevel, countdownLevel: CountdownLevel | null): number | null {
+  if (countdownLevel === null) {
+    return null;
+  }
 
-  return t < 0 ? null : t + target;
+  const d = target - countdownLevel;
+  return d < 0 ? null : d;
 }
