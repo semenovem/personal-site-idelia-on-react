@@ -2,7 +2,9 @@
   background-image: url(assets/bg_blur.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: left ;
+  background-position: left;
+
+  --h: 150px;
 }
 
 .player {
@@ -12,57 +14,45 @@
   margin-right: auto;
 }
 
-.arrowL, .arrowR {
-  width: 10vw;
-  height: 10vw;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+.scroll {
+  margin-top: var(--indent-xl);
+  max-width: var(--max-width-limit);
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.arrowL {
-  background-image: url(../../assets/icons/arrow_left.svg);
+
+.item {
+  min-width: calc(var(--h) * 1.5);
+  width: calc(var(--h) * 1.5);
+  height: var(--h);
+
+  overflow: hidden;
+  position: relative;
 }
 
-.arrowR {
-  background-image: url(../../assets/icons/arrow_right.svg);
+.item:not(:first-child) {
+  margin-left: var(--indent-l);
 }
 
-.wrap {
-  margin-top: var(--indent-m);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.cover {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  width: 100%;
+  filter: grayscale(100%);
 }
 
-.content {
-  flex-grow: 1;
-  margin-left: var(--indent-m);
-  margin-right: var(--indent-m);
+.selected {
+  filter: none;
 }
 
-.musicPlayer {}
-
-
-
-/*.img_wrapper{*/
-/*  position: relative;*/
-/*  padding-top: 75%;*/
-/*  overflow: hidden;*/
-/*}*/
-
-/*.img_wrapper img{*/
-/*  position: absolute;*/
-/*  top: 0;*/
-/*  width: 100%;*/
-/*  opacity: 0;*/
-/*}*/
 
 
 /* sm */
 @media (min-width: 576px) {
   .player {
-    width: 90%;
     height: 400px;
   }
 }
@@ -71,8 +61,11 @@
 
 /* md */
 @media (min-width: 768px) {
+  .video {
+    --h: 180px;
+  }
+
   .player {
-    width: 80%;
     height: 450px;
   }
 }
@@ -81,8 +74,11 @@
 
 /* lg */
 @media (min-width: 992px) {
+  .video {
+    --h: 200px;
+  }
+
   .player {
-    width: 70%;
     height: 500px;
   }
 }
@@ -91,8 +87,23 @@
 
 /* xl */
 @media (min-width: 1200px) {
+  .video {
+    --h: 220px;
+  }
+
   .player {
-    width: 1000px;
+    width: 1200px;
     height: 600px;
+  }
+}
+
+/* xxl */
+@media (min-width: 1400px) {
+  .video {
+    --h: 220px;
+  }
+
+  .player {
+    height: 700px;
   }
 }

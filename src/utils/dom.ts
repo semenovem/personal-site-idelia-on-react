@@ -1,4 +1,4 @@
-export default function (
+export function findValueByElemAttr (
   elem: HTMLElement | null,
   parent: HTMLElement | null,
   attr: string,
