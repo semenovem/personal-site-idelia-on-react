@@ -77,7 +77,7 @@ class VideoPlayerYoutube extends React.Component<IOwnProps> {
 
   public componentDidUpdate(prevProps: Readonly<IOwnProps>): void {
     const { isPause } = this.props;
-    if (isPause !== prevProps.isPause && isPause && this.player) {
+    if (isPause !== prevProps.isPause && isPause && this.player && this.player.pauseVideo) {
 
       this.player.pauseVideo();
     }
