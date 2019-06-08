@@ -6,16 +6,16 @@
 
 .cover {
   flex-grow: 1;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
 
-  background-image: url(assets/bg_low.jpg);
+  background-image: url(assets/bg_xs_blur.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
-
 
 .titleSite {
   background-image: url(assets/title_xs.png);
@@ -54,7 +54,7 @@
   }
 
   .cover {
-    /*background-image: url(assets/bg_md.jpg);*/
+    background-image: url(assets/bg_md_blur.jpg);
   }
 }
 

@@ -1,9 +1,10 @@
-import {ILevWin, IProgressiveImgParams} from './types';
+import * as T from './types';
 
 import {CountdownLevel, howRelevant as levHowRelevant} from "ctx/Countdown";
 import {WinSize, howRelevant as winHowRelevant} from "ctx/WinSize";
 
-type IArgs = IProgressiveImgParams | IProgressiveImgParams[];
+
+const isArray = Array.isArray.bind(Array);
 
 interface IEmpty {
   lev: CountdownLevel | null;
@@ -11,38 +12,14 @@ interface IEmpty {
   img: string | null
 }
 
-
-
-
-const argsss: IProgressiveImgParams = {
-  lev: CountdownLevel.CRITICAL,
-  win: [
-    {
-      win: WinSize.MD,
-      img: 'bg_xs.jpg',
-    },
-    {
-      win: WinSize.LG,
-      img: 'bg_lg.jpg',
-    },
-  ]
-};
-
-
-
-
-
 interface ISt {
-  cur: IEmpty | ILevWin;
+  cur: IEmpty | T.ILevWin;
   lev: CountdownLevel;
   win: WinSize;
 }
 
 
-
-
-
-export function findRelevantImg(args: IArgs, countdownLevel: CountdownLevel, winSize: WinSize): string | null {
+export function findRelevantImg(args: any /* wip */, countdownLevel: CountdownLevel, winSize: WinSize): string | null {
   const st: ISt = {
     cur: {
       lev: null,
@@ -53,43 +30,100 @@ export function findRelevantImg(args: IArgs, countdownLevel: CountdownLevel, win
     win: winSize,
   };
 
-  // todo for development
-  args = argsss;
-
-
-  if (Array.isArray(args)) {
-    args.forEach(it => {});
-
-    return null;
-  } else {
-      return (defItem(st, args)).cur.img;
-  }
+  return iterator(st, args).cur.img;
 }
 
-function defItem(st: ISt, a: IProgressiveImgParams): ISt {
-  if (Array.isArray(a.lev)) {
-
-    return {} as ISt
-  }
-
-  if (Array.isArray(a.win)) {
-
-    return {} as ISt
-  }
-
-  if ('win' in a) {
-
-  }
-
-  return defLevWin(st, a);
+// для рекурсивного прохода данных
+function iterator(st: ISt, a: any): ISt {
+  return isArray(a) ? a.reduce((acc, it) => iterator(acc, it), st) : /*defType(st, a)*/ st;
 }
-
-
-
+//
+// // определение типа данных
+// function defType(st: ISt, a: T.IProgressiveImgParams): ISt {
+//   let type;
+//
+//   type = T.isILevWin(a);
+//   if (type) {
+//     return defLevWin(st, type);
+//   }
+//
+//
+//
+//   type = T.isILevWinKit(a);
+//   if (type) {
+//     return st;
+//   }
+//
+//   if (T.isILevKitWin(a)) {
+//     return st;
+//   }
+//
+//   if (T.isILevDefWinKit(a)) {
+//     return st;
+//   }
+//
+//
+//   if (T.isIDefLev(a)) {
+//     return st;
+//   }
+//
+//   return st;
+// }
+//
+//
+//
+//
+//
+//
+// // // разбор по типам данных
+// // function defItem(st: ISt, a: T.IProgressiveImgParams): ISt {
+// //   if (Array.isArray(a.lev)) {
+// //     if (!('win' in a) || Array.isArray(a.win)) {
+// //       return st;    // этого не может быть. ts не определяет, что если lev массив, то win точно есть
+// //     }
+// //     return defLevAsArray(st, a.lev, a.win);
+// //   } else {
+// //
+// //   }
+// //
+// //   if ('win' in a) {
+// //     if (Array.isArray(a.win)) {
+// //
+// //     } else {
+// //
+// //     }
+// //   } else {
+// //
+// //   }
+// //
+// //   return defLevWin(st, a);
+// // }
+//
+// // массив lev типа IDefLev
+// function defLevAsArray(st: ISt, lev: IDefLev[], win: WinSize): ISt {
+//   return lev.reduce((acc, it) => defLevWin(acc, { ...it, win }), st);
+// }
+//
+// //
+// function defWithLev(st: ISt, a: T.IDefLev, lev: CountdownLevel): ISt {
+//
+//   return st;
+// }
+//
+// //
+// function defWithWin(st: ISt, a: T.IDefLev, win: WinSize): ISt {
+//
+//   return st;
+// }
+//
+//
+//
+//
+//
 /**
  * for ILevWin
  */
-function defLevWin(st: ISt, a: ILevWin): ISt {
+function defLevWin(st: ISt, a: T.ILevWin): ISt {
   const levPrev = levHowRelevant(st.lev, st.cur.lev);
   const levNext = levHowRelevant(st.lev, a.lev);
 
@@ -118,64 +152,107 @@ function defLevWin(st: ISt, a: ILevWin): ISt {
   };
   return st;
 }
-
-
-
-
-const arg: IProgressiveImgParams = {
-  lev: CountdownLevel.CRITICAL,
-  win: [
-    {
-      win: WinSize.MD,
-      img: 'bg_xs.jpg',
-    },
-    {
-      win: WinSize.LG,
-      img: 'bg_lg.jpg',
-    },
-  ]
-};
-
-
-/**
- * @example
- */
-const argsss: IProgressiveImgParams[] = [
-  {
-    // if not passed - apply to all
-    lev: CountdownLevel.CORE,
-    img: 'bg_xs.jpg',
-  },
-  {
-    win: WinSize.SM,
-    lev: [
-      {
-        lev: CountdownLevel.CRITICAL,
-        img: 'bg_sm-mid.jpg',
-      },
-      {
-        lev: CountdownLevel.IMPORTANT,
-        img: 'bg-sm.jpg'
-      }
-    ],
-  },
-  {
-    lev: CountdownLevel.CRITICAL,
-    win: [
-      {
-        win: WinSize.MD,
-        img: 'bg_md.jpg',
-      },
-      {
-        win: WinSize.LG,
-        img: 'bg_lg.jpg',
-      },
-    ],
-  },
-  {
-    lev: CountdownLevel.CORE,
-    win: [WinSize.LG], // if not passed - apply to all
-    img: 'bg_lg.jpg',
-  },
-];
-
+//
+//
+//
+//
+//
+// const argsss: T.IProgressiveImgParams = {
+//   lev: CountdownLevel.IMPORTANT,
+//   win: WinSize.XS,
+//   img: 'bg_xs.jpg',
+// };
+//
+//
+//
+//
+// const argsss11: T.IProgressiveImgParams = {
+//   lev: CountdownLevel.CRITICAL,
+//   win: [
+//     {
+//       win: WinSize.MD,
+//       img: 'bg_xs.jpg',
+//     },
+//     {
+//       win: WinSize.LG,
+//       img: 'bg_lg.jpg',
+//     },
+//   ]
+// };
+//
+//
+//
+//
+//
+// const arg: T.IProgressiveImgParams = {
+//   lev: CountdownLevel.CRITICAL,
+//   win: [
+//     {
+//       win: WinSize.MD,
+//       img: 'bg_xs.jpg',
+//     },
+//     {
+//       win: WinSize.LG,
+//       img: 'bg_lg.jpg',
+//     },
+//   ]
+// };
+//
+//
+// /**
+//  * @example
+//  */
+// const args343ss: T.IProgressiveImgParams[] = [
+//   {
+//     // if not passed - apply to all
+//     lev: CountdownLevel.CORE,
+//     img: 'bg_xs.jpg',
+//   },
+//   {
+//     win: WinSize.SM,
+//     lev: [
+//       {
+//         lev: CountdownLevel.CRITICAL,
+//         img: 'bg_sm-mid.jpg',
+//       },
+//       {
+//         lev: CountdownLevel.IMPORTANT,
+//         img: 'bg-sm.jpg'
+//       }
+//     ],
+//   },
+//   {
+//     lev: CountdownLevel.CRITICAL,
+//     win: [
+//       {
+//         win: WinSize.MD,
+//         img: 'bg_md.jpg',
+//       },
+//       {
+//         win: WinSize.LG,
+//         img: 'bg_lg.jpg',
+//       },
+//     ],
+//   },
+//   {
+//     lev: CountdownLevel.CORE,
+//     win: [WinSize.LG], // if not passed - apply to all
+//     img: 'bg_lg.jpg',
+//   },
+// ];
+//
+//
+//
+//
+// const tasks = {
+//   lev: {
+//     win: 345,
+//
+//     [CountdownLevel.CORE]: 'asdasd',
+//
+//
+//   },
+//
+// };
+//
+// delete (tasks['lev']);

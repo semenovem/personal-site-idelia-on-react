@@ -6,6 +6,7 @@ import MusicCover from 'cmp/MusicCover';
 import {IOffTabIndex, withOffTabIndexCtx} from 'ctx/OffTabIndex';
 import {IMusicPlayerProps, withCtxMusicPlayer} from 'ctx/MusicPlayer';
 import {Status} from 'types/player';
+import Bg from './Background';
 
 import itunes from 'assets/icons/shops/itunes_buy.png';
 import spotify from 'assets/icons/shops/spotify_buy.png';
@@ -93,13 +94,13 @@ class Music extends React.Component<IProps, IState> {
 
   public render() {
     return (
-      <div id={ROUTES.MUSIC.HTML_ID} className={cn(cssMod.mod, css.music)}>
+      <Bg id={ROUTES.MUSIC.HTML_ID} className={cn(cssMod.mod, css.music)}>
         <h2 className={cn(cssTypography.modTitle, cssMod.title)}>{ROUTES.MUSIC.TITLE}</h2>
 
         <div className={css.songs}>
           {songs.map(it => this.renderSong(it))}
         </div>
-      </div>
+      </Bg>
     );
   }
 }

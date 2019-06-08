@@ -44,6 +44,21 @@
 .musicPlayer {}
 
 
+
+/*.img_wrapper{*/
+/*  position: relative;*/
+/*  padding-top: 75%;*/
+/*  overflow: hidden;*/
+/*}*/
+
+/*.img_wrapper img{*/
+/*  position: absolute;*/
+/*  top: 0;*/
+/*  width: 100%;*/
+/*  opacity: 0;*/
+/*}*/
+
+
 /* sm */
 @media (min-width: 576px) {
   .player {

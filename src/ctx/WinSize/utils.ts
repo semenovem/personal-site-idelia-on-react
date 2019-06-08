@@ -10,6 +10,10 @@ export function defWinSize(w: number): WinSize {
   return WinSize.XXL;
 }
 
+export function canBeUsed(target: WinSize, winSize: WinSize): boolean {
+  return winSize <= target;
+}
+
 /**
  * relevant screen resolution
  */
@@ -19,5 +23,5 @@ export function howRelevant(target: WinSize, winSize: WinSize | null): number | 
   }
 
   const d = target - winSize;
-  return d < 0 ? null : d;
+  return d < 0 ? null : d + winSize;
 }

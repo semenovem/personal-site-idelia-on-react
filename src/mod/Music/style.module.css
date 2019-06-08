@@ -1,5 +1,5 @@
 .music {
-  background-image: url(assets/bg_xs.jpg);
+  background-image: url(assets/bg_xs_blur.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
@@ -88,4 +88,8 @@
 
 
 /* xl */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+  .music {
+    background-image: url(assets/bg_xl_blur.jpg);
+  }
+}
