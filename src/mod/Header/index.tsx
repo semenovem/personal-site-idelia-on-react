@@ -16,7 +16,41 @@ const NavMenu = withOffTabIndexCtx<INavMenuProps>(CmpNavMenu);
 const BtnHamMenu = withOffTabIndexCtx<IBtnHamMenuProps>(CmpBtnHamMenu);
 
 class Header extends React.Component<IOwnProps> {
-  render() {
+  private readonly refTitle: React.RefObject<HTMLDivElement>;
+  private opacity = 1;
+  private prevScroll = 0;
+  private scrollStep = 15;
+
+  constructor(props: IOwnProps) {
+    super(props);
+    this.refTitle = React.createRef();
+
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  public componentWillUnmount(): void {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  private handleScroll = (event: Event) => {
+    const scroll = document.documentElement.scrollTop;
+    const height = window.innerHeight * 0.7;
+
+    if (scroll > height || Math.abs(this.prevScroll + scroll) < this.scrollStep) {
+      return;
+    }
+    this.prevScroll = scroll;
+    this.opacity = 1 - scroll / height;
+    window.requestAnimationFrame(this.changeOpacityTitle);
+  };
+
+  private changeOpacityTitle = () => {
+    if (this.refTitle.current) {
+      this.refTitle.current.style.opacity = this.opacity.toString();
+    }
+  };
+
+  public render() {
     const {onActOpenHamMenu} = this.props;
 
     return (
@@ -29,7 +63,7 @@ class Header extends React.Component<IOwnProps> {
               onOpen={onActOpenHamMenu}
             />
 
-            <div className={css.titleSite}/>
+            <div className={css.titleSite} ref={this.refTitle} />
           </div>
         </Background>
 

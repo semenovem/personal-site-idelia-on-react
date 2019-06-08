@@ -32,22 +32,24 @@ class Videos extends React.Component<IProps, IState> {
 
 
   private handleSelect = (id: string) => {
-    console.log('selected id', id);
+    if (+id === this.state.selectedId) {
+      return;
+    }
     this.setState({ selectedId: +id, });
   };
-
 
   private renderItems() {
     const { selectedId } = this.state;
 
     return videos.map(it => (
       <button
-        className={css.item}
+        className={cn(css.item, it.id === selectedId && css.selected)}
         key={it.id}
         data-id={it.id}
         tabIndex={0}
       >
-        <img src={it.cover} className={cn(css.cover, it.id === selectedId && css.selected)} alt=""/>
+        <img src={it.cover} className={css.cover} alt=""/>
+        <div className={css.btnPlay}/>
       </button>
     ));
   }
