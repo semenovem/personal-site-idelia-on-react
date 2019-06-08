@@ -79,7 +79,6 @@ class VideoPlayerYoutube extends React.Component<IOwnProps> {
     const { isPause } = this.props;
     if (isPause !== prevProps.isPause && isPause && this.player) {
 
-      debugger;
       this.player.pauseVideo();
     }
   }
@@ -102,7 +101,6 @@ class VideoPlayerYoutube extends React.Component<IOwnProps> {
   };
 
   private handlePlayerStateChange = (event: any) => {
-    debugger;
     // @ts-ignore
     if (event.data === window.YT.PlayerState.PLAYING) {
       this.props.onPlay();

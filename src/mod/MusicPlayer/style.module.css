@@ -10,6 +10,7 @@
   justify-content: flex-end;
   transition: 300ms all;
   transform: translateY(110%);
+  visibility: hidden;
 }
 
 .controls {
@@ -18,4 +19,5 @@
 
 .show {
   transform: translateY(0);
+  visibility: visible;
 }

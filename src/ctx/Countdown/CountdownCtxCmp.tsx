@@ -7,6 +7,16 @@ import {CountdownLevel, ICountdown} from './types';
 import {getNext} from './utils';
 
 class CountdownCtxCmp extends React.Component<{}> {
+  /**
+   * for manipulating with <body class="... hide-elem-before-critical">
+   * when the level, the class is removed
+   */
+  static cssCls = {
+    [CountdownLevel.CRITICAL]: 'hide-elem-before-critical',
+    // not yet used
+    // [CountdownLevel.IMPORTANT]: 'hide-elem-before-important',
+  };
+
   constructor(props: {}) {
     super(props);
 
@@ -74,7 +84,14 @@ class CountdownCtxCmp extends React.Component<{}> {
     }
 
     this.level = nextLevel;
-    this.runCallbacks();
+
+    window.requestAnimationFrame(this.runCallbacks);
+
+    // @ts-ignore
+    const cssCls = CountdownCtxCmp.cssCls[nextLevel];
+    if (cssCls) {
+      document.body.classList.remove(cssCls);
+    }
   };
 
   public render() {

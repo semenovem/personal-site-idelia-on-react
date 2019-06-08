@@ -9,6 +9,8 @@ import Contact from 'mod/Contact';
 import News from 'mod/News';
 import Footer from 'mod/Footer';
 
+import css from './style.module.css';
+
 interface IOwnProps {
   onOpenHamMenu: () => void;
 }
@@ -30,11 +32,13 @@ class SinglePage extends React.Component<IProps> {
         />
         <main>
           <Music />
-          <Bio />
-          <Videos />
-          <Gallery />
-          <News />
-          <Contact />
+          <div className={css.optimize}>
+            <Bio />
+            <Videos />
+            <Gallery />
+            <News />
+            <Contact />
+          </div>
         </main>
 
         <Footer />

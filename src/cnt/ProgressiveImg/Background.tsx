@@ -29,6 +29,15 @@ class Background extends React.Component<IProps> {
     this.ref = React.createRef<HTMLDivElement>();
   }
 
+  public componentDidUpdate(prevPros: IProps): void {
+    const { winSize } = this.props;
+
+    // for resize window
+    if (winSize !== prevPros.winSize) {
+      this.setCallback();
+    }
+  }
+
   public componentWillUnmount(): void {
     this.removeAllCallbacks();
   }
@@ -77,8 +86,6 @@ class Background extends React.Component<IProps> {
   };
 
   handleError = ({ target }: any) => {
-    debugger;
-
     // todo retry attempt downloading image
     target.remove();
   };
