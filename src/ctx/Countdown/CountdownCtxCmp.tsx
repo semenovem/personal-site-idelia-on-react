@@ -1,4 +1,7 @@
 import React from "react";
+
+import { isUserBrowser } from 'config/utils';
+
 import CountdownCtx from "./CountdownCtx";
 import {CountdownLevel, ICountdown} from './types';
 import {getNext} from './utils';
@@ -9,7 +12,9 @@ class CountdownCtxCmp extends React.Component<{}> {
 
     this.countdown = {
       getLevel: this.getLevel,
-      addTask: this.addTask,
+
+      // for not user browser, example server side or pre-rendering - not execute callbacks
+      addTask: isUserBrowser() ? this.addTask : () => 0,
       removeTask: this.removeTask,
     };
 
