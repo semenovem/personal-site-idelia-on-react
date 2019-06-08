@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
+import Bg from './Background';
 import {ROUTES} from 'types/routes';
 // import VideoPlayer from 'cmp/VideoPlayer';
 import VideoPlayerYoutube from 'cmp/VideoPlayerYoutube';
@@ -30,7 +31,7 @@ class Videos extends React.Component<IProps> {
     const { musicPlayer } = this.props;
 
     return (
-      <div id={ROUTES.VIDEOS.HTML_ID} className={cn(cssMod.modFreePaddingSides, css.video)}>
+      <Bg id={ROUTES.VIDEOS.HTML_ID} className={cn(cssMod.modFreePaddingSides, css.video)}>
         <h2 className={cn(cssTypography.modTitleVideo, cssMod.title)}>{ROUTES.VIDEOS.TITLE}</h2>
 
         <VideoPlayerYoutube
@@ -66,7 +67,7 @@ class Videos extends React.Component<IProps> {
         {/*</div>*/}
 
 
-      </div>
+      </Bg>
     );
   }
 }

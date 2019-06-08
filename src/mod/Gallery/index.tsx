@@ -3,8 +3,10 @@ import cn from 'classnames';
 
 import {ROUTES} from 'types/routes';
 import { withOffTabIndexCtx, IOffTabIndex } from 'ctx/OffTabIndex';
+import Bg from './Background';
 
-import photo006 from './assets/006.jpg';
+import photo006 from './assets/photos/006.jpg';
+
 import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
@@ -18,7 +20,7 @@ class Gallery extends React.Component<IOwnProps> {
     const {offTabIndex} = this.props;
 
     return (
-      <div id={ROUTES.GALLERY.HTML_ID} className={cn(cssMod.mod, css.gallery)}>
+      <Bg id={ROUTES.GALLERY.HTML_ID} className={cn(cssMod.mod, css.gallery)}>
         <h2 className={cn(cssTypography.modTitle, cssMod.title)}>{ROUTES.GALLERY.TITLE}</h2>
 
 
@@ -37,7 +39,7 @@ class Gallery extends React.Component<IOwnProps> {
             {...offTabIndex && {tabIndex: -1}}
           />
         </div>
-      </div>
+      </Bg>
     );
   }
 }

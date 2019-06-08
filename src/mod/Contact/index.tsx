@@ -3,6 +3,7 @@ import cn from 'classnames';
 
 import {ROUTES} from 'types/routes';
 import { withOffTabIndexCtx, IOffTabIndex} from 'ctx/OffTabIndex';
+import Bg from './Background';
 
 import cssCommon from 'styles/common.module.css';
 import cssTypography from 'styles/typography.module.css';
@@ -40,7 +41,7 @@ class Contact extends React.Component<IOwnProps, IState> {
     const { name, email, message, } = this.state;
 
     return (
-      <div id={ROUTES.CONTACT.HTML_ID} className={cn(cssMod.mod, css.contact)}>
+      <Bg id={ROUTES.CONTACT.HTML_ID} className={cn(cssMod.mod, css.contact)}>
         <h2 className={cn(cssTypography.modTitle, cssMod.titleHigh)}>{ROUTES.CONTACT.TITLE}</h2>
 
         <form className={cn(css.form, cssTypography.modContactInput)} onSubmit={this.handleSubmit}>
@@ -86,7 +87,7 @@ class Contact extends React.Component<IOwnProps, IState> {
             </button>
           </div>
         </form>
-      </div>
+      </Bg>
     );
   }
 }

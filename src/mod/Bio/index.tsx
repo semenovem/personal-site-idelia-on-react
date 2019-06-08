@@ -4,6 +4,8 @@ import cn from 'classnames';
 import {ROUTES} from 'types/routes';
 import {IOffTabIndex, withOffTabIndexCtx} from 'ctx/OffTabIndex';
 
+import Bg from './Background';
+
 import cssCommon from 'styles/common.module.css';
 import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
@@ -39,7 +41,7 @@ class Bio extends React.Component<IProps, IState> {
     const {shownAdditionalText: shown} = this.state;
 
     return (
-      <div id={ROUTES.BIO.HTML_ID} className={cn(cssMod.mod, css.bio, className)}>
+      <Bg id={ROUTES.BIO.HTML_ID} className={cn(cssMod.mod, css.bio, className)}>
         <h2 className={cn(cssMod.title, css.title)}>
           <div className={cn(cssTypography.modTitleBioLastName, css.lastName)}>Idelia</div>
           <div className={cssTypography.modTitleBioFirstName}>Mars</div>
@@ -124,7 +126,7 @@ class Bio extends React.Component<IProps, IState> {
           </button>
 
         </div>
-      </div>
+      </Bg>
     );
   }
 }
