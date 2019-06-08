@@ -23,14 +23,18 @@
     <title>Idelia Mars</title>
   </head>
   <body class="js-focus-visible">
-
-    <script id="__id-script-add-css-cls-for-body__">
+    <script id="__id-script-in-template-add-css-cls-for-body__">
       // adds css cls for hide elem for a while
       // if js is disabled - don't panic
       // just js optimization will be disabled
-      document.body.classList.add('hide-elem-before-critical', 'hide-elem-before-important', 'js-optimization');
-      document.querySelector('#__id-script-add-css-cls-for-body__').remove();
+
+      if (window.navigator.userAgent !== 'ReactSnap') {
+        document.body.classList.add('hide-elem-before-critical', 'hide-elem-before-important', 'js-optimization');
+        document.getElementById('__id-script-in-template-add-css-cls-for-body__').remove();
+      }
     </script>
+
+
 
     <div id="root"></div>
     <div id="splash-page-root"></div>
