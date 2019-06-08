@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.4e61c28c.chunk.css",
-    "main.js": "/static/js/main.eb05bbb6.chunk.js",
-    "main.js.map": "/static/js/main.eb05bbb6.chunk.js.map",
+    "main.css": "/static/css/main.ec1a492d.chunk.css",
+    "main.js": "/static/js/main.a8c4610f.chunk.js",
+    "main.js.map": "/static/js/main.a8c4610f.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
     "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.7bc57933.chunk.js": "/static/js/2.7bc57933.chunk.js",
-    "static/js/2.7bc57933.chunk.js.map": "/static/js/2.7bc57933.chunk.js.map",
+    "static/js/2.c75340b1.chunk.js": "/static/js/2.c75340b1.chunk.js",
+    "static/js/2.c75340b1.chunk.js.map": "/static/js/2.c75340b1.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.87dd72d263c0576c8bee51ad118b4c12.js": "/precache-manifest.87dd72d263c0576c8bee51ad118b4c12.js",
+    "precache-manifest.511b6171a923a20c7a999ce0c02ef0de.js": "/precache-manifest.511b6171a923a20c7a999ce0c02ef0de.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.4e61c28c.chunk.css.map": "/static/css/main.4e61c28c.chunk.css.map",
+    "static/css/main.ec1a492d.chunk.css.map": "/static/css/main.ec1a492d.chunk.css.map",
     "static/media/006.jpg": "/static/media/006.26a58145.jpg",
     "static/media/style.module.css": "/static/media/title_xs.dadc39bb.png",
     "static/media/bg_lg.jpg": "/static/media/bg_lg.ec548723.jpg",
@@ -18,12 +18,15 @@
     "static/media/bg_sm.jpg": "/static/media/bg_sm.fcc38635.jpg",
     "static/media/bg_xl.jpg": "/static/media/bg_xl.f7530219.jpg",
     "static/media/bg_xs.jpg": "/static/media/bg_xs.c8a0ca3f.jpg",
-    "static/media/different.jpg": "/static/media/different.ccfb4335.jpg",
+    "static/media/different.jpg": "/static/media/different.e9cac28c.jpg",
     "static/media/facefook_bw.svg": "/static/media/facefook_bw.28c28620.svg",
     "static/media/instagram_bw.svg": "/static/media/instagram_bw.72384eb9.svg",
     "static/media/itunes_buy.png": "/static/media/itunes_buy.3b86b4d1.png",
+    "static/media/love_bizarre.jpg": "/static/media/love_bizarre.09968792.jpg",
     "static/media/my_voice.jpg": "/static/media/my_voice.2449d65e.jpg",
     "static/media/spotify_buy.png": "/static/media/spotify_buy.3cfa8e86.png",
-    "static/media/spotify_white.svg": "/static/media/spotify_white.782dbe3f.svg"
+    "static/media/spotify_white.svg": "/static/media/spotify_white.782dbe3f.svg",
+    "static/media/the_road_before_me.jpg": "/static/media/the_road_before_me.9b015245.jpg",
+    "static/media/tv_tatar_girl.jpg": "/static/media/tv_tatar_girl.dedbb195.jpg"
   }
 }
