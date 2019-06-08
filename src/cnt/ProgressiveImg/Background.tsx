@@ -60,30 +60,26 @@ class Background extends React.Component<IProps> {
     }
 
     const el = document.createElement('IMG') as HTMLImageElement;
+
     el.src = url;
     el.style.position = 'absolute';
-
-    el.onload = this.handleLoadImg;
+    el.onload = this.handleLoadImg.bind(this, url);
     el.onerror = this.handleError;
-
     document.getElementById('preload-images')!.appendChild(el);
-
   };
 
-  handleLoadImg = ({ target }: any) => {
+  handleLoadImg = (url: string, { target }: any) => {
     if (this.ref.current) {
-      this.ref.current.style.backgroundImage = `url(${target.src})`;
-      this.style = { backgroundImage: `url(${target.src})`};
+      this.ref.current.style.backgroundImage = `url(${url})`;
+      this.style = { backgroundImage: `url(${url})`};
     }
-
     target.remove();
   };
 
   handleError = ({ target }: any) => {
     debugger;
 
-    // todo повторить попытку загрузки
-
+    // todo retry attempt downloading image
     target.remove();
   };
 
