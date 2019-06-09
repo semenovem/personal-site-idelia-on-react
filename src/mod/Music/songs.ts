@@ -30,7 +30,7 @@ export const songs = [
     spotify: 'https://open.spotify.com/album/3SOvjES7pbP2ovIduUHD8w',
     itunes: 'https://music.apple.com/us/album/my-voice-from-see-my-voice/1447994568?i=1447994576',
     coverUrl: myVoice,
-    url: '/songs/tm_002.mp3',
+    url: '/songs/my_voice.mp3',
   },
 ];
 
