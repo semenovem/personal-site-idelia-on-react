@@ -5,28 +5,18 @@
   background-position: center top;
 }
 
-.arrowL, .arrowR {
-  width: 10vw;
-  height: 10vw;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+.photos {
+  height: 340px;
 }
 
-.arrowL {
-  background-image: url(../../assets/icons/arrow_left.svg);
+.img {
+  object-fit: contain;
 }
 
-.arrowR {
-  background-image: url(../../assets/icons/arrow_right.svg);
+.img:not(:first-child) {
+  margin-left: var(--indent-m);
 }
 
-.wrap {
-  margin-top: var(--indent-m);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 /* sm */
 @media (min-width: 576px) {}
