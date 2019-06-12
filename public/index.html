@@ -2,9 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/fav0.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+
+    <meta name="robots" content="noindex,nofollow">
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -19,20 +20,27 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Idelia Mars</title>
   </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+  <body class="js-focus-visible">
+    <script id="__id-script-in-template-add-css-cls-for-body__">
+      // adds css cls for hide elem for a while
+      // if js is disabled - don't panic
+      // just js optimization will be disabled
+
+      if (window.navigator.userAgent !== 'ReactSnap') {
+        document.body.classList.add('hide-elem-before-critical', 'hide-elem-before-important', 'js-optimization');
+        document.getElementById('__id-script-in-template-add-css-cls-for-body__').remove();
+      }
+    </script>
+
+
+
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <div id="splash-page-root"></div>
+    <script async src="%PUBLIC_URL%/focus-visible.js"></script>
+<!--    <script async src="https://www.youtube.com/iframe_api"></script>-->
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <div id="preload-images" style="position:fixed; top: -1000px; left: 0; visibility: hidden;"></div>
   </body>
 </html>

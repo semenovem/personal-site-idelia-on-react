@@ -1,0 +1,58 @@
+.bio {
+  /*min-height: 100vh;*/
+
+  display: flex;
+  flex-direction: column;
+
+  background-image: url(assets/bg_blur.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.title {
+  text-align: right;
+}
+
+.lastName {
+  padding-right: 40px;
+}
+
+.extended {
+}
+
+.hide {
+  display: none;
+}
+
+
+.readMore {
+}
+
+
+/* sm */
+@media (min-width: 576px) {}
+
+
+
+/* md */
+@media (min-width: 768px) {  }
+
+
+
+/* lg */
+@media (min-width: 992px) {}
+
+
+
+/* xl */
+@media (min-width: 1200px) {
+  .extended {
+    display: block;
+  }
+
+
+  .readMore {
+    display: none
+  }
+}

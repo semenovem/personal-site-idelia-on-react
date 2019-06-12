@@ -1,0 +1,73 @@
+
+.mod {
+  padding: var(--indent-xl) var(--indent-m) var(--indent-xxl) var(--indent-m);
+}
+
+.modFreePaddingSides {
+  padding: var(--indent-xl) 0 var(--indent-xxl) 0;
+}
+
+.title {
+  margin-bottom: var(--indent-xl);
+}
+
+.titleHigh {
+  margin-bottom: var(--indent-xxl);
+}
+
+
+.btnHamMenu, .btnCloseHamMenu {
+  position: absolute;
+  top: var(--indent-xl);
+  right: var(--indent-xl);
+
+  width: calc(2vw + 30px);
+  height: calc(2vw + 15px);
+}
+
+.btnBack {
+  position: absolute;
+  top: 30px;
+  left: var(--indent-xl);
+
+  width: calc(6vw + 40px);
+  height: calc(6vw + 20px);
+}
+
+
+
+/* sm */
+@media (min-width: 576px) {}
+
+
+
+/* md */
+@media (min-width: 768px) {
+  .btnHamMenu {
+    display: none;
+  }
+}
+
+
+
+/* lg */
+@media (min-width: 992px) {}
+
+
+
+/* xl */
+@media (min-width: 1200px) {}
+
+
+
+/* xxl */
+@media (min-width: 1400px) {
+  .btnHamMenu {
+    right: calc((100vw - var(--max-width-limit)) / 2 + var(--indent-xl));
+  }
+
+  .btnBack {
+    left: calc((100vw - var(--max-width-limit)) / 2 + var(--indent-xl));
+  }
+}
+

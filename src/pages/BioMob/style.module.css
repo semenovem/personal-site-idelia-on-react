@@ -1,0 +1,11 @@
+.bioMob {
+  border: 2px solid gold;
+
+  height: 100vh;
+  overflow: auto;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}

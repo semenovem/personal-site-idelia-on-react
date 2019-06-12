@@ -1,0 +1,66 @@
+.scroll {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.items {
+  overflow-x: auto;
+  display: flex;
+  position: relative;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.arrow {
+  min-width: 30px;
+  min-height: 100px;
+  color: white;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  position: absolute;
+  z-index: 10;
+}
+
+.arrow:first-child {
+  margin-left: var(--indent-s);
+  margin-right: var(--indent-m);
+  background-image: url(../../assets/icons/arrow_left.svg);
+  left: 0;
+}
+
+.arrow:last-child {
+  margin-left: var(--indent-m);
+  margin-right: var(--indent-s);
+  background-image: url(../../assets/icons/arrow_right.svg);
+  right: 0;
+}
+
+
+/* sm */
+@media (min-width: 576px) {
+}
+
+
+
+/* md */
+@media (min-width: 768px) {
+}
+
+
+
+/* lg */
+@media (min-width: 992px) {
+  .arrow {
+    position: initial;
+  }
+}
+
+
+
+/* xl */
+@media (min-width: 1200px) {
+}
