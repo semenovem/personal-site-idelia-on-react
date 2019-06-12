@@ -19,17 +19,16 @@ interface IOwnProps extends IOffTabIndex {
 class Gallery extends React.Component<IOwnProps> {
 
   private handleClick = (id: string) => {
-    console.log(id);
   };
 
 
   private renderPhotos() {
-
     return photos.map(it => (
       <img
         key={it.url}
         src={it.url}
         className={css.img}
+        data-id={it.id}
       />
     ));
   }
@@ -42,7 +41,8 @@ class Gallery extends React.Component<IOwnProps> {
         <ScrollX
           className={css.photos}
           onClickItem={this.handleClick}
-          nameAttr='data-id'
+          nameDataAttr='data-id'
+          onTabIndex={!this.props.offTabIndex}
         >
           {this.renderPhotos()}
         </ScrollX>
