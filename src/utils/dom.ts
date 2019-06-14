@@ -2,12 +2,14 @@ export function findValueByElemAttr (
   elem: HTMLElement | null,
   parent: HTMLElement | null,
   attr: string,
-): string | undefined {
+): string | null {
 
   while (elem && elem !== parent) {
     if (elem.hasAttribute(attr)) {
-      return elem.getAttribute(attr)!;
+      return elem.getAttribute(attr);
     }
     elem = elem.parentElement;
   }
+
+  return null;
 }

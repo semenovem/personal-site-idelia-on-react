@@ -79,7 +79,7 @@ class Videos extends React.Component<IProps, IState> {
 
         <ScrollX
           className={css.scroll}
-          nameAttr='data-id'
+          nameDataAttr='data-id'
           onClickItem={this.handleSelect}
         >
           {this.renderItems()}
