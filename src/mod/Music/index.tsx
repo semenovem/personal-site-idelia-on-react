@@ -94,13 +94,14 @@ class Music extends React.Component<IProps, IState> {
 
   public render() {
     return (
-      <Bg id={ROUTES.MUSIC.HTML_ID} className={cn(cssMod.mod, css.music)}>
+      <div id={ROUTES.MUSIC.HTML_ID} className={cn(cssMod.mod, css.music)}>
+        <Bg className={css.bg}/>
         <h2 className={cn(cssTypography.modTitle, cssMod.title)}>{ROUTES.MUSIC.TITLE}</h2>
 
         <div className={css.songs}>
           {songs.map(it => this.renderSong(it))}
         </div>
-      </Bg>
+      </div>
     );
   }
 }

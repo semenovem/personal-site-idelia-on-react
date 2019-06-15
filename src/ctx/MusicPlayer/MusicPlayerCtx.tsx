@@ -7,7 +7,7 @@ const musicPlayerCtx: IMusicPlayer = {
   play: () => {},
   pause: () => {},
   change: () => {},
-  isPlay: () => false,
+  isPlay: false,
   url: null,
 };
 

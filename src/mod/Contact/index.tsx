@@ -41,7 +41,8 @@ class Contact extends React.Component<IOwnProps, IState> {
     const { name, email, message, } = this.state;
 
     return (
-      <Bg id={ROUTES.CONTACT.HTML_ID} className={cn(cssMod.mod, css.contact)}>
+      <div id={ROUTES.CONTACT.HTML_ID} className={cn(cssMod.mod, css.contact)}>
+        <Bg className={css.bg}/>
         <h2 className={cn(cssTypography.modTitle, cssMod.titleHigh)}>{ROUTES.CONTACT.TITLE}</h2>
 
         <form className={cn(css.form, cssTypography.modContactInput)} onSubmit={this.handleSubmit}>
@@ -87,7 +88,7 @@ class Contact extends React.Component<IOwnProps, IState> {
             </button>
           </div>
         </form>
-      </Bg>
+      </div>
     );
   }
 }

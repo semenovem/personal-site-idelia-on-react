@@ -17,7 +17,6 @@ interface IOwnProps extends IOffTabIndex {
 
 
 class Gallery extends React.Component<IOwnProps> {
-
   private handleClick = (id: string) => {
   };
 
@@ -35,7 +34,8 @@ class Gallery extends React.Component<IOwnProps> {
 
   public render() {
     return (
-      <Bg id={ROUTES.GALLERY.HTML_ID} className={cn(cssMod.modFreePaddingSides, css.gallery)}>
+      <div id={ROUTES.GALLERY.HTML_ID} className={cn(cssMod.modFreePaddingSides, css.gallery)}>
+        <Bg className={css.bg}/>
         <h2 className={cn(cssTypography.modTitle, cssMod.title)}>{ROUTES.GALLERY.TITLE}</h2>
 
         <ScrollX
@@ -47,7 +47,7 @@ class Gallery extends React.Component<IOwnProps> {
           {this.renderPhotos()}
         </ScrollX>
 
-      </Bg>
+      </div>
     );
   }
 }

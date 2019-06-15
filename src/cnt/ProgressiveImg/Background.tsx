@@ -9,7 +9,7 @@ import { IProgressiveImgProps} from "./types";
 // TODO decide component props
 export interface IOwnProps extends React.ComponentProps<any> {
   className?: string;
-  children: React.ReactChild |  React.ReactChild[] | React.ReactChildren[];
+  children?: React.ReactChild |  React.ReactChild[] | React.ReactChildren[];
 }
 
 type IProps = IOwnProps & IProgressiveImgProps & ICountdownProps & IWinSizeProps;
