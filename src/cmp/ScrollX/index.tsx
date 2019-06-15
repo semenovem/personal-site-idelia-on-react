@@ -30,6 +30,11 @@ class ScrollX extends React.Component<Props> {
     this.refArrowR = React.createRef();
   }
 
+  private setStyleBtn(elem: HTMLButtonElement, isShow: boolean): void {
+    elem.classList[isShow ? 'add' : 'remove'](css.arrowShowUp);
+    elem.disabled = !isShow;
+  }
+
   private handleClickArrowL = () => {
     this.refItems.current && this.refItems.current.scrollToNextItemL();
   };
@@ -42,23 +47,26 @@ class ScrollX extends React.Component<Props> {
     const arrows = this.arrows;
 
     if (arrows.l !== l && this.refArrowL.current) {
-      this.refArrowL.current.classList[l ? 'add' : 'remove'](css.arrowOn);
+      this.setStyleBtn(this.refArrowL.current, l);
       arrows.l = l;
     }
 
     if (arrows.r !== r && this.refArrowR.current) {
-      this.refArrowR.current.classList[r ? 'add' : 'remove'](css.arrowOn);
+      this.setStyleBtn(this.refArrowR.current, r);
       arrows.r = r;
     }
   };
 
   public render() {
     const { className, children, nameDataAttr, onClickItem, onTabIndex } = this.props;
+    const arrows = this.arrows;
 
     return (
       <div className={cn(className, css.scroll)}>
         <button
-          className={cn(css.arrow, this.arrows.l && css.arrowOn)}
+          className={cn(css.arrow, arrows.l && css.arrowShowUp)}
+          type="button"
+          disabled={arrows.l}
           ref={this.refArrowL}
           {...!onTabIndex && { tabIndex: -1 }}
           onClick={this.handleClickArrowL}
@@ -74,8 +82,9 @@ class ScrollX extends React.Component<Props> {
         </Items>
 
         <button
-          className={cn(css.arrow, this.arrows.l && css.arrowOn)}
-          data-arrow="r"
+          className={cn(css.arrow, arrows.r && css.arrowShowUp)}
+          type="button"
+          disabled={arrows.r}
           ref={this.refArrowR}
           {...!onTabIndex && { tabIndex: -1 }}
           onClick={this.handleClickArrowR}

@@ -2,7 +2,8 @@ import React from 'react';
 import cn from 'classnames';
 
 import css from "./style.module.css";
-import {findValueByElemAttr} from "utils/dom";
+import {findValueByElemAttr} from "utils/dom/findValueByElemAttr";
+import {findElemBeyondVisibility, Direction} from "utils/dom/findElemBeyondVisibility";
 
 interface Props {
   className?: string;
@@ -44,27 +45,24 @@ class Items extends React.Component<Props> {
     }
   }
 
-  // TODO скролл до следующего элемента
-  // найти крайний. Если он виден менее 90% - докручиваем
-  // если крайний элемент виден более - скроллить до следующего
   public scrollToNextItemL() {
-    const el = this.ref.current;
+    if (this.ref.current) {
+      const elem = findElemBeyondVisibility(Direction.LEFT, this.ref.current, this.props.nameDataAttr);
 
-    if (!el) {
-      return;
+      if (elem) {
+        elem.scrollIntoView({behavior: 'smooth', inline: "start", block: "nearest"});
+      }
     }
-
-    el.scrollLeft -= 200;
   }
 
   public scrollToNextItemR() {
-    const el = this.ref.current;
+    if (this.ref.current) {
+      const elem = findElemBeyondVisibility(Direction.RIGHT, this.ref.current, this.props.nameDataAttr);
 
-    if (!el) {
-      return;
+      if (elem) {
+        elem.scrollIntoView({behavior: 'smooth', inline: "end", block: "nearest"});
+      }
     }
-
-    el.scrollLeft += 200;
   }
 
   private waitingPaint = () => {
