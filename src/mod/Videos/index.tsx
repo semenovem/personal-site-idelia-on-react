@@ -3,21 +3,19 @@ import cn from 'classnames';
 
 import Bg from './Background';
 import {ROUTES} from 'types/routes';
-import VideoPlayerYoutube from 'cmp/VideoPlayerYoutube';
+import VideoPlayerYoutube from 'cnt/VideoPlayerYoutube';
 import { withOffTabIndexCtx, IOffTabIndex } from 'ctx/OffTabIndex';
-import { withCtxMusicPlayer, IMusicPlayerProps } from 'ctx/MusicPlayer';
-
 import ScrollX from 'cmp/ScrollX';
+import { musicPlayerControl } from 'ctx/MusicPlayer';
 
 import { videos } from './videos';
-
 
 import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
 
 interface IOwnProps {}
-type IProps = IOwnProps & IOffTabIndex & IMusicPlayerProps;
+type IProps = IOwnProps & IOffTabIndex;
 type IState = {
   selectedId: number;
 }
@@ -28,7 +26,7 @@ class Videos extends React.Component<IProps, IState> {
   public state = {
     selectedId: videos[0].id,
   };
-  private handlePlay = () => this.props.musicPlayer.pause();
+  private handlePlay = () => musicPlayerControl.pause();
 
 
   private handleSelect = (id: string) => {
@@ -61,12 +59,12 @@ class Videos extends React.Component<IProps, IState> {
 
 
   render() {
-    const { musicPlayer } = this.props;
     const { selectedId } = this.state;
     const video = videos.find(it => it.id === selectedId) || videos[0];
 
     return (
-      <Bg id={ROUTES.VIDEOS.HTML_ID} className={cn(cssMod.modFreePaddingSides, css.video)}>
+      <div id={ROUTES.VIDEOS.HTML_ID} className={cn(cssMod.modFreePaddingSides, css.video)}>
+        <Bg className={css.bg}/>
         <h2 className={cn(cssTypography.modTitleVideo, cssMod.title)}>{ROUTES.VIDEOS.TITLE}</h2>
 
         <VideoPlayerYoutube
@@ -74,7 +72,6 @@ class Videos extends React.Component<IProps, IState> {
           className={css.player}
           src={video.url}
           onPlay={this.handlePlay}
-          isPause={musicPlayer.isPlay()}
         />
 
         <ScrollX
@@ -84,10 +81,10 @@ class Videos extends React.Component<IProps, IState> {
         >
           {this.renderItems()}
         </ScrollX>
-      </Bg>
+      </div>
     );
   }
 }
 
-export default withOffTabIndexCtx(withCtxMusicPlayer(Videos));
+export default withOffTabIndexCtx(Videos);
 

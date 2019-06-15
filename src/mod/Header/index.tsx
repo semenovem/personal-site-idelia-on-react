@@ -3,7 +3,7 @@ import CmpBtnHamMenu, { IProps as IBtnHamMenuProps } from 'cmp/BtnHamMenu';
 import CmpNavMenu, { IProps as INavMenuProps } from 'mod/NavMenu';
 import {ROUTES} from 'types/routes';
 import { withOffTabIndexCtx } from 'ctx/OffTabIndex';
-import Background from './Background';
+import Bg from './Background';
 
 import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
@@ -55,7 +55,7 @@ class Header extends React.Component<IOwnProps> {
 
     return (
       <div id={ROUTES.HEADER.HTML_ID} className={css.header}>
-        <Background className={css.cover}>
+        <Bg className={css.cover}>
           <div className={css.sticky}>
 
             <BtnHamMenu
@@ -65,7 +65,7 @@ class Header extends React.Component<IOwnProps> {
 
             <div className={css.titleSite} ref={this.refTitle} />
           </div>
-        </Background>
+        </Bg>
 
         <NavMenu onSelect={noop} />
       </div>

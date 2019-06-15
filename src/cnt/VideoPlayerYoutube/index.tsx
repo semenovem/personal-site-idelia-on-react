@@ -1,13 +1,14 @@
 import React from 'react';
 import cn from 'classnames';
 
+import { withCtxMusicPlayer, IMusicPlayerProps } from 'ctx/MusicPlayer';
+
 import css from './style.module.css';
 
 interface IOwnProps {
   className?: string;
   urlCover?: string;
   active?: boolean;
-  isPlayed?: boolean;
   isPause?: boolean;
   offTabIndex?: boolean;
   htmlId: string;
@@ -26,7 +27,9 @@ interface IOwnProps {
   src: string;
 }
 
-class VideoPlayerYoutube extends React.Component<IOwnProps> {
+type Props = IOwnProps & IMusicPlayerProps;
+
+class VideoPlayerYoutube extends React.Component<Props> {
   static isLoadedScriptApi: Promise<void>;
 
   /**
@@ -64,7 +67,7 @@ class VideoPlayerYoutube extends React.Component<IOwnProps> {
 
   player: any;
 
-  constructor(props: IOwnProps) {
+  constructor(props: Props) {
     super(props);
     VideoPlayerYoutube.loadScriptApi();
     this.refEl = React.createRef();
@@ -75,9 +78,9 @@ class VideoPlayerYoutube extends React.Component<IOwnProps> {
    VideoPlayerYoutube.isLoadedScriptApi.then(this.createPlayer);
   }
 
-  public componentDidUpdate(prevProps: Readonly<IOwnProps>): void {
-    const { isPause } = this.props;
-    if (isPause !== prevProps.isPause && isPause && this.player && this.player.pauseVideo) {
+  public componentDidUpdate(prevProps: Props): void {
+    const { musicPlayer: { isPlay } } = this.props;
+    if (isPlay !== prevProps.musicPlayer.isPlay && isPlay && this.player && this.player.pauseVideo) {
 
       this.player.pauseVideo();
     }
@@ -110,8 +113,6 @@ class VideoPlayerYoutube extends React.Component<IOwnProps> {
 
   public render() {
     const { urlCover, className, src, htmlId } = this.props;
-    // const styleBtn = isPlayed ? css.pause : css.play;
-
     const style = {...urlCover && {backgroundImage: urlCover}};
 
     return (
@@ -138,4 +139,4 @@ class VideoPlayerYoutube extends React.Component<IOwnProps> {
   }
 }
 
-export default VideoPlayerYoutube;
+export default withCtxMusicPlayer<IOwnProps>(VideoPlayerYoutube);

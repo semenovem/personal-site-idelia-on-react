@@ -12,10 +12,7 @@ import SplashPagePortal from 'portals/SplashPagePortal';
 
 import {IRouteItem, ROUTES} from "types/routes";
 import OffTabIndexCtx from 'ctx/OffTabIndex';
-import {IMusicPlayerProps, withCtxMusicPlayer} from 'ctx/MusicPlayer';
-import {IWinSizeProps, withCtxWinSize} from 'ctx/WinSize';
-
-type IProps  = IMusicPlayerProps & IWinSizeProps;
+import {musicPlayerControl} from 'ctx/MusicPlayer';
 
 interface IState {
   /**
@@ -24,15 +21,14 @@ interface IState {
   isOpenHamMenu: boolean;
 }
 
-
-class App extends React.Component<IProps, IState> {
+class App extends React.Component<{}, IState> {
   public state = {
     isOpenHamMenu: false,
   };
 
   private splashPages: IRouteItem[] = [];
 
-  constructor(props: IProps) {
+  constructor(props: {}) {
     super(props);
     window.addEventListener('hashchange', this.handleHashChange);
     window.addEventListener('keydown', this.handleKey);
@@ -57,7 +53,7 @@ class App extends React.Component<IProps, IState> {
         return;
       }
 
-      this.props.musicPlayer.pause();
+      musicPlayerControl.pause();
     }
 
     if (e.code === 'Space') {
@@ -75,7 +71,6 @@ class App extends React.Component<IProps, IState> {
 
   private handleOpenHamMenu = () => this.setState({isOpenHamMenu: true,});
   private handleCloseHamMenu = () => this.setState({isOpenHamMenu: false,});
-
 
   private handleHashChange = () => {
     const hash = window.location.hash || ROUTES.HEADER.HASH;
@@ -113,7 +108,6 @@ class App extends React.Component<IProps, IState> {
     }
   };
 
-
   /**
    * Render splash screen pages
    */
@@ -129,8 +123,6 @@ class App extends React.Component<IProps, IState> {
 
     return null;
   }
-
-
 
   public render() {
     const {isOpenHamMenu} = this.state;
@@ -163,6 +155,6 @@ class App extends React.Component<IProps, IState> {
   }
 }
 
-export default withCtxWinSize(withCtxMusicPlayer(App));
+export default App;
 
 function noop() {}
