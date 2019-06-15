@@ -17,7 +17,9 @@ interface IOwnProps extends IOffTabIndex {
 
 
 class Gallery extends React.Component<IOwnProps> {
-  private handleClick = (id: string) => {
+  private handleClick = (id: string, elem: HTMLElement) => {
+
+    console.log(elem);
   };
 
 

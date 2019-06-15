@@ -1,13 +1,13 @@
 import React from 'react';
 import cn from 'classnames';
 
-import Items from './Items';
+import Items, { onClickProp } from './Items';
 
 import css from './style.module.css';
 
 interface Props {
   className?: string;
-  onClickItem(id: string): void;
+  onClickItem?: onClickProp;
   nameDataAttr: string;
 
   onTabIndex?: boolean;

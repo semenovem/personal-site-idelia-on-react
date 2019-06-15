@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 
 import {ROUTES, IRouteItem} from 'types/routes';
-import { findValueByElemAttr } from 'utils/dom/findValueByElemAttr';
+import { findValueByAttr } from 'utils/dom/findValueByAttr';
 
 import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
@@ -37,7 +37,7 @@ class HamMenu extends React.Component<IProps> {
   }
 
   private handleSelect = (event: React.MouseEvent) => {
-    const id = findValueByElemAttr(event.target as HTMLElement, event.currentTarget as HTMLElement, 'data-id');
+    const id = findValueByAttr(event.target as HTMLElement, event.currentTarget as HTMLElement, 'data-id');
 
     if (!id) {
       return;
