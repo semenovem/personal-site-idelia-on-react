@@ -1,10 +1,13 @@
 import React from 'react';
+import cn from 'classnames';
+
 import CmpBtnHamMenu, { IProps as IBtnHamMenuProps } from 'cmp/BtnHamMenu';
 import CmpNavMenu, { IProps as INavMenuProps } from 'mod/NavMenu';
 import {ROUTES} from 'types/routes';
 import { withOffTabIndexCtx } from 'ctx/OffTabIndex';
 import Bg from './Background';
 
+import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
 
@@ -55,7 +58,8 @@ class Header extends React.Component<IOwnProps> {
 
     return (
       <div id={ROUTES.HEADER.HTML_ID} className={css.header}>
-        <Bg className={css.cover}>
+        <div className={css.cover}>
+          <Bg className={css.bg}/>
           <div className={css.sticky}>
 
             <BtnHamMenu
@@ -63,9 +67,12 @@ class Header extends React.Component<IOwnProps> {
               onOpen={onActOpenHamMenu}
             />
 
-            <div className={css.titleSite} ref={this.refTitle} />
+            <div className={cn(css.titleSite, cssTypography.modHeaderTitleMob)} ref={this.refTitle} >
+              <div>IDELIA</div>
+              <div>MARS</div>
+            </div>
           </div>
-        </Bg>
+        </div>
 
         <NavMenu onSelect={noop} />
       </div>

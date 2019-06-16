@@ -99,7 +99,7 @@
 
 /* xl */
 @media (min-width: 1200px) {
-  .music {
+  .bg {
     background-image: url(assets/bg_xl_blur.jpg);
   }
 }
