@@ -38,6 +38,13 @@
   },
   "devDependencies": {
     "@types/classnames": "^2.2.7",
+    "colors": "^1.3.3",
+    "husky": "^2.4.1",
     "react-snap": "^1.23.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "node dev_scripts/git_hooks/prePush.js"
+    }
   }
 }

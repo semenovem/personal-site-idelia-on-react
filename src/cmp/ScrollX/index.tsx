@@ -1,42 +1,94 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { findValueByElemAttr } from "utils/dom";
+import Items from './Items';
 
 import css from './style.module.css';
 
-interface IOwnProps {
+interface Props {
   className?: string;
   onClickItem(id: string): void;
-  nameAttr: string;
+  nameDataAttr: string;
+
+  onTabIndex?: boolean;
 }
 
-class ScrollX extends React.Component<IOwnProps> {
-  private handleClickArrow = (_event: React.MouseEvent<HTMLButtonElement>) => {
-    // console.log('click');
+class ScrollX extends React.Component<Props> {
+  private readonly refItems: React.RefObject<Items>;
+  private readonly refArrowL: React.RefObject<HTMLButtonElement>;
+  private readonly refArrowR: React.RefObject<HTMLButtonElement>;
+
+  private arrows = {
+    l: false,
+    r: false,
   };
 
-  private handleClickItem = (event: React.MouseEvent<HTMLElement>) => {
-    const { nameAttr, onClickItem } = this.props;
-    const value = findValueByElemAttr(event.target as HTMLElement, event.currentTarget, nameAttr);
+  constructor(props: Props) {
+    super(props);
+    this.refItems = React.createRef();
+    this.refArrowL = React.createRef();
+    this.refArrowR = React.createRef();
+  }
 
-    if (value) {
-      onClickItem(value);
+  private setStyleBtn(elem: HTMLButtonElement, isShow: boolean): void {
+    elem.classList[isShow ? 'add' : 'remove'](css.arrowShowUp);
+    elem.disabled = !isShow;
+  }
+
+  private handleClickArrowL = () => {
+    this.refItems.current && this.refItems.current.scrollToNextItemL();
+  };
+
+  private handleClickArrowR = () => {
+    this.refItems.current && this.refItems.current.scrollToNextItemR();
+  };
+
+  private handleScrollingToEdge = (l: boolean, r: boolean) => {
+    const arrows = this.arrows;
+
+    if (arrows.l !== l && this.refArrowL.current) {
+      this.setStyleBtn(this.refArrowL.current, l);
+      arrows.l = l;
+    }
+
+    if (arrows.r !== r && this.refArrowR.current) {
+      this.setStyleBtn(this.refArrowR.current, r);
+      arrows.r = r;
     }
   };
 
   public render() {
-    const { className, children } = this.props;
+    const { className, children, nameDataAttr, onClickItem, onTabIndex } = this.props;
+    const arrows = this.arrows;
 
     return (
       <div className={cn(className, css.scroll)}>
-        <button className={css.arrow} onClick={this.handleClickArrow}/>
+        <button
+          className={cn(css.arrow, arrows.l && css.arrowShowUp)}
+          type="button"
+          disabled={arrows.l}
+          ref={this.refArrowL}
+          {...!onTabIndex && { tabIndex: -1 }}
+          onClick={this.handleClickArrowL}
+        />
 
-        <div className={css.items} onClick={this.handleClickItem}>
+        <Items
+          nameDataAttr={nameDataAttr}
+          onClick={onClickItem}
+          ref={this.refItems}
+          onScrollingToEdge={this.handleScrollingToEdge}
+        >
           {children}
-        </div>
+        </Items>
 
-        <button className={css.arrow} onClick={this.handleClickArrow}/>
+        <button
+          className={cn(css.arrow, arrows.r && css.arrowShowUp)}
+          type="button"
+          disabled={arrows.r}
+          ref={this.refArrowR}
+          {...!onTabIndex && { tabIndex: -1 }}
+          onClick={this.handleClickArrowR}
+        />
       </div>
     );
   }

@@ -17,37 +17,37 @@ interface IOwnProps extends IOffTabIndex {
 
 
 class Gallery extends React.Component<IOwnProps> {
-
   private handleClick = (id: string) => {
-    console.log(id);
   };
 
 
   private renderPhotos() {
-
     return photos.map(it => (
       <img
         key={it.url}
         src={it.url}
         className={css.img}
+        data-id={it.id}
       />
     ));
   }
 
   public render() {
     return (
-      <Bg id={ROUTES.GALLERY.HTML_ID} className={cn(cssMod.modFreePaddingSides, css.gallery)}>
+      <div id={ROUTES.GALLERY.HTML_ID} className={cn(cssMod.modFreePaddingSides, css.gallery)}>
+        <Bg className={css.bg}/>
         <h2 className={cn(cssTypography.modTitle, cssMod.title)}>{ROUTES.GALLERY.TITLE}</h2>
 
         <ScrollX
           className={css.photos}
           onClickItem={this.handleClick}
-          nameAttr='data-id'
+          nameDataAttr='data-id'
+          onTabIndex={!this.props.offTabIndex}
         >
           {this.renderPhotos()}
         </ScrollX>
 
-      </Bg>
+      </div>
     );
   }
 }

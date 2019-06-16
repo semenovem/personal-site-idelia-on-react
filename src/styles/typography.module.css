@@ -20,6 +20,14 @@
   text-decoration: underline;
 }
 
+.modHeaderTitleMob {
+  font-size: var(--font-size-mod-header-title);
+  color: white;
+  letter-spacing: 22px;
+  line-height: 1.3em;
+  font-weight: 300;
+  font-family: 'Fjalla One', sans-serif;
+}
 
 .modTitle, .modTitleVideo {
   color: white;

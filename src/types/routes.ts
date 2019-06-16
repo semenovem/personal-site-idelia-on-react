@@ -103,7 +103,10 @@ ROUTES.ORDER_HAM_MENU.push(
   ROUTES.BIO,
   ROUTES.VIDEOS,
   ROUTES.GALLERY,
+
+  /* TODO to temporarily hide section NEWS, because it work ip progress
   ROUTES.NEWS,
+  */
   ROUTES.CONTACT,
 );
 

@@ -18,13 +18,12 @@ class News extends React.Component<IOwnProps> {
     // const {  } = this.props;
 
     return (
-      <Bg id={ROUTES.NEWS.HTML_ID} className={cn(cssMod.mod, css.news)}>
+      <div id={ROUTES.NEWS.HTML_ID} className={cn(cssMod.mod, css.news)}>
+        <Bg className={css.bg}/>
         <h2 className={cn(cssTypography.modTitle, cssMod.title)}>{ROUTES.NEWS.TITLE}</h2>
+        
 
-
-
-
-      </Bg>
+      </div>
     );
   }
 }

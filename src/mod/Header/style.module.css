@@ -10,15 +10,24 @@
 
   display: flex;
   flex-direction: column;
+  position: relative;
+}
 
+.bg {
   background-image: url(assets/bg_xs_blur.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
 }
 
 .titleSite {
-  background-image: url(assets/title_xs.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -27,7 +36,7 @@
   height: 25vw;
 
   margin-left: var(--indent-l);
-  margin-top: calc(var(--indent-xl) - 5px);
+  margin-top: calc(var(--indent-xl) - 10px);
   margin-bottom: calc(var(--indent-xl) - 5px);
 }
 
@@ -53,7 +62,11 @@
     height: 30vw;
   }
 
-  .cover {
+  .titleSite>* {
+    display: none;
+  }
+
+  .bg {
     background-image: url(assets/bg_md_blur.jpg);
   }
 }

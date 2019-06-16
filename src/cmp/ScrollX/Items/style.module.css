@@ -1,0 +1,7 @@
+.items {
+  overflow-x: auto;
+  display: flex;
+  position: relative;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}

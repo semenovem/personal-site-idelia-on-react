@@ -14,9 +14,29 @@ interface IOwnProps {
 
 export interface IProps extends IOwnProps {}
 
+function NavMenu({className, offTabIndex}: IProps): React.ReactElement {
+  const groups = getGroup(offTabIndex);
+
+  return (
+    <div className={cn(css.navMenu, className)}>
+      <div className={css.content}>
+        {groups.map((its, i) => (
+          <div className={css.contentItem} key={`i${i}`}>
+            {i > 0 && (renderDivider())}
+            <div className={css.row}>
+              {its.map(it => it)}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function getGroup(offTabIndex?: boolean) {
   const styleItem = cssTypography.navMenuItem;
 
+  // TODO to temporarily hide section NEWS `it.ID === 'NEWS'`, because it work ip progress
   return ROUTES.ORDER_NAV_MENU
     .map((it: IRouteItem): React.ReactNode => (
         <a
@@ -24,6 +44,7 @@ function getGroup(offTabIndex?: boolean) {
           className={styleItem}
           key={it.ID}
           { ...offTabIndex && { tabIndex: -1}}
+          { ...it.ID === 'NEWS' && {style: { display: 'none', }}}
         >
           {it.MENU_ITEM_NAME}
         </a>
@@ -44,28 +65,7 @@ function getGroup(offTabIndex?: boolean) {
 
       return acc;
     }, [[]]);
-
 }
-
-const NavMenu: React.FC<IProps> = ({className, offTabIndex}) => {
-  const groups = getGroup(offTabIndex);
-
-
-  return (
-    <div className={cn(css.navMenu, className)}>
-      <div className={css.content}>
-        {groups.map((its, i) => (
-          <div className={css.contentItem} key={`i${i}`}>
-            {i > 0 && (renderDivider())}
-            <div className={css.row}>
-              {its.map(it => it)}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
 
 function renderDivider() {
   return (

@@ -23,38 +23,48 @@ import preview011 from './assets/photos/011_md_preview.jpg';
 
 export const photos: any[] = [
   {
+    id: 1,
     url: preview001,
   },
   {
+    id: 2,
     url: preview002,
   },
   {
+    id: 3,
     url: preview003,
   },
   {
+    id: 4,
     url: preview004,
   },
   {
+    id: 5,
     url: preview005,
   },
   {
+    id: 6,
     url: preview006,
   },
   {
+    id: 7,
     url: preview007,
   },
   {
+    id: 8,
     url: preview008,
   },
   {
+    id: 9,
     url: preview009,
   },
   {
+    id: 10,
     url: preview010,
   },
   {
+    id: 11,
     url: preview011,
   }
-
 ];
 

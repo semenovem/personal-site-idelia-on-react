@@ -1,6 +1,7 @@
 import {IMusicPlayer, Status} from "types/player";
 import React from "react";
 import MusicPlayerCtx from "./MusicPlayerCtx";
+import { addEventListenerPause, addEventListenerPlay, removeEventListenerPause, removeEventListenerPlay} from './control';
 
 type IProps = {}
 
@@ -19,9 +20,17 @@ class MusicPlayerCtxCmp extends React.Component<IProps, IState> {
         pause: this.handlePause,
         change: this.handleChange,
         url: null,
-        isPlay: this.handleIsPlay,
+        isPlay: false,
       }
-    }
+    };
+
+    addEventListenerPlay(this.handlePlay);
+    addEventListenerPause(this.handlePause);
+  }
+
+  public componentWillUnmount(): void {
+    removeEventListenerPlay(this.handlePlay);
+    removeEventListenerPause(this.handlePause);
   }
 
   handlePlay = () => {
@@ -29,6 +38,7 @@ class MusicPlayerCtxCmp extends React.Component<IProps, IState> {
       player: {
         ...this.state.player,
         status: Status.PLAY,
+        isPlay: true,
       }
     });
   };
@@ -38,6 +48,7 @@ class MusicPlayerCtxCmp extends React.Component<IProps, IState> {
       player: {
         ...this.state.player,
         status: Status.PAUSE,
+        isPlay: false,
       }
     });
   };
@@ -48,6 +59,7 @@ class MusicPlayerCtxCmp extends React.Component<IProps, IState> {
         ...this.state.player,
         url,
         status: url ? Status.PLAY : Status.PAUSE,
+        isPlay: !!url,
       }
     });
   };

@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 
 import {ROUTES, IRouteItem} from 'types/routes';
-import { findValueByElemAttr } from 'utils/dom';
+import { findValueByElemAttr } from 'utils/dom/findValueByElemAttr';
 
 import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
