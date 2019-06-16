@@ -63,7 +63,10 @@ class Header extends React.Component<IOwnProps> {
               onOpen={onActOpenHamMenu}
             />
 
-            <div className={css.titleSite} ref={this.refTitle} />
+            <div className={css.titleSite} ref={this.refTitle} >
+              <div>IDELIA</div>
+              <div>MARS</div>
+            </div>
           </div>
         </Bg>
 

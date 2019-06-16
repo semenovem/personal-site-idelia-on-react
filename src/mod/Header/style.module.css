@@ -18,7 +18,7 @@
 }
 
 .titleSite {
-  background-image: url(assets/title_xs.png);
+  /*background-image: url(assets/title_xs.png);*/
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -27,8 +27,17 @@
   height: 25vw;
 
   margin-left: var(--indent-l);
-  margin-top: calc(var(--indent-xl) - 5px);
+  margin-top: calc(var(--indent-xl) - 10px);
   margin-bottom: calc(var(--indent-xl) - 5px);
+
+  color: white;
+  font-size: 48px;
+  letter-spacing: 22px;
+  line-height: 67px;
+
+  font-weight: 200;
+
+  font-family: 'Fjalla One', sans-serif;
 }
 
 .sticky {
@@ -47,7 +56,7 @@
 /* md */
 @media (min-width: 768px) {
   .titleSite {
-    background-image: url(assets/title_md.png);
+    /*background-image: url(assets/title_md.png);*/
 
     width: calc(130px + 33vw);
     height: 30vw;
