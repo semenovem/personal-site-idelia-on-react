@@ -5,7 +5,7 @@ import 'styles/vars_next.css'
 
 import SinglePage from 'pages/SinglePage';
 import BioMob from 'pages/BioMob';
-import HamMenu from 'mod/HamMenu';
+import HamMenu from 'pages/HamMenu';
 import MusicPlayer from 'mod/MusicPlayer';
 import Portal from 'portals/Portal';
 import SplashPagePortal from 'portals/SplashPagePortal';
