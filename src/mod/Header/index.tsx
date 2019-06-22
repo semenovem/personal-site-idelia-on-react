@@ -2,29 +2,26 @@ import React from 'react';
 import cn from 'classnames';
 
 import CmpBtnHamMenu, { IProps as IBtnHamMenuProps } from 'cmp/BtnHamMenu';
-import CmpNavMenu, { IProps as INavMenuProps } from 'mod/NavMenu';
+import CmpNavMenu, { IProps as INavMenuProps } from 'cnt/NavMenu';
 import {ROUTES} from 'types/routes';
-import { withOffTabIndexCtx } from 'ctx/OffTabIndex';
+import { withUserInteraction } from 'ctx/PageMgr';
+import { PageMgr } from 'ctx/PageMgr';
 import Bg from './Background';
 
 import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
 
-interface IOwnProps {
-  onActOpenHamMenu: () => void;
-}
+const NavMenu = withUserInteraction<INavMenuProps>(CmpNavMenu);
+const BtnHamMenu = withUserInteraction<IBtnHamMenuProps>(CmpBtnHamMenu);
 
-const NavMenu = withOffTabIndexCtx<INavMenuProps>(CmpNavMenu);
-const BtnHamMenu = withOffTabIndexCtx<IBtnHamMenuProps>(CmpBtnHamMenu);
-
-class Header extends React.Component<IOwnProps> {
+class Header extends React.Component<{}> {
   private readonly refTitle: React.RefObject<HTMLDivElement>;
   private opacity = 1;
   private prevScroll = 0;
   private scrollStep = 15;
 
-  constructor(props: IOwnProps) {
+  constructor(props: {}) {
     super(props);
     this.refTitle = React.createRef();
 
@@ -53,9 +50,11 @@ class Header extends React.Component<IOwnProps> {
     }
   };
 
-  public render() {
-    const {onActOpenHamMenu} = this.props;
+  private handleOpenHamMenu = () => {
+    PageMgr.open(PageMgr.Page.HAM_MENU);
+  };
 
+  public render() {
     return (
       <div id={ROUTES.HEADER.HTML_ID} className={css.header}>
         <div className={css.cover}>
@@ -64,7 +63,7 @@ class Header extends React.Component<IOwnProps> {
 
             <BtnHamMenu
               className={cssMod.btnHamMenu}
-              onOpen={onActOpenHamMenu}
+              onOpen={this.handleOpenHamMenu}
             />
 
             <div className={cn(css.titleSite, cssTypography.modHeaderTitleMob)} ref={this.refTitle} >

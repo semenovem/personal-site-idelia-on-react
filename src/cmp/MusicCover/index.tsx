@@ -9,7 +9,7 @@ interface IOwnProps {
   active?: boolean;
   isPlayed?: boolean;
   id: string;
-  offTabIndex?: boolean;
+  hasUserInteraction?: boolean;
   onPlayerControl:(id: string) => void;
 }
 
@@ -47,7 +47,7 @@ class MusicCover extends React.Component<IOwnProps> {
   private clearTimer = () => this.timer && clearTimeout(this.timer);
 
   render() {
-    const { urlCover, className, isPlayed, active, offTabIndex } = this.props;
+    const { urlCover, className, isPlayed, active, hasUserInteraction } = this.props;
     const styleBtn = isPlayed ? css.pause : css.play;
 
     return (
@@ -60,7 +60,7 @@ class MusicCover extends React.Component<IOwnProps> {
         <button
           className={cn(css.btn, styleBtn)}
           onClick={this.handleBtnClick}
-          {...offTabIndex && { tabIndex: -1 }}
+          {...!hasUserInteraction && { tabIndex: -1 }}
         />
       </div>
     );

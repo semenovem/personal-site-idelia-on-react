@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 import {ROUTES} from 'types/routes';
 import MusicCover from 'cmp/MusicCover';
-import {IOffTabIndex, withOffTabIndexCtx} from 'ctx/OffTabIndex';
+import { withUserInteraction, PageMgrUserInteractionProps } from 'ctx/PageMgr';
 import {IMusicPlayerProps, withCtxMusicPlayer} from 'ctx/MusicPlayer';
 import {Status} from 'types/player';
 import Bg from './Background';
@@ -19,7 +19,7 @@ import css from './style.module.css';
 
 interface IOwnProps {}
 
-interface IProps extends IOwnProps, IOffTabIndex, IMusicPlayerProps {}
+interface IProps extends IOwnProps, PageMgrUserInteractionProps, IMusicPlayerProps {}
 
 interface IState {
   playedSongId: string | null;
@@ -31,9 +31,9 @@ class Music extends React.Component<IProps, IState> {
   };
 
   public shouldComponentUpdate(nextProps: IProps, nextState: IState) {
-    const { offTabIndex, musicPlayer } = this.props;
+    const { hasUserInteraction, musicPlayer } = this.props;
     const { playedSongId } = this.state;
-    return nextProps.offTabIndex !== offTabIndex || nextState.playedSongId !== playedSongId || musicPlayer.status !== nextProps.musicPlayer.status;
+    return nextProps.hasUserInteraction !== hasUserInteraction || nextState.playedSongId !== playedSongId || musicPlayer.status !== nextProps.musicPlayer.status;
   }
 
   private handlePlayerControl = (id: string) => {
@@ -55,7 +55,7 @@ class Music extends React.Component<IProps, IState> {
   };
 
   private renderSong(song: ISong) {
-    const { offTabIndex, musicPlayer: { status } } = this.props;
+    const { hasUserInteraction, musicPlayer: { status } } = this.props;
     const { playedSongId } = this.state;
     const isPlayed = status === Status.PLAY && song.id === playedSongId;
 
@@ -67,7 +67,7 @@ class Music extends React.Component<IProps, IState> {
           onPlayerControl={this.handlePlayerControl}
           id={song.id}
           isPlayed={isPlayed}
-          offTabIndex={offTabIndex}
+          hasUserInteraction={hasUserInteraction}
         />
 
         <div className={css.buy}>
@@ -77,7 +77,7 @@ class Music extends React.Component<IProps, IState> {
             rel="noopener noreferrer"
             className={css.store}
             style={{ backgroundImage: `url(${itunes})`}}
-            {...offTabIndex && { tabIndex: -1 }}
+            {...!hasUserInteraction && { tabIndex: -1 }}
           > </a>
           <a
             href={song.spotify}
@@ -85,7 +85,7 @@ class Music extends React.Component<IProps, IState> {
             rel="noopener noreferrer"
             className={css.store}
             style={{ backgroundImage: `url(${spotify})`}}
-            {...offTabIndex && { tabIndex: -1 }}
+            {...!hasUserInteraction && { tabIndex: -1 }}
           > </a>
         </div>
       </div>
@@ -106,4 +106,4 @@ class Music extends React.Component<IProps, IState> {
   }
 }
 
-export default withCtxMusicPlayer(withOffTabIndexCtx(Music));
+export default withCtxMusicPlayer(withUserInteraction(Music));

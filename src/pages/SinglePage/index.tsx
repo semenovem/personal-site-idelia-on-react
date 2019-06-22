@@ -8,28 +8,42 @@ import Bio from 'mod/Bio';
 import Contact from 'mod/Contact';
 import News from 'mod/News';
 import Footer from 'mod/Footer';
+import {withCtxPageMgr, Page} from "ctx/PageMgr";
+import {ROUTES} from "types/routes";
 
 import css from './style.module.css';
 
-interface IOwnProps {
-  onOpenHamMenu: () => void;
-}
+const routes = [ROUTES.HEADER, ROUTES.MUSIC, ROUTES.BIO, ROUTES.VIDEOS, ROUTES.GALLERY, ROUTES.NEWS, ROUTES.CONTACT];
 
-type IProps = IOwnProps
+class SinglePage extends React.Component<{}> {
+  constructor(props: {}) {
+    super(props);
+    window.addEventListener('hashchange', this.handleHashChange);
+  }
 
-class SinglePage extends React.Component<IProps> {
-  state = {
-    isOpenHamMenu: false,
+  public componentWillUnmount() {
+    window.removeEventListener('hashchange', this.handleHashChange);
+  }
+
+  private handleHashChange = () => {
+    const hash = window.location.hash || ROUTES.HEADER.HASH;
+    const routeItem = routes.find(it => it.HASH === hash);
+
+    if (!routeItem) {
+      return;
+    }
+
+    const el = document.getElementById(routeItem.HTML_ID);
+
+    if (el) {
+      el.scrollIntoView({behavior: 'smooth'});
+    }
   };
 
   public render() {
-    const { onOpenHamMenu } = this.props;
-
     return (
       <>
-        <Header
-          onActOpenHamMenu={onOpenHamMenu}
-        />
+        <Header />
         <main>
           <Music />
           <div className={css.optimize}>
@@ -47,4 +61,4 @@ class SinglePage extends React.Component<IProps> {
   }
 }
 
-export default SinglePage;
+export default withCtxPageMgr<{}>(Page.SINGLE, SinglePage);

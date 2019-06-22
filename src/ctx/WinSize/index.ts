@@ -1,10 +1,5 @@
-import WinSizeCtxCmp from './WinSizeCtxCmp';
-import withCtxWinSize from './withCtxWinSize';
+export { default as WinSizeCtxCmp } from './WinSizeCtxCmp';
+export { default as withCtxWinSize } from './withCtxWinSize';
 
 export * from './types';
 export { howRelevant, canBeUsed } from './utils';
-
-export {
-  WinSizeCtxCmp,
-  withCtxWinSize,
-}

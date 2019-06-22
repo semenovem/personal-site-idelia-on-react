@@ -10,7 +10,7 @@ interface Props {
   onClickItem?: onClickProp;
   nameDataAttr: string;
 
-  onTabIndex?: boolean;
+  hasUserInteraction?: boolean;
 }
 
 class ScrollX extends React.Component<Props> {
@@ -58,7 +58,7 @@ class ScrollX extends React.Component<Props> {
   };
 
   public render() {
-    const { className, children, nameDataAttr, onClickItem, onTabIndex } = this.props;
+    const { className, children, nameDataAttr, onClickItem, hasUserInteraction } = this.props;
     const arrows = this.arrows;
 
     return (
@@ -68,7 +68,7 @@ class ScrollX extends React.Component<Props> {
           type="button"
           disabled={arrows.l}
           ref={this.refArrowL}
-          {...!onTabIndex && { tabIndex: -1 }}
+          {...!hasUserInteraction && { tabIndex: -1 }}
           onClick={this.handleClickArrowL}
         />
 
@@ -86,7 +86,7 @@ class ScrollX extends React.Component<Props> {
           type="button"
           disabled={arrows.r}
           ref={this.refArrowR}
-          {...!onTabIndex && { tabIndex: -1 }}
+          {...!hasUserInteraction && { tabIndex: -1 }}
           onClick={this.handleClickArrowR}
         />
       </div>

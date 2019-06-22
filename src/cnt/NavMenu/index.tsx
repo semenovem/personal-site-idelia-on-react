@@ -9,13 +9,13 @@ import css from './style.module.css';
 interface IOwnProps {
   className?: string;
   onSelect: () => void;
-  offTabIndex?: boolean;
+  hasUserInteraction?: boolean;
 }
 
 export interface IProps extends IOwnProps {}
 
-function NavMenu({className, offTabIndex}: IProps): React.ReactElement {
-  const groups = getGroup(offTabIndex);
+function NavMenu({className, hasUserInteraction}: IProps): React.ReactElement {
+  const groups = getGroup(hasUserInteraction);
 
   return (
     <div className={cn(css.navMenu, className)}>
@@ -33,7 +33,7 @@ function NavMenu({className, offTabIndex}: IProps): React.ReactElement {
   );
 }
 
-function getGroup(offTabIndex?: boolean) {
+function getGroup(hasUserInteraction?: boolean) {
   const styleItem = cssTypography.navMenuItem;
 
   // TODO to temporarily hide section NEWS `it.ID === 'NEWS'`, because it work ip progress
@@ -43,7 +43,7 @@ function getGroup(offTabIndex?: boolean) {
           href={it.HASH}
           className={styleItem}
           key={it.ID}
-          { ...offTabIndex && { tabIndex: -1}}
+          { ...!hasUserInteraction && { tabIndex: -1}}
           { ...it.ID === 'NEWS' && {style: { display: 'none', }}}
         >
           {it.MENU_ITEM_NAME}

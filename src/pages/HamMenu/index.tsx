@@ -1,41 +1,21 @@
 import React from 'react';
 import cn from 'classnames';
 
-import {ROUTES, IRouteItem} from 'types/routes';
+import {ROUTES} from 'types/routes';
 import { findValueByAttr } from 'utils/dom/findValueByAttr';
 
 import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
-import {IBodyScrollProps, withCtxBodyScroll} from "ctx/BodyScroll";
-
+import {withCtxPageMgr, Page, PageMgrProps, PageMgr} from "ctx/PageMgr";
 
 interface IOwnProps {
-  isShow: boolean;
   className?: string;
-  onClose: () => void;
-  onSelect: (id: IRouteItem['ID']) => void;
 }
 
-type IProps = IOwnProps & IBodyScrollProps
+type IProps = IOwnProps & PageMgrProps;
 
 class HamMenu extends React.Component<IProps> {
-  constructor(props: IProps) {
-    super(props);
-
-    if (props.isShow) {
-      props.bodyScroll.off();
-    }
-  }
-
-  public componentDidUpdate(prevProps: Readonly<IOwnProps & IBodyScrollProps>): void {
-    const {isShow, bodyScroll} = this.props;
-
-    if (prevProps.isShow !== isShow) {
-      isShow ? bodyScroll.off() : bodyScroll.on();
-    }
-  }
-
   private handleSelect = (event: React.MouseEvent) => {
     const id = findValueByAttr(event.target as HTMLElement, event.currentTarget as HTMLElement, 'data-id');
 
@@ -43,7 +23,11 @@ class HamMenu extends React.Component<IProps> {
       return;
     }
 
-    this.props.onSelect(id);
+    this.handleClose();
+  };
+
+  private handleClose = () => {
+    PageMgr.close(PageMgr.Page.HAM_MENU);
   };
 
   private renderItems() {
@@ -65,11 +49,11 @@ class HamMenu extends React.Component<IProps> {
   }
 
   public render() {
-    const {className, isShow, onClose} = this.props;
+    const {className, pageMgr: {hasUserInteraction}} = this.props;
 
     return (
-      <div className={cn(css.hamMenu, className, isShow && css.visible)}>
-        <button className={cn(cssMod.btnCloseHamMenu, css.btnClose)} onClick={onClose}/>
+      <div className={cn(css.hamMenu, className, hasUserInteraction && css.visible)}>
+        <button className={cn(cssMod.btnCloseHamMenu, css.btnClose)} onClick={this.handleClose}/>
 
         <nav className={cn(css.items)} onClick={this.handleSelect}>
           {this.renderItems()}
@@ -79,4 +63,4 @@ class HamMenu extends React.Component<IProps> {
   }
 }
 
-export default withCtxBodyScroll<IOwnProps>(HamMenu);
+export default withCtxPageMgr<IOwnProps>(Page.HAM_MENU, HamMenu);

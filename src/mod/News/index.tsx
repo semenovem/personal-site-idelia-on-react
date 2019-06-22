@@ -2,14 +2,14 @@ import React from 'react';
 import cn from 'classnames';
 
 import {ROUTES} from 'types/routes';
-import { withOffTabIndexCtx, IOffTabIndex} from 'ctx/OffTabIndex';
+import { withUserInteraction, PageMgrUserInteractionProps } from 'ctx/PageMgr';
 import Bg from './Background';
 
 import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
 
-interface IOwnProps extends IOffTabIndex {
+interface IOwnProps extends PageMgrUserInteractionProps {
 }
 
 class News extends React.Component<IOwnProps> {
@@ -28,4 +28,4 @@ class News extends React.Component<IOwnProps> {
   }
 }
 
-export default withOffTabIndexCtx(News);
+export default withUserInteraction(News);

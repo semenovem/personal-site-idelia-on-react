@@ -62,12 +62,9 @@ class WinSizeCtxCmp extends React.Component<IProps, IState> {
   };
 
   render() {
-    const { children } = this.props;
-    const {winSize } = this.state;
-
     return (
-      <WinSizeCtx.Provider value={winSize}>
-        {children}
+      <WinSizeCtx.Provider value={this.state.winSize}>
+        {this.props.children}
       </WinSizeCtx.Provider>
     );
   }
