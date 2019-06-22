@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 
 import {ROUTES} from 'types/routes';
-import {IOffTabIndex, withOffTabIndexCtx} from 'ctx/OffTabIndex';
+import { withUserInteraction, PageMgrUserInteractionProps } from 'ctx/PageMgr';
 
 import Bg from './Background';
 
@@ -16,7 +16,7 @@ interface IOwnProps {
   className?: string;
 }
 
-type IProps = IOwnProps & IOffTabIndex;
+type IProps = IOwnProps & PageMgrUserInteractionProps;
 
 interface IState {
   shownAdditionalText: boolean;
@@ -37,7 +37,7 @@ class Bio extends React.Component<IProps, IState> {
   };
 
   public render() {
-    const {className, offTabIndex } = this.props;
+    const {className, hasUserInteraction } = this.props;
     const {shownAdditionalText: shown} = this.state;
 
     return (
@@ -121,7 +121,7 @@ class Bio extends React.Component<IProps, IState> {
           <button
             className={cn(cssCommon.btnGrape, cssTypography.btnOrange, css.readMore)}
             onClick={this.handleReadMore}
-            {...offTabIndex && {tabIndex:-1}}
+            {...!hasUserInteraction && {tabIndex:-1}}
           >
             {shown ? 'Collapse' : 'Read more' }
           </button>
@@ -132,6 +132,6 @@ class Bio extends React.Component<IProps, IState> {
   }
 }
 
-export default withOffTabIndexCtx(Bio);
+export default withUserInteraction(Bio);
 
 

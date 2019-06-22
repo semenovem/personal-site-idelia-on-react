@@ -1,10 +1,5 @@
-import CountdownCtxCmp from './CountdownCtxCmp';
-import withCtxCountdown from './withCtxCountdown';
+export { default as CountdownCtxCmp } from './CountdownCtxCmp';
+export { default as withCtxCountdown } from './withCtxCountdown';
 
 export * from './types';
 export { howRelevant } from './utils';
-
-export {
-  CountdownCtxCmp,
-  withCtxCountdown,
-}

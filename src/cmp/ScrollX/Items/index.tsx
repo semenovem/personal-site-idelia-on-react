@@ -2,12 +2,12 @@ import React from 'react';
 import cn from 'classnames';
 
 import css from "./style.module.css";
-import {findValueByElemAttr} from "utils/dom/findValueByElemAttr";
+import {findElemByAttr} from "utils/dom/findElemByAttr";
 import {findElemBeyondVisibility, Direction} from "utils/dom/findElemBeyondVisibility";
 
 interface Props {
   className?: string;
-  onClick?(id: string): void;
+  onClick?: onClickProp;
   nameDataAttr: string;
   onScrollingToEdge(l: boolean, r: boolean): void;
 }
@@ -106,16 +106,16 @@ class Items extends React.Component<Props> {
   };
 
   private handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    const {onClick} = this.props;
+    const {onClick, nameDataAttr} = this.props;
 
     if (!onClick) {
       return;
     }
 
-    const value = findValueByElemAttr(event.target as HTMLElement, event.currentTarget, this.props.nameDataAttr);
+    const elem = findElemByAttr(event.target as HTMLElement, event.currentTarget, nameDataAttr);
 
-    if (value) {
-      onClick(value);
+    if (elem) {
+      onClick(elem.getAttribute(nameDataAttr)!, elem);
     }
   };
 
@@ -135,3 +135,5 @@ class Items extends React.Component<Props> {
 }
 
 export default Items;
+
+export type onClickProp = (id: string, elem: HTMLElement) => void;

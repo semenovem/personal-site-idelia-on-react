@@ -1,12 +1,12 @@
-export function findValueByElemAttr (
+export function findElemByAttr (
   elem: HTMLElement | null,
   parent: HTMLElement | null,
   attr: string,
-): string | null {
+): HTMLElement | null {
 
   while (elem && elem !== parent) {
     if (elem.hasAttribute(attr)) {
-      return elem.getAttribute(attr);
+      return elem;
     }
     elem = elem.parentElement;
   }

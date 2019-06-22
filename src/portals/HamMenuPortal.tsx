@@ -5,13 +5,13 @@ type IProps = {
   children: React.ReactChild;
 };
 
-const domNode = document.body;
+const domNode = document.getElementById('ham-menu')!;
 
-const Portal = ({ children }: IProps) => (
+const HamMenuPortal = ({ children }: IProps) => (
   ReactDOM.createPortal(
     children,
     domNode,
   )
 );
 
-export default Portal;
+export default HamMenuPortal;

@@ -4,7 +4,7 @@ import cn from 'classnames';
 import Bg from './Background';
 import {ROUTES} from 'types/routes';
 import VideoPlayerYoutube from 'cnt/VideoPlayerYoutube';
-import { withOffTabIndexCtx, IOffTabIndex } from 'ctx/OffTabIndex';
+import { withUserInteraction, PageMgrUserInteractionProps } from 'ctx/PageMgr';
 import ScrollX from 'cmp/ScrollX';
 import { musicPlayerControl } from 'ctx/MusicPlayer';
 
@@ -15,7 +15,7 @@ import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
 
 interface IOwnProps {}
-type IProps = IOwnProps & IOffTabIndex;
+type IProps = IOwnProps & PageMgrUserInteractionProps;
 type IState = {
   selectedId: number;
 }
@@ -37,6 +37,7 @@ class Videos extends React.Component<IProps, IState> {
   };
 
   private renderItems() {
+    const { hasUserInteraction } = this.props;
     const { selectedId } = this.state;
 
     return videos.map(it => (
@@ -44,7 +45,7 @@ class Videos extends React.Component<IProps, IState> {
         className={cn(css.item, it.id === selectedId && css.selected)}
         key={it.id}
         data-id={it.id}
-        tabIndex={0}
+        {...!hasUserInteraction && { tabIndex: -1}}
       >
         <img src={it.cover} className={css.cover} alt=""/>
         <div className={css.btnPlay}/>
@@ -59,6 +60,7 @@ class Videos extends React.Component<IProps, IState> {
 
 
   render() {
+    const { hasUserInteraction } = this.props;
     const { selectedId } = this.state;
     const video = videos.find(it => it.id === selectedId) || videos[0];
 
@@ -72,6 +74,7 @@ class Videos extends React.Component<IProps, IState> {
           className={css.player}
           src={video.url}
           onPlay={this.handlePlay}
+          hasUserInteraction={hasUserInteraction}
         />
 
         <ScrollX
@@ -86,5 +89,5 @@ class Videos extends React.Component<IProps, IState> {
   }
 }
 
-export default withOffTabIndexCtx(Videos);
+export default withUserInteraction(Videos);
 

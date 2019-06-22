@@ -2,7 +2,7 @@ import React, {ChangeEvent} from 'react';
 import cn from 'classnames';
 
 import {ROUTES} from 'types/routes';
-import { withOffTabIndexCtx, IOffTabIndex} from 'ctx/OffTabIndex';
+import { withUserInteraction, PageMgrUserInteractionProps } from 'ctx/PageMgr';
 import Bg from './Background';
 
 import cssCommon from 'styles/common.module.css';
@@ -10,7 +10,7 @@ import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
 
-interface IOwnProps extends IOffTabIndex {}
+interface IOwnProps extends PageMgrUserInteractionProps {}
 
 
 interface IState {
@@ -37,7 +37,7 @@ class Contact extends React.Component<IOwnProps, IState> {
   };
 
   public render() {
-    const { offTabIndex } = this.props;
+    const { hasUserInteraction } = this.props;
     const { name, email, message, } = this.state;
 
     return (
@@ -54,7 +54,7 @@ class Contact extends React.Component<IOwnProps, IState> {
               value={name}
               placeholder='Name'
               onChange={this.handleChangeName}
-              {...offTabIndex && {tabIndex: -1}}
+              {...!hasUserInteraction && {tabIndex: -1}}
             />
 
             <input
@@ -64,7 +64,7 @@ class Contact extends React.Component<IOwnProps, IState> {
               placeholder='Email ID'
               onChange={this.handleChangeEmail}
               type='email'
-              {...offTabIndex && {tabIndex: -1}}
+              {...!hasUserInteraction && {tabIndex: -1}}
             />
           </div>
 
@@ -75,14 +75,14 @@ class Contact extends React.Component<IOwnProps, IState> {
             placeholder='message'
             onChange={this.handleChangeMessage}
             rows={4}
-            {...offTabIndex && {tabIndex: -1}}
+            {...!hasUserInteraction && {tabIndex: -1}}
           />
 
           <div className={css.sendWrap}>
             <button
               type='submit'
               className={cn(cssCommon.btnGrape, cssTypography.btnOrange, css.send)}
-              {...offTabIndex && {tabIndex: -1}}
+              {...!hasUserInteraction && {tabIndex: -1}}
             >
               Send
             </button>
@@ -93,4 +93,4 @@ class Contact extends React.Component<IOwnProps, IState> {
   }
 }
 
-export default withOffTabIndexCtx(Contact);
+export default withUserInteraction(Contact);

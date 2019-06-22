@@ -6,14 +6,14 @@ import css from './style.module.css';
 export interface IProps {
   className?: string;
   onOpen: () => void;
-  offTabIndex?: boolean;
+  hasUserInteraction?: boolean;
 }
 
-const BtnHamMenu: React.FC<IProps> = ({ className, onOpen, offTabIndex }) => (
+const BtnHamMenu: React.FC<IProps> = ({ className, onOpen, hasUserInteraction }) => (
   <button
     className={cn(css.btnHamMenu, className)}
     onClick={onOpen}
-    {...(offTabIndex && { tabIndex: -1 })}
+    {...!hasUserInteraction && { tabIndex: -1 }}
   />
 );
 

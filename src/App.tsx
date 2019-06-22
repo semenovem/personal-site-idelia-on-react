@@ -7,47 +7,27 @@ import SinglePage from 'pages/SinglePage';
 import BioMob from 'pages/BioMob';
 import HamMenu from 'pages/HamMenu';
 import MusicPlayer from 'mod/MusicPlayer';
-import Portal from 'portals/Portal';
+import HamMenuPortal from "portals/HamMenuPortal";
+import MusicPlayerPortal from 'portals/MusicPlayerPortal';
 import SplashPagePortal from 'portals/SplashPagePortal';
 
-import {IRouteItem, ROUTES} from "types/routes";
-import OffTabIndexCtx from 'ctx/OffTabIndex';
+import {IRouteItem} from "types/routes";
 import {musicPlayerControl} from 'ctx/MusicPlayer';
 
-interface IState {
-  /**
-   * menu is open
-   */
-  isOpenHamMenu: boolean;
-}
-
-class App extends React.Component<{}, IState> {
-  public state = {
-    isOpenHamMenu: false,
-  };
-
+class App extends React.Component<{}> {
   private splashPages: IRouteItem[] = [];
 
   constructor(props: {}) {
     super(props);
-    window.addEventListener('hashchange', this.handleHashChange);
     window.addEventListener('keydown', this.handleKey);
   }
 
   public componentWillUnmount() {
-    window.removeEventListener('hashchange', this.handleHashChange);
     window.removeEventListener('keydown', this.handleKey);
   }
 
   private handleKey = (e: KeyboardEvent) => {
-    const {isOpenHamMenu} = this.state;
-
     if (e.code === 'Escape') {
-      if (isOpenHamMenu) {
-        this.handleCloseHamMenu();
-        return;
-      }
-
       if (this.splashPages.length) {
         this.splashPages.pop();
         return;
@@ -69,45 +49,6 @@ class App extends React.Component<{}, IState> {
     }
   };
 
-  private handleOpenHamMenu = () => this.setState({isOpenHamMenu: true,});
-  private handleCloseHamMenu = () => this.setState({isOpenHamMenu: false,});
-
-  private handleHashChange = () => {
-    const hash = window.location.hash || ROUTES.HEADER.HASH;
-    const routeItem = ROUTES.ALL.find(it => it.HASH === hash);
-
-    if (!routeItem) {
-      return;
-    }
-
-    if (routeItem.SINGLE) {
-      const ind = this.splashPages.indexOf(routeItem);
-
-      if (ind > -1) {
-        this.splashPages.length = ind+1;
-      } else {
-        this.splashPages.push(routeItem);
-      }
-
-      this.forceUpdate();
-    } else {
-
-      const el = document.getElementById(routeItem.HTML_ID);
-      if (el) {
-        el.scrollIntoView({behavior: 'smooth'});
-      }
-
-      if (this.splashPages.length) {
-        this.splashPages.length = 0;
-        this.forceUpdate();
-      }
-    }
-
-    if (this.state.isOpenHamMenu) {
-      setTimeout(this.handleCloseHamMenu, 100);
-    }
-  };
-
   /**
    * Render splash screen pages
    */
@@ -125,36 +66,24 @@ class App extends React.Component<{}, IState> {
   }
 
   public render() {
-    const {isOpenHamMenu} = this.state;
     const splashPages = this.renderSplashPages();
-    const offTabIndexSinglePage = isOpenHamMenu || !!splashPages;
 
     return (
       <>
-        <OffTabIndexCtx.Provider value={offTabIndexSinglePage}>
-          <SinglePage
-            onOpenHamMenu={this.handleOpenHamMenu}
-          />
-        </OffTabIndexCtx.Provider>
+        <SinglePage/>
 
         {splashPages}
 
-        <Portal>
-          <HamMenu
-            isShow={isOpenHamMenu}
-            onClose={this.handleCloseHamMenu}
-            onSelect={noop}
-          />
-        </Portal>
+        <HamMenuPortal>
+          <HamMenu />
+        </HamMenuPortal>
 
-        <Portal>
+        <MusicPlayerPortal>
           <MusicPlayer />
-        </Portal>
+        </MusicPlayerPortal>
       </>
     );
   }
 }
 
 export default App;
-
-function noop() {}

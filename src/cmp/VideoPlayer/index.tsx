@@ -8,12 +8,12 @@ interface IOwnProps {
   urlCover: string;
   active?: boolean;
   isPlayed?: boolean;
-  offTabIndex?: boolean;
+  hasUserInteraction?: boolean;
 }
 
 class VideoPlayer extends React.Component<IOwnProps> {
   render() {
-    const { urlCover, className, isPlayed, offTabIndex } = this.props;
+    const { urlCover, className, isPlayed, hasUserInteraction } = this.props;
     const styleBtn = isPlayed ? css.pause : css.play;
 
     return (
@@ -26,7 +26,7 @@ class VideoPlayer extends React.Component<IOwnProps> {
 
         <button
           className={cn(css.btn, styleBtn)}
-          {...offTabIndex && { tabIndex: -1 }}
+          {...!hasUserInteraction && { tabIndex: -1 }}
         />
       </div>
     );

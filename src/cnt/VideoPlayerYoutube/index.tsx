@@ -10,7 +10,7 @@ interface IOwnProps {
   urlCover?: string;
   active?: boolean;
   isPause?: boolean;
-  offTabIndex?: boolean;
+  hasUserInteraction?: boolean;
   htmlId: string;
 
   /**
@@ -111,8 +111,9 @@ class VideoPlayerYoutube extends React.Component<Props> {
   };
 
 
+  // TODO to hide iframe because off tabindex - not right display: none
   public render() {
-    const { urlCover, className, src, htmlId } = this.props;
+    const { urlCover, className, src, htmlId, hasUserInteraction } = this.props;
     const style = {...urlCover && {backgroundImage: urlCover}};
 
     return (
@@ -127,7 +128,7 @@ class VideoPlayerYoutube extends React.Component<Props> {
           title="youtube"
           id={htmlId}
           ref={this.refEl}
-          className={css.iframe}
+          className={cn(css.iframe, !hasUserInteraction && css.hide)}
           src={src}
           frameBorder="0"
           allow="accelerometer; autoplay; encrypted-media; picture-in-picture"

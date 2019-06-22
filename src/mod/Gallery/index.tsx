@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 
 import {ROUTES} from 'types/routes';
-import { withOffTabIndexCtx, IOffTabIndex } from 'ctx/OffTabIndex';
+import { withUserInteraction, PageMgrUserInteractionProps } from 'ctx/PageMgr';
 import ScrollX from 'cmp/ScrollX';
 
 import Bg from './Background';
@@ -12,14 +12,13 @@ import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
 
-interface IOwnProps extends IOffTabIndex {
-}
+type Props = PageMgrUserInteractionProps;
 
+class Gallery extends React.Component<Props> {
+  private handleClick = (id: string, elem: HTMLElement) => {
 
-class Gallery extends React.Component<IOwnProps> {
-  private handleClick = (id: string) => {
+    console.log(elem);
   };
-
 
   private renderPhotos() {
     return photos.map(it => (
@@ -42,7 +41,7 @@ class Gallery extends React.Component<IOwnProps> {
           className={css.photos}
           onClickItem={this.handleClick}
           nameDataAttr='data-id'
-          onTabIndex={!this.props.offTabIndex}
+          hasUserInteraction={this.props.hasUserInteraction}
         >
           {this.renderPhotos()}
         </ScrollX>
@@ -52,4 +51,4 @@ class Gallery extends React.Component<IOwnProps> {
   }
 }
 
-export default withOffTabIndexCtx(Gallery);
+export default withUserInteraction(Gallery);

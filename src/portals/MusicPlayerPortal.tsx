@@ -5,13 +5,13 @@ type IProps = {
   children: React.ReactChild;
 };
 
-const domNode = document.getElementById('splash-pages')!;
+const domNode = document.getElementById('music-player')!;
 
-const SplashPagePortal = ({ children }: IProps) => (
+const MusicPlayerPortal = ({ children }: IProps) => (
   ReactDOM.createPortal(
     children,
     domNode,
   )
 );
 
-export default SplashPagePortal;
+export default MusicPlayerPortal;
