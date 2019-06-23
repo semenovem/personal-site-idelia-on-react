@@ -5,3 +5,10 @@
   padding: 0 var(--indent-s);
   cursor: pointer;
 }
+
+.btnCloseOnAbsolutePosition {
+  position: absolute;
+  top: var(--indent-xl);
+  right: var(--indent-xl);
+}
+

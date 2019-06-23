@@ -1,0 +1,34 @@
+
+.photosViewer {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+
+  top: 0;
+  left: 0;
+}
+
+.bg {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.9;
+}
+
+.showUp {
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-name: anim-show-up;
+  animation-timing-function: ease-out;
+}
+
+
+@keyframes anim-show-up {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+

@@ -21,6 +21,7 @@
 
 .img {
   object-fit: contain;
+  cursor: pointer;
 }
 
 .img:not(:first-child) {

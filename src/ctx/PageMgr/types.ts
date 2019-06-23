@@ -12,11 +12,11 @@ export interface PageMgrValue {
 }
 
 export enum Page {
-  UNKNOWN,
-  SINGLE,
-  HAM_MENU,
-  BIO_MOB,
-  PHOTOS_VIEWER,
+  UNKNOWN = 'UNKNOWN',
+  SINGLE = 'SINGLE',
+  HAM_MENU = 'HAM_MENU',
+  BIO_MOB = 'BIO_MOB',
+  PHOTOS_VIEWER = 'PHOTOS_VIEWER',
 }
 
 export type Handler = (isTop: boolean) => void;

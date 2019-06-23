@@ -4,7 +4,7 @@ export {
   Page,
 }
 
-export type PageMgrProps = PageMgrProps;
+export interface PageMgrProps extends PageMgrProps {}
 export type PageMgrUserInteractionProps = PageMgrUserInteractionProps;
 
 export { default as PageMgr} from './PageMgr';

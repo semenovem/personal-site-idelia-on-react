@@ -2,11 +2,13 @@ import React from 'react';
 import cn from 'classnames';
 
 import {ROUTES} from 'types/routes';
-import { withUserInteraction, PageMgrUserInteractionProps } from 'ctx/PageMgr';
+import {withUserInteraction, PageMgrUserInteractionProps, PageMgr} from 'ctx/PageMgr';
+import Portal from 'portals/PhotosViewer';
 import ScrollX from 'cmp/ScrollX';
 
 import Bg from './Background';
 import { photos } from './photos';
+import PhotosViewer, { setElem } from './PhotosViewer';
 
 import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
@@ -16,8 +18,12 @@ type Props = PageMgrUserInteractionProps;
 
 class Gallery extends React.Component<Props> {
   private handleClick = (id: string, elem: HTMLElement) => {
+    setElem(elem as HTMLImageElement);
+    PageMgr.open(PageMgr.Page.PHOTOS_VIEWER);
+  };
 
-    console.log(elem);
+  private handleClosePhotosViewer = () => {
+    PageMgr.close(PageMgr.Page.PHOTOS_VIEWER);
   };
 
   private renderPhotos() {
@@ -46,6 +52,9 @@ class Gallery extends React.Component<Props> {
           {this.renderPhotos()}
         </ScrollX>
 
+        <Portal>
+          <PhotosViewer onClose={this.handleClosePhotosViewer} />
+        </Portal>
       </div>
     );
   }

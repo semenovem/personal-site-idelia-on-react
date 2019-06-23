@@ -1,0 +1,24 @@
+photoStudio:
+  src:
+    - dir: src/mod/Gallery/assets/photos
+      file: ^.+\.(jpg)|(png)$
+  output:
+    file: jpg
+    infofilename: photosInfo.json
+  resolution:
+    xs:
+      size: 576
+      preview: null 200
+    sm:
+      size: 768
+      preview: null 300
+    md:
+      size: 992
+      preview: null 400
+    lg:
+      size: 1200
+      preview: null 400
+    xl:
+      size: 1400
+      preview: null 400
+
