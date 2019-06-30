@@ -16,11 +16,10 @@
 }
 
 .photos {
-  height: 300px;
+  height: 200px;
 }
 
 .img {
-  object-fit: contain;
   cursor: pointer;
 }
 
@@ -30,17 +29,29 @@
 
 
 /* sm */
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+  .photos {
+    height: 300px;
+  }
+}
 
 
 
 /* md */
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+  .photos {
+    height: 400px;
+  }
+}
 
 
 
 /* lg */
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+  .photos {
+    height: 500px;
+  }
+}
 
 
 
