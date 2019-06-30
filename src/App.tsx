@@ -49,30 +49,14 @@ class App extends React.Component<{}> {
     }
   };
 
-  /**
-   * Render splash screen pages
-   */
-  private renderSplashPages() {
-
-    if (this.splashPages.length) {
-      return (
-        <SplashPagePortal>
-          <BioMob/>
-        </SplashPagePortal>
-      );
-    }
-
-    return null;
-  }
-
   public render() {
-    const splashPages = this.renderSplashPages();
-
     return (
       <>
         <SinglePage/>
 
-        {splashPages}
+        <SplashPagePortal>
+          <BioMob />
+        </SplashPagePortal>
 
         <HamMenuPortal>
           <HamMenu />

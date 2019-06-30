@@ -35,25 +35,8 @@
   animation-timing-function: ease-out;
 }
 
-
-.btnClose {
-  background-image: url(../../assets/icons/x.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-
 .selected {
   color: #666;
-}
-
-
-.showUp {
-  animation-duration: 100ms;
-  animation-fill-mode: forwards;
-  animation-name: anim-show-up;
-  animation-timing-function: ease-out;
 }
 
 @keyframes anim-show-up {

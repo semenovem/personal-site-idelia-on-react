@@ -1,0 +1,103 @@
+
+.photos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.center {
+}
+
+.img {
+  max-height: 100%;
+}
+
+.btnL, .btnR {
+  position: absolute;
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 45%;
+}
+
+.btnL {
+  left: 0;
+}
+
+.btnR {
+  right: 0;
+}
+
+.left, .right {
+  opacity: 0.5;
+  width: 20px;
+
+  display: none;
+}
+
+.imgPreview {}
+
+.left {
+  border: 2px solid red;
+}
+
+.right {
+  border: 2px solid blue;
+}
+
+.arrowL, .arrowR {
+  width: 20px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+}
+
+.arrowL {
+  background-image: url(../../../../assets/icons/arrow_left.svg);
+  margin-left: var(--indent-s);
+  margin-right: var(--indent-l);
+  left: 0;
+}
+
+.arrowR {
+  background-image: url(../../../../assets/icons/arrow_right.svg);
+  margin-left: var(--indent-l);
+  margin-right: var(--indent-s);
+  right: 0;
+}
+
+
+
+/* sm */
+@media (min-width: 576px) {}
+
+
+
+/* md */
+@media (min-width: 768px) {
+  .arrowL, .arrowR {
+    width: 50px;
+    position: initial;
+  }
+}
+
+
+
+/* lg */
+@media (min-width: 992px) {
+
+}
+
+
+
+/* xl */
+@media (min-width: 1200px) {}
+
+

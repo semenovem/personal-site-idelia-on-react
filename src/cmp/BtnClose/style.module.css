@@ -1,0 +1,33 @@
+.btn {
+  background-image: url(../../assets/icons/x.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  width: calc(2vw + 30px);
+  height: calc(2vw + 15px);
+
+  cursor: pointer;
+}
+
+
+/* sm */
+@media (min-width: 576px) {}
+
+
+
+/* md */
+@media (min-width: 768px) {
+  .btn {
+  }
+}
+
+
+
+/* lg */
+@media (min-width: 992px) {}
+
+
+
+/* xl */
+@media (min-width: 1200px) {}

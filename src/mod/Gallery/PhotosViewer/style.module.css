@@ -1,0 +1,50 @@
+
+.photosViewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.bg {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.showUp {
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+  animation-name: anim-show-up;
+  animation-timing-function: ease-out;
+}
+
+.photos {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+
+@keyframes anim-show-up {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
