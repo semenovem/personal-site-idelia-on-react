@@ -348,7 +348,7 @@ export const photos = [
     id: 1,
 
     xs: {
-      url: {
+      main: {
         url: img001Xs,
         width: 576,
         height: 720,
@@ -365,7 +365,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img001Sm,
         width: 768,
         height: 960,
@@ -377,7 +377,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img001Md,
         width: 992,
         height: 1240,
@@ -389,7 +389,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img001Lg,
         width: 1200,
         height: 1500,
@@ -401,7 +401,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img001Xl,
         width: 1400,
         height: 1750,
@@ -412,7 +412,7 @@ export const photos = [
     id: 2,
 
     xs: {
-      url: {
+      main: {
         url: img002Xs,
         width: 576,
         height: 576,
@@ -429,7 +429,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img002Sm,
         width: 768,
         height: 768,
@@ -441,7 +441,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img002Md,
         width: 992,
         height: 992,
@@ -453,7 +453,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img002Lg,
         width: 1200,
         height: 1200,
@@ -465,7 +465,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img002Xl,
         width: 1400,
         height: 1400,
@@ -476,7 +476,7 @@ export const photos = [
     id: 3,
 
     xs: {
-      url: {
+      main: {
         url: img003Xs,
         width: 576,
         height: 576,
@@ -493,7 +493,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img003Sm,
         width: 768,
         height: 768,
@@ -505,7 +505,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img003Md,
         width: 992,
         height: 992,
@@ -517,7 +517,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img003Lg,
         width: 1200,
         height: 1200,
@@ -529,7 +529,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img003Xl,
         width: 1400,
         height: 1400,
@@ -540,7 +540,7 @@ export const photos = [
     id: 4,
 
     xs: {
-      url: {
+      main: {
         url: img004Xs,
         width: 576,
         height: 864,
@@ -557,7 +557,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img004Sm,
         width: 768,
         height: 1152,
@@ -569,7 +569,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img004Md,
         width: 992,
         height: 1488,
@@ -581,7 +581,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img004Lg,
         width: 1200,
         height: 1800,
@@ -593,7 +593,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img004Xl,
         width: 1400,
         height: 2100,
@@ -604,7 +604,7 @@ export const photos = [
     id: 5,
 
     xs: {
-      url: {
+      main: {
         url: img005Xs,
         width: 576,
         height: 864,
@@ -621,7 +621,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img005Sm,
         width: 768,
         height: 1152,
@@ -633,7 +633,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img005Md,
         width: 992,
         height: 1488,
@@ -645,7 +645,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img005Lg,
         width: 1200,
         height: 1800,
@@ -657,7 +657,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img005Xl,
         width: 1400,
         height: 2100,
@@ -668,7 +668,7 @@ export const photos = [
     id: 6,
 
     xs: {
-      url: {
+      main: {
         url: img006Xs,
         width: 576,
         height: 864,
@@ -685,7 +685,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img006Sm,
         width: 768,
         height: 1152,
@@ -697,7 +697,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img006Md,
         width: 992,
         height: 1488,
@@ -709,7 +709,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img006Lg,
         width: 1200,
         height: 1800,
@@ -721,7 +721,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img006Xl,
         width: 1400,
         height: 2100,
@@ -732,7 +732,7 @@ export const photos = [
     id: 7,
 
     xs: {
-      url: {
+      main: {
         url: img007Xs,
         width: 576,
         height: 864,
@@ -749,7 +749,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img007Sm,
         width: 768,
         height: 1152,
@@ -761,7 +761,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img007Md,
         width: 992,
         height: 1488,
@@ -773,7 +773,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img007Lg,
         width: 1200,
         height: 1800,
@@ -785,7 +785,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img007Xl,
         width: 1400,
         height: 2100,
@@ -796,7 +796,7 @@ export const photos = [
     id: 8,
 
     xs: {
-      url: {
+      main: {
         url: img008Xs,
         width: 576,
         height: 864,
@@ -813,7 +813,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img008Sm,
         width: 768,
         height: 1152,
@@ -825,7 +825,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img008Md,
         width: 992,
         height: 1488,
@@ -837,7 +837,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img008Lg,
         width: 1200,
         height: 1800,
@@ -849,7 +849,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img008Xl,
         width: 1400,
         height: 2100,
@@ -860,7 +860,7 @@ export const photos = [
     id: 9,
 
     xs: {
-      url: {
+      main: {
         url: img009Xs,
         width: 576,
         height: 384,
@@ -877,7 +877,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img009Sm,
         width: 768,
         height: 512,
@@ -889,7 +889,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img009Md,
         width: 992,
         height: 661,
@@ -901,7 +901,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img009Lg,
         width: 1200,
         height: 800,
@@ -913,7 +913,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img009Xl,
         width: 1400,
         height: 933,
@@ -924,7 +924,7 @@ export const photos = [
     id: 10,
 
     xs: {
-      url: {
+      main: {
         url: img010Xs,
         width: 576,
         height: 867,
@@ -941,7 +941,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img010Sm,
         width: 768,
         height: 1156,
@@ -953,7 +953,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img010Md,
         width: 992,
         height: 1494,
@@ -965,7 +965,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img010Lg,
         width: 1200,
         height: 1807,
@@ -977,7 +977,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img010Xl,
         width: 1400,
         height: 2108,
@@ -988,7 +988,7 @@ export const photos = [
     id: 11,
 
     xs: {
-      url: {
+      main: {
         url: img011Xs,
         width: 576,
         height: 864,
@@ -1005,7 +1005,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img011Sm,
         width: 768,
         height: 1152,
@@ -1017,7 +1017,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img011Md,
         width: 992,
         height: 1488,
@@ -1029,7 +1029,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img011Lg,
         width: 1200,
         height: 1800,
@@ -1041,7 +1041,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img011Xl,
         width: 1400,
         height: 2100,
@@ -1052,7 +1052,7 @@ export const photos = [
     id: 12,
 
     xs: {
-      url: {
+      main: {
         url: img012Xs,
         width: 576,
         height: 633,
@@ -1069,7 +1069,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img012Sm,
         width: 768,
         height: 844,
@@ -1081,7 +1081,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img012Md,
         width: 992,
         height: 1090,
@@ -1093,7 +1093,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img012Lg,
         width: 1200,
         height: 1318,
@@ -1105,7 +1105,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img012Xl,
         width: 1400,
         height: 1538,
@@ -1116,7 +1116,7 @@ export const photos = [
     id: 13,
 
     xs: {
-      url: {
+      main: {
         url: img013Xs,
         width: 576,
         height: 792,
@@ -1133,7 +1133,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img013Sm,
         width: 768,
         height: 1056,
@@ -1145,7 +1145,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img013Md,
         width: 992,
         height: 1364,
@@ -1157,7 +1157,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img013Lg,
         width: 1200,
         height: 1650,
@@ -1169,7 +1169,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img013Xl,
         width: 1400,
         height: 1926,
@@ -1180,7 +1180,7 @@ export const photos = [
     id: 14,
 
     xs: {
-      url: {
+      main: {
         url: img014Xs,
         width: 576,
         height: 757,
@@ -1197,7 +1197,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img014Sm,
         width: 768,
         height: 1010,
@@ -1209,7 +1209,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img014Md,
         width: 992,
         height: 1304,
@@ -1221,7 +1221,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img014Lg,
         width: 1200,
         height: 1578,
@@ -1233,7 +1233,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img014Xl,
         width: 1400,
         height: 1841,
@@ -1244,7 +1244,7 @@ export const photos = [
     id: 15,
 
     xs: {
-      url: {
+      main: {
         url: img015Xs,
         width: 576,
         height: 367,
@@ -1261,7 +1261,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img015Sm,
         width: 768,
         height: 490,
@@ -1273,7 +1273,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img015Md,
         width: 991,
         height: 632,
@@ -1285,7 +1285,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img015Lg,
         width: 1200,
         height: 765,
@@ -1297,7 +1297,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img015Xl,
         width: 1400,
         height: 893,
@@ -1308,7 +1308,7 @@ export const photos = [
     id: 16,
 
     xs: {
-      url: {
+      main: {
         url: img016Xs,
         width: 576,
         height: 423,
@@ -1325,7 +1325,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img016Sm,
         width: 768,
         height: 564,
@@ -1337,7 +1337,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img016Md,
         width: 992,
         height: 728,
@@ -1349,7 +1349,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img016Lg,
         width: 1200,
         height: 881,
@@ -1361,7 +1361,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img016Xl,
         width: 1400,
         height: 1028,
@@ -1372,7 +1372,7 @@ export const photos = [
     id: 17,
 
     xs: {
-      url: {
+      main: {
         url: img017Xs,
         width: 576,
         height: 384,
@@ -1389,7 +1389,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img017Sm,
         width: 768,
         height: 512,
@@ -1401,7 +1401,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img017Md,
         width: 992,
         height: 661,
@@ -1413,7 +1413,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img017Lg,
         width: 1200,
         height: 800,
@@ -1425,7 +1425,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img017Xl,
         width: 1400,
         height: 933,
@@ -1436,7 +1436,7 @@ export const photos = [
     id: 18,
 
     xs: {
-      url: {
+      main: {
         url: img018Xs,
         width: 576,
         height: 826,
@@ -1453,7 +1453,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img018Sm,
         width: 768,
         height: 1102,
@@ -1465,7 +1465,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img018Md,
         width: 992,
         height: 1423,
@@ -1477,7 +1477,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img018Lg,
         width: 1200,
         height: 1722,
@@ -1489,7 +1489,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img018Xl,
         width: 1400,
         height: 2009,
@@ -1500,7 +1500,7 @@ export const photos = [
     id: 19,
 
     xs: {
-      url: {
+      main: {
         url: img019Xs,
         width: 576,
         height: 867,
@@ -1517,7 +1517,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img019Sm,
         width: 768,
         height: 1157,
@@ -1529,7 +1529,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img019Md,
         width: 992,
         height: 1494,
@@ -1541,7 +1541,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img019Lg,
         width: 1200,
         height: 1807,
@@ -1553,7 +1553,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img019Xl,
         width: 1400,
         height: 2108,
@@ -1564,7 +1564,7 @@ export const photos = [
     id: 20,
 
     xs: {
-      url: {
+      main: {
         url: img020Xs,
         width: 576,
         height: 864,
@@ -1581,7 +1581,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img020Sm,
         width: 768,
         height: 1152,
@@ -1593,7 +1593,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img020Md,
         width: 992,
         height: 1488,
@@ -1605,7 +1605,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img020Lg,
         width: 1200,
         height: 1800,
@@ -1617,7 +1617,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img020Xl,
         width: 1400,
         height: 2101,
@@ -1628,7 +1628,7 @@ export const photos = [
     id: 21,
 
     xs: {
-      url: {
+      main: {
         url: img021Xs,
         width: 576,
         height: 864,
@@ -1645,7 +1645,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img021Sm,
         width: 768,
         height: 1152,
@@ -1657,7 +1657,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img021Md,
         width: 992,
         height: 1488,
@@ -1669,7 +1669,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img021Lg,
         width: 1200,
         height: 1800,
@@ -1681,7 +1681,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img021Xl,
         width: 1400,
         height: 2101,
@@ -1692,7 +1692,7 @@ export const photos = [
     id: 22,
 
     xs: {
-      url: {
+      main: {
         url: img022Xs,
         width: 576,
         height: 625,
@@ -1709,7 +1709,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img022Sm,
         width: 768,
         height: 833,
@@ -1721,7 +1721,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img022Md,
         width: 992,
         height: 1076,
@@ -1733,7 +1733,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img022Lg,
         width: 1200,
         height: 1302,
@@ -1745,7 +1745,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img022Xl,
         width: 1400,
         height: 1519,
@@ -1756,7 +1756,7 @@ export const photos = [
     id: 23,
 
     xs: {
-      url: {
+      main: {
         url: img023Xs,
         width: 576,
         height: 576,
@@ -1773,7 +1773,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img023Sm,
         width: 768,
         height: 768,
@@ -1785,7 +1785,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img023Md,
         width: 992,
         height: 992,
@@ -1797,7 +1797,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img023Lg,
         width: 1200,
         height: 1200,
@@ -1809,7 +1809,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img023Xl,
         width: 1400,
         height: 1400,
@@ -1820,7 +1820,7 @@ export const photos = [
     id: 24,
 
     xs: {
-      url: {
+      main: {
         url: img024Xs,
         width: 576,
         height: 576,
@@ -1837,7 +1837,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img024Sm,
         width: 768,
         height: 768,
@@ -1849,7 +1849,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img024Md,
         width: 992,
         height: 992,
@@ -1861,7 +1861,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img024Lg,
         width: 1200,
         height: 1200,
@@ -1873,7 +1873,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img024Xl,
         width: 1400,
         height: 1401,
@@ -1884,7 +1884,7 @@ export const photos = [
     id: 25,
 
     xs: {
-      url: {
+      main: {
         url: img025Xs,
         width: 576,
         height: 808,
@@ -1901,7 +1901,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img025Sm,
         width: 768,
         height: 1078,
@@ -1913,7 +1913,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img025Md,
         width: 992,
         height: 1392,
@@ -1925,7 +1925,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img025Lg,
         width: 1200,
         height: 1684,
@@ -1937,7 +1937,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img025Xl,
         width: 1400,
         height: 1965,
@@ -1948,7 +1948,7 @@ export const photos = [
     id: 26,
 
     xs: {
-      url: {
+      main: {
         url: img026Xs,
         width: 576,
         height: 825,
@@ -1965,7 +1965,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img026Sm,
         width: 768,
         height: 1099,
@@ -1977,7 +1977,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img026Md,
         width: 992,
         height: 1420,
@@ -1989,7 +1989,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img026Lg,
         width: 1200,
         height: 1718,
@@ -2001,7 +2001,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img026Xl,
         width: 1400,
         height: 2004,
@@ -2012,7 +2012,7 @@ export const photos = [
     id: 27,
 
     xs: {
-      url: {
+      main: {
         url: img027Xs,
         width: 576,
         height: 864,
@@ -2029,7 +2029,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img027Sm,
         width: 768,
         height: 1152,
@@ -2041,7 +2041,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img027Md,
         width: 992,
         height: 1488,
@@ -2053,7 +2053,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img027Lg,
         width: 1200,
         height: 1800,
@@ -2065,7 +2065,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img027Xl,
         width: 1400,
         height: 2100,
@@ -2076,7 +2076,7 @@ export const photos = [
     id: 28,
 
     xs: {
-      url: {
+      main: {
         url: img028Xs,
         width: 576,
         height: 864,
@@ -2093,7 +2093,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img028Sm,
         width: 768,
         height: 1152,
@@ -2105,7 +2105,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img028Md,
         width: 992,
         height: 1488,
@@ -2117,7 +2117,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img028Lg,
         width: 1200,
         height: 1800,
@@ -2129,7 +2129,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img028Xl,
         width: 1400,
         height: 2100,
@@ -2140,7 +2140,7 @@ export const photos = [
     id: 29,
 
     xs: {
-      url: {
+      main: {
         url: img029Xs,
         width: 576,
         height: 864,
@@ -2157,7 +2157,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img029Sm,
         width: 768,
         height: 1152,
@@ -2169,7 +2169,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img029Md,
         width: 992,
         height: 1488,
@@ -2181,7 +2181,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img029Lg,
         width: 1200,
         height: 1800,
@@ -2193,7 +2193,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img029Xl,
         width: 1400,
         height: 2100,
@@ -2204,7 +2204,7 @@ export const photos = [
     id: 30,
 
     xs: {
-      url: {
+      main: {
         url: img030Xs,
         width: 576,
         height: 864,
@@ -2221,7 +2221,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img030Sm,
         width: 768,
         height: 1152,
@@ -2233,7 +2233,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img030Md,
         width: 992,
         height: 1488,
@@ -2245,7 +2245,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img030Lg,
         width: 1200,
         height: 1800,
@@ -2257,7 +2257,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img030Xl,
         width: 1400,
         height: 2100,
@@ -2268,7 +2268,7 @@ export const photos = [
     id: 31,
 
     xs: {
-      url: {
+      main: {
         url: img031Xs,
         width: 576,
         height: 864,
@@ -2285,7 +2285,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img031Sm,
         width: 768,
         height: 1152,
@@ -2297,7 +2297,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img031Md,
         width: 992,
         height: 1488,
@@ -2309,7 +2309,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img031Lg,
         width: 1200,
         height: 1800,
@@ -2321,7 +2321,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img031Xl,
         width: 1400,
         height: 2100,
@@ -2332,7 +2332,7 @@ export const photos = [
     id: 32,
 
     xs: {
-      url: {
+      main: {
         url: img032Xs,
         width: 576,
         height: 360,
@@ -2349,7 +2349,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img032Sm,
         width: 767,
         height: 479,
@@ -2361,7 +2361,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img032Md,
         width: 992,
         height: 619,
@@ -2373,7 +2373,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img032Lg,
         width: 1200,
         height: 749,
@@ -2385,7 +2385,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img032Xl,
         width: 1400,
         height: 874,
@@ -2396,7 +2396,7 @@ export const photos = [
     id: 33,
 
     xs: {
-      url: {
+      main: {
         url: img033Xs,
         width: 576,
         height: 844,
@@ -2413,7 +2413,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img033Sm,
         width: 768,
         height: 1125,
@@ -2425,7 +2425,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img033Md,
         width: 992,
         height: 1453,
@@ -2437,7 +2437,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img033Lg,
         width: 1200,
         height: 1758,
@@ -2449,7 +2449,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img033Xl,
         width: 1400,
         height: 2050,
@@ -2460,7 +2460,7 @@ export const photos = [
     id: 34,
 
     xs: {
-      url: {
+      main: {
         url: img034Xs,
         width: 576,
         height: 864,
@@ -2477,7 +2477,7 @@ export const photos = [
       },
     },
     sm: {
-      url: {
+      main: {
         url: img034Sm,
         width: 768,
         height: 1152,
@@ -2489,7 +2489,7 @@ export const photos = [
       },
     },
     md: {
-      url: {
+      main: {
         url: img034Md,
         width: 992,
         height: 1488,
@@ -2501,7 +2501,7 @@ export const photos = [
       },
     },
     lg: {
-      url: {
+      main: {
         url: img034Lg,
         width: 1200,
         height: 1800,
@@ -2513,7 +2513,7 @@ export const photos = [
       },
     },
     xl: {
-      url: {
+      main: {
         url: img034Xl,
         width: 1400,
         height: 2100,

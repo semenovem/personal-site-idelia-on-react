@@ -76,9 +76,8 @@ function createContentResolution(data, resolution) {
       .filter(kind => data[kind])
       .forEach(kind => {
         const d = data[kind];
-        const propName = kind === 'main' ? 'url' : kind;
 
-        txt += `\n      ${propName}: {`;
+        txt += `\n      ${kind}: {`;
         {
           txt += `\n        url: ${d.variable},`;
           txt += `\n        width: ${d.width},`;

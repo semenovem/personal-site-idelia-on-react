@@ -36,14 +36,15 @@ class PhotosViewer extends React.Component<Props> {
     return (
       <div className={cn(css.photosViewer, css.showUp)}>
         <div className={css.bg} />
+        <div className={css.photos}>
+          <Photos id={storageId || 0} />
+        </div>
 
         <BtnClose
           className={cssCommon.btnCloseOnAbsolutePosition}
           onClose={this.handleClose}
           hasUserInteraction={pageMgr.hasUserInteraction}
         />
-
-        <Photos />
       </div>
     );
   }
@@ -52,8 +53,10 @@ class PhotosViewer extends React.Component<Props> {
 export default withCtxPageMgr<OwnProps>(Page.PHOTOS_VIEWER, PhotosViewer);
 
 
-let elem: HTMLImageElement | null = null;
+let storageElem: HTMLImageElement | null = null;
+let storageId: number | null = null;
 
-export function setElem(el: HTMLImageElement) {
-  elem = el;
+export function setElem(el: HTMLImageElement, id: number) {
+  storageElem = el;
+  storageId = id;
 }

@@ -8,6 +8,7 @@ import Portal from 'portals/PhotosViewer';
 import ScrollX from 'cmp/ScrollX';
 
 import Bg from './Background';
+import {getPhoto} from './getPhoto';
 import { photos } from './importPhotos';
 
 import PhotosViewer, { setElem } from './PhotosViewer';
@@ -20,7 +21,7 @@ type Props = PageMgrUserInteractionProps & IWinSizeProps;
 
 class Gallery extends React.Component<Props> {
   private handleClick = (id: string, elem: HTMLElement) => {
-    setElem(elem as HTMLImageElement);
+    setElem(elem as HTMLImageElement, +id);
     PageMgr.open(PageMgr.Page.PHOTOS_VIEWER);
   };
 
@@ -30,7 +31,7 @@ class Gallery extends React.Component<Props> {
 
   private renderPhotos() {
     return photos.map((it: any) => {
-      const photo = getUrlPhoto(it, this.props.winSize, 'preview');
+      const photo = getPhoto(it, this.props.winSize, 'preview');
 
       return (
         <img
@@ -47,6 +48,8 @@ class Gallery extends React.Component<Props> {
   }
 
   public render() {
+    const props = this.props;
+
     return (
       <div id={ROUTES.GALLERY.HTML_ID} className={cn(cssMod.modFreePaddingSides, css.gallery)}>
         <Bg className={css.bg}/>
@@ -56,13 +59,15 @@ class Gallery extends React.Component<Props> {
           className={css.photos}
           onClickItem={this.handleClick}
           nameDataAttr='data-id'
-          hasUserInteraction={this.props.hasUserInteraction}
+          hasUserInteraction={props.hasUserInteraction}
         >
           {this.renderPhotos()}
         </ScrollX>
 
         <Portal>
-          <PhotosViewer onClose={this.handleClosePhotosViewer} />
+          <PhotosViewer
+            onClose={this.handleClosePhotosViewer}
+          />
         </Portal>
       </div>
     );
@@ -70,35 +75,3 @@ class Gallery extends React.Component<Props> {
 }
 
 export default withCtxWinSize(withUserInteraction(Gallery));
-
-
-/**
- * @param data
- * @param winSize
- * @param kind
- */
-function getUrlPhoto(data: any, winSize: WinSize, kind: string): { url: string; width: number; height: number } {
-  let w: WinSize | null = winSize;
-  let codeWinSize: string;
-
-  while(w !== null) {
-    codeWinSize = getCodeWinSize(w).toLowerCase();
-
-    if (data[codeWinSize] && data[codeWinSize][kind]) {
-      const d = data[codeWinSize][kind];
-
-      return {
-        url: d.url,
-        width: d.width,
-        height: d.height,
-      };
-    }
-    w = getSmaller(w);
-  }
-
-  return {
-    url: '',
-    width: 100,
-    height: 100,
-  };
-}
