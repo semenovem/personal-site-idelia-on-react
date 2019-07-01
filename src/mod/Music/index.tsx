@@ -71,22 +71,28 @@ class Music extends React.Component<IProps, IState> {
         />
 
         <div className={css.buy}>
-          <a
-            href={song.itunes}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={css.store}
-            style={{ backgroundImage: `url(${itunes})`}}
-            {...!hasUserInteraction && { tabIndex: -1 }}
-          > </a>
-          <a
-            href={song.spotify}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={css.store}
-            style={{ backgroundImage: `url(${spotify})`}}
-            {...!hasUserInteraction && { tabIndex: -1 }}
-          > </a>
+          {song.itunes &&
+            <a
+              href={song.itunes}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={css.store}
+              style={{backgroundImage: `url(${itunes})`}}
+              {...!hasUserInteraction && {tabIndex: -1}}
+            > </a>
+          }
+          {song.spotify &&
+            <a
+              href={song.spotify}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={css.store}
+              style={{backgroundImage: `url(${spotify})`}}
+              {...!hasUserInteraction && {tabIndex: -1}}
+            > </a>
+          }
+          {!song.spotify && !song.itunes && <div className={cn(css.store, css.comingSoon)}>Coming soon</div>}
+
         </div>
       </div>
     );

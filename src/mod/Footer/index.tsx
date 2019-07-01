@@ -64,7 +64,7 @@ class Footer extends React.Component<IProps> {
         </div>
 
         <div className={cn(cssTypography.footerCopyright, css.copyright)}>
-          an Eden park design
+          Idelia Mars ®
         </div>
       </>
     );

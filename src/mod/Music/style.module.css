@@ -19,6 +19,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: var(--max-width-limit);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .song:not(:first-child) {
@@ -55,6 +58,13 @@
   background-position: center;
 }
 
+.comingSoon {
+  color: white;
+  font-size: 36px;
+  text-align: center;
+  font-style: italic;
+}
+
 
 
 /* sm */
@@ -72,6 +82,7 @@
   .songs {
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .song:not(:first-child) {
@@ -101,5 +112,9 @@
 @media (min-width: 1200px) {
   .bg {
     background-image: url(assets/bg_xl_blur.jpg);
+  }
+
+  .song {
+    margin: 0 var(--indent-l);
   }
 }
