@@ -1,13 +1,8 @@
 import different from './assets/covers/different.jpg';
 import myVoice from './assets/covers/my_voice.jpg';
-
-// import fff from './assets/songs/tm_5.mp3';
-
-// import fff from '../../../assets/songs/different.mp3';
-
-// import musDifferent from 'assets/songs/tm_5.mp3';
-// import musMyVoice from './assets/songs/tm_7.mp3';
-
+import iWould from './assets/covers/i_would.jpeg';
+import bomb from './assets/covers/bomb.jpeg';
+import iAmYours from './assets/covers/i_am_yours.jpeg';
 
 export interface ISong {
   id: string;
@@ -32,14 +27,38 @@ export const songs = [
     coverUrl: myVoice,
     url: '/songs/my_voice.mp3',
   },
+
+  {
+    id: 'iWould',
+    spotify: '',
+    itunes: '',
+    coverUrl: iWould,
+    url: '/songs/i_would.mp3',
+  },
+
+  {
+    id: 'bomb',
+    spotify: '',
+    itunes: '',
+    coverUrl: bomb,
+    url: '/songs/bomb.mp3',
+  },
+
+  {
+    id: 'i_am_yours',
+    spotify: '',
+    itunes: '',
+    coverUrl: iAmYours,
+    url: '/songs/i_am_yours.mp3',
+  },
+
+
 ];
 
 export function findUrl(id: string | null): string | null {
-
   if (!id) { return null; }
 
   const song = songs.find(it => it.id === id);
 
   return song ? song.url : null;
-
 }

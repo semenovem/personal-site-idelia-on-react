@@ -222,16 +222,6 @@ import img022MdPreview from './assets/photos/022-md-preview.jpg'
 import img022Lg from './assets/photos/022-lg.jpg'
 import img022LgPreview from './assets/photos/022-lg-preview.jpg'
 import img022Xl from './assets/photos/022-xl.jpg'
-import img023Xs from './assets/photos/023-xs.jpg'
-import img023XsBlurred from './assets/photos/023-xs-blurred.jpg'
-import img023XsPreview from './assets/photos/023-xs-preview.jpg'
-import img023Sm from './assets/photos/023-sm.jpg'
-import img023SmPreview from './assets/photos/023-sm-preview.jpg'
-import img023Md from './assets/photos/023-md.jpg'
-import img023MdPreview from './assets/photos/023-md-preview.jpg'
-import img023Lg from './assets/photos/023-lg.jpg'
-import img023LgPreview from './assets/photos/023-lg-preview.jpg'
-import img023Xl from './assets/photos/023-xl.jpg'
 import img024Xs from './assets/photos/024-xs.jpg'
 import img024XsBlurred from './assets/photos/024-xs-blurred.jpg'
 import img024XsPreview from './assets/photos/024-xs-preview.jpg'
@@ -1757,70 +1747,6 @@ export const photos = [
 
     xs: {
       main: {
-        url: img023Xs,
-        width: 576,
-        height: 576,
-      },
-      preview: {
-        url: img023XsPreview,
-        width: 200,
-        height: 200,
-      },
-      blurred: {
-        url: img023XsBlurred,
-        width: 30,
-        height: 30,
-      },
-    },
-    sm: {
-      main: {
-        url: img023Sm,
-        width: 768,
-        height: 768,
-      },
-      preview: {
-        url: img023SmPreview,
-        width: 300,
-        height: 300,
-      },
-    },
-    md: {
-      main: {
-        url: img023Md,
-        width: 992,
-        height: 992,
-      },
-      preview: {
-        url: img023MdPreview,
-        width: 400,
-        height: 400,
-      },
-    },
-    lg: {
-      main: {
-        url: img023Lg,
-        width: 1200,
-        height: 1200,
-      },
-      preview: {
-        url: img023LgPreview,
-        width: 450,
-        height: 450,
-      },
-    },
-    xl: {
-      main: {
-        url: img023Xl,
-        width: 1400,
-        height: 1400,
-      },
-    },
-  },
-  {
-    id: 24,
-
-    xs: {
-      main: {
         url: img024Xs,
         width: 576,
         height: 576,
@@ -1881,7 +1807,7 @@ export const photos = [
     },
   },
   {
-    id: 25,
+    id: 24,
 
     xs: {
       main: {
@@ -1945,7 +1871,7 @@ export const photos = [
     },
   },
   {
-    id: 26,
+    id: 25,
 
     xs: {
       main: {
@@ -2009,7 +1935,7 @@ export const photos = [
     },
   },
   {
-    id: 27,
+    id: 26,
 
     xs: {
       main: {
@@ -2073,7 +1999,7 @@ export const photos = [
     },
   },
   {
-    id: 28,
+    id: 27,
 
     xs: {
       main: {
@@ -2137,7 +2063,7 @@ export const photos = [
     },
   },
   {
-    id: 29,
+    id: 28,
 
     xs: {
       main: {
@@ -2201,7 +2127,7 @@ export const photos = [
     },
   },
   {
-    id: 30,
+    id: 29,
 
     xs: {
       main: {
@@ -2265,7 +2191,7 @@ export const photos = [
     },
   },
   {
-    id: 31,
+    id: 30,
 
     xs: {
       main: {
@@ -2329,7 +2255,7 @@ export const photos = [
     },
   },
   {
-    id: 32,
+    id: 31,
 
     xs: {
       main: {
@@ -2393,7 +2319,7 @@ export const photos = [
     },
   },
   {
-    id: 33,
+    id: 32,
 
     xs: {
       main: {
@@ -2457,7 +2383,7 @@ export const photos = [
     },
   },
   {
-    id: 34,
+    id: 33,
 
     xs: {
       main: {
