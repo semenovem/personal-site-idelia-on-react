@@ -9,6 +9,15 @@ interface State {
 
 class PageMgr extends React.Component<{}, State> {
   public static Page = Page;
+  private static handlerOpen: ((p: Page) => void) | null = null;
+  private static handlerClose: ((p: Page) => void) | null = null;
+
+  public static open(page: Page) {
+    PageMgr.handlerOpen && PageMgr.handlerOpen(page);
+  }
+  public static close(page: Page) {
+    PageMgr.handlerClose && PageMgr.handlerClose(page);
+  }
 
   public constructor(props: {}) {
     super(props);
@@ -24,16 +33,6 @@ class PageMgr extends React.Component<{}, State> {
     PageMgr.handlerClose = this.closePage;
   }
 
-  private static handlerOpen: ((p: Page) => void) | null = null;
-  private static handlerClose: ((p: Page) => void) | null = null;
-
-  public static open(page: Page) {
-    PageMgr.handlerOpen && PageMgr.handlerOpen(page);
-  }
-  public static close(page: Page) {
-    PageMgr.handlerClose && PageMgr.handlerClose(page);
-  }
-
   private openPage = (page: Page): void => {
     const { pageMgr } = this.state;
 
@@ -47,7 +46,7 @@ class PageMgr extends React.Component<{}, State> {
     bodyScroll.off();
   };
 
-  private closePage = (page: Page): void => {
+  private closePage = (): void => {
     const { pageMgr } = this.state;
 
     bodyScroll.on();

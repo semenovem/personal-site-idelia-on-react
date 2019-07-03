@@ -148,6 +148,6 @@ module.exports = {
     'jsx-a11y/media-has-caption': 0,
 
     // FIXME must = 2
-    "jsx-a11y/anchor-has-content": 0,
+    "jsx-a11y/anchor-has-content": 2,
   },
 };

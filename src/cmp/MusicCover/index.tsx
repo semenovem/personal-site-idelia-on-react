@@ -27,7 +27,7 @@ class MusicCover extends React.Component<OwnProps> {
     onPlayerControl(id);
   };
 
-  private handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+  private handleClick = () => {
     if (this.flag) {
       this.flag = false;
       return;
@@ -35,7 +35,7 @@ class MusicCover extends React.Component<OwnProps> {
     this.handleAction();
   };
 
-  private handleBtnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  private handleBtnClick = () => {
     this.flag = true;
     this.clearTimer();
     this.timer = window.setTimeout(this.resetFlag, 20);

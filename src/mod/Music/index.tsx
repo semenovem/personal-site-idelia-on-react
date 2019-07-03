@@ -80,6 +80,7 @@ class Music extends React.Component<Props, State> {
 
         <div className={css.buy}>
           {song.itunes && (
+            // eslint-disable-next-line jsx-a11y/anchor-has-content
             <a
               href={song.itunes}
               target="_blank"
@@ -90,6 +91,7 @@ class Music extends React.Component<Props, State> {
             />
           )}
           {song.spotify && (
+            // eslint-disable-next-line jsx-a11y/anchor-has-content
             <a
               href={song.spotify}
               target="_blank"

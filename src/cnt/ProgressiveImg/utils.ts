@@ -124,7 +124,7 @@ function iterator(st: St, a: any): St {
 /**
  * for LevWin
  */
-function defLevWin(st: St, a: T.LevWin): St {
+export function defLevWin(st: St, a: T.LevWin): St {
   const levPrev = levHowRelevant(st.lev, st.cur.lev);
   const levNext = levHowRelevant(st.lev, a.lev);
 
