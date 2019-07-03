@@ -1,19 +1,20 @@
 import React from 'react';
 import cn from 'classnames';
 
-import {IMusicPlayerProps, withCtxMusicPlayer} from 'ctx/MusicPlayer';
+import { MusicPlayerProps, withCtxMusicPlayer } from 'ctx/MusicPlayer';
 
+import { Status } from 'types/player';
 import css from './style.module.css';
-import {Status} from "types/player";
 
-type IProps = IMusicPlayerProps;
+type Props = MusicPlayerProps;
 
-class Music extends React.Component<IProps> {
+class Music extends React.Component<Props> {
   private refAudio: HTMLAudioElement | null = null;
-  private setRefAudio = (el: HTMLAudioElement) => this.refAudio = el;
 
-  public shouldComponentUpdate({ musicPlayer }: Readonly<IMusicPlayerProps>): boolean {
-    const { musicPlayer: { status, url } } = this.props;
+  public shouldComponentUpdate({ musicPlayer }: Readonly<MusicPlayerProps>): boolean {
+    const {
+      musicPlayer: { status, url },
+    } = this.props;
 
     return status !== musicPlayer.status || url !== musicPlayer.url;
   }
@@ -36,14 +37,14 @@ class Music extends React.Component<IProps> {
     }
   }
 
+  private setRefAudio = (el: HTMLAudioElement) => (this.refAudio = el);
+
   private renderSource(url: string | null) {
     if (!url) {
       return null;
     }
 
-    return (
-      <source src={url} type="audio/mpeg"/>
-    );
+    return <source src={url} type="audio/mpeg" />;
   }
 
   public render() {

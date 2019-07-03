@@ -12,18 +12,18 @@ import iconITunes from 'assets/icons/shops/itunes_white.png';
 import iconYandexMusicMob from 'assets/icons/shops/yandex_music_icon.svg';
 import iconYandexMusic from 'assets/icons/shops/yandex_music_white.svg';
 
-import {SOCIAL} from 'types/social';
+import { SOCIAL } from 'types/social';
 
 import cssTypography from 'styles/typography.module.css';
 import css from './style.module.css';
 
-interface IOwnProps extends PageMgrUserInteractionProps {
-  disableTagFooter?: true,
+interface OwnProps extends PageMgrUserInteractionProps {
+  disableTagFooter?: true;
 }
 
-interface IProps extends IOwnProps {}
+interface Props extends OwnProps {}
 
-class Footer extends React.Component<IProps> {
+class Footer extends React.Component<Props> {
   private renderContentFooter() {
     const { hasUserInteraction } = this.props;
 
@@ -34,7 +34,7 @@ class Footer extends React.Component<IProps> {
             href={SOCIAL.FACEBOOK.URL}
             target="_blank"
             rel="noopener noreferrer"
-            {...!hasUserInteraction && { tabIndex: -1}}
+            {...(!hasUserInteraction && { tabIndex: -1 })}
           >
             <img src={iconFacebook} alt={SOCIAL.FACEBOOK.ALT} />
           </a>
@@ -43,7 +43,7 @@ class Footer extends React.Component<IProps> {
             href={SOCIAL.INSTAGRAM.URL}
             target="_blank"
             rel="noopener noreferrer"
-            {...!hasUserInteraction && { tabIndex: -1}}
+            {...(!hasUserInteraction && { tabIndex: -1 })}
           >
             <img src={iconInstagram} alt={SOCIAL.INSTAGRAM.ALT} />
           </a>
@@ -52,36 +52,34 @@ class Footer extends React.Component<IProps> {
             href={SOCIAL.SPOTIFY.URL}
             target="_blank"
             rel="noopener noreferrer"
-            {...!hasUserInteraction && { tabIndex: -1}}
+            {...(!hasUserInteraction && { tabIndex: -1 })}
           >
-            <img src={iconSpotifyMob} alt={SOCIAL.SPOTIFY.ALT} className={css.logoMob}/>
-            <img src={iconSpotify} alt={SOCIAL.SPOTIFY.ALT} className={css.logoTablet}/>
+            <img src={iconSpotifyMob} alt={SOCIAL.SPOTIFY.ALT} className={css.logoMob} />
+            <img src={iconSpotify} alt={SOCIAL.SPOTIFY.ALT} className={css.logoTablet} />
           </a>
 
           <a
             href={SOCIAL.ITUNES.URL}
             target="_blank"
             rel="noopener noreferrer"
-            {...!hasUserInteraction && { tabIndex: -1}}
+            {...(!hasUserInteraction && { tabIndex: -1 })}
           >
-            <img src={iconITunesMob} alt={SOCIAL.ITUNES.ALT} className={css.logoMob}/>
-            <img src={iconITunes} alt={SOCIAL.ITUNES.ALT} className={css.logoTablet}/>
+            <img src={iconITunesMob} alt={SOCIAL.ITUNES.ALT} className={css.logoMob} />
+            <img src={iconITunes} alt={SOCIAL.ITUNES.ALT} className={css.logoTablet} />
           </a>
 
           <a
             href={SOCIAL.YANDEX_MUSIC.URL}
             target="_blank"
             rel="noopener noreferrer"
-            {...!hasUserInteraction && { tabIndex: -1}}
+            {...(!hasUserInteraction && { tabIndex: -1 })}
           >
             <img src={iconYandexMusicMob} alt={SOCIAL.YANDEX_MUSIC.ALT} className={css.logoMob} />
             <img src={iconYandexMusic} alt={SOCIAL.YANDEX_MUSIC.ALT} className={css.logoTablet} />
           </a>
         </div>
 
-        <div className={cn(cssTypography.footerCopyright, css.copyright)}>
-          Idelia Mars ®
-        </div>
+        <div className={cn(cssTypography.footerCopyright, css.copyright)}>Idelia Mars ®</div>
       </>
     );
   }
@@ -89,10 +87,10 @@ class Footer extends React.Component<IProps> {
   public render() {
     const { disableTagFooter } = this.props;
 
-    return (
-      disableTagFooter
-        ? <div className={css.footer}>{this.renderContentFooter()}</div>
-        : <footer className={css.footer}>{this.renderContentFooter()}</footer>
+    return disableTagFooter ? (
+      <div className={css.footer}>{this.renderContentFooter()}</div>
+    ) : (
+      <footer className={css.footer}>{this.renderContentFooter()}</footer>
     );
   }
 }

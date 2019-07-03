@@ -3,19 +3,15 @@ import cn from 'classnames';
 
 import css from './style.module.css';
 
-
-interface IOwnProps {
+interface OwnProps {
   className: string;
   onBack: () => void;
 }
 
-interface IProps extends IOwnProps {}
+interface Props extends OwnProps {}
 
-const BtnBack: React.FC<IProps> = ({ className, onBack }) => (
-  <button
-    className={cn(css.btn, className)}
-    onClick={onBack}
-  />
+const BtnBack: React.FC<Props> = ({ className, onBack }: Props) => (
+  <button className={cn(css.btn, className)} onClick={onBack} type="button" />
 );
 
 export default BtnBack;

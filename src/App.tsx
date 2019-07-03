@@ -1,23 +1,23 @@
 import React from 'react';
-import 'styles/global.css'
-import 'styles/vars.css'
-import 'styles/vars_next.css'
+import 'styles/global.css';
+import 'styles/vars.css';
+import 'styles/vars_next.css';
 
 import SinglePage from 'pages/SinglePage';
 import BioMob from 'pages/BioMob';
 import HamMenu from 'pages/HamMenu';
 import MusicPlayer from 'mod/MusicPlayer';
-import HamMenuPortal from "portals/HamMenuPortal";
+import HamMenuPortal from 'portals/HamMenuPortal';
 import MusicPlayerPortal from 'portals/MusicPlayerPortal';
 import SplashPagePortal from 'portals/SplashPagePortal';
 
-import {IRouteItem} from "types/routes";
-import {musicPlayerControl} from 'ctx/MusicPlayer';
+import { RouteItem } from 'types/routes';
+import { musicPlayerControl } from 'ctx/MusicPlayer';
 
 class App extends React.Component<{}> {
-  private splashPages: IRouteItem[] = [];
+  private splashPages: RouteItem[] = [];
 
-  constructor(props: {}) {
+  public constructor(props: {}) {
     super(props);
     window.addEventListener('keydown', this.handleKey);
   }
@@ -52,7 +52,7 @@ class App extends React.Component<{}> {
   public render() {
     return (
       <>
-        <SinglePage/>
+        <SinglePage />
 
         <SplashPagePortal>
           <BioMob />

@@ -1,5 +1,5 @@
-import React from "react";
-import WinSizeCtx from "./WinSizeCtx";
+import React from 'react';
+import WinSizeCtx from './WinSizeCtx';
 
 function withCtxWinSize<T>(Component: any) {
   function WinSizeCtxCmp(props: T) {
@@ -10,7 +10,9 @@ function withCtxWinSize<T>(Component: any) {
     );
   }
 
-  WinSizeCtxCmp.displayName = `withWinSizeCtx(${Component.displayName || Component.name || 'Undefined'})`;
+  WinSizeCtxCmp.displayName = `withWinSizeCtx(${Component.displayName ||
+    Component.name ||
+    'Undefined'})`;
 
   return WinSizeCtxCmp;
 }

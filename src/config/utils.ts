@@ -3,10 +3,10 @@
  */
 export function isUserBrowser() {
   return (
-    typeof window === 'object'
-    && window
-    && typeof window.navigator === 'object'
-    && window.navigator
-    && window.navigator.userAgent !== 'ReactSnap'
+    typeof window === 'object' &&
+    window &&
+    typeof window.navigator === 'object' &&
+    window.navigator &&
+    window.navigator.userAgent !== 'ReactSnap'
   );
 }

@@ -12,7 +12,7 @@ const AppApplyCtx = () => (
     <CountdownCtxCmp>
       <MusicPlayerCtxCmp>
         <PageMgr>
-          <App/>
+          <App />
         </PageMgr>
       </MusicPlayerCtxCmp>
     </CountdownCtxCmp>

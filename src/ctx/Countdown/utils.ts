@@ -1,9 +1,12 @@
-import {CountdownLevel} from "./types";
+import { CountdownLevel } from './types';
 
 /**
  * relevant level
  */
-export function howRelevant(target: CountdownLevel, countdownLevel: CountdownLevel | null): number | null {
+export function howRelevant(
+  target: CountdownLevel,
+  countdownLevel: CountdownLevel | null
+): number | null {
   if (countdownLevel === null) {
     return null;
   }

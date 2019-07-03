@@ -8,15 +8,23 @@ import Bio from 'mod/Bio';
 import Contact from 'mod/Contact';
 import News from 'mod/News';
 import Footer from 'mod/Footer';
-import {withCtxPageMgr, Page} from "ctx/PageMgr";
-import {ROUTES} from "types/routes";
+import { withCtxPageMgr, Page } from 'ctx/PageMgr';
+import { ROUTES } from 'types/routes';
 
 import css from './style.module.css';
 
-const routes = [ROUTES.HEADER, ROUTES.MUSIC, ROUTES.BIO, ROUTES.VIDEOS, ROUTES.GALLERY, ROUTES.NEWS, ROUTES.CONTACT];
+const routes = [
+  ROUTES.HEADER,
+  ROUTES.MUSIC,
+  ROUTES.BIO,
+  ROUTES.VIDEOS,
+  ROUTES.GALLERY,
+  ROUTES.NEWS,
+  ROUTES.CONTACT,
+];
 
 class SinglePage extends React.Component<{}> {
-  constructor(props: {}) {
+  public constructor(props: {}) {
     super(props);
     window.addEventListener('hashchange', this.handleHashChange);
   }
@@ -36,7 +44,7 @@ class SinglePage extends React.Component<{}> {
     const el = document.getElementById(routeItem.HTML_ID);
 
     if (el) {
-      el.scrollIntoView({behavior: 'smooth'});
+      el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 

@@ -1,6 +1,5 @@
-import CountdownCtx from "./CountdownCtx";
-import React from "react";
-
+import React from 'react';
+import CountdownCtx from './CountdownCtx';
 
 function withCtxCountdown<T>(Component: any) {
   function CountdownCtxCmp(props: T) {
@@ -11,7 +10,9 @@ function withCtxCountdown<T>(Component: any) {
     );
   }
 
-  CountdownCtxCmp.displayName = `withCtxCountdown(${Component.displayName || Component.name || 'Undefined'})`;
+  CountdownCtxCmp.displayName = `withCtxCountdown(${Component.displayName ||
+    Component.name ||
+    'Undefined'})`;
 
   return CountdownCtxCmp;
 }

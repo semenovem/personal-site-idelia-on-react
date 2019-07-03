@@ -2,21 +2,23 @@ import React from 'react';
 import cn from 'classnames';
 
 import { withCtxPageMgr, Page, PageMgrProps } from 'ctx/PageMgr';
-import BtnClose from "cmp/BtnClose";
-
-import Photos from './Photos';
+import BtnClose from 'cmp/BtnClose';
 
 import cssCommon from 'styles/common.module.css';
+import Photos from './Photos';
+
 import css from './style.module.css';
 
 interface OwnProps {
   onClose(): void;
 }
-type Props = OwnProps & PageMgrProps
+type Props = OwnProps & PageMgrProps;
 
 class PhotosViewer extends React.Component<Props> {
   public shouldComponentUpdate({ pageMgr }: Props) {
-    return this.props.pageMgr.topPage === Page.PHOTOS_VIEWER || pageMgr.topPage === Page.PHOTOS_VIEWER;
+    return (
+      this.props.pageMgr.topPage === Page.PHOTOS_VIEWER || pageMgr.topPage === Page.PHOTOS_VIEWER
+    );
   }
 
   private handleClose = () => {
@@ -53,7 +55,7 @@ class PhotosViewer extends React.Component<Props> {
 
 export default withCtxPageMgr<OwnProps>(Page.PHOTOS_VIEWER, PhotosViewer);
 
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 let storageElem: HTMLImageElement | null = null;
 let storageId: number | null = null;
 

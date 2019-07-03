@@ -1,29 +1,28 @@
-import { WinSize } from "./types";
-import { defWinSize } from "./utils";
-import React from "react";
-import WinSizeCtx from "./WinSizeCtx";
+import React from 'react';
+import { WinSize } from './types';
+import { defWinSize } from './utils';
+import WinSizeCtx from './WinSizeCtx';
 
-type IProps = {}
+interface Props {}
 
-interface IState {
-  winSize: WinSize,
+interface State {
+  winSize: WinSize;
 }
 
 const DELAY_RESIZE = 100;
 
-class WinSizeCtxCmp extends React.Component<IProps, IState> {
+class WinSizeCtxCmp extends React.Component<Props, State> {
   public state = {
     winSize: defWinSize(window.innerWidth),
   };
 
-  constructor(props: IProps) {
-    super(props);
-    window.addEventListener('resize', this.handleResize);
-  }
-
   private resizeTimer: number | null = null;
   private resizeLast: number = 0;
 
+  public constructor(props: Props) {
+    super(props);
+    window.addEventListener('resize', this.handleResize);
+  }
 
   public componentWillUnmount() {
     window.removeEventListener('resize', this.handleResize);
@@ -39,10 +38,6 @@ class WinSizeCtxCmp extends React.Component<IProps, IState> {
       this.resizeCallback(DELAY_RESIZE);
     }
   };
-
-  private resizeCallback(t: number) {
-    this.resizeTimer = window.setTimeout(this.resizeCheckAct, t) as number;
-  }
 
   private resizeCheckAct = () => {
     const t = Date.now();
@@ -61,11 +56,13 @@ class WinSizeCtxCmp extends React.Component<IProps, IState> {
     }
   };
 
-  render() {
+  private resizeCallback(t: number) {
+    this.resizeTimer = window.setTimeout(this.resizeCheckAct, t) as number;
+  }
+
+  public render() {
     return (
-      <WinSizeCtx.Provider value={this.state.winSize}>
-        {this.props.children}
-      </WinSizeCtx.Provider>
+      <WinSizeCtx.Provider value={this.state.winSize}>{this.props.children}</WinSizeCtx.Provider>
     );
   }
 }

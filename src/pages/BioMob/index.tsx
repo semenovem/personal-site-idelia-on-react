@@ -15,22 +15,21 @@ type Props = OwnProps & PageMgrProps;
 
 class BioMob extends React.Component<Props> {
   public shouldComponentUpdate({ pageMgr }: Props) {
-    return this.props.pageMgr.topPage === Page.PHOTOS_VIEWER || pageMgr.topPage === Page.PHOTOS_VIEWER;
+    return (
+      this.props.pageMgr.topPage === Page.PHOTOS_VIEWER || pageMgr.topPage === Page.PHOTOS_VIEWER
+    );
   }
 
-  render() {
+  public render() {
     const { pageMgr } = this.props;
 
     if (pageMgr.topPage !== Page.BIO_MOB) {
       return null;
     }
 
-
     return (
       <div className={css.bioMob}>
-
         <Bio />
-
         footer
       </div>
     );

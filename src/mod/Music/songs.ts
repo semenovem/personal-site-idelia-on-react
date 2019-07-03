@@ -4,7 +4,7 @@ import iWould from './assets/covers/i_would.jpg';
 import bomb from './assets/covers/bomb.jpg';
 import iAmYours from './assets/covers/i_am_yours.jpg';
 
-export interface ISong {
+export interface Song {
   id: string;
   spotify: string;
   itunes: string;
@@ -13,7 +13,7 @@ export interface ISong {
   name: string;
 }
 
-export const songs: ISong[] = [
+export const songs: Song[] = [
   {
     id: 'different',
     spotify: 'https://open.spotify.com/album/4VY70aiWv6YMzJeCIBBVF1',
@@ -60,7 +60,9 @@ export const songs: ISong[] = [
 ];
 
 export function findUrl(id: string | null): string | null {
-  if (!id) { return null; }
+  if (!id) {
+    return null;
+  }
 
   const song = songs.find(it => it.id === id);
 

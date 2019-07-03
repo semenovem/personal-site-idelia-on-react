@@ -1,23 +1,39 @@
-import React from "react";
+import React from 'react';
 
 import { isUserBrowser } from 'config/utils';
 
-import CountdownCtx from "./CountdownCtx";
-import {CountdownLevel, ICountdown} from './types';
-import {getNext} from './utils';
+import CountdownCtx from './CountdownCtx';
+import { CountdownLevel, Countdown } from './types';
+import { getNext } from './utils';
 
 class CountdownCtxCmp extends React.Component<{}> {
   /**
    * for manipulating with <body class="... hide-elem-before-critical">
    * when the level, the class is removed
    */
-  static cssCls = {
+  private static cssCls = {
     [CountdownLevel.CRITICAL]: 'hide-elem-before-critical',
     // not yet used
     // [CountdownLevel.IMPORTANT]: 'hide-elem-before-important',
   };
 
-  constructor(props: {}) {
+  // eslint-disable-next-line react/sort-comp
+  private readonly countdown: Countdown;
+
+  /**
+   * Get current level of countdown
+   */
+  private level: CountdownLevel = CountdownLevel.CORE;
+
+  private numCallback: number = 0;
+
+  private callbacks: {
+    l: CountdownLevel;
+    n: number;
+    fn: (currentLevel: CountdownLevel) => void;
+  }[] = [];
+
+  public constructor(props: {}) {
     super(props);
 
     this.countdown = {
@@ -28,27 +44,19 @@ class CountdownCtxCmp extends React.Component<{}> {
       removeTask: this.removeTask,
     };
 
-    setTimeout(this.nextLevel, 500);  // for critical
+    setTimeout(this.nextLevel, 500); // for critical
     setTimeout(this.nextLevel, 1000);
     setTimeout(this.nextLevel, 2000);
     setTimeout(this.nextLevel, 4000);
     setTimeout(this.nextLevel, 6000);
   }
+  private getLevel: Countdown['getLevel'] = () => this.level;
 
-  countdown: ICountdown;
-
-  /**
-   * Get current level of countdown
-   */
-  private level: CountdownLevel = CountdownLevel.CORE;
-  private numCallback: number = 0;
-
-  private callbacks: Array<{l: CountdownLevel; n: number; fn: (currentLevel: CountdownLevel) => void; }> = [];
-
-  private getLevel: ICountdown['getLevel'] = () => this.level;
-  private addTask: ICountdown['addTask'] = (level, callback): number => {
+  private addTask: Countdown['addTask'] = (level, callback): number => {
     if (level <= this.level) {
-      setTimeout(() => {callback(this.level)}, 1);
+      setTimeout(() => {
+        callback(this.level);
+      }, 1);
       return 0;
     }
 
@@ -61,7 +69,7 @@ class CountdownCtxCmp extends React.Component<{}> {
     return this.numCallback;
   };
 
-  private removeTask: ICountdown['removeTask'] = (numCallback: number): void => {
+  private removeTask: Countdown['removeTask'] = (numCallback: number): void => {
     this.callbacks = this.callbacks.filter(it => it.n !== numCallback);
   };
 
@@ -96,9 +104,7 @@ class CountdownCtxCmp extends React.Component<{}> {
 
   public render() {
     return (
-      <CountdownCtx.Provider value={this.countdown}>
-        {this.props.children}
-      </CountdownCtx.Provider>
+      <CountdownCtx.Provider value={this.countdown}>{this.props.children}</CountdownCtx.Provider>
     );
   }
 }
