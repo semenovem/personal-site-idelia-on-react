@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7ea957f7c7ad27e3236d5c13ade44b80",
+    "revision": "fe22ddeb90b8e8cf72a8bfb343f20157",
     "url": "/index.html"
   },
   {
-    "revision": "1927b900a6e9295aed26",
-    "url": "/static/css/main.eb281384.chunk.css"
+    "revision": "d62c9ef7afeae1de7012",
+    "url": "/static/css/main.7b286666.chunk.css"
   },
   {
-    "revision": "1041575b58267bed32e4",
-    "url": "/static/js/2.c3dec040.chunk.js"
+    "revision": "214beda89c2a487c86d7",
+    "url": "/static/js/2.508c5d79.chunk.js"
   },
   {
-    "revision": "1927b900a6e9295aed26",
-    "url": "/static/js/main.c504a6e6.chunk.js"
+    "revision": "d62c9ef7afeae1de7012",
+    "url": "/static/js/main.f538c100.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -1284,8 +1284,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/spotify_buy.3cfa8e86.png"
   },
   {
-    "revision": "782dbe3f9e18f0ad28ddbad2505cfacc",
-    "url": "/static/media/spotify_white.782dbe3f.svg"
+    "revision": "39ce492db4050bda615027c000c78053",
+    "url": "/static/media/spotify_icon_white.39ce492d.svg"
+  },
+  {
+    "revision": "1551c11913d8d326eab3f0db01ff6a9a",
+    "url": "/static/media/spotify_white.1551c119.svg"
   },
   {
     "revision": "9b0152452aff0830071a08759223aa95",
@@ -1298,6 +1302,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "dedbb195052cdec1e342c628e4ad4921",
     "url": "/static/media/tv_tatar_girl.dedbb195.jpg"
+  },
+  {
+    "revision": "ae443aec02b53b92aeb2e9df4b1212db",
+    "url": "/static/media/yandex_music_icon.ae443aec.svg"
   },
   {
     "revision": "13baad002666e7b49cf39b052d62dc47",

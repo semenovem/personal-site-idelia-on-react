@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.eb281384.chunk.css",
-    "main.js": "/static/js/main.c504a6e6.chunk.js",
-    "main.js.map": "/static/js/main.c504a6e6.chunk.js.map",
+    "main.css": "/static/css/main.7b286666.chunk.css",
+    "main.js": "/static/js/main.f538c100.chunk.js",
+    "main.js.map": "/static/js/main.f538c100.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
     "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.c3dec040.chunk.js": "/static/js/2.c3dec040.chunk.js",
-    "static/js/2.c3dec040.chunk.js.map": "/static/js/2.c3dec040.chunk.js.map",
+    "static/js/2.508c5d79.chunk.js": "/static/js/2.508c5d79.chunk.js",
+    "static/js/2.508c5d79.chunk.js.map": "/static/js/2.508c5d79.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.137699948228d0c499c93bf6735859ba.js": "/precache-manifest.137699948228d0c499c93bf6735859ba.js",
+    "precache-manifest.a577f6f3bd235762bc776f565d52e5b7.js": "/precache-manifest.a577f6f3bd235762bc776f565d52e5b7.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.eb281384.chunk.css.map": "/static/css/main.eb281384.chunk.css.map",
+    "static/css/main.7b286666.chunk.css.map": "/static/css/main.7b286666.chunk.css.map",
     "static/media/001-lg-preview.jpg": "/static/media/001-lg-preview.8319a8c6.jpg",
     "static/media/001-lg.jpg": "/static/media/001-lg.0d37ef5b.jpg",
     "static/media/001-md-preview.jpg": "/static/media/001-md-preview.f46d4ecb.jpg",
@@ -295,9 +295,11 @@
     "static/media/love_bizarre.jpg": "/static/media/love_bizarre.09968792.jpg",
     "static/media/my_voice.jpg": "/static/media/my_voice.7ff906b7.jpg",
     "static/media/spotify_buy.png": "/static/media/spotify_buy.3cfa8e86.png",
-    "static/media/spotify_white.svg": "/static/media/spotify_white.782dbe3f.svg",
+    "static/media/spotify_icon_white.svg": "/static/media/spotify_icon_white.39ce492d.svg",
+    "static/media/spotify_white.svg": "/static/media/spotify_white.1551c119.svg",
     "static/media/the_road_before_me.jpg": "/static/media/the_road_before_me.9b015245.jpg",
     "static/media/tv_tatar_girl.jpg": "/static/media/tv_tatar_girl.dedbb195.jpg",
+    "static/media/yandex_music_icon.svg": "/static/media/yandex_music_icon.ae443aec.svg",
     "static/media/yandex_music_white.svg": "/static/media/yandex_music_white.13baad00.svg"
   }
 }
