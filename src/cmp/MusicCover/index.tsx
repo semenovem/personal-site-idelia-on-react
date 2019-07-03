@@ -11,6 +11,7 @@ interface IOwnProps {
   id: string;
   hasUserInteraction?: boolean;
   onPlayerControl:(id: string) => void;
+  nameTrack: string;
 }
 
 class MusicCover extends React.Component<IOwnProps> {
@@ -47,7 +48,7 @@ class MusicCover extends React.Component<IOwnProps> {
   private clearTimer = () => this.timer && clearTimeout(this.timer);
 
   render() {
-    const { urlCover, className, isPlayed, active, hasUserInteraction } = this.props;
+    const { urlCover, className, isPlayed, hasUserInteraction, nameTrack } = this.props;
     const styleBtn = isPlayed ? css.pause : css.play;
 
     return (
@@ -55,12 +56,13 @@ class MusicCover extends React.Component<IOwnProps> {
         className={cn(css.musicCover, className)}
         onClick={this.handleClick}
       >
-        <img src={urlCover} className={cn(css.img, !active && css.grayscale)} alt=''/>
+        <img src={urlCover} className={cn(css.img, !isPlayed && css.grayscale)} alt=''/>
 
         <button
           className={cn(css.btn, styleBtn)}
           onClick={this.handleBtnClick}
           {...!hasUserInteraction && { tabIndex: -1 }}
+          aria-label={isPlayed ? `Stop track ${nameTrack}` : `Play track ${nameTrack}`}
         />
       </div>
     );

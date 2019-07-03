@@ -58,6 +58,7 @@ class HamMenu extends React.Component<IProps> {
           className={cssCommon.btnCloseOnAbsolutePosition}
           onClose={this.handleClose}
           hasUserInteraction={hasUserInteraction}
+          aria-label="Close menu"
         />
 
         <nav className={cn(css.items)} onClick={this.handleSelect}>

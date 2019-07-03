@@ -14,7 +14,7 @@
 }
 
 .bg {
-  background-image: url(assets/bg_xs_blur.jpg);
+  background-image: url(assets/bg/bg_xs_blur.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -67,7 +67,7 @@
   }
 
   .bg {
-    background-image: url(assets/bg_md_blur.jpg);
+    background-image: url(assets/bg/bg_md_blur.jpg);
   }
 }
 

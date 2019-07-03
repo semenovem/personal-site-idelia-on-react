@@ -14,6 +14,8 @@ const BtnHamMenu: React.FC<IProps> = ({ className, onOpen, hasUserInteraction })
     className={cn(css.btnHamMenu, className)}
     onClick={onOpen}
     {...!hasUserInteraction && { tabIndex: -1 }}
+    type="button"
+    aria-label="Open menu"
   />
 );
 

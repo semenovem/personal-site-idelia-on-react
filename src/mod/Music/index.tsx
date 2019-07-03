@@ -68,6 +68,7 @@ class Music extends React.Component<IProps, IState> {
           id={song.id}
           isPlayed={isPlayed}
           hasUserInteraction={hasUserInteraction}
+          nameTrack={song.name}
         />
 
         <div className={css.buy}>

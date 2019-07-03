@@ -3,7 +3,7 @@
 }
 
 .bg {
-  background-image: url(assets/bg_xs_blur.jpg);
+  background-image: url(assets/bg/bg_xs_blur.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
@@ -43,7 +43,7 @@
 .buy {
     display: flex;
     justify-content: center;
-    margin-top: var(--indent-l);
+    margin-top: var(--indent-s);
 }
 
 .store {
@@ -111,7 +111,7 @@
 /* xl */
 @media (min-width: 1200px) {
   .bg {
-    background-image: url(assets/bg_xl_blur.jpg);
+    background-image: url(assets/bg/bg_xl_blur.jpg);
   }
 
   .song {

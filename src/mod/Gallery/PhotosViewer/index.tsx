@@ -44,6 +44,7 @@ class PhotosViewer extends React.Component<Props> {
           className={cssCommon.btnCloseOnAbsolutePosition}
           onClose={this.handleClose}
           hasUserInteraction={pageMgr.hasUserInteraction}
+          aria-label="Close photo viewer"
         />
       </div>
     );

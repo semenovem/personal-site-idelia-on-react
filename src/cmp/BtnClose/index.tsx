@@ -9,10 +9,13 @@ interface Props {
   hasUserInteraction: boolean;
 }
 
-const BtnClose: React.FC<Props> = ({ className, onClose }) => (
+const BtnClose: React.FC<Props> = ({ className, onClose, hasUserInteraction, ...rest }) => (
   <button
     className={cn(css.btn, className)}
     onClick={onClose}
+    type="button"
+    {...!hasUserInteraction && {tabIndex: -1}}
+    {...rest}
   />
 );
 
