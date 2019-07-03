@@ -4,8 +4,7 @@ import coverTheRoadBeforeMe from './assets/covers/the_road_before_me.jpg';
 import coverTvTatarGirl from './assets/covers/tv_tatar_girl.jpg';
 import coverIdeliaByLeron from './assets/covers/idelia_by_leron.jpg';
 
-
-interface IVideo {
+interface Video {
   id: number;
   title: string;
   tooltip: string;
@@ -17,7 +16,7 @@ interface IVideo {
   iframe?: string;
 }
 
-export const videos: IVideo[] = [
+export const videos: Video[] = [
   {
     id: 1,
     title: 'Different',
@@ -29,7 +28,6 @@ export const videos: IVideo[] = [
     iframe: 'https://www.youtube.com/embed/_qQYNjPbboM?controls=0&modestbranding=1&enablejsapi=1',
   },
 
-
   {
     id: 2,
     title: 'Love bizarre',
@@ -37,9 +35,9 @@ export const videos: IVideo[] = [
     url: 'https://www.youtube.com/embed/heSCtd9LZss',
     cover: coverLoveBizarre,
     youtube: 'https://www.youtube.com/watch?v=heSCtd9LZss&feature=youtu.be',
-    iframe: '<iframe width="560" height="315" src="https://www.youtube.com/embed/heSCtd9LZss" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    iframe:
+      '<iframe width="560" height="315" src="https://www.youtube.com/embed/heSCtd9LZss" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
   },
-
 
   {
     id: 3,
@@ -48,9 +46,9 @@ export const videos: IVideo[] = [
     url: 'https://www.youtube.com/embed/tAz7-pgGo8c',
     cover: coverTheRoadBeforeMe,
     youtube: 'https://www.youtube.com/watch?v=tAz7-pgGo8c&feature=youtu.be',
-    iframe: '<iframe width="560" height="315" src="https://www.youtube.com/embed/tAz7-pgGo8c?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    iframe:
+      '<iframe width="560" height="315" src="https://www.youtube.com/embed/tAz7-pgGo8c?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
   },
-
 
   {
     id: 4,
@@ -59,7 +57,8 @@ export const videos: IVideo[] = [
     url: 'https://www.youtube.com/embed/O_MipF8mz_w',
     cover: coverTvTatarGirl,
     youtube: 'https://www.youtube.com/watch?v=O_MipF8mz_w&feature=youtu.be',
-    iframe: '<iframe width="560" height="315" src="https://www.youtube.com/embed/O_MipF8mz_w?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    iframe:
+      '<iframe width="560" height="315" src="https://www.youtube.com/embed/O_MipF8mz_w?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
   },
 
   {
@@ -69,6 +68,7 @@ export const videos: IVideo[] = [
     url: 'https://www.youtube.com/embed/dhtkYDaODYc',
     cover: coverIdeliaByLeron,
     youtube: 'https://www.youtube.com/watch?v=dhtkYDaODYc&feature=youtu.be',
-    iframe: '<iframe width="560" height="315" src="https://www.youtube.com/embed/dhtkYDaODYc?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    iframe:
+      '<iframe width="560" height="315" src="https://www.youtube.com/embed/dhtkYDaODYc?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
   },
 ];

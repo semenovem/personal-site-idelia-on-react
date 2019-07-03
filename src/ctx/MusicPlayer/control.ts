@@ -9,7 +9,7 @@ export const control = {
   },
   pause() {
     listenersPause.forEach(it => it());
-  }
+  },
 };
 
 export function addEventListenerPlay(callback: Callback) {

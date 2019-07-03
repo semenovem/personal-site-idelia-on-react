@@ -13,7 +13,7 @@ async function write(path, files) {
     const relative = './' + pkgPath.relative(pkgPath.dirname(path), sourceFilePath);
     const variable = convertToCamelCase('img-' + pkgPath.parse(filePathResized).name);
 
-    content += `import ${variable} from '${relative}'\n`;
+    content += `import ${variable} from '${relative}';\n`;
 
     if (originFileName in mapImports === false) {
       mapImports[originFileName] = {

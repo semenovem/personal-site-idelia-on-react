@@ -1,11 +1,11 @@
 export const PATH_NAME = 'p';
 
-interface IParamImgBg {
+interface ParamImgBg {
   [id: string]: string;
 }
 
-export function makeImgBg(param: IParamImgBg): string {
-  let path: string = '';
+export function makeImgBg(param: ParamImgBg): string {
+  let path = '';
   let key: string;
   let flag = true;
   let propsLength = 0;
@@ -44,7 +44,7 @@ export function makeImgBg(param: IParamImgBg): string {
   }
 
   if (path) {
-    result += ` ${PATH_NAME}:${path}`
+    result += ` ${PATH_NAME}:${path}`;
   }
 
   return result;
@@ -57,7 +57,7 @@ export function makeImgBg(param: IParamImgBg): string {
  * @param {string} b
  * @returns {string}
  */
-function defCommonPath (a: string, b: string): string {
+function defCommonPath(a: string, b: string): string {
   const l = Math.min(a.length, b.length);
   let i: number;
 

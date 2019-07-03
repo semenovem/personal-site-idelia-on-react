@@ -1,17 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-type IProps = {
+interface Props {
   children: React.ReactChild;
-};
+}
 
-const domNode = document.getElementById('photos-viewer')!;
+const domNode = document.getElementById('photos-viewer');
 
-const PhotosViewer = ({ children }: IProps) => (
-  ReactDOM.createPortal(
-    children,
-    domNode,
-  )
-);
+if (!domNode) {
+  throw new Error('no dom element defined "photos-viewer"');
+}
+
+const PhotosViewer = ({ children }: Props) => ReactDOM.createPortal(children, domNode);
 
 export default PhotosViewer;

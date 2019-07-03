@@ -1,5 +1,5 @@
-import React from "react";
-import {PageMgrValue, Page} from "./types";
+import React from 'react';
+import { PageMgrValue, Page } from './types';
 
 export const pageMgrValue: PageMgrValue = {
   hasUserInteraction: false,

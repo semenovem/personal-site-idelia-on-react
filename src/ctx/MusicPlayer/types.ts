@@ -1,5 +1,5 @@
-import {IMusicPlayer} from "types/player";
+import { MusicPlayer } from 'types/player';
 
-export interface IMusicPlayerProps {
-  musicPlayer: IMusicPlayer
+export interface MusicPlayerProps {
+  musicPlayer: MusicPlayer;
 }

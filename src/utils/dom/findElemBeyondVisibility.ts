@@ -7,7 +7,11 @@ export enum Direction {
 
 const SHOWN_ELEM_PORTION = 0.5;
 
-export function findElemBeyondVisibility(direction: Direction, cnt: HTMLElement, nameDataAttr: string): HTMLElement | null {
+export function findElemBeyondVisibility(
+  direction: Direction,
+  cnt: HTMLElement,
+  nameDataAttr: string
+): HTMLElement | null {
   const children = cnt.querySelectorAll<HTMLElement>(`[${nameDataAttr}]`);
   const rect = cnt.getBoundingClientRect();
 
@@ -28,7 +32,7 @@ export function findElemBeyondVisibility(direction: Direction, cnt: HTMLElement,
 
 function findLeft(left: number, children: NodeListOf<HTMLElement>): HTMLElement | null {
   let elem: HTMLElement | null = null;
-  let max: number = 100000;
+  let max = 100000;
 
   children.forEach(it => {
     const rect = it.getBoundingClientRect();
@@ -49,7 +53,7 @@ function findLeft(left: number, children: NodeListOf<HTMLElement>): HTMLElement 
 
 function findRight(right: number, children: NodeListOf<HTMLElement>): HTMLElement | null {
   let elem: HTMLElement | null = null;
-  let max: number = 100000;
+  let max = 100000;
 
   children.forEach(it => {
     const rect = it.getBoundingClientRect();

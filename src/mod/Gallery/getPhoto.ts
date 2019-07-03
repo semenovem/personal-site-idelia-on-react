@@ -1,4 +1,4 @@
-import {getCodeWinSize, getSmaller, WinSize} from "ctx/WinSize";
+import { getCodeWinSize, getSmaller, WinSize } from 'ctx/WinSize';
 
 import { photos } from './importPhotos';
 
@@ -19,7 +19,6 @@ export function getPhotoById(id: number, winSize: WinSize, kind: string): Result
   return getPhoto(data, winSize, kind);
 }
 
-
 /**
  * @param data
  * @param winSize
@@ -29,7 +28,7 @@ export function getPhoto(data: any, winSize: WinSize, kind: string): Result {
   let w: WinSize | null = winSize;
   let codeWinSize: string;
 
-  while(w !== null) {
+  while (w !== null) {
     codeWinSize = getCodeWinSize(w).toLowerCase();
 
     if (data[codeWinSize] && data[codeWinSize][kind]) {
@@ -55,7 +54,7 @@ export function getPrevId(id: number): number | null {
   let i: number;
   let next: number | null = null;
 
-  for(i = 0; i < photos.length; i++) {
+  for (i = 0; i < photos.length; i++) {
     if (photos[i].id === id) {
       break;
     }
@@ -66,12 +65,11 @@ export function getPrevId(id: number): number | null {
   return next;
 }
 
-
 export function getNextId(id: number): number | null {
   let i: number;
   let prev: number | null = null;
 
-  for(i = photos.length - 1; i >= 0; i--) {
+  for (i = photos.length - 1; i >= 0; i--) {
     if (photos[i].id === id) {
       break;
     }

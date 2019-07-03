@@ -1,17 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-type IProps = {
+interface Props {
   children: React.ReactChild;
-};
+}
 
-const domNode = document.getElementById('splash-pages')!;
+const domNode = document.getElementById('splash-pages');
 
-const SplashPagePortal = ({ children }: IProps) => (
-  ReactDOM.createPortal(
-    children,
-    domNode,
-  )
-);
+if (!domNode) {
+  throw new Error('no dom element defined "splash-pages"');
+}
+
+const SplashPagePortal = ({ children }: Props) => ReactDOM.createPortal(children, domNode);
 
 export default SplashPagePortal;

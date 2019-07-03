@@ -1,23 +1,23 @@
 import React from 'react';
 import cn from 'classnames';
 
-import {ROUTES} from 'types/routes';
-import {withUserInteraction, PageMgrUserInteractionProps, PageMgr} from 'ctx/PageMgr';
-import { withCtxWinSize, WinSize, IWinSizeProps, getSmaller, getCodeWinSize } from 'ctx/WinSize';
+import { ROUTES } from 'types/routes';
+import { withUserInteraction, PageMgrUserInteractionProps, PageMgr } from 'ctx/PageMgr';
+import { withCtxWinSize, WinSizeProps } from 'ctx/WinSize';
 import Portal from 'portals/PhotosViewer';
 import ScrollX from 'cmp/ScrollX';
 
+import cssTypography from 'styles/typography.module.css';
+import cssMod from 'mod/style.module.css';
 import Bg from './Background';
-import {getPhoto} from './getPhoto';
+import { getPhoto } from './getPhoto';
 import { photos } from './importPhotos';
 
 import PhotosViewer, { setElem } from './PhotosViewer';
 
-import cssTypography from 'styles/typography.module.css';
-import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
 
-type Props = PageMgrUserInteractionProps & IWinSizeProps;
+type Props = PageMgrUserInteractionProps & WinSizeProps;
 
 class Gallery extends React.Component<Props> {
   private handleClick = (id: string, elem: HTMLElement) => {
@@ -52,22 +52,20 @@ class Gallery extends React.Component<Props> {
 
     return (
       <div id={ROUTES.GALLERY.HTML_ID} className={cn(cssMod.modFreePaddingSides, css.gallery)}>
-        <Bg className={css.bg}/>
+        <Bg className={css.bg} />
         <h2 className={cn(cssTypography.modTitle, cssMod.title)}>{ROUTES.GALLERY.TITLE}</h2>
 
         <ScrollX
           className={css.photos}
           onClickItem={this.handleClick}
-          nameDataAttr='data-id'
+          nameDataAttr="data-id"
           hasUserInteraction={props.hasUserInteraction}
         >
           {this.renderPhotos()}
         </ScrollX>
 
         <Portal>
-          <PhotosViewer
-            onClose={this.handleClosePhotosViewer}
-          />
+          <PhotosViewer onClose={this.handleClosePhotosViewer} />
         </Portal>
       </div>
     );

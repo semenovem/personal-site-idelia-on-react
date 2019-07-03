@@ -1,14 +1,15 @@
-export function findElemByAttr (
+export function findElemByAttr(
   elem: HTMLElement | null,
   parent: HTMLElement | null,
-  attr: string,
+  attr: string
 ): HTMLElement | null {
+  let el = elem;
 
-  while (elem && elem !== parent) {
-    if (elem.hasAttribute(attr)) {
+  while (el && el !== parent) {
+    if (el.hasAttribute(attr)) {
       return elem;
     }
-    elem = elem.parentElement;
+    el = el.parentElement;
   }
 
   return null;

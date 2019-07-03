@@ -5,7 +5,6 @@ import { backgroundApplyParams } from 'cnt/ProgressiveImg';
 import xs from './assets/bg/bg_xs.jpg';
 import sm from './assets/bg/bg_sm.jpg';
 import md from './assets/bg/bg_lg.jpg';
-import lg from './assets/bg/bg_lg.jpg';
 import xl from './assets/bg/bg_xl.jpg';
 
 export const params = {
@@ -19,7 +18,7 @@ export const params = {
     [CountdownLevel.CORE]: md,
   },
   [WinSize.LG]: {
-    [CountdownLevel.CORE]: lg,
+    [CountdownLevel.CORE]: md, // not file for it resolution
   },
   [WinSize.XL]: {
     [CountdownLevel.CORE]: xl,

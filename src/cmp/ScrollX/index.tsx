@@ -13,16 +13,16 @@ interface Props {
 }
 
 class ScrollX extends React.Component<Props> {
-  private readonly refItems: React.RefObject<Items>;
-  private readonly refArrowL: React.RefObject<HTMLButtonElement>;
-  private readonly refArrowR: React.RefObject<HTMLButtonElement>;
-
   private arrows = {
     l: false,
     r: false,
   };
 
-  constructor(props: Props) {
+  private readonly refArrowL: React.RefObject<HTMLButtonElement>;
+  private readonly refArrowR: React.RefObject<HTMLButtonElement>;
+  private readonly refItems: React.RefObject<Items>;
+
+  public constructor(props: Props) {
     super(props);
     this.refItems = React.createRef();
     this.refArrowL = React.createRef();
@@ -65,7 +65,7 @@ class ScrollX extends React.Component<Props> {
           className={cn(css.arrow, arrows.l && css.arrowShowUp)}
           type="button"
           ref={this.refArrowL}
-          {...!hasUserInteraction && { tabIndex: -1 }}
+          {...(!hasUserInteraction && { tabIndex: -1 })}
           onClick={this.handleClickArrowL}
         />
 
@@ -82,7 +82,7 @@ class ScrollX extends React.Component<Props> {
           className={cn(css.arrow, arrows.r && css.arrowShowUp)}
           type="button"
           ref={this.refArrowR}
-          {...!hasUserInteraction && { tabIndex: -1 }}
+          {...(!hasUserInteraction && { tabIndex: -1 })}
           onClick={this.handleClickArrowR}
         />
       </div>

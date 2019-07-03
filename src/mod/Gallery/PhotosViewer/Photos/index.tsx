@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-import {withCtxWinSize, IWinSizeProps} from "ctx/WinSize";
+import { withCtxWinSize, WinSizeProps } from 'ctx/WinSize';
 
 import { getPhotoById, getPrevId, getNextId } from '../../getPhoto';
 
@@ -18,7 +18,7 @@ interface State {
   nextId: number | null;
 }
 
-type Props = OwnProps & IWinSizeProps;
+type Props = OwnProps & WinSizeProps;
 
 class Photos extends React.Component<Props, State> {
   public state = {
@@ -55,7 +55,6 @@ class Photos extends React.Component<Props, State> {
     });
   };
 
-
   public render() {
     const { winSize, className } = this.props;
     const { currentId, prevId, nextId } = this.state;
@@ -65,31 +64,27 @@ class Photos extends React.Component<Props, State> {
 
     return (
       <div className={cn(css.photos, className)}>
-
-        <div className={css.btnL} onClick={this.handleArrowL}/>
+        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
+        <div className={css.btnL} onClick={this.handleArrowL} />
 
         <div className={css.left}>
-          {photoPrev && <img src={photoPrev.url} className={css.imgPreview} alt=""/>}
+          {photoPrev && <img src={photoPrev.url} className={css.imgPreview} alt="" />}
         </div>
 
-        <div className={css.arrowL}/>
-
+        <div className={css.arrowL} />
 
         <div className={css.center}>
-          <img src={photo.url} alt="" className={css.center}/>
+          <img src={photo.url} alt="" className={css.center} />
         </div>
 
-
-
-        <div className={css.arrowR}/>
+        <div className={css.arrowR} />
 
         <div className={css.right}>
-          {photoNext && <img src={photoNext.url} className={css.imgPreview} alt=""/>}
+          {photoNext && <img src={photoNext.url} className={css.imgPreview} alt="" />}
         </div>
 
-
-        <div className={css.btnR} onClick={this.handleArrowR}/>
-
+        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
+        <div className={css.btnR} onClick={this.handleArrowR} />
       </div>
     );
   }

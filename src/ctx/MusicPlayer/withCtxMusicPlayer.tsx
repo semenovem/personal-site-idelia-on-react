@@ -1,5 +1,5 @@
-import React from "react";
-import MusicPlayerCtx from "./MusicPlayerCtx";
+import React from 'react';
+import MusicPlayerCtx from './MusicPlayerCtx';
 
 function withCtxMusicPlayer<T>(Component: any) {
   function MusicPlayerCtxCmp(props: T) {
@@ -10,7 +10,9 @@ function withCtxMusicPlayer<T>(Component: any) {
     );
   }
 
-  MusicPlayerCtxCmp.displayName = `withMusicPlayerCtx(${Component.displayName || Component.name || 'Undefined'})`;
+  MusicPlayerCtxCmp.displayName = `withMusicPlayerCtx(${Component.displayName ||
+    Component.name ||
+    'Undefined'})`;
 
   return MusicPlayerCtxCmp;
 }

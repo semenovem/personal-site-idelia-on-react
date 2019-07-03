@@ -1,32 +1,32 @@
 import uniqueHtmlId from 'utils/uniqueHtmlId';
 
-export interface IRouteItem {
-  readonly ID: string,
-  readonly HTML_ID: string,
-  readonly HASH: string,
-  readonly MENU_ITEM_NAME: string,
+export interface RouteItem {
+  readonly ID: string;
+  readonly HTML_ID: string;
+  readonly HASH: string;
+  readonly MENU_ITEM_NAME: string;
   readonly TITLE: string;
   readonly SINGLE?: true;
 }
 
-export interface IRoute {
-  readonly HEADER: IRouteItem;
-  readonly BIO: IRouteItem;
-  readonly BIO_FULLY: IRouteItem;
-  readonly CONTACT: IRouteItem;
-  readonly GALLERY: IRouteItem;
-  readonly MUSIC: IRouteItem;
-  readonly NEWS: IRouteItem;
-  readonly VIDEOS: IRouteItem;
+export interface Route {
+  readonly HEADER: RouteItem;
+  readonly BIO: RouteItem;
+  readonly BIO_FULLY: RouteItem;
+  readonly CONTACT: RouteItem;
+  readonly GALLERY: RouteItem;
+  readonly MUSIC: RouteItem;
+  readonly NEWS: RouteItem;
+  readonly VIDEOS: RouteItem;
 
-  readonly ORDER_NAV_MENU: Array<IRouteItem>;
-  readonly ORDER_HAM_MENU: Array<IRouteItem>;
-  readonly SINGLE_PAGE: Array<IRouteItem>;
+  readonly ORDER_NAV_MENU: RouteItem[];
+  readonly ORDER_HAM_MENU: RouteItem[];
+  readonly SINGLE_PAGE: RouteItem[];
 
-  readonly ALL: Array<IRouteItem>;
+  readonly ALL: RouteItem[];
 }
 
-export const ROUTES: IRoute = {
+export const ROUTES: Route = {
   HEADER: {
     ID: 'HEADER',
     HTML_ID: uniqueHtmlId(),
@@ -107,7 +107,7 @@ ROUTES.ORDER_HAM_MENU.push(
   /* TODO to temporarily hide section NEWS, because it work ip progress
   ROUTES.NEWS,
   */
-  ROUTES.CONTACT,
+  ROUTES.CONTACT
 );
 
 ROUTES.ORDER_NAV_MENU.push(
@@ -118,7 +118,7 @@ ROUTES.ORDER_NAV_MENU.push(
   ROUTES.NEWS,
 
   ROUTES.GALLERY,
-  ROUTES.CONTACT,
+  ROUTES.CONTACT
 );
 
 ROUTES.ALL.push(
@@ -128,9 +128,7 @@ ROUTES.ALL.push(
   ROUTES.MUSIC,
   ROUTES.VIDEOS,
   ROUTES.GALLERY,
-  ROUTES.CONTACT,
+  ROUTES.CONTACT
 );
 
-ROUTES.SINGLE_PAGE.push(
-  ROUTES.BIO_FULLY,
-);
+ROUTES.SINGLE_PAGE.push(ROUTES.BIO_FULLY);

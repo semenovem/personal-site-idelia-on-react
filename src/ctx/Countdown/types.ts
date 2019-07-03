@@ -1,9 +1,8 @@
-
-export interface ICountdownProps {
-  countdown: ICountdown;
+export interface CountdownProps {
+  countdown: Countdown;
 }
 
-export interface ICountdown {
+export interface Countdown {
   /**
    * get current level of countdown
    */

@@ -1,14 +1,15 @@
-export function findValueByAttr (
+export function findValueByAttr(
   elem: HTMLElement | null,
   parent: HTMLElement | null,
-  attr: string,
+  attr: string
 ): string | null {
+  let el = elem;
 
-  while (elem && elem !== parent) {
-    if (elem.hasAttribute(attr)) {
-      return elem.getAttribute(attr);
+  while (el && el !== parent) {
+    if (el.hasAttribute(attr)) {
+      return el.getAttribute(attr);
     }
-    elem = elem.parentElement;
+    el = el.parentElement;
   }
 
   return null;
