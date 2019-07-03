@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "eb4c854c1a3f69fdbd1308ad55d828e9",
+    "revision": "7ea957f7c7ad27e3236d5c13ade44b80",
     "url": "/index.html"
   },
   {
-    "revision": "3ac3036a8ded2874f676",
+    "revision": "1927b900a6e9295aed26",
     "url": "/static/css/main.eb281384.chunk.css"
   },
   {
-    "revision": "803edbd584d353ff5b18",
-    "url": "/static/js/2.dc7124f3.chunk.js"
+    "revision": "1041575b58267bed32e4",
+    "url": "/static/js/2.c3dec040.chunk.js"
   },
   {
-    "revision": "3ac3036a8ded2874f676",
-    "url": "/static/js/main.5ef91deb.chunk.js"
+    "revision": "1927b900a6e9295aed26",
+    "url": "/static/js/main.c504a6e6.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -1298,5 +1298,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "dedbb195052cdec1e342c628e4ad4921",
     "url": "/static/media/tv_tatar_girl.dedbb195.jpg"
+  },
+  {
+    "revision": "13baad002666e7b49cf39b052d62dc47",
+    "url": "/static/media/yandex_music_white.13baad00.svg"
   }
 ]);

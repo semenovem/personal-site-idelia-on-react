@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.eb281384.chunk.css",
-    "main.js": "/static/js/main.5ef91deb.chunk.js",
-    "main.js.map": "/static/js/main.5ef91deb.chunk.js.map",
+    "main.js": "/static/js/main.c504a6e6.chunk.js",
+    "main.js.map": "/static/js/main.c504a6e6.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
     "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.dc7124f3.chunk.js": "/static/js/2.dc7124f3.chunk.js",
-    "static/js/2.dc7124f3.chunk.js.map": "/static/js/2.dc7124f3.chunk.js.map",
+    "static/js/2.c3dec040.chunk.js": "/static/js/2.c3dec040.chunk.js",
+    "static/js/2.c3dec040.chunk.js.map": "/static/js/2.c3dec040.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.cb2983f7eeb7cd4b2fc939165f2cca77.js": "/precache-manifest.cb2983f7eeb7cd4b2fc939165f2cca77.js",
+    "precache-manifest.137699948228d0c499c93bf6735859ba.js": "/precache-manifest.137699948228d0c499c93bf6735859ba.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.eb281384.chunk.css.map": "/static/css/main.eb281384.chunk.css.map",
     "static/media/001-lg-preview.jpg": "/static/media/001-lg-preview.8319a8c6.jpg",
@@ -297,6 +297,7 @@
     "static/media/spotify_buy.png": "/static/media/spotify_buy.3cfa8e86.png",
     "static/media/spotify_white.svg": "/static/media/spotify_white.782dbe3f.svg",
     "static/media/the_road_before_me.jpg": "/static/media/the_road_before_me.9b015245.jpg",
-    "static/media/tv_tatar_girl.jpg": "/static/media/tv_tatar_girl.dedbb195.jpg"
+    "static/media/tv_tatar_girl.jpg": "/static/media/tv_tatar_girl.dedbb195.jpg",
+    "static/media/yandex_music_white.svg": "/static/media/yandex_music_white.13baad00.svg"
   }
 }
