@@ -1,0 +1,10 @@
+dev_scripts
+
+build
+public
+
+node_modules
+
+src/registerServiceWorker.js
+src/serviceWorker.ts
+src/**/__tests__/**
