@@ -20,4 +20,9 @@ export const SOCIAL = {
     URL: 'https://music.apple.com/us/artist/idelia-mars/380111893',
     ALT: 'Idelia Mars',
   },
+
+  YANDEX_MUSIC: {
+    URL: 'https://music.yandex.ru/artist/3920485',
+    ALT: 'Idelia Mars',
+  },
 };

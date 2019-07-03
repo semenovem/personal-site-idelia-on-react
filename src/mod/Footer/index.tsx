@@ -3,10 +3,11 @@ import cn from 'classnames';
 
 import { withUserInteraction, PageMgrUserInteractionProps } from 'ctx/PageMgr';
 
-import iconsFacebook from 'assets/icons/social/facefook_bw.svg';
-import iconsInstagram from 'assets/icons/social/instagram_bw.svg';
-import iconsSpotify from 'assets/icons/shops/spotify_white.svg';
-import iconsITunes from 'assets/icons/shops/itunes_white.png';
+import iconFacebook from 'assets/icons/social/facefook_bw.svg';
+import iconInstagram from 'assets/icons/social/instagram_bw.svg';
+import iconSpotify from 'assets/icons/shops/spotify_white.svg';
+import iconITunes from 'assets/icons/shops/itunes_white.png';
+import iconYandexMusic from 'assets/icons/shops/yandex_music_white.svg';
 
 import {SOCIAL} from 'types/social';
 
@@ -32,7 +33,7 @@ class Footer extends React.Component<IProps> {
             rel="noopener noreferrer"
             {...!hasUserInteraction && { tabIndex: -1}}
           >
-            <img src={iconsFacebook} alt={SOCIAL.FACEBOOK.ALT}/>
+            <img src={iconFacebook} alt={SOCIAL.FACEBOOK.ALT}/>
           </a>
 
           <a
@@ -41,7 +42,7 @@ class Footer extends React.Component<IProps> {
             rel="noopener noreferrer"
             {...!hasUserInteraction && { tabIndex: -1}}
           >
-            <img src={iconsInstagram} alt={SOCIAL.INSTAGRAM.ALT}/>
+            <img src={iconInstagram} alt={SOCIAL.INSTAGRAM.ALT}/>
           </a>
 
           <a
@@ -50,7 +51,7 @@ class Footer extends React.Component<IProps> {
             rel="noopener noreferrer"
             {...!hasUserInteraction && { tabIndex: -1}}
           >
-            <img src={iconsSpotify} alt={SOCIAL.SPOTIFY.ALT}/>
+            <img src={iconSpotify} alt={SOCIAL.SPOTIFY.ALT}/>
           </a>
 
           <a
@@ -59,7 +60,16 @@ class Footer extends React.Component<IProps> {
             rel="noopener noreferrer"
             {...!hasUserInteraction && { tabIndex: -1}}
           >
-            <img src={iconsITunes} alt={SOCIAL.ITUNES.ALT}/>
+            <img src={iconITunes} alt={SOCIAL.ITUNES.ALT}/>
+          </a>
+
+          <a
+            href={SOCIAL.YANDEX_MUSIC.URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            {...!hasUserInteraction && { tabIndex: -1}}
+          >
+            <img src={iconYandexMusic} alt={SOCIAL.YANDEX_MUSIC.ALT}/>
           </a>
         </div>
 
