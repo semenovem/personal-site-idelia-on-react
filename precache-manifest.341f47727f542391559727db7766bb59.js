@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fe22ddeb90b8e8cf72a8bfb343f20157",
+    "revision": "83ecf5b7969256591d9316041be9745e",
     "url": "/index.html"
   },
   {
-    "revision": "d62c9ef7afeae1de7012",
-    "url": "/static/css/main.7b286666.chunk.css"
+    "revision": "c230745097eb8f4ecd54",
+    "url": "/static/css/main.5fe42988.chunk.css"
   },
   {
-    "revision": "214beda89c2a487c86d7",
-    "url": "/static/js/2.508c5d79.chunk.js"
+    "revision": "f7bbe9d8ebeab982f2a3",
+    "url": "/static/js/2.01c7b0af.chunk.js"
   },
   {
-    "revision": "d62c9ef7afeae1de7012",
-    "url": "/static/js/main.f538c100.chunk.js"
+    "revision": "c230745097eb8f4ecd54",
+    "url": "/static/js/main.1a8b0682.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -1294,10 +1294,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "9b0152452aff0830071a08759223aa95",
     "url": "/static/media/the_road_before_me.9b015245.jpg"
-  },
-  {
-    "revision": "79f0844aba279c8ac033dc085c6df018",
-    "url": "/static/media/title_md.79f0844a.png"
   },
   {
     "revision": "dedbb195052cdec1e342c628e4ad4921",
