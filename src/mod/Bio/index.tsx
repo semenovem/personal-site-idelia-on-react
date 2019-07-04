@@ -102,7 +102,7 @@ class Bio extends React.Component<Props, State> {
           </div>
 
           <button
-            className={cn(cssCommon.btnGrape, cssTypography.btnOrange, css.readMore)}
+            className={cn(cssCommon.btnDark, cssTypography.btnDark, css.readMore)}
             onClick={this.handleReadMore}
             {...(!hasUserInteraction && { tabIndex: -1 })}
             type="button"
