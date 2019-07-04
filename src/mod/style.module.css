@@ -1,20 +1,24 @@
 
 .mod {
-  padding: var(--indent-xl) var(--indent-m) var(--indent-xxl) var(--indent-m);
+  padding-bottom: var(--indent-xxxl);
 }
 
-.modFreePaddingSides {
-  padding: var(--indent-xl) 0 var(--indent-xxl) 0;
+.modPaddingSides {
+  padding-left: var(--indent-xl);
+  padding-right: var(--indent-xl);
 }
 
 .title {
   margin-bottom: var(--indent-xl);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: var(--indent-l) var(--indent-m) var(--indent-l) var(--indent-m);
+
+  width: 100%;
 }
 
 .titleHigh {
   margin-bottom: var(--indent-xxl);
 }
-
 
 .btnHamMenu, .btnCloseHamMenu {
   position: absolute;

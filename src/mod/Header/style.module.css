@@ -32,12 +32,11 @@
   background-repeat: no-repeat;
   background-position: center;
 
-  width: 50vw;
-  height: 25vw;
-
-  margin-left: var(--indent-l);
+  margin-left: auto;
+  margin-right: auto;
   margin-top: calc(var(--indent-xl) - 10px);
-  margin-bottom: calc(var(--indent-xl) - 5px);
+  padding-left: var(--indent-l);
+  max-width: var(--max-width-limit);
 }
 
 .sticky {
@@ -55,21 +54,21 @@
 
 /* md */
 @media (min-width: 768px) {
-  .titleSite {
-    background-image: url(assets/title_md.png);
-
-    width: calc(130px + 33vw);
-    height: 30vw;
-  }
-
-  .titleSite>* {
-    display: none;
-  }
-
   .bg {
     background-image: url(assets/bg/bg_md_blur.jpg);
   }
+
+  .cover {
+    justify-content: center;
+    padding-bottom: calc(var(--indent-xxl) * 3);
+  }
+
+  .titleSite {
+    margin-top: 0;
+  }
+
 }
+
 
 
 /* lg */
@@ -79,11 +78,3 @@
 
 /* xl */
 @media (min-width: 1200px) {}
-
-
-/* xxl */
-@media (min-width: 1400px) {
-  .cover {
-    padding-left: calc((100vw - var(--max-width-limit)) / 2 + var(--indent-m));
-  }
-}

@@ -71,6 +71,8 @@
   font-size: 24px;
   color: #fff;
   text-align: justify;
+  margin-left: var(--indent-s);
+  margin-right: var(--indent-s);
 }
 
 .textBio p {
@@ -94,15 +96,41 @@
   .navMenuItem {
     letter-spacing: 2px;
   }
+
+  .modHeaderTitleMob {
+    color: #DA0000;
+    letter-spacing: 30px;
+  }
+
+  .textBio {
+    font-size: 24px;
+    color: #000;
+    text-align: justify;
+    margin-left: var(--indent-l);
+    margin-right: var(--indent-l);
+
+    padding: var(--indent-m) var(--indent-l);
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+  }
 }
 
 
 
 /* lg */
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+  .modHeaderTitleMob {
+    letter-spacing: 40px;
+  }
+}
 
 
 
 /* xl */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+  .modHeaderTitleMob {
+    letter-spacing: 50px;
+  }
+}
 
