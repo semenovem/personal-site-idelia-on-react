@@ -59,7 +59,7 @@
   }
 
   .cover {
-    justify-content: center;
+    justify-content: flex-end;
     padding-bottom: calc(var(--indent-xxl) * 3);
   }
 
