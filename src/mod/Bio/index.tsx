@@ -40,10 +40,7 @@ class Bio extends React.Component<Props, State> {
     return (
       <div id={ROUTES.BIO.HTML_ID} className={cn(cssMod.mod, css.bio, className)}>
         <Bg className={css.bg} />
-        <h2 className={cn(cssMod.title, css.title)}>
-          <div className={cn(cssTypography.modTitleBioLastName, css.lastName)}>Idelia</div>
-          <div className={cssTypography.modTitleBioFirstName}>Mars</div>
-        </h2>
+        <h2 className={cn(cssTypography.modTitle, cssMod.title)}>{ROUTES.BIO.TITLE}</h2>
 
         <div className={cn(cssTypography.textBio)}>
           <p>

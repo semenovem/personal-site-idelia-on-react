@@ -46,7 +46,7 @@ class Contact extends React.Component<OwnProps, State> {
     return (
       <div id={ROUTES.CONTACT.HTML_ID} className={cn(cssMod.mod, css.contact)}>
         <Bg className={css.bg} />
-        <h2 className={cn(cssTypography.modTitle, cssMod.titleHigh)}>{ROUTES.CONTACT.TITLE}</h2>
+        <h2 className={cn(cssTypography.modTitle, cssMod.title)}>{ROUTES.CONTACT.TITLE}</h2>
 
         <form className={cn(css.form, cssTypography.modContactInput)} onSubmit={this.handleSubmit}>
           <div className={css.rowOne}>

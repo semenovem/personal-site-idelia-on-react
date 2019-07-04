@@ -62,7 +62,7 @@ class Videos extends React.Component<Props, State> {
     const video = videos.find(it => it.id === selectedId) || videos[0];
 
     return (
-      <div id={ROUTES.VIDEOS.HTML_ID} className={cn(cssMod.modFreePaddingSides, css.video)}>
+      <div id={ROUTES.VIDEOS.HTML_ID} className={cn(cssMod.mod, css.video)}>
         <Bg className={css.bg} />
         <h2 className={cn(cssTypography.modTitleVideo, cssMod.title)}>{ROUTES.VIDEOS.TITLE}</h2>
 

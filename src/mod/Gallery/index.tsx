@@ -51,7 +51,7 @@ class Gallery extends React.Component<Props> {
     const props = this.props;
 
     return (
-      <div id={ROUTES.GALLERY.HTML_ID} className={cn(cssMod.modFreePaddingSides, css.gallery)}>
+      <div id={ROUTES.GALLERY.HTML_ID} className={cn(cssMod.mod, css.gallery)}>
         <Bg className={css.bg} />
         <h2 className={cn(cssTypography.modTitle, cssMod.title)}>{ROUTES.GALLERY.TITLE}</h2>
 

@@ -24,7 +24,6 @@ class Header extends React.Component<{}> {
   public constructor(props: {}) {
     super(props);
     this.refTitle = React.createRef();
-
     window.addEventListener('scroll', this.handleScroll);
   }
 
@@ -34,7 +33,7 @@ class Header extends React.Component<{}> {
 
   private handleScroll = () => {
     const scroll = document.documentElement.scrollTop;
-    const height = window.innerHeight * 0.7;
+    const height = window.innerHeight * 0.4;
 
     if (scroll > height || Math.abs(this.prevScroll + scroll) < this.scrollStep) {
       return;
