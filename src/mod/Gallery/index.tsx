@@ -30,6 +30,10 @@ class Gallery extends React.Component<Props> {
   };
 
   private renderPhotos() {
+    if (window.navigator.userAgent === 'ReactSnap') {
+      return null;
+    }
+
     return photos.map((it: any) => {
       const photo = getPhoto(it, this.props.winSize, 'preview');
 
