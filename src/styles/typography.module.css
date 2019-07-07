@@ -110,15 +110,9 @@
 
   .textBio {
     font-size: 24px;
-    color: #000;
     text-align: justify;
     margin-left: var(--indent-l);
     margin-right: var(--indent-l);
-
-    padding: var(--indent-m) var(--indent-l);
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-    border-radius: 2px;
   }
 }
 
