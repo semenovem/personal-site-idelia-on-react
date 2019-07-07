@@ -1,0 +1,22 @@
+.qrCode {
+  animation-duration: 100ms;
+  animation-fill-mode: forwards;
+  animation-name: anim-show-up;
+  animation-timing-function: ease-out;
+
+  transform: translateX(150%);
+}
+
+@keyframes anim-show-up {
+  from {
+    opacity: 0;
+    transform: translateX(150%);
+  }
+  50% {
+    opacity: 0.1;
+  }
+  to {
+    opacity: .7;
+    transform: translateX(0);
+  }
+}
