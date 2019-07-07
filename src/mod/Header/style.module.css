@@ -28,15 +28,10 @@
 }
 
 .titleSite {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-
   margin-left: auto;
   margin-right: auto;
   margin-top: calc(var(--indent-xl) - 10px);
   padding-left: var(--indent-l);
-  max-width: var(--max-width-limit);
 }
 
 .sticky {
@@ -60,11 +55,11 @@
 
   .cover {
     justify-content: flex-end;
-    padding-bottom: calc(var(--indent-xxl) * 3);
+    padding-bottom: calc(var(--indent-xl) * 1);
   }
 
   .titleSite {
-    margin-top: 0;
+    margin-top: 150px;
   }
 
 }

@@ -125,18 +125,14 @@
 
 
 /* lg */
-@media (min-width: 992px) {
-  .modHeaderTitleMob {
-    letter-spacing: 40px;
-  }
-}
+@media (min-width: 992px) {}
 
 
 
 /* xl */
 @media (min-width: 1200px) {
   .modHeaderTitleMob {
-    letter-spacing: 50px;
+    letter-spacing: 40px;
   }
 }
 
