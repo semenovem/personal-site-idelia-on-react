@@ -6,9 +6,12 @@ import CmpNavMenu, { Props as INavMenuProps } from 'cnt/NavMenu';
 import { ROUTES } from 'types/routes';
 import { withUserInteraction, PageMgr } from 'ctx/PageMgr';
 
+import Bg from './Background';
+import QrCode from './QrCode';
+
 import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
-import Bg from './Background';
+
 import css from './style.module.css';
 
 const NavMenu = withUserInteraction<INavMenuProps>(CmpNavMenu);
@@ -66,6 +69,8 @@ class Header extends React.Component<{}> {
               <div>MARS</div>
             </div>
           </div>
+
+          <QrCode className={css.qrCode} />
         </div>
 
         <NavMenu onSelect={noop} />
