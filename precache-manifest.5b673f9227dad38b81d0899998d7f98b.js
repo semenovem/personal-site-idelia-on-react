@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "de5601de49bf169f253a75107f51bb1a",
+    "revision": "ee5e296a7ba0525ac5a21ac929116a33",
     "url": "/index.html"
   },
   {
-    "revision": "459709cab166a2b66f03",
-    "url": "/static/css/main.7dc6a9d5.chunk.css"
+    "revision": "e4a07b5dcafed0070114",
+    "url": "/static/css/main.6feb150c.chunk.css"
   },
   {
-    "revision": "6811fda76c3a4ddaffb1",
-    "url": "/static/js/2.1efbf0a3.chunk.js"
+    "revision": "dc7b13be6c858da65ab9",
+    "url": "/static/js/2.16d8e70c.chunk.js"
   },
   {
-    "revision": "459709cab166a2b66f03",
-    "url": "/static/js/main.69d509f7.chunk.js"
+    "revision": "e4a07b5dcafed0070114",
+    "url": "/static/js/main.8436a580.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -1112,10 +1112,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/bg_lg.9df9cc3e.jpg"
   },
   {
-    "revision": "ae08183c5d730c0a36edd980e5ba8415",
-    "url": "/static/media/bg_lg.ae08183c.jpg"
-  },
-  {
     "revision": "d924796bd79e4e1129a85cdbf0e233df",
     "url": "/static/media/bg_lg.d924796b.jpg"
   },
@@ -1126,6 +1122,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "1f3184214767f7bfb3ead6e4cadf08f7",
     "url": "/static/media/bg_md.1f318421.jpg"
+  },
+  {
+    "revision": "4c06ddedefd2c011eb469384d959da86",
+    "url": "/static/media/bg_md.4c06dded.jpg"
   },
   {
     "revision": "6aaf44cc515753a9f906c1955d1cde91",
@@ -1174,10 +1174,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "1f0da83fad52fbbb0cc3b20bb3dd29a7",
     "url": "/static/media/bg_xl.1f0da83f.jpg"
-  },
-  {
-    "revision": "2c8cb15ff45c28d7a9b5c5209ff44021",
-    "url": "/static/media/bg_xl.2c8cb15f.jpg"
   },
   {
     "revision": "46ee7899412aa00b8968f1ddf66877a4",
@@ -1254,6 +1250,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "7ff906b76a185b04e2f1063901b334ac",
     "url": "/static/media/my_voice.7ff906b7.jpg"
+  },
+  {
+    "revision": "6ecd81696a583097b99e769141bd0ea1",
+    "url": "/static/media/qr.6ecd8169.svg"
   },
   {
     "revision": "3cfa8e86c8c1663327ac16ded5ffe405",
