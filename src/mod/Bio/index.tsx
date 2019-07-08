@@ -44,60 +44,61 @@ class Bio extends React.Component<Props, State> {
 
         <div className={cn(cssTypography.textBio)}>
           <p>
-            Idelia is a Singer, Songwriter, Writer and Actress. She is an International Music talent
-            in the genres of Pop, Electronic, Dance and R&B. She has an ability to sing in three
-            languages: English, Russian and Tatar. She is also becoming fluent in Spanish so one day
-            she can sing in Spanish as well.
+            Idelia Mars is an international talent - a singer, songwriter and an actress. She has
+            recorded Music in English, Russian and Tatar in the genres of Pop/Electronic/Dance/R&B.
+            Her broad range of skills and experience has enabled her to become an extraordinary
+            entertainer.
           </p>
 
           <div className={cn(css.extended, !shown && css.hide)}>
             <p>
-              When she used to live in Russia, Idelia had two record deals and published two albums
-              with those companies. Some of her songs became very popular and hit the spot number
-              one on the radio charts. She gave a new direction to the Tatar Music, combining
-              traditional elements with hot European dance beats. She became one of the Tatar
-              artists who changed the Tatar Music.
+              Idelia was born in Kazan, the capital city of the exotic Republic of Tatarstan,
+              Russia. She grew up in a Tatar family surrounded with the love of music. Her father
+              was a popular, classical music composer. He fondly stated, “As a child, Idelia loved
+              performing for guests and writing beautiful poems. She felt a soulful connection to
+              creativity from a very young age, especially music.” Her father passed away on March
+              16th 2016.
             </p>
 
             <p>
-              Born Ideliya Makarova, in the capital city of Kazan of the exotic Republic of
-              Tatarstan, Russia. She grew up in a Tatar family surrounded with the love of music.
-              Her father was a popular, classical music composer. He fondly stated, “As a child,
-              Idelia loved performing for guests and writing beautiful poems. She felt a soulful
-              connection to creativity from a very young age especially music .” Her father passed
-              away on March 16th 2016.
+              Her mother made a contribution to the development of the Tatar Encyclopedia. When she
+              was younger she wanted to be a singer because she has a great soprano voice. Both
+              sides of Idelia’s Family are full of creative people. Her uncle from her mother’s side
+              is also a very famous composer and singer in the Tatar Music World.
             </p>
 
             <p>
-              Her mother made a contribution to the development of the Tatar Encyclopedia. But when
-              she was younger she wanted to be a singer , because she has a great soprano voice.
-              Both sides of Idelia’s Family are full of creative people. Her uncle from her mother’s
-              side is also a very famous composer and singer in the Tatar Music World.
+              Idelia’s television career began as early as the second grade. She was cast by the
+              producer of a theatrical television show for children. Later as a teenager Idelia was
+              selected to host the Tatar Television Youth Program called “Yashlar Tuktalyshy”
+              (“Youth stop”) and she revolutionized the program with a new freestyle format. It was
+              during that period of time, when Idelia realized she had something to share and she
+              decided to follow her inspiration to pursue a career in music and entertainment.
             </p>
 
             <p>
-              Idelia also worked on TV since she was a kid. Idelia’s television career began as
-              early as the second grade. When she was cast by the producer of a theatrical
-              television show for children. Later as a teenager Idelia was selected to host the
-              Tatar Television Youth Program called “Yashlar Tuktalyshy” (“Youth stop”) and she
-              revolutionized the program with a new freestyle format. She also, participated in
-              music, choreography and acting classes. It was during this period of time, that Idelia
-              realized she had something to share and she decided to follow her inspiration to
-              pursue a career in music and entertainment.
+              As a teenager Idelia discovered her love for pop / techno /dance music. She took
+              music, choreography and acting classes. Her unique, seductive voice and artistic
+              expressions captured the hearts of many. Idelia enjoys a “hands on” approach in the
+              creation and production of her music - writing lyrics, creating melodies, harmonies,
+              and hooks as well as dancing, acting and directing her music videos. Her music,
+              charisma and rebellious nature have caught the attention of young adult fans and the
+              media, resulting in several appearances on television and interviews in newspapers and
+              magazines.
             </p>
 
             <p>
-              Recently Idelia made her Directorial debut with “See My Voice”. This film she wrote
-              based off of her inspiring original song “My Voice” about the inner voice. Creative
-              writing always being her biggest passion, but in this case she truly desired to work
-              on a project that would combine her talents, as a writer and a singer. This is how
-              “See My Voice” was born. She made this film to the memory of her father.
+              Recently Idelia made her Directorial debut with “See My Voice” short film. The film
+              she wrote based off of her inspiring original song “My Voice” about the inner voice.
+              Creative writing always being her biggest passion, but in this case she truly desired
+              to work on a project that would combine her talents as a writer and a singer. This is
+              how “See My Voice” was born. She dedicated this film to the memory of her father. She
+              plans to continue writing more films.
             </p>
 
             <p>
-              In the future Idelia is planning to write a script for her first feature film in
-              Fantasy genre to bring a new message to Humanity. She also always works on some new
-              music.
+              Idelia currently resides in Miami, Florida, US. With a strong and growing fan base she
+              continues her artistic evolution.
             </p>
           </div>
 
