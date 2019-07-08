@@ -7,7 +7,7 @@ export function findElemByAttr(
 
   while (el && el !== parent) {
     if (el.hasAttribute(attr)) {
-      return elem;
+      return el;
     }
     el = el.parentElement;
   }

@@ -39,7 +39,6 @@ class Videos extends React.Component<Props, State> {
     const { selectedId } = this.state;
 
     return videos.map(it => (
-      // eslint-disable-next-line react/button-has-type
       <button
         className={cn(css.item, it.id === selectedId && css.selected)}
         key={it.id}

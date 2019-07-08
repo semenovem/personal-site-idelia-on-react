@@ -1,4 +1,5 @@
 import coverDifferent from './assets/covers/different.jpg';
+import coverDifferentBackstage from './assets/covers/different_backstage.jpg';
 import coverLoveBizarre from './assets/covers/love_bizarre.jpg';
 import coverTheRoadBeforeMe from './assets/covers/the_road_before_me.jpg';
 import coverTvTatarGirl from './assets/covers/tv_tatar_girl.jpg';
@@ -30,6 +31,16 @@ export const videos: Video[] = [
 
   {
     id: 2,
+    title: 'Different music video backstage',
+    tooltip: '',
+    url: 'https://www.youtube.com/embed/cXLd-sVMZdU',
+    cover: coverDifferentBackstage,
+    iframe:
+      '<iframe width="560" height="315" src="https://www.youtube.com/embed/cXLd-sVMZdU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+  },
+
+  {
+    id: 3,
     title: 'Love bizarre',
     tooltip: '',
     url: 'https://www.youtube.com/embed/heSCtd9LZss',
@@ -40,7 +51,7 @@ export const videos: Video[] = [
   },
 
   {
-    id: 3,
+    id: 4,
     title: 'The road before me',
     tooltip: '',
     url: 'https://www.youtube.com/embed/tAz7-pgGo8c',
@@ -51,7 +62,7 @@ export const videos: Video[] = [
   },
 
   {
-    id: 4,
+    id: 5,
     title: 'tv Tatar girl',
     tooltip: '',
     url: 'https://www.youtube.com/embed/O_MipF8mz_w',
@@ -62,7 +73,7 @@ export const videos: Video[] = [
   },
 
   {
-    id: 5,
+    id: 6,
     title: 'Idelia by Leron',
     tooltip: '',
     url: 'https://www.youtube.com/embed/dhtkYDaODYc',
