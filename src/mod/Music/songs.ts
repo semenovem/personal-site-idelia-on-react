@@ -51,8 +51,8 @@ export const songs: Song[] = [
 
   {
     id: 'i_am_yours',
-    spotify: '',
-    itunes: '',
+    spotify: 'https://open.spotify.com/album/3piQPdOwEFGQjv9L2ixC9j',
+    itunes: 'https://music.apple.com/us/album/im-yours-i-m/1471635967?i=1471635973',
     coverUrl: iAmYours,
     url: '/songs/i_am_yours.mp3',
     name: 'i am yours',
