@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8504e65697af2d1ecdeba3323a386202",
+    "revision": "40ce29dae55f2d32ce228684133942d3",
     "url": "/index.html"
   },
   {
-    "revision": "9549a4d2907398567163",
+    "revision": "1b2e10257a5793ef7d4c",
     "url": "/static/css/main.d8da9a5f.chunk.css"
   },
   {
-    "revision": "039e9b44e2cec0ae7bcc",
-    "url": "/static/js/2.58b4ed1e.chunk.js"
+    "revision": "4f6baae4b7740e894561",
+    "url": "/static/js/2.83d6aa8c.chunk.js"
   },
   {
-    "revision": "9549a4d2907398567163",
-    "url": "/static/js/main.07be660e.chunk.js"
+    "revision": "1b2e10257a5793ef7d4c",
+    "url": "/static/js/main.518d33df.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -1234,6 +1234,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "28c28620baf28831a6c97ece4120e368",
     "url": "/static/media/facefook_bw.28c28620.svg"
+  },
+  {
+    "revision": "e9dec76d6637a3ad1cccfad72c484e08",
+    "url": "/static/media/google_music.e9dec76d.svg"
+  },
+  {
+    "revision": "d0bee766ff1987682d780cb0a80abab5",
+    "url": "/static/media/google_music_with_sign.d0bee766.svg"
   },
   {
     "revision": "cb02a1f40792c55d77f0d749e5fc994d",
