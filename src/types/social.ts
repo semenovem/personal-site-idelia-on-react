@@ -25,4 +25,9 @@ export const SOCIAL = {
     URL: 'https://music.yandex.ru/artist/3920485',
     ALT: 'Idelia Mars',
   },
+
+  GOOGLE_MUSIC: {
+    URL: 'https://play.google.com/music/listen?u=0#/artist/Acbuqc7fna7xyei4sb3xxbjz4ja/Idelia+Mars',
+    ALT: 'Idelia Mars',
+  },
 };

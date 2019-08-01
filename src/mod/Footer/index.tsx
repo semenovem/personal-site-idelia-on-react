@@ -11,6 +11,8 @@ import iconITunesMob from 'assets/icons/shops/itunes_icon_white.png';
 import iconITunes from 'assets/icons/shops/itunes_white.png';
 import iconYandexMusicMob from 'assets/icons/shops/yandex_music_icon.svg';
 import iconYandexMusic from 'assets/icons/shops/yandex_music_white.svg';
+import iconGoogleMusic from 'assets/icons/shops/google_music.svg';
+import iconGoogleMusicWithSign from 'assets/icons/shops/google_music_with_sign.svg';
 
 import { SOCIAL } from 'types/social';
 
@@ -76,6 +78,20 @@ class Footer extends React.Component<Props> {
           >
             <img src={iconYandexMusicMob} alt={SOCIAL.YANDEX_MUSIC.ALT} className={css.logoMob} />
             <img src={iconYandexMusic} alt={SOCIAL.YANDEX_MUSIC.ALT} className={css.logoTablet} />
+          </a>
+
+          <a
+            href={SOCIAL.GOOGLE_MUSIC.URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            {...(!hasUserInteraction && { tabIndex: -1 })}
+          >
+            <img src={iconGoogleMusic} alt={SOCIAL.GOOGLE_MUSIC.ALT} className={css.logoMob} />
+            <img
+              src={iconGoogleMusicWithSign}
+              alt={SOCIAL.GOOGLE_MUSIC.ALT}
+              className={css.logoTablet}
+            />
           </a>
         </div>
 
