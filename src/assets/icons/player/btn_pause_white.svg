@@ -1,10 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g transform="translate(2.000000, 2.000000)" stroke="#FFFFFF" stroke-width="2.79069767">
-          <circle id="Oval-Copy" cx="24" cy="24" r="24"/>
-          <path d="M19.8139535,14.27907 L19.8139535,34.27907" stroke-linecap="square"/>
-          <path d="M28.1860465,14.27907 L28.1860465,34.27907" stroke-linecap="square"/>
-        </g>
-    </g>
-</svg>
+<svg width="52" height="52" xmlns="http://www.w3.org/2000/svg"><g transform="translate(2 2)" stroke="#FFF" stroke-width="2.791" fill="none" fill-rule="evenodd"><circle cx="24" cy="24" r="24"/><path d="M19.814 14.28v20M28.186 14.28v20" stroke-linecap="square"/></g></svg>
