@@ -42,8 +42,8 @@ export const songs: Song[] = [
 
   {
     id: 'bomb',
-    spotify: '',
-    itunes: '',
+    spotify: 'https://open.spotify.com/album/1Wteh2Cc2Lytd30aa5ZU08',
+    itunes: 'https://music.apple.com/us/album/bomb-single/1472177996',
     coverUrl: bomb,
     url: '/songs/bomb.mp3',
     name: 'bomb',
