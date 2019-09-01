@@ -1,12 +1,16 @@
-import React from "react";
-import {ICountdown, CountdownLevel} from "./types";
+import React from 'react';
+import { Countdown, CountdownLevel } from './types';
 
 const countdown = {
-    getLevel() { return CountdownLevel.CORE; },
-    addTask(countdownLevel: CountdownLevel) { return 0 },
-    removeTask(numTask: number): void {}
-  };
+  getLevel() {
+    return CountdownLevel.CORE;
+  },
+  addTask() {
+    return 0;
+  },
+  removeTask(): void {},
+};
 
-const CountdownCtx = React.createContext<ICountdown>(countdown);
+const CountdownCtx = React.createContext<Countdown>(countdown);
 
 export default CountdownCtx;

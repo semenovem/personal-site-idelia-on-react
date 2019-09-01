@@ -11,11 +11,53 @@
 .links {
   padding: var(--indent-m) var(--indent-m);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 70px;
 }
 
 .links a {
   display: inline-block;
   height: 100%;
+}
+
+.links a img {
+  height: 100%;
+}
+
+
+.logoMob {
+  display: block;
+}
+
+.logoTablet {
+  display: none;
+}
+
+
+/* sm */
+@media (min-width: 576px) {}
+
+
+/* md */
+@media (min-width: 768px) {
+  .logoMob {
+    display: none;
+  }
+
+  .logoTablet {
+    display: block;
+  }
+}
+
+
+/* lg */
+@media (min-width: 992px) {
+  .links {
+    height: 100px;
+  }
+}
+
+
+/* xl */
+@media (min-width: 1200px) {
 }

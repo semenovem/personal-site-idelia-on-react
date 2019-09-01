@@ -34,8 +34,8 @@
 /* md */
 @media (min-width: 768px) {
   :root {
-    --font-size-nav-menu-item: 3vw;
-
+    --font-size-nav-menu-item: 2.3vw;
+    --font-size-mod-title: 42px;
   }
 }
 
@@ -44,6 +44,7 @@
 /* lg */
 @media (min-width: 992px) {
   :root {
+    --font-size-mod-header-title: 90px;
   }
 }
 

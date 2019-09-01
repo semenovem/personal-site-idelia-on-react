@@ -1,6 +1,4 @@
 .bio {
-  /*min-height: 100vh;*/
-
   display: flex;
   flex-direction: column;
 
@@ -35,25 +33,39 @@
   display: none;
 }
 
-
 .readMore {
 }
 
+.img {
+  display: inline;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wrap {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column-reverse;
+  padding-right: 20px;
+}
 
 /* sm */
-@media (min-width: 576px) {}
-
-
+@media (min-width: 576px) {
+}
 
 /* md */
-@media (min-width: 768px) {  }
-
-
+@media (min-width: 768px) {
+  .wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
 
 /* lg */
-@media (min-width: 992px) {}
-
-
+@media (min-width: 992px) {
+}
 
 /* xl */
 @media (min-width: 1200px) {
@@ -61,8 +73,7 @@
     display: block;
   }
 
-
   .readMore {
-    display: none
+    display: none;
   }
 }

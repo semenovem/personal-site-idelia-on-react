@@ -1,11 +1,11 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { withCtxMusicPlayer, IMusicPlayerProps } from 'ctx/MusicPlayer';
+import { withCtxMusicPlayer, MusicPlayerProps } from 'ctx/MusicPlayer';
 
 import css from './style.module.css';
 
-interface IOwnProps {
+interface OwnProps {
   className?: string;
   urlCover?: string;
   active?: boolean;
@@ -23,26 +23,25 @@ interface IOwnProps {
    */
   onPause?(): void;
 
-
   src: string;
 }
 
-type Props = IOwnProps & IMusicPlayerProps;
+type Props = OwnProps & MusicPlayerProps;
 
 class VideoPlayerYoutube extends React.Component<Props> {
-  static isLoadedScriptApi: Promise<void>;
+  private static isLoadedScriptApi: Promise<void>;
 
   /**
    * not yet used
    */
-  static loadScriptApi(): Promise<void> {
+  private static loadScriptApi(): Promise<void> {
     if (VideoPlayerYoutube.isLoadedScriptApi) {
       return VideoPlayerYoutube.isLoadedScriptApi;
     }
 
     VideoPlayerYoutube.isLoadedScriptApi = new Promise((resolve, reject) => {
       const tag = document.createElement('script');
-      tag.src = "https://www.youtube.com/iframe_api";
+      tag.src = 'https://www.youtube.com/iframe_api';
 
       tag.onerror = reject;
 
@@ -50,10 +49,13 @@ class VideoPlayerYoutube extends React.Component<Props> {
       window.onYouTubeIframeAPIReady = resolve;
 
       const firstEl = document.getElementsByTagName('script')[0];
-      firstEl.parentNode!.insertBefore(tag, firstEl);
+
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      firstEl!.parentNode!.insertBefore(tag, firstEl);
     })
       .then(() => {})
       .catch(e => {
+        // eslint-disable-next-line no-console
         console.error('failed to load api script: "https://www.youtube.com/iframe_api"');
         throw e;
       });
@@ -61,13 +63,14 @@ class VideoPlayerYoutube extends React.Component<Props> {
     return VideoPlayerYoutube.isLoadedScriptApi;
   }
 
-  mount = false;
+  private mount = false;
 
-  refEl: any;
+  private readonly refEl: any;
 
-  player: any;
+  // eslint-disable-next-line react/sort-comp
+  private player: any;
 
-  constructor(props: Props) {
+  public constructor(props: Props) {
     super(props);
     VideoPlayerYoutube.loadScriptApi();
     this.refEl = React.createRef();
@@ -75,13 +78,19 @@ class VideoPlayerYoutube extends React.Component<Props> {
   }
 
   public componentDidMount() {
-   VideoPlayerYoutube.isLoadedScriptApi.then(this.createPlayer);
+    VideoPlayerYoutube.isLoadedScriptApi.then(this.createPlayer);
   }
 
   public componentDidUpdate(prevProps: Props): void {
-    const { musicPlayer: { isPlay } } = this.props;
-    if (isPlay !== prevProps.musicPlayer.isPlay && isPlay && this.player && this.player.pauseVideo) {
-
+    const {
+      musicPlayer: { isPlay },
+    } = this.props;
+    if (
+      isPlay !== prevProps.musicPlayer.isPlay &&
+      isPlay &&
+      this.player &&
+      this.player.pauseVideo
+    ) {
       this.player.pauseVideo();
     }
   }
@@ -98,8 +107,8 @@ class VideoPlayerYoutube extends React.Component<Props> {
     // @ts-ignore
     this.player = new window.YT.Player(this.refEl.current, {
       events: {
-        'onStateChange': this.handlePlayerStateChange
-      }
+        onStateChange: this.handlePlayerStateChange,
+      },
     });
   };
 
@@ -110,18 +119,13 @@ class VideoPlayerYoutube extends React.Component<Props> {
     }
   };
 
-
   // TODO to hide iframe because off tabindex - not right display: none
   public render() {
     const { urlCover, className, src, htmlId, hasUserInteraction } = this.props;
-    const style = {...urlCover && {backgroundImage: urlCover}};
+    const style = { ...(urlCover && { backgroundImage: urlCover }) };
 
     return (
-      <div
-        className={cn(css.videoPlayer, className)}
-        style={style}
-      >
-
+      <div className={cn(css.videoPlayer, className)} style={style}>
         {/*<img src={urlCover} className={css.img} alt=''/>*/}
 
         <iframe
@@ -134,10 +138,9 @@ class VideoPlayerYoutube extends React.Component<Props> {
           allow="accelerometer; autoplay; encrypted-media; picture-in-picture"
           allowFullScreen
         />
-
       </div>
     );
   }
 }
 
-export default withCtxMusicPlayer<IOwnProps>(VideoPlayerYoutube);
+export default withCtxMusicPlayer<OwnProps>(VideoPlayerYoutube);

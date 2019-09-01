@@ -71,15 +71,27 @@
   font-size: 24px;
   color: #fff;
   text-align: justify;
+  margin-left: var(--indent-s);
+  margin-right: var(--indent-s);
 }
 
 .textBio p {
   text-indent: 1em
 }
 
+.textBio p:first-child {
+  margin-top: 0;
+}
+
 
 .btnOrange {
   color: white;
+  font-size: 22px;
+  letter-spacing: 3px;
+}
+
+.btnDark {
+  color: rgba(0, 0, 0, 0.9);
   font-size: 22px;
   letter-spacing: 3px;
 }
@@ -94,6 +106,18 @@
   .navMenuItem {
     letter-spacing: 2px;
   }
+
+  .modHeaderTitleMob {
+    color: #DA0000;
+    letter-spacing: 30px;
+  }
+
+  .textBio {
+    font-size: 24px;
+    text-align: justify;
+    margin-left: var(--indent-l);
+    margin-right: var(--indent-l);
+  }
 }
 
 
@@ -104,5 +128,9 @@
 
 
 /* xl */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+  .modHeaderTitleMob {
+    letter-spacing: 40px;
+  }
+}
 

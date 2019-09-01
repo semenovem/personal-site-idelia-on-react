@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { IMusicPlayer, Status } from 'types/player';
+import { MusicPlayer, Status } from 'types/player';
 
-const musicPlayerCtx: IMusicPlayer = {
+const musicPlayerCtx: MusicPlayer = {
   status: Status.PAUSE,
   play: () => {},
   pause: () => {},
@@ -11,6 +11,6 @@ const musicPlayerCtx: IMusicPlayer = {
   url: null,
 };
 
-const MusicPlayerCtx = React.createContext<IMusicPlayer>(musicPlayerCtx);
+const MusicPlayerCtx = React.createContext<MusicPlayer>(musicPlayerCtx);
 
 export default MusicPlayerCtx;

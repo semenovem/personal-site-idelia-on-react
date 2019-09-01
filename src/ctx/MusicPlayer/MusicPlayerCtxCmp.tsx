@@ -1,16 +1,21 @@
-import {IMusicPlayer, Status} from "types/player";
-import React from "react";
-import MusicPlayerCtx from "./MusicPlayerCtx";
-import { addEventListenerPause, addEventListenerPlay, removeEventListenerPause, removeEventListenerPlay} from './control';
+import { MusicPlayer, Status } from 'types/player';
+import React from 'react';
+import MusicPlayerCtx from './MusicPlayerCtx';
+import {
+  addEventListenerPause,
+  addEventListenerPlay,
+  removeEventListenerPause,
+  removeEventListenerPlay,
+} from './control';
 
-type IProps = {}
+interface Props {}
 
-interface IState {
-  player: IMusicPlayer,
+interface State {
+  player: MusicPlayer;
 }
 
-class MusicPlayerCtxCmp extends React.Component<IProps, IState> {
-  constructor(props: IProps) {
+class MusicPlayerCtxCmp extends React.Component<Props, State> {
+  public constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -21,7 +26,7 @@ class MusicPlayerCtxCmp extends React.Component<IProps, IState> {
         change: this.handleChange,
         url: null,
         isPlay: false,
-      }
+      },
     };
 
     addEventListenerPlay(this.handlePlay);
@@ -33,47 +38,49 @@ class MusicPlayerCtxCmp extends React.Component<IProps, IState> {
     removeEventListenerPause(this.handlePause);
   }
 
-  handlePlay = () => {
+  private handlePlay = () => {
+    const { player } = this.state;
+
     this.setState({
       player: {
-        ...this.state.player,
+        ...player,
         status: Status.PLAY,
         isPlay: true,
-      }
+      },
     });
   };
 
-  handlePause = () => {
+  private handlePause = () => {
+    const { player } = this.state;
+
     this.setState({
       player: {
-        ...this.state.player,
+        ...player,
         status: Status.PAUSE,
         isPlay: false,
-      }
+      },
     });
   };
 
-  handleChange = (url: string | null) => {
+  private handleChange = (url: string | null) => {
+    const { player } = this.state;
+
     this.setState({
       player: {
-        ...this.state.player,
+        ...player,
         url,
         status: url ? Status.PLAY : Status.PAUSE,
         isPlay: !!url,
-      }
+      },
     });
   };
 
-  handleIsPlay = () => this.state.player.status === Status.PLAY;
+  private handleIsPlay = () => this.state.player.status === Status.PLAY;
 
-  render() {
+  public render() {
     const { player } = this.state;
 
-    return (
-      <MusicPlayerCtx.Provider value={player}>
-        {this.props.children}
-      </MusicPlayerCtx.Provider>
-    );
+    return <MusicPlayerCtx.Provider value={player}>{this.props.children}</MusicPlayerCtx.Provider>;
   }
 }
 

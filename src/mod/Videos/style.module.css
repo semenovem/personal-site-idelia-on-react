@@ -5,7 +5,7 @@
 }
 
 .bg {
-  background-image: url(assets/bg_blur.jpg);
+  background-image: url(assets/bg/bg_blur.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left;
@@ -35,7 +35,7 @@
   min-width: calc(var(--h) * 1.5);
   width: calc(var(--h) * 1.5);
   height: var(--h);
-  overflow: visible;
+  overflow: hidden;
   position: relative;
   cursor: pointer;
   transition: transform 200ms;
@@ -44,16 +44,18 @@
   align-items: center;
 }
 
-.item:hover {
-  transform: scale(1.1);
+.item:hover .cover {
+  filter: grayscale(0);
+  transform: scale(1.04);
 }
 
 .item:not(:first-child) {
   margin-left: var(--indent-l);
 }
 
-.selected {
-  transform: scale(1.1);
+.item.selected .cover {
+  filter: grayscale(0);
+  transform: scale(1.04);
 }
 
 .cover {
@@ -62,6 +64,8 @@
   object-position: center;
   height: 100%;
   width: 100%;
+  filter: grayscale(100%);
+  transition: all 300ms;
 }
 
 .selected .cover {

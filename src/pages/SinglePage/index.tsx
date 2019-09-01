@@ -8,22 +8,60 @@ import Bio from 'mod/Bio';
 import Contact from 'mod/Contact';
 import News from 'mod/News';
 import Footer from 'mod/Footer';
-import {withCtxPageMgr, Page} from "ctx/PageMgr";
-import {ROUTES} from "types/routes";
+import { withCtxPageMgr, Page } from 'ctx/PageMgr';
+import { ROUTES, RouteItem } from 'types/routes';
 
 import css from './style.module.css';
 
-const routes = [ROUTES.HEADER, ROUTES.MUSIC, ROUTES.BIO, ROUTES.VIDEOS, ROUTES.GALLERY, ROUTES.NEWS, ROUTES.CONTACT];
+const routes = [
+  ROUTES.HEADER,
+  ROUTES.MUSIC,
+  ROUTES.BIO,
+  ROUTES.VIDEOS,
+  ROUTES.GALLERY,
+  ROUTES.NEWS,
+  ROUTES.CONTACT,
+];
+
+const obj: { [id: string]: RouteItem } = {};
+
+const routesAsObjByHtmlId: { [id: string]: RouteItem } = routes.reduce((acc, it: RouteItem) => {
+  acc[it.HTML_ID] = it;
+
+  return acc;
+}, obj);
 
 class SinglePage extends React.Component<{}> {
-  constructor(props: {}) {
+  public constructor(props: {}) {
     super(props);
     window.addEventListener('hashchange', this.handleHashChange);
+  }
+
+  public componentDidMount() {
+    const observer = new IntersectionObserver(this.handleObserver, {
+      threshold: 0,
+      rootMargin: '-200px 0px -100px 0px',
+    });
+
+    routes
+      .map(it => document.getElementById(it.HTML_ID))
+      .filter(Boolean)
+      .forEach(it => observer.observe(it as HTMLElement));
   }
 
   public componentWillUnmount() {
     window.removeEventListener('hashchange', this.handleHashChange);
   }
+
+  private handleObserver: IntersectionObserverCallback = (event: IntersectionObserverEntry[]) => {
+    event
+      .filter(it => it.isIntersecting)
+      .map(it => routesAsObjByHtmlId[it.target.id])
+      .filter(Boolean)
+      .forEach(it => {
+        window.history.pushState(null, '', it.HASH);
+      });
+  };
 
   private handleHashChange = () => {
     const hash = window.location.hash || ROUTES.HEADER.HASH;
@@ -36,7 +74,7 @@ class SinglePage extends React.Component<{}> {
     const el = document.getElementById(routeItem.HTML_ID);
 
     if (el) {
-      el.scrollIntoView({behavior: 'smooth'});
+      el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 

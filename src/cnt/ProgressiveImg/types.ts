@@ -1,89 +1,74 @@
-import {CountdownLevel} from "ctx/Countdown";
-import {WinSize} from "ctx/WinSize";
+import { CountdownLevel } from 'ctx/Countdown';
+import { WinSize } from 'ctx/WinSize';
 
 const isArray = Array.isArray.bind(Array);
 
-export interface IProgressiveImgProps {
+export interface ProgressiveImgProps {
   params: IProgressiveImgParams;
 }
 
-
-
-
-
-export type IProgressiveImgParams = IParams;
-
+export type IProgressiveImgParams = Params;
 
 /**
  * @simple format
  */
-export interface IParams {
+export interface Params {
   [win: string]: {
     [lev: string]: string;
-  }
+  };
 }
-
 
 /**
  * @work in progress
  */
 type IProgressiveImgParamsNext = any;
 
-export interface ILevWin {
+export interface LevWin {
   lev: CountdownLevel;
   win: WinSize;
   img: string;
 }
-export function isILevWin(a: IProgressiveImgParamsNext): ILevWin | null {
-  return !isArray(a.lev) && 'win' in a && !isArray(a.win) ? a as ILevWin : null;
+export function isILevWin(a: IProgressiveImgParamsNext): LevWin | null {
+  return !isArray(a.lev) && 'win' in a && !isArray(a.win) ? (a as LevWin) : null;
 }
 
-
-
-export interface ILevWinKit {
+export interface LevWinKit {
   lev: CountdownLevel;
-  win: IDefWin[];
+  win: DefWin[];
 }
-export function isILevWinKit(a: IProgressiveImgParamsNext): ILevWinKit | null {
-  return !isArray(a.lev) && 'win' in a && isArray(a.win) && !('img' in a) ? a as ILevWinKit : null;
-}
-
-
-
-interface ILevKitWin {
-  lev: IDefLev[]
-  win: WinSize,
-}
-export function isILevKitWin(a: IProgressiveImgParamsNext): ILevKitWin | null {
-  return isArray(a.lev) && 'win' in a && !isArray(a.win) ? a as ILevKitWin : null;
+export function isILevWinKit(a: IProgressiveImgParamsNext): LevWinKit | null {
+  return !isArray(a.lev) && 'win' in a && isArray(a.win) && !('img' in a) ? (a as LevWinKit) : null;
 }
 
+interface LevKitWin {
+  lev: DefLev[];
+  win: WinSize;
+}
+export function isILevKitWin(a: IProgressiveImgParamsNext): LevKitWin | null {
+  return isArray(a.lev) && 'win' in a && !isArray(a.win) ? (a as LevKitWin) : null;
+}
 
-
-interface ILevDefWinKit {
+interface LevDefWinKit {
   lev: CountdownLevel;
   win: WinSize[];
   img: string;
 }
-export function isILevDefWinKit(a: IProgressiveImgParamsNext): ILevDefWinKit | null {
-  return !isArray(a.lev) && 'win' in a && isArray(a.win) && 'img' in a ? a as ILevDefWinKit : null;
+export function isILevDefWinKit(a: IProgressiveImgParamsNext): LevDefWinKit | null {
+  return !isArray(a.lev) && 'win' in a && isArray(a.win) && 'img' in a ? (a as LevDefWinKit) : null;
 }
-
 
 // if root, then apply to all sizes of window
 // and as child
-export interface IDefLev {
+export interface DefLev {
   lev: CountdownLevel;
   img: string;
 }
-export function isIDefLev(a: IProgressiveImgParamsNext): IDefLev | null {
-  return !isArray(a.lev) && !('win' in a) && 'img' in a ? a as IDefLev : null;
+export function isIDefLev(a: IProgressiveImgParamsNext): DefLev | null {
+  return !isArray(a.lev) && !('win' in a) && 'img' in a ? (a as DefLev) : null;
 }
 
-
-
 // only as child
-export interface IDefWin {
-  win: WinSize,
+export interface DefWin {
+  win: WinSize;
   img: string;
 }

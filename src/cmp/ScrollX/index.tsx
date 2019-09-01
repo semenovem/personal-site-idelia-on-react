@@ -9,21 +9,20 @@ interface Props {
   className?: string;
   onClickItem?: onClickProp;
   nameDataAttr: string;
-
-  hasUserInteraction?: boolean;
+  hasUserInteraction: boolean;
 }
 
 class ScrollX extends React.Component<Props> {
-  private readonly refItems: React.RefObject<Items>;
-  private readonly refArrowL: React.RefObject<HTMLButtonElement>;
-  private readonly refArrowR: React.RefObject<HTMLButtonElement>;
-
   private arrows = {
     l: false,
     r: false,
   };
 
-  constructor(props: Props) {
+  private readonly refArrowL: React.RefObject<HTMLButtonElement>;
+  private readonly refArrowR: React.RefObject<HTMLButtonElement>;
+  private readonly refItems: React.RefObject<Items>;
+
+  public constructor(props: Props) {
     super(props);
     this.refItems = React.createRef();
     this.refArrowL = React.createRef();
@@ -32,7 +31,6 @@ class ScrollX extends React.Component<Props> {
 
   private setStyleBtn(elem: HTMLButtonElement, isShow: boolean): void {
     elem.classList[isShow ? 'add' : 'remove'](css.arrowShowUp);
-    elem.disabled = !isShow;
   }
 
   private handleClickArrowL = () => {
@@ -66,9 +64,8 @@ class ScrollX extends React.Component<Props> {
         <button
           className={cn(css.arrow, arrows.l && css.arrowShowUp)}
           type="button"
-          disabled={arrows.l}
           ref={this.refArrowL}
-          {...!hasUserInteraction && { tabIndex: -1 }}
+          {...(!hasUserInteraction && { tabIndex: -1 })}
           onClick={this.handleClickArrowL}
         />
 
@@ -84,9 +81,8 @@ class ScrollX extends React.Component<Props> {
         <button
           className={cn(css.arrow, arrows.r && css.arrowShowUp)}
           type="button"
-          disabled={arrows.r}
           ref={this.refArrowR}
-          {...!hasUserInteraction && { tabIndex: -1 }}
+          {...(!hasUserInteraction && { tabIndex: -1 })}
           onClick={this.handleClickArrowR}
         />
       </div>

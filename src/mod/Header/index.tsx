@@ -1,30 +1,32 @@
 import React from 'react';
 import cn from 'classnames';
 
-import CmpBtnHamMenu, { IProps as IBtnHamMenuProps } from 'cmp/BtnHamMenu';
-import CmpNavMenu, { IProps as INavMenuProps } from 'cnt/NavMenu';
-import {ROUTES} from 'types/routes';
-import { withUserInteraction } from 'ctx/PageMgr';
-import { PageMgr } from 'ctx/PageMgr';
+import CmpBtnHamMenu, { Props as IBtnHamMenuProps } from 'cmp/BtnHamMenu';
+import CmpNavMenu, { Props as INavMenuProps } from 'cnt/NavMenu';
+import { ROUTES } from 'types/routes';
+import { withUserInteraction, PageMgr } from 'ctx/PageMgr';
+
 import Bg from './Background';
+import QrCode from './QrCode';
 
 import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
+
 import css from './style.module.css';
 
 const NavMenu = withUserInteraction<INavMenuProps>(CmpNavMenu);
 const BtnHamMenu = withUserInteraction<IBtnHamMenuProps>(CmpBtnHamMenu);
 
 class Header extends React.Component<{}> {
-  private readonly refTitle: React.RefObject<HTMLDivElement>;
   private opacity = 1;
   private prevScroll = 0;
   private scrollStep = 15;
 
-  constructor(props: {}) {
+  private readonly refTitle: React.RefObject<HTMLDivElement>;
+
+  public constructor(props: {}) {
     super(props);
     this.refTitle = React.createRef();
-
     window.addEventListener('scroll', this.handleScroll);
   }
 
@@ -32,9 +34,9 @@ class Header extends React.Component<{}> {
     window.removeEventListener('scroll', this.handleScroll);
   }
 
-  private handleScroll = (event: Event) => {
+  private handleScroll = () => {
     const scroll = document.documentElement.scrollTop;
-    const height = window.innerHeight * 0.7;
+    const height = window.innerHeight * 0.4;
 
     if (scroll > height || Math.abs(this.prevScroll + scroll) < this.scrollStep) {
       return;
@@ -58,19 +60,17 @@ class Header extends React.Component<{}> {
     return (
       <div id={ROUTES.HEADER.HTML_ID} className={css.header}>
         <div className={css.cover}>
-          <Bg className={css.bg}/>
+          <Bg className={css.bg} />
           <div className={css.sticky}>
+            <BtnHamMenu className={cssMod.btnHamMenu} onOpen={this.handleOpenHamMenu} />
 
-            <BtnHamMenu
-              className={cssMod.btnHamMenu}
-              onOpen={this.handleOpenHamMenu}
-            />
-
-            <div className={cn(css.titleSite, cssTypography.modHeaderTitleMob)} ref={this.refTitle} >
+            <div className={cn(css.titleSite, cssTypography.modHeaderTitleMob)} ref={this.refTitle}>
               <div>IDELIA</div>
               <div>MARS</div>
             </div>
           </div>
+
+          <QrCode className={css.qrCode} />
         </div>
 
         <NavMenu onSelect={noop} />

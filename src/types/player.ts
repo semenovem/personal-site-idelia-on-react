@@ -1,4 +1,3 @@
-
 export enum Actions {
   PLAY,
   PAUSE,
@@ -19,14 +18,14 @@ export enum Volume {
   UNMUTE,
 }
 
-export interface IPlayer {
-  status: Status
+export interface Player {
+  status: Status;
   play(): void;
   pause(): void;
   change(url: string | string[] | null): void;
   isPlay: boolean;
 }
 
-export interface IMusicPlayer extends IPlayer {
+export interface MusicPlayer extends Player {
   url: string | null;
 }

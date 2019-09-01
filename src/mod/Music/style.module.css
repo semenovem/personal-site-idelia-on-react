@@ -3,7 +3,7 @@
 }
 
 .bg {
-  background-image: url(assets/bg_xs_blur.jpg);
+  background-image: url(assets/bg/bg_xs_blur.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
@@ -19,6 +19,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: var(--max-width-limit);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .song:not(:first-child) {
@@ -40,7 +43,7 @@
 .buy {
     display: flex;
     justify-content: center;
-    margin-top: var(--indent-l);
+    margin-top: var(--indent-s);
 }
 
 .store {
@@ -53,6 +56,13 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.comingSoon {
+  color: white;
+  font-size: 36px;
+  text-align: center;
+  font-style: italic;
 }
 
 
@@ -72,6 +82,7 @@
   .songs {
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .song:not(:first-child) {
@@ -100,6 +111,10 @@
 /* xl */
 @media (min-width: 1200px) {
   .bg {
-    background-image: url(assets/bg_xl_blur.jpg);
+    background-image: url(assets/bg/bg_xl_blur.jpg);
+  }
+
+  .song {
+    margin: 0 var(--indent-l);
   }
 }

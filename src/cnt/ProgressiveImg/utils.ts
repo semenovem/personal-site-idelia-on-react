@@ -1,26 +1,27 @@
+import { CountdownLevel, howRelevant as levHowRelevant } from 'ctx/Countdown';
+import { WinSize, howRelevant as winHowRelevant } from 'ctx/WinSize';
 import * as T from './types';
-
-import {CountdownLevel, howRelevant as levHowRelevant} from "ctx/Countdown";
-import {WinSize, howRelevant as winHowRelevant} from "ctx/WinSize";
-
 
 const isArray = Array.isArray.bind(Array);
 
-interface IEmpty {
+interface Empty {
   lev: CountdownLevel | null;
   win: WinSize | null;
-  img: string | null
+  img: string | null;
 }
 
-interface ISt {
-  cur: IEmpty | T.ILevWin;
+interface St {
+  cur: Empty | T.LevWin;
   lev: CountdownLevel;
   win: WinSize;
 }
 
-
-export function findRelevantImg(args: any /* wip */, countdownLevel: CountdownLevel, winSize: WinSize): string | null {
-  const st: ISt = {
+export function findRelevantImg(
+  args: any /* wip */,
+  countdownLevel: CountdownLevel,
+  winSize: WinSize
+): string | null {
+  const st: St = {
     cur: {
       lev: null,
       win: null,
@@ -34,12 +35,12 @@ export function findRelevantImg(args: any /* wip */, countdownLevel: CountdownLe
 }
 
 // для рекурсивного прохода данных
-function iterator(st: ISt, a: any): ISt {
+function iterator(st: St, a: any): St {
   return isArray(a) ? a.reduce((acc, it) => iterator(acc, it), st) : /*defType(st, a)*/ st;
 }
 //
 // // определение типа данных
-// function defType(st: ISt, a: T.IProgressiveImgParams): ISt {
+// function defType(st: St, a: T.IProgressiveImgParams): St {
 //   let type;
 //
 //   type = T.isILevWin(a);
@@ -76,7 +77,7 @@ function iterator(st: ISt, a: any): ISt {
 //
 //
 // // // разбор по типам данных
-// // function defItem(st: ISt, a: T.IProgressiveImgParams): ISt {
+// // function defItem(st: St, a: T.IProgressiveImgParams): St {
 // //   if (Array.isArray(a.lev)) {
 // //     if (!('win' in a) || Array.isArray(a.win)) {
 // //       return st;    // этого не может быть. ts не определяет, что если lev массив, то win точно есть
@@ -99,19 +100,19 @@ function iterator(st: ISt, a: any): ISt {
 // //   return defLevWin(st, a);
 // // }
 //
-// // массив lev типа IDefLev
-// function defLevAsArray(st: ISt, lev: IDefLev[], win: WinSize): ISt {
+// // массив lev типа DefLev
+// function defLevAsArray(st: St, lev: DefLev[], win: WinSize): St {
 //   return lev.reduce((acc, it) => defLevWin(acc, { ...it, win }), st);
 // }
 //
 // //
-// function defWithLev(st: ISt, a: T.IDefLev, lev: CountdownLevel): ISt {
+// function defWithLev(st: St, a: T.DefLev, lev: CountdownLevel): St {
 //
 //   return st;
 // }
 //
 // //
-// function defWithWin(st: ISt, a: T.IDefLev, win: WinSize): ISt {
+// function defWithWin(st: St, a: T.DefLev, win: WinSize): St {
 //
 //   return st;
 // }
@@ -121,9 +122,9 @@ function iterator(st: ISt, a: any): ISt {
 //
 //
 /**
- * for ILevWin
+ * for LevWin
  */
-function defLevWin(st: ISt, a: T.ILevWin): ISt {
+export function defLevWin(st: St, a: T.LevWin): St {
   const levPrev = levHowRelevant(st.lev, st.cur.lev);
   const levNext = levHowRelevant(st.lev, a.lev);
 
@@ -140,15 +141,15 @@ function defLevWin(st: ISt, a: T.ILevWin): ISt {
     return st;
   }
 
-
   if (levPrev && winPrev) {
     if (levNext === levPrev && winNext > winPrev) {
       return st;
     }
   }
 
+  // eslint-disable-next-line no-param-reassign
   st.cur = {
-    ...a
+    ...a,
   };
   return st;
 }

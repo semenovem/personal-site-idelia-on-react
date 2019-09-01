@@ -1,23 +1,28 @@
 import React from 'react';
 import cn from 'classnames';
 
-import {ROUTES} from 'types/routes';
+import { ROUTES } from 'types/routes';
 import { findValueByAttr } from 'utils/dom/findValueByAttr';
+import BtnClose from 'cmp/BtnClose';
 
 import cssTypography from 'styles/typography.module.css';
-import cssMod from 'mod/style.module.css';
+import cssCommon from 'styles/common.module.css';
+import { withCtxPageMgr, Page, PageMgrProps, PageMgr } from 'ctx/PageMgr';
 import css from './style.module.css';
-import {withCtxPageMgr, Page, PageMgrProps, PageMgr} from "ctx/PageMgr";
 
-interface IOwnProps {
+interface OwnProps {
   className?: string;
 }
 
-type IProps = IOwnProps & PageMgrProps;
+type Props = OwnProps & PageMgrProps;
 
-class HamMenu extends React.Component<IProps> {
+class HamMenu extends React.Component<Props> {
   private handleSelect = (event: React.MouseEvent) => {
-    const id = findValueByAttr(event.target as HTMLElement, event.currentTarget as HTMLElement, 'data-id');
+    const id = findValueByAttr(
+      event.target as HTMLElement,
+      event.currentTarget as HTMLElement,
+      'data-id'
+    );
 
     if (!id) {
       return;
@@ -49,13 +54,21 @@ class HamMenu extends React.Component<IProps> {
   }
 
   public render() {
-    const {className, pageMgr: {hasUserInteraction}} = this.props;
+    const {
+      className,
+      pageMgr: { hasUserInteraction },
+    } = this.props;
 
     return (
       <div className={cn(css.hamMenu, className, hasUserInteraction && css.visible)}>
-        <button className={cn(cssMod.btnCloseHamMenu, css.btnClose)} onClick={this.handleClose}/>
+        <BtnClose
+          className={cssCommon.btnCloseOnAbsolutePosition}
+          onClose={this.handleClose}
+          hasUserInteraction={hasUserInteraction}
+          aria-label="Close menu"
+        />
 
-        <nav className={cn(css.items)} onClick={this.handleSelect}>
+        <nav className={cn(css.items)} onClick={this.handleSelect} aria-hidden>
           {this.renderItems()}
         </nav>
       </div>
@@ -63,4 +76,4 @@ class HamMenu extends React.Component<IProps> {
   }
 }
 
-export default withCtxPageMgr<IOwnProps>(Page.HAM_MENU, HamMenu);
+export default withCtxPageMgr<OwnProps>(Page.HAM_MENU, HamMenu);

@@ -1,5 +1,8 @@
 .gallery {
   position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .bg {
@@ -16,11 +19,13 @@
 }
 
 .photos {
-  height: 300px;
+  height: 200px;
+  max-width: var(--max-width-limit);
+  width: 100%;
 }
 
 .img {
-  object-fit: contain;
+  cursor: pointer;
 }
 
 .img:not(:first-child) {
@@ -29,17 +34,29 @@
 
 
 /* sm */
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+  .photos {
+    height: 300px;
+  }
+}
 
 
 
 /* md */
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+  .photos {
+    height: 400px;
+  }
+}
 
 
 
 /* lg */
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+  .photos {
+    height: 500px;
+  }
+}
 
 
 

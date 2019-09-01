@@ -1,43 +1,46 @@
 import React from 'react';
 import cn from 'classnames';
 
-import {ROUTES} from 'types/routes';
+import { ROUTES } from 'types/routes';
 import MusicCover from 'cmp/MusicCover';
 import { withUserInteraction, PageMgrUserInteractionProps } from 'ctx/PageMgr';
-import {IMusicPlayerProps, withCtxMusicPlayer} from 'ctx/MusicPlayer';
-import {Status} from 'types/player';
-import Bg from './Background';
+import { MusicPlayerProps, withCtxMusicPlayer } from 'ctx/MusicPlayer';
+import { Status } from 'types/player';
 
 import itunes from 'assets/icons/shops/itunes_buy.png';
 import spotify from 'assets/icons/shops/spotify_buy.png';
 
-import {findUrl, ISong, songs} from './songs';
-
 import cssTypography from 'styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
+import { findUrl, Song, songs } from './songs';
+import Bg from './Background';
 import css from './style.module.css';
 
-interface IOwnProps {}
+interface OwnProps {}
 
-interface IProps extends IOwnProps, PageMgrUserInteractionProps, IMusicPlayerProps {}
+interface Props extends OwnProps, PageMgrUserInteractionProps, MusicPlayerProps {}
 
-interface IState {
+interface State {
   playedSongId: string | null;
 }
 
-class Music extends React.Component<IProps, IState> {
-  state = {
+class Music extends React.Component<Props, State> {
+  public state = {
     playedSongId: null,
   };
 
-  public shouldComponentUpdate(nextProps: IProps, nextState: IState) {
+  public shouldComponentUpdate(nextProps: Props, nextState: State) {
     const { hasUserInteraction, musicPlayer } = this.props;
     const { playedSongId } = this.state;
-    return nextProps.hasUserInteraction !== hasUserInteraction || nextState.playedSongId !== playedSongId || musicPlayer.status !== nextProps.musicPlayer.status;
+    return (
+      nextProps.hasUserInteraction !== hasUserInteraction ||
+      nextState.playedSongId !== playedSongId ||
+      musicPlayer.status !== nextProps.musicPlayer.status
+    );
   }
 
   private handlePlayerControl = (id: string) => {
-    const { playedSongId, } = this.state;
+    const { playedSongId } = this.state;
     const { musicPlayer } = this.props;
 
     if (musicPlayer.status === Status.PAUSE && musicPlayer.url) {
@@ -51,11 +54,15 @@ class Music extends React.Component<IProps, IState> {
       },
       () => {
         musicPlayer.change(findUrl(this.state.playedSongId));
-      });
+      }
+    );
   };
 
-  private renderSong(song: ISong) {
-    const { hasUserInteraction, musicPlayer: { status } } = this.props;
+  private renderSong(song: Song) {
+    const {
+      hasUserInteraction,
+      musicPlayer: { status },
+    } = this.props;
     const { playedSongId } = this.state;
     const isPlayed = status === Status.PLAY && song.id === playedSongId;
 
@@ -68,25 +75,35 @@ class Music extends React.Component<IProps, IState> {
           id={song.id}
           isPlayed={isPlayed}
           hasUserInteraction={hasUserInteraction}
+          nameTrack={song.name}
         />
 
         <div className={css.buy}>
-          <a
-            href={song.itunes}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={css.store}
-            style={{ backgroundImage: `url(${itunes})`}}
-            {...!hasUserInteraction && { tabIndex: -1 }}
-          > </a>
-          <a
-            href={song.spotify}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={css.store}
-            style={{ backgroundImage: `url(${spotify})`}}
-            {...!hasUserInteraction && { tabIndex: -1 }}
-          > </a>
+          {song.itunes && (
+            // eslint-disable-next-line jsx-a11y/anchor-has-content
+            <a
+              href={song.itunes}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={css.store}
+              style={{ backgroundImage: `url(${itunes})` }}
+              {...(!hasUserInteraction && { tabIndex: -1 })}
+            />
+          )}
+          {song.spotify && (
+            // eslint-disable-next-line jsx-a11y/anchor-has-content
+            <a
+              href={song.spotify}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={css.store}
+              style={{ backgroundImage: `url(${spotify})` }}
+              {...(!hasUserInteraction && { tabIndex: -1 })}
+            />
+          )}
+          {!song.spotify && !song.itunes && (
+            <div className={cn(css.store, css.comingSoon)}>Coming soon</div>
+          )}
         </div>
       </div>
     );
@@ -95,12 +112,10 @@ class Music extends React.Component<IProps, IState> {
   public render() {
     return (
       <div id={ROUTES.MUSIC.HTML_ID} className={cn(cssMod.mod, css.music)}>
-        <Bg className={css.bg}/>
+        <Bg className={css.bg} />
         <h2 className={cn(cssTypography.modTitle, cssMod.title)}>{ROUTES.MUSIC.TITLE}</h2>
 
-        <div className={css.songs}>
-          {songs.map(it => this.renderSong(it))}
-        </div>
+        <div className={css.songs}>{songs.map(it => this.renderSong(it))}</div>
       </div>
     );
   }

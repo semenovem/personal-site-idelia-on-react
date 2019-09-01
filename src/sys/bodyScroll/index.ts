@@ -9,10 +9,10 @@ export const bodyScroll: Readonly<BodyScroll> = {
 
   getStatus() {
     return !stack.length;
-  }
+  },
 };
 
-function changeScroll(status: boolean) {
+function changeScroll(status: boolean): void {
   if (status) {
     stack.pop();
   } else {
@@ -21,6 +21,6 @@ function changeScroll(status: boolean) {
   window.requestAnimationFrame(changeBodyScroll);
 }
 
-function changeBodyScroll() {
+function changeBodyScroll(): void {
   document.body.style.overflow = stack.length ? 'hidden' : null;
 }

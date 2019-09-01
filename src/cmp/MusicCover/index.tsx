@@ -3,17 +3,18 @@ import cn from 'classnames';
 
 import css from './style.module.css';
 
-interface IOwnProps {
+interface OwnProps {
   className: string;
   urlCover: string;
   active?: boolean;
   isPlayed?: boolean;
   id: string;
   hasUserInteraction?: boolean;
-  onPlayerControl:(id: string) => void;
+  onPlayerControl: (id: string) => void;
+  nameTrack: string;
 }
 
-class MusicCover extends React.Component<IOwnProps> {
+class MusicCover extends React.Component<OwnProps> {
   private flag: boolean = false;
   private timer: number | null = null;
 
@@ -26,7 +27,7 @@ class MusicCover extends React.Component<IOwnProps> {
     onPlayerControl(id);
   };
 
-  private handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+  private handleClick = () => {
     if (this.flag) {
       this.flag = false;
       return;
@@ -34,7 +35,7 @@ class MusicCover extends React.Component<IOwnProps> {
     this.handleAction();
   };
 
-  private handleBtnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  private handleBtnClick = () => {
     this.flag = true;
     this.clearTimer();
     this.timer = window.setTimeout(this.resetFlag, 20);
@@ -42,25 +43,25 @@ class MusicCover extends React.Component<IOwnProps> {
     this.handleAction();
   };
 
-  private resetFlag = () => this.flag = false;
+  private resetFlag = () => (this.flag = false);
 
   private clearTimer = () => this.timer && clearTimeout(this.timer);
 
-  render() {
-    const { urlCover, className, isPlayed, active, hasUserInteraction } = this.props;
+  public render() {
+    const { urlCover, className, isPlayed, hasUserInteraction, nameTrack } = this.props;
     const styleBtn = isPlayed ? css.pause : css.play;
 
     return (
-      <div
-        className={cn(css.musicCover, className)}
-        onClick={this.handleClick}
-      >
-        <img src={urlCover} className={cn(css.img, !active && css.grayscale)} alt=''/>
+      // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
+      <div className={cn(css.musicCover, className)} onClick={this.handleClick}>
+        <img src={urlCover} className={cn(css.img, !isPlayed && css.grayscale)} alt="" />
 
         <button
           className={cn(css.btn, styleBtn)}
           onClick={this.handleBtnClick}
-          {...!hasUserInteraction && { tabIndex: -1 }}
+          {...(!hasUserInteraction && { tabIndex: -1 })}
+          aria-label={isPlayed ? `Stop track ${nameTrack}` : `Play track ${nameTrack}`}
+          type="button"
         />
       </div>
     );
