@@ -79,6 +79,10 @@
   text-indent: 1em
 }
 
+.textBio p:first-child {
+  margin-top: 0;
+}
+
 
 .btnOrange {
   color: white;

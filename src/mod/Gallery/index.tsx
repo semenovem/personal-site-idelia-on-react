@@ -8,13 +8,14 @@ import Portal from 'portals/PhotosViewer';
 import ScrollX from 'cmp/ScrollX';
 
 import cssTypography from 'styles/typography.module.css';
-import cssMod from 'mod/style.module.css';
+import { isPreRendering } from 'sys/prerender';
 import Bg from './Background';
 import { getPhoto } from './getPhoto';
 import { photos } from './importPhotos';
 
 import PhotosViewer, { setElem } from './PhotosViewer';
 
+import cssMod from 'mod/style.module.css';
 import css from './style.module.css';
 
 type Props = PageMgrUserInteractionProps & WinSizeProps;
@@ -30,11 +31,11 @@ class Gallery extends React.Component<Props> {
   };
 
   private renderPhotos() {
-    if (window.navigator.userAgent === 'ReactSnap') {
+    if (isPreRendering()) {
       return null;
     }
 
-    return photos.map((it: any) => {
+    return photos.map((it: PhotoGent) => {
       const photo = getPhoto(it, this.props.winSize, 'preview');
 
       return (
@@ -77,3 +78,30 @@ class Gallery extends React.Component<Props> {
 }
 
 export default withCtxWinSize(withUserInteraction(Gallery));
+
+interface PhotoGent {
+  id: number;
+  xs?: PhotoGentItem;
+  sm?: PhotoGentItem;
+  md?: PhotoGentItem;
+  lg?: PhotoGentItem;
+  xl?: PhotoGentItem;
+}
+
+interface PhotoGentItem {
+  main?: {
+    url: string;
+    width: number;
+    height: number;
+  };
+  preview?: {
+    url: string;
+    width: number;
+    height: number;
+  };
+  blurred?: {
+    url: string;
+    width: number;
+    height: number;
+  };
+}

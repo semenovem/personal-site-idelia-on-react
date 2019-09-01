@@ -32,13 +32,6 @@ class Contact extends React.Component<OwnProps, State> {
   private handleChangeMessage = (e: ChangeEvent<HTMLTextAreaElement>) =>
     this.setState({ message: e.target.value });
 
-  private handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    // eslint-disable-next-line no-console
-    console.log('submit form');
-  };
-
   public render() {
     const { hasUserInteraction } = this.props;
     const { name, email, message } = this.state;
@@ -48,7 +41,25 @@ class Contact extends React.Component<OwnProps, State> {
         <Bg className={css.bg} />
         <h2 className={cn(cssTypography.modTitle, cssMod.title)}>{ROUTES.CONTACT.TITLE}</h2>
 
-        <form className={cn(css.form, cssTypography.modContactInput)} onSubmit={this.handleSubmit}>
+        <form
+          className={cn(css.form, cssTypography.modContactInput)}
+          action="https://formforsite.com/send/dmVyaWF0b2Q4NTI0QG1haWwucnU"
+          method="POST"
+        >
+          <input name="_site" type="hidden" value="ideliamarsmusic.com" />
+          <input name="_form" type="hidden" value="Contact Form" />
+
+          <input
+            name="_error-page-redirect"
+            type="hidden"
+            value="http://ideliamarsmusic.com/#contact"
+          />
+          <input
+            name="_success-page-redirect"
+            type="hidden"
+            value="http://ideliamarsmusic.com/#contact"
+          />
+
           <div className={css.rowOne}>
             <input
               className={cn(css.field, css.name)}

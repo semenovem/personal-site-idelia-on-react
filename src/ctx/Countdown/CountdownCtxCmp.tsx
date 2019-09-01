@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { isUserBrowser } from 'config/utils';
+import { isPreRendering } from 'sys/prerender';
 
 import CountdownCtx from './CountdownCtx';
 import { CountdownLevel, Countdown } from './types';
@@ -40,7 +40,7 @@ class CountdownCtxCmp extends React.Component<{}> {
       getLevel: this.getLevel,
 
       // for not user browser, example server side or pre-rendering - not execute callbacks
-      addTask: isUserBrowser() ? this.addTask : () => 0,
+      addTask: !isPreRendering() ? this.addTask : () => 0,
       removeTask: this.removeTask,
     };
 
