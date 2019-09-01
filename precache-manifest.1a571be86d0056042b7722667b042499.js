@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "40ce29dae55f2d32ce228684133942d3",
+    "revision": "9882e1569bcd3eb53468dbc7e9a4898c",
     "url": "/index.html"
   },
   {
-    "revision": "1b2e10257a5793ef7d4c",
-    "url": "/static/css/main.d8da9a5f.chunk.css"
+    "revision": "3f154df0c7f21a119b63",
+    "url": "/static/css/main.e2c20fb6.chunk.css"
   },
   {
-    "revision": "4f6baae4b7740e894561",
-    "url": "/static/js/2.83d6aa8c.chunk.js"
+    "revision": "c29b596d006123fa8496",
+    "url": "/static/js/2.73932ac6.chunk.js"
   },
   {
-    "revision": "1b2e10257a5793ef7d4c",
-    "url": "/static/js/main.518d33df.chunk.js"
+    "revision": "3f154df0c7f21a119b63",
+    "url": "/static/js/main.e872287e.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -1092,12 +1092,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/034-xs.a47ea2ef.jpg"
   },
   {
-    "revision": "f102dedb01f186c0427c0436b6e6a9be",
-    "url": "/static/media/arrow_left.f102dedb.svg"
+    "revision": "f1aaf7ca92d8397abdab48ffcf0292c2",
+    "url": "/static/media/arrow_left.f1aaf7ca.svg"
   },
   {
-    "revision": "e570d52655ab3719f81cf381710ec99a",
-    "url": "/static/media/arrow_right.e570d526.svg"
+    "revision": "e3b97832680764df68c2dc41ccbae760",
+    "url": "/static/media/arrow_right.e3b97832.svg"
   },
   {
     "revision": "3817e9a7fe24db77e33a96bf68a3402f",
@@ -1204,16 +1204,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/btn_ham_menu_white.f4702561.svg"
   },
   {
-    "revision": "1f3ffcff39e1dc1a9b7a9f16b335a7d7",
-    "url": "/static/media/btn_pause_white.1f3ffcff.svg"
+    "revision": "a366876f702ebdc1842b32fca9fb2ce2",
+    "url": "/static/media/btn_pause_white.a366876f.svg"
   },
   {
-    "revision": "9a3736a221350959ac949a77cd9b6104",
-    "url": "/static/media/btn_play_red.9a3736a2.svg"
+    "revision": "8543723ad38895021e17747d4ebae893",
+    "url": "/static/media/btn_play_red.8543723a.svg"
   },
   {
-    "revision": "0c95e1830dcef885202230df9396316b",
-    "url": "/static/media/btn_play_white.0c95e183.svg"
+    "revision": "9c95484dfc0571ea3a3e7be76951c2bc",
+    "url": "/static/media/btn_play_white.9c95484d.svg"
   },
   {
     "revision": "51f20dd730f91c67de00039e5f168dcf",
@@ -1232,16 +1232,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/different_interview.748890e9.jpg"
   },
   {
-    "revision": "28c28620baf28831a6c97ece4120e368",
-    "url": "/static/media/facefook_bw.28c28620.svg"
+    "revision": "ebc00f0761ec2f623bce84a0cd68f7a6",
+    "url": "/static/media/facefook_bw.ebc00f07.svg"
   },
   {
     "revision": "e9dec76d6637a3ad1cccfad72c484e08",
     "url": "/static/media/google_music.e9dec76d.svg"
   },
   {
-    "revision": "d0bee766ff1987682d780cb0a80abab5",
-    "url": "/static/media/google_music_with_sign.d0bee766.svg"
+    "revision": "0581150e43da8868edb7e375a9ac745a",
+    "url": "/static/media/google_music_with_sign.0581150e.svg"
   },
   {
     "revision": "cb02a1f40792c55d77f0d749e5fc994d",
@@ -1252,8 +1252,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/i_would.31ab851f.jpg"
   },
   {
-    "revision": "72384eb9b6cd02f8986971cd581804f9",
-    "url": "/static/media/instagram_bw.72384eb9.svg"
+    "revision": "e0e50725c083c02cab11521cff79e6c4",
+    "url": "/static/media/instagram_bw.e0e50725.svg"
   },
   {
     "revision": "3b86b4d1d2bbdee10216d6851fa4af0e",
@@ -1262,6 +1262,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "099687929640abd51a21ad3ea1b07ab0",
     "url": "/static/media/love_bizarre.09968792.jpg"
+  },
+  {
+    "revision": "740fe65446e9c3c42a95b2cff2b3dba3",
+    "url": "/static/media/my_voice.740fe654.jpg"
   },
   {
     "revision": "7ff906b76a185b04e2f1063901b334ac",
@@ -1276,12 +1280,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/spotify_buy.3cfa8e86.png"
   },
   {
-    "revision": "39ce492db4050bda615027c000c78053",
-    "url": "/static/media/spotify_icon_white.39ce492d.svg"
+    "revision": "816b9679ae3c06d006c08ae13e8a1b3d",
+    "url": "/static/media/spotify_icon_white.816b9679.svg"
   },
   {
-    "revision": "1551c11913d8d326eab3f0db01ff6a9a",
-    "url": "/static/media/spotify_white.1551c119.svg"
+    "revision": "8793f0cc04a67b43b2f4eb0b69b92b36",
+    "url": "/static/media/spotify_white.8793f0cc.svg"
   },
   {
     "revision": "9b0152452aff0830071a08759223aa95",
@@ -1292,11 +1296,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/tv_tatar_girl.dedbb195.jpg"
   },
   {
-    "revision": "ae443aec02b53b92aeb2e9df4b1212db",
-    "url": "/static/media/yandex_music_icon.ae443aec.svg"
+    "revision": "c231b3ec498e6188cc3222fc23224e29",
+    "url": "/static/media/yandex_music_icon.c231b3ec.svg"
   },
   {
-    "revision": "13baad002666e7b49cf39b052d62dc47",
-    "url": "/static/media/yandex_music_white.13baad00.svg"
+    "revision": "9e2c2a44f8b27d194c27c489592d2148",
+    "url": "/static/media/yandex_music_white.9e2c2a44.svg"
   }
 ]);
