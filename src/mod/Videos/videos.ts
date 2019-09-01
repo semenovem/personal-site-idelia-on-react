@@ -5,6 +5,7 @@ import coverTheRoadBeforeMe from './assets/covers/the_road_before_me.jpg';
 import coverTvTatarGirl from './assets/covers/tv_tatar_girl.jpg';
 import coverIdeliaByLeron from './assets/covers/idelia_by_leron.jpg';
 import coverDifferentInterview from './assets/covers/different_interview.jpg';
+import coverMyVoice from './assets/covers/my_voice.jpg';
 
 let id = 0;
 
@@ -23,12 +24,20 @@ interface Video {
 export const videos: Video[] = [
   {
     id: ++id,
+    title: 'My Voice',
+    tooltip: '',
+    url: 'https://www.youtube.com/embed/YQtG0hpHb2Y',
+    cover: coverMyVoice,
+    promo: true,
+
+    iframe: 'https://www.youtube.com/embed/YQtG0hpHb2Y?controls=0&modestbranding=1&enablejsapi=1',
+  },
+  {
+    id: ++id,
     title: 'Different',
     tooltip: '',
     url: 'https://www.youtube.com/embed/_qQYNjPbboM',
     cover: coverDifferent,
-    promo: true,
-
     iframe: 'https://www.youtube.com/embed/_qQYNjPbboM?controls=0&modestbranding=1&enablejsapi=1',
   },
 

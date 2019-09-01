@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { defScrollSze } from 'sys/defScrollSize';
+
 import { WinSize } from './types';
 import { defWinSize } from './utils';
 import WinSizeCtx from './WinSizeCtx';
@@ -16,12 +19,15 @@ class WinSizeCtxCmp extends React.Component<Props, State> {
     winSize: defWinSize(window.innerWidth),
   };
 
+  private readonly scrollSize: { x: number; y: number };
   private resizeTimer: number | null = null;
   private resizeLast: number = 0;
 
   public constructor(props: Props) {
     super(props);
     window.addEventListener('resize', this.handleResize);
+
+    this.scrollSize = defScrollSze();
   }
 
   public componentWillUnmount() {

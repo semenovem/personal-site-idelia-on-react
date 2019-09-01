@@ -2,6 +2,15 @@ export interface WinSizeProps {
   winSize: WinSize;
 }
 
+// TODO new for windows - move here
+export interface WinSizeNext {
+  scr: WinSize;
+  scroll: {
+    x: number;
+    y: number;
+  };
+}
+
 /**
  * Size of screens
  * minimal value for switching
