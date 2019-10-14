@@ -3,6 +3,12 @@
 # usage
 # bash ../../_scripts/re.sh 001.jpg xs sm md lg xl
 
+#xs: 0
+#sm: 600
+#md: 960
+#lg: 1280
+#xl: 1920
+
 if [ ! -n "$1" ]
 then
   echo "No parameters found. "
@@ -26,14 +32,11 @@ for param in "$@"
 do
   SUFFIX="w$param"
 
-  if [ ${param} = "xxs" ]; then param=100; SUFFIX=xxs; fi
   if [ ${param} = "xs" ]; then param=300; SUFFIX=xs; fi
-
-  if [ ${param} = "sm" ]; then param=576; SUFFIX=sm; fi
-  if [ ${param} = "md" ]; then param=768; SUFFIX=md; fi
-  if [ ${param} = "lg" ]; then param=992; SUFFIX=lg; fi
-  if [ ${param} = "xl" ]; then param=1200; SUFFIX=xl; fi
-  if [ ${param} = "xxl" ]; then param=1400; SUFFIX=xxl; fi
+  if [ ${param} = "sm" ]; then param=480; SUFFIX=sm; fi
+  if [ ${param} = "md" ]; then param=640; SUFFIX=md; fi
+  if [ ${param} = "lg" ]; then param=960; SUFFIX=lg; fi
+  if [ ${param} = "xl" ]; then param=1920; SUFFIX=xl; fi
 
   NEW_FILE="$FILE_NAME--$SUFFIX.$FILE_EXT"
 

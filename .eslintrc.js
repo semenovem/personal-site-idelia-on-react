@@ -149,5 +149,8 @@ module.exports = {
 
     // FIXME must = 2
     "jsx-a11y/anchor-has-content": 2,
+
+    'no-plusplus': 0,
+    'no-continue': 0,
   },
 };

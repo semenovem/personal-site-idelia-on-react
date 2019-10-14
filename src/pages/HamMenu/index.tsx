@@ -8,13 +8,15 @@ import BtnClose from 'cmp/BtnClose';
 import cssTypography from 'styles/typography.module.css';
 import cssCommon from 'styles/common.module.css';
 import { withCtxPageMgr, Page, PageMgrProps, PageMgr } from 'ctx/PageMgr';
+import { withCtxMenu, MenuProps } from 'ctx/Menu';
+
 import css from './style.module.css';
 
 interface OwnProps {
   className?: string;
 }
 
-type Props = OwnProps & PageMgrProps;
+type Props = OwnProps & PageMgrProps & MenuProps;
 
 class HamMenu extends React.Component<Props> {
   private handleSelect = (event: React.MouseEvent) => {
@@ -32,6 +34,11 @@ class HamMenu extends React.Component<Props> {
   };
 
   private handleClose = () => {
+    this.props.menu.close();
+
+    /**
+     * @deprecated
+     */
     PageMgr.close(PageMgr.Page.HAM_MENU);
   };
 
@@ -76,4 +83,4 @@ class HamMenu extends React.Component<Props> {
   }
 }
 
-export default withCtxPageMgr<OwnProps>(Page.HAM_MENU, HamMenu);
+export default withCtxMenu(withCtxPageMgr<OwnProps>(Page.HAM_MENU, HamMenu));

@@ -57,3 +57,9 @@ a {
 
 /* added to improving loading */
 .js-optimization {}
+
+
+* {
+  color: white;
+  font-size: 40px;
+}

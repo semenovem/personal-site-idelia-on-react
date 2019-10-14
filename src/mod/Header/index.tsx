@@ -5,6 +5,7 @@ import CmpBtnHamMenu, { Props as IBtnHamMenuProps } from 'cmp/BtnHamMenu';
 import CmpNavMenu, { Props as INavMenuProps } from 'cnt/NavMenu';
 import { ROUTES } from 'types/routes';
 import { withUserInteraction, PageMgr } from 'ctx/PageMgr';
+import { withCtxMenu, MenuProps } from 'ctx/Menu';
 
 import Bg from './Background';
 import QrCode from './QrCode';
@@ -17,14 +18,16 @@ import css from './style.module.css';
 const NavMenu = withUserInteraction<INavMenuProps>(CmpNavMenu);
 const BtnHamMenu = withUserInteraction<IBtnHamMenuProps>(CmpBtnHamMenu);
 
-class Header extends React.Component<{}> {
+type Props = MenuProps;
+
+class Header extends React.Component<Props> {
   private opacity = 1;
   private prevScroll = 0;
   private scrollStep = 15;
 
   private readonly refTitle: React.RefObject<HTMLDivElement>;
 
-  public constructor(props: {}) {
+  public constructor(props: Props) {
     super(props);
     this.refTitle = React.createRef();
     window.addEventListener('scroll', this.handleScroll);
@@ -53,6 +56,7 @@ class Header extends React.Component<{}> {
   };
 
   private handleOpenHamMenu = () => {
+    this.props.menu.open();
     PageMgr.open(PageMgr.Page.HAM_MENU);
   };
 
@@ -79,6 +83,6 @@ class Header extends React.Component<{}> {
   }
 }
 
-export default Header;
+export default withCtxMenu(Header);
 
 function noop() {}

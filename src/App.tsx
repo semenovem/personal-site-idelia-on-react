@@ -11,6 +11,8 @@ import HamMenuPortal from 'portals/HamMenuPortal';
 import MusicPlayerPortal from 'portals/MusicPlayerPortal';
 import SplashPagePortal from 'portals/SplashPagePortal';
 
+import MoviesSeeMyVoice from 'pages/movies/SeeMyVoice';
+
 import { RouteItem } from 'types/routes';
 import { musicPlayerControl } from 'ctx/MusicPlayer';
 
@@ -52,6 +54,7 @@ class App extends React.Component<{}> {
   public render() {
     return (
       <>
+        {/*<MoviesSeeMyVoice />*/}
         <SinglePage />
 
         <SplashPagePortal>
