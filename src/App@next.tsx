@@ -1,11 +1,12 @@
 import React from 'react';
-import 'styles/global.css';
-import 'styles/vars.css';
-import 'styles/vars_next.css';
+import 'pages/SinglePage/styles/global.css';
+import 'pages/SinglePage/styles/vars.css';
+import 'pages/SinglePage/styles/vars_next.css';
 
 import Main from 'pages/Main';
-import Music from 'pages/Music';
-import Movies from 'pages/movies/List';
+import Music from 'sites/Music';
+
+import MovieSeeMyVoice from 'sites/movies/SeeMyVoice';
 
 enum Route {
   MAIN = '',
@@ -36,6 +37,7 @@ class App extends React.Component<{}, State> {
 
   public constructor(props: {}) {
     super(props);
+    // no unsubscribe, the application is constantly running
     window.addEventListener('popstate', this.handlePopState);
 
     const { pushState } = window.history;
@@ -47,10 +49,6 @@ class App extends React.Component<{}, State> {
     this.state = {
       route: App.defineRoute(),
     };
-  }
-
-  public componentWillUnmount() {
-    window.removeEventListener('popstate', this.handlePopState);
   }
 
   private handlePopState = () => {
@@ -70,7 +68,8 @@ class App extends React.Component<{}, State> {
       case Route.MUSIC:
         return <Music />;
       case Route.MOVIES:
-        return <Movies />;
+        return <MovieSeeMyVoice />;
+
       default:
         return <Main />;
     }

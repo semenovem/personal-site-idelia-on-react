@@ -10,7 +10,7 @@ import { Status } from 'types/player';
 import itunes from 'assets/icons/shops/itunes_buy.png';
 import spotify from 'assets/icons/shops/spotify_buy.png';
 
-import cssTypography from 'styles/typography.module.css';
+import cssTypography from 'pages/SinglePage/styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import { findUrl, Song, songs } from './songs';
 import Bg from './Background';

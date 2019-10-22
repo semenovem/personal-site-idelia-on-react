@@ -10,7 +10,7 @@ import { withCtxMenu, MenuProps } from 'ctx/Menu';
 import Bg from './Background';
 import QrCode from './QrCode';
 
-import cssTypography from 'styles/typography.module.css';
+import cssTypography from 'pages/SinglePage/styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 
 import css from './style.module.css';
@@ -57,7 +57,6 @@ class Header extends React.Component<Props> {
 
   private handleOpenHamMenu = () => {
     this.props.menu.open();
-    PageMgr.open(PageMgr.Page.HAM_MENU);
   };
 
   public render() {

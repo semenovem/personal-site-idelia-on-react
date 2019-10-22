@@ -16,11 +16,12 @@ import iconGoogleMusicWithSign from 'assets/icons/shops/google_music_with_sign.s
 
 import { SOCIAL } from 'types/social';
 
-import cssTypography from 'styles/typography.module.css';
+import cssTypography from 'pages/SinglePage/styles/typography.module.css';
 import css from './style.module.css';
 
 interface OwnProps extends PageMgrUserInteractionProps {
   disableTagFooter?: true;
+  className?: string;
 }
 
 interface Props extends OwnProps {}
@@ -101,14 +102,15 @@ class Footer extends React.Component<Props> {
   }
 
   public render() {
-    const { disableTagFooter } = this.props;
+    const { disableTagFooter, className } = this.props;
 
     return disableTagFooter ? (
-      <div className={css.footer}>{this.renderContentFooter()}</div>
+      <div className={cn(css.footer, className)}>{this.renderContentFooter()}</div>
     ) : (
-      <footer className={css.footer}>{this.renderContentFooter()}</footer>
+      <footer className={cn(css.footer, className)}>{this.renderContentFooter()}</footer>
     );
   }
 }
 
-export default withUserInteraction(Footer);
+// FIXME any
+export default withUserInteraction<any>(Footer);

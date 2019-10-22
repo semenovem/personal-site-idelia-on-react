@@ -4,7 +4,7 @@ import cn from 'classnames';
 import { ROUTES } from 'types/routes';
 import { withUserInteraction, PageMgrUserInteractionProps } from 'ctx/PageMgr';
 
-import cssTypography from 'styles/typography.module.css';
+import cssTypography from 'pages/SinglePage/styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import Bg from './Background';
 import css from './style.module.css';

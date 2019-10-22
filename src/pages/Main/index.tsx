@@ -1,23 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-import Link from 'sys/route/Link';
+import { hasPreRendering } from 'sys/prerender';
+import { addCssClassToBody, removeCssClassToBody } from 'sys/bodyCss';
+
+import MainSinglePage from './Page';
 
 import css from './style.module.css';
 
-const Main: React.FC<{}> = () => (
-  <div className={css.main}>
-    main
-    <br />
-    <br />
+const Main: React.FC<{}> = () => {
+  const [loaded, setLoaded] = useState<boolean>(false);
 
-    <Link href="/">main</Link>
-    <br />
-    <Link href="music">music</Link>
-    <br />
-    <Link href="movies" titleOfPage="new title of page">
-      movies
-    </Link>
-  </div>
-);
+  useEffect(() => {
+    if (!hasPreRendering()) {
+      setTimeout(() => setLoaded(true), 200);
+    }
+
+    addCssClassToBody(css.forPageMain);
+
+    return () => {
+      removeCssClassToBody(css.forPageMain);
+    };
+  }, []);
+
+  const style = loaded ? undefined : { display: 'none' };
+
+  return <MainSinglePage style={style} />;
+};
 
 export default Main;

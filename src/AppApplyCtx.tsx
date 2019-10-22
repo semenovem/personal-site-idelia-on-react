@@ -12,13 +12,13 @@ import AppNext from './App@next';
 const AppApplyCtx = () => (
   <WinSizeCtxCmp>
     <CountdownCtxCmp>
-      <MusicPlayerCtxCmp>
-        <MenuCtxCmp>
+      <MenuCtxCmp>
+        <MusicPlayerCtxCmp>
           <PageMgr>
             <AppNext />
           </PageMgr>
-        </MenuCtxCmp>
-      </MusicPlayerCtxCmp>
+        </MusicPlayerCtxCmp>
+      </MenuCtxCmp>
     </CountdownCtxCmp>
   </WinSizeCtxCmp>
 );

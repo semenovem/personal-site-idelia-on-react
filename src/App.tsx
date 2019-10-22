@@ -1,7 +1,7 @@
 import React from 'react';
-import 'styles/global.css';
-import 'styles/vars.css';
-import 'styles/vars_next.css';
+import 'pages/SinglePage/styles/global.css';
+import 'pages/SinglePage/styles/vars.css';
+import 'pages/SinglePage/styles/vars_next.css';
 
 import SinglePage from 'pages/SinglePage';
 import BioMob from 'pages/BioMob';
@@ -10,8 +10,6 @@ import MusicPlayer from 'mod/MusicPlayer';
 import HamMenuPortal from 'portals/HamMenuPortal';
 import MusicPlayerPortal from 'portals/MusicPlayerPortal';
 import SplashPagePortal from 'portals/SplashPagePortal';
-
-import MoviesSeeMyVoice from 'pages/movies/SeeMyVoice';
 
 import { RouteItem } from 'types/routes';
 import { musicPlayerControl } from 'ctx/MusicPlayer';
@@ -54,7 +52,6 @@ class App extends React.Component<{}> {
   public render() {
     return (
       <>
-        {/*<MoviesSeeMyVoice />*/}
         <SinglePage />
 
         <SplashPagePortal>

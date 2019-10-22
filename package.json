@@ -23,6 +23,9 @@
     "photo": "node dev_scripts/photo",
     "lint": "eslint './src/**/*.{ts,tsx}'"
   },
+  "reactSnap": {
+    "skipThirdPartyRequests": true
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
