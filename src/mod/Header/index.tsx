@@ -4,13 +4,13 @@ import cn from 'classnames';
 import CmpBtnHamMenu, { Props as IBtnHamMenuProps } from 'cmp/BtnHamMenu';
 import CmpNavMenu, { Props as INavMenuProps } from 'cnt/NavMenu';
 import { ROUTES } from 'types/routes';
-import { withUserInteraction, PageMgr } from 'ctx/PageMgr';
+import { withUserInteraction } from 'ctx/PageMgr';
 import { withCtxMenu, MenuProps } from 'ctx/Menu';
 
 import Bg from './Background';
 import QrCode from './QrCode';
 
-import cssTypography from 'pages/SinglePage/styles/typography.module.css';
+import cssTypography from 'sites/Music/styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 
 import css from './style.module.css';

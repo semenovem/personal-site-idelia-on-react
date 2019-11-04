@@ -5,8 +5,8 @@ import { ROUTES } from 'types/routes';
 import { findValueByAttr } from 'utils/dom/findValueByAttr';
 import BtnClose from 'cmp/BtnClose';
 
-import cssTypography from 'pages/SinglePage/styles/typography.module.css';
-import cssCommon from 'pages/SinglePage/styles/common.module.css';
+import cssTypography from 'sites/Music/styles/typography.module.css';
+import cssCommon from 'sites/Music/styles/common.module.css';
 import { withCtxMenu, MenuProps } from 'ctx/Menu';
 
 import css from './style.module.css';

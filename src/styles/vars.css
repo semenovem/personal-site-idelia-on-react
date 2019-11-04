@@ -1,0 +1,36 @@
+:root {
+  --font-size-base: 24px;
+
+  --indent-xs: 4px;
+  --indent-s: 8px;
+  --indent-m: 16px;
+  --indent-l: 24px;
+  --indent-xl: 36px;
+  --indent-xxl: 48px;
+
+  --max-width-limit: 1400px;
+}
+
+/* sm */
+@media (min-width: 600px) {
+  :root {
+  }
+}
+
+/* md */
+@media (min-width: 960px) {
+  :root {
+  }
+}
+
+/* lg */
+@media (min-width: 1280px) {
+  :root {
+  }
+}
+
+/* xl */
+@media (min-width: 1920px) {
+  :root {
+  }
+}

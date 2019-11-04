@@ -16,7 +16,7 @@ import iconGoogleMusicWithSign from 'assets/icons/shops/google_music_with_sign.s
 
 import { SOCIAL } from 'types/social';
 
-import cssTypography from 'pages/SinglePage/styles/typography.module.css';
+import cssTypography from 'sites/Music/styles/typography.module.css';
 import css from './style.module.css';
 
 interface OwnProps extends PageMgrUserInteractionProps {

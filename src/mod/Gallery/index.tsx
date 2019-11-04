@@ -7,7 +7,7 @@ import { withCtxWinSize, WinSizeProps } from 'ctx/WinSize';
 import Portal from 'portals/PhotosViewer';
 import ScrollX from 'cmp/ScrollX';
 
-import cssTypography from 'pages/SinglePage/styles/typography.module.css';
+import cssTypography from 'sites/Music/styles/typography.module.css';
 import { hasPreRendering } from 'sys/prerender';
 import Bg from './Background';
 import { getPhoto } from './getPhoto';

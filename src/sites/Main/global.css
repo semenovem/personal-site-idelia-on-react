@@ -1,0 +1,15 @@
+body {
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+  animation-name: anim;
+  animation-timing-function: ease-out;
+}
+
+@keyframes anim {
+  from {
+    background-color: rgba(19, 20, 21, 0);
+  }
+  to {
+    background-color: rgba(19, 20, 21, 1);
+  }
+}

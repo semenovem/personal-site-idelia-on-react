@@ -1,0 +1,17 @@
+body {
+  background-color: #2A0505;
+}
+
+/* only for body */
+/* use for hide elem, for a while ( */
+/* see template html */
+/* <body class="...hide-elem-before-critical hide-elem-before-important"> */
+/* must be installed directly in the template  */
+.hide-elem-before-critical {
+}
+.hide-elem-before-important {
+}
+
+/* added to improving loading */
+.js-optimization {
+}

@@ -18,16 +18,6 @@ export interface WinSizeNext {
  * @example 0 >= XS < 567
  * @example 567 >= SM < 768
  */
-// TODO @deprecated
-// export enum WinSize {
-//   XS = 0, // 576 -- 288
-//   SM = 576, // 768 -- 384
-//   MD = 768, // 992 -- 496
-//   LG = 992, // 1200 -- 600
-//   XL = 1200, // 1400 -- 700
-//   XXL = 1400,
-// }
-
 export enum WinSize {
   XS = 0, // 600 -- 300
   SM = 600, // 960 -- 480
@@ -35,14 +25,3 @@ export enum WinSize {
   LG = 1280, // 1920 -- 960
   XL = 1920, // 1920 -- 1920
 }
-
-/*
-
-перейти на новую размерную сетку
-xs: 0
-sm: 600
-md: 960
-lg: 1280
-xl: 1920
-
- */

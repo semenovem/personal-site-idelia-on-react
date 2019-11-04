@@ -10,6 +10,7 @@
     "classnames": "^2.2.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
     "react-scripts": "3.2.0",
     "typescript": "3.4.5"
   },
@@ -18,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postbuild": "react-snap",
+    "off-postbuild": "_react-snap",
     "deploy": "bash dev_scripts/deploy.sh",
     "photo": "node dev_scripts/photo",
     "lint": "eslint './src/**/*.{ts,tsx}'"
@@ -43,6 +44,7 @@
   },
   "devDependencies": {
     "@types/classnames": "^2.2.9",
+    "@types/react-helmet": "^5.0.14",
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
     "colors": "^1.4.0",

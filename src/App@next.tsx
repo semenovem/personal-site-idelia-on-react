@@ -1,12 +1,10 @@
 import React from 'react';
-import 'pages/SinglePage/styles/global.css';
-import 'pages/SinglePage/styles/vars.css';
-import 'pages/SinglePage/styles/vars_next.css';
+import 'styles/vars.css';
+import 'styles/global.css';
 
-import Main from 'pages/Main';
-import Music from 'sites/Music';
-
-import MovieSeeMyVoice from 'sites/movies/SeeMyVoice';
+const Main = React.lazy(() => import('sites/Main'));
+const Music = React.lazy(() => import('sites/Music'));
+const MovieSeeMyVoice = React.lazy(() => import('sites/movies/SeeMyVoice'));
 
 enum Route {
   MAIN = '',
@@ -64,15 +62,21 @@ class App extends React.Component<{}, State> {
   };
 
   public render() {
+    let Cmp;
+
     switch (this.state.route) {
       case Route.MUSIC:
-        return <Music />;
+        Cmp = <Music />;
+        break;
       case Route.MOVIES:
-        return <MovieSeeMyVoice />;
+        Cmp = <MovieSeeMyVoice />;
+        break;
 
       default:
-        return <Main />;
+        Cmp = <Main />;
     }
+
+    return <React.Suspense fallback={null}>{Cmp}</React.Suspense>;
   }
 }
 

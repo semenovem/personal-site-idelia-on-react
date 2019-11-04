@@ -6,7 +6,6 @@ import { CountdownCtxCmp } from 'ctx/Countdown';
 import { PageMgr } from 'ctx/PageMgr';
 import { MenuCtxCmp } from 'ctx/Menu';
 
-import App from './App';
 import AppNext from './App@next';
 
 const AppApplyCtx = () => (

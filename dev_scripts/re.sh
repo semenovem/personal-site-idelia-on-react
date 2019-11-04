@@ -32,11 +32,11 @@ for param in "$@"
 do
   SUFFIX="w$param"
 
-  if [ ${param} = "xs" ]; then param=300; SUFFIX=xs; fi
-  if [ ${param} = "sm" ]; then param=480; SUFFIX=sm; fi
-  if [ ${param} = "md" ]; then param=640; SUFFIX=md; fi
-  if [ ${param} = "lg" ]; then param=960; SUFFIX=lg; fi
-  if [ ${param} = "xl" ]; then param=1920; SUFFIX=xl; fi
+  if [ ${param} = "xs" ]; then param=600; SUFFIX=xs; fi
+  if [ ${param} = "sm" ]; then param=960; SUFFIX=sm; fi
+  if [ ${param} = "md" ]; then param=1280; SUFFIX=md; fi
+  if [ ${param} = "lg" ]; then param=1920; SUFFIX=lg; fi
+#  if [ ${param} = "xl" ]; then param=1920; SUFFIX=xl; fi
 
   NEW_FILE="$FILE_NAME--$SUFFIX.$FILE_EXT"
 

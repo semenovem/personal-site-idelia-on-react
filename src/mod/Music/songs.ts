@@ -1,6 +1,6 @@
 import different from './assets/covers/different.jpg';
 import myVoice from './assets/covers/my_voice.jpg';
-import iWould from './assets/covers/i_would.jpg';
+import iWould from './assets/covers/i_would_2.jpg';
 import bomb from './assets/covers/bomb.jpg';
 import iAmYours from './assets/covers/i_am_yours.jpg';
 
