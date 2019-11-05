@@ -83,11 +83,12 @@ class App extends React.Component<{}, State> {
       <>
         <React.Suspense fallback={null}>{Cmp}</React.Suspense>
 
-        {hasPreRendering() && null}
-        <div style={{ display: 'none' }}>
-          <a href="/music" />
-          <a href="/see-my-voice" />
-        </div>
+        {hasPreRendering() && (
+          <span style={{ display: 'none' }} className="">
+            <a href="/music" />
+            <a href="/see-my-voice" />
+          </span>
+        )}
       </>
     );
   }
