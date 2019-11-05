@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { hasPreRendering } from 'sys/prerender';
+
 import 'styles/vars.css';
 import 'styles/global.css';
 
@@ -9,7 +12,7 @@ const MovieSeeMyVoice = React.lazy(() => import('sites/movies/SeeMyVoice'));
 enum Route {
   MAIN = '',
   MUSIC = 'music',
-  MOVIES = 'movies',
+  MOVIES = 'see-my-voice',
 }
 
 interface State {
@@ -76,7 +79,17 @@ class App extends React.Component<{}, State> {
         Cmp = <Main />;
     }
 
-    return <React.Suspense fallback={null}>{Cmp}</React.Suspense>;
+    return (
+      <>
+        <React.Suspense fallback={null}>{Cmp}</React.Suspense>
+
+        {hasPreRendering() && null}
+        <div style={{ display: 'none' }}>
+          <a href="/music" />
+          <a href="/see-my-voice" />
+        </div>
+      </>
+    );
   }
 }
 

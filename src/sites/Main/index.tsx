@@ -15,7 +15,7 @@ export default function MainSinglePage() {
           Idelia Mars Music
         </Item>
 
-        <Item href="/movies" className={css.itemIndent}>
+        <Item href="/see-my-voice" className={css.itemIndent}>
           See My Voice film
         </Item>
       </main>
