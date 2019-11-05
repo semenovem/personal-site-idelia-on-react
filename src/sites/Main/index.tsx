@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { hasPreRendering } from 'sys/prerender';
+
 import './global.css';
 
 import Footer from 'mod/Footer';
@@ -8,6 +10,10 @@ import Item from './Item';
 import css from './style.module.css';
 
 export default function MainSinglePage() {
+  if (hasPreRendering()) {
+    return null;
+  }
+
   return (
     <>
       <main className={css.main}>

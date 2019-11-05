@@ -13,6 +13,7 @@ import SplashPagePortal from 'portals/SplashPagePortal';
 
 import { RouteItem } from 'types/routes';
 import { musicPlayerControl } from 'ctx/MusicPlayer';
+import { hasPreRendering } from 'sys/prerender';
 
 class App extends React.Component<{}> {
   private splashPages: RouteItem[] = [];
@@ -50,6 +51,10 @@ class App extends React.Component<{}> {
   };
 
   public render() {
+    if (hasPreRendering()) {
+      return null;
+    }
+
     return (
       <>
         <SinglePage />
