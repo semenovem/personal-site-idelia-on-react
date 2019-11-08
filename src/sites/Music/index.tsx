@@ -14,6 +14,7 @@ import SplashPagePortal from 'portals/SplashPagePortal';
 import { RouteItem } from 'types/routes';
 import { musicPlayerControl } from 'ctx/MusicPlayer';
 import { hasPreRendering } from 'sys/prerender';
+import { Helmet } from 'react-helmet';
 
 class App extends React.Component<{}> {
   private splashPages: RouteItem[] = [];
@@ -57,6 +58,14 @@ class App extends React.Component<{}> {
 
     return (
       <>
+        <Helmet>
+          <title>Idelia music site</title>
+          <meta
+            name="description"
+            content="The official website of Idelia Mars. Idelia is a Singer, Songwriter, Writer and Actress. She is an International Music talent in the genres of Pop, Electronic, Dance and R&B. Featuring Idelia Mars biography, contact information, photo galleries, music, videos, links"
+          />
+          <meta name="keywords" content="music, singer, pop, songs, Idelia Mars" />
+        </Helmet>
         <SinglePage />
 
         <SplashPagePortal>

@@ -19,7 +19,11 @@ function SeeMyVoice() {
     <>
       <Helmet>
         <title>Idelia site film See My Voice</title>
-        <meta name="description" content="Idelia site film See My Voice" />
+        <meta
+          name="description"
+          content="See My Voice - Mystery Drama Short Film :  Every song has a story. Annie feels a deep connection with music, as she has since she was a little girl. However, life events forced her to give up on her dream. Only a mystery woman on the edge of life and death can help her. But will this mystery woman be able to help bring back Annie’s dream or has Annie's fear grown bigger than her faith?"
+        />
+        <meta name="keywords" content="director, singer, pop, songs, Idelia Mars" />
       </Helmet>
 
       <Header />
