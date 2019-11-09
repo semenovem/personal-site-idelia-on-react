@@ -65,6 +65,7 @@ class App extends React.Component<{}> {
             content="The official website of Idelia Mars. Idelia is a Singer, Songwriter, Writer and Actress. She is an International Music talent in the genres of Pop, Electronic, Dance and R&B. Featuring Idelia Mars biography, contact information, photo galleries, music, videos, links"
           />
           <meta name="keywords" content="music, singer, pop, songs, Idelia Mars" />
+          <meta name="theme-color" content="#2A0505" />
         </Helmet>
         <SinglePage />
 
