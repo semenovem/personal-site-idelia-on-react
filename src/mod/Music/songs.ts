@@ -3,6 +3,7 @@ import myVoice from './assets/covers/my_voice.jpg';
 import iWould from './assets/covers/i_would_2.jpg';
 import bomb from './assets/covers/bomb.jpg';
 import iAmYours from './assets/covers/i_am_yours.jpg';
+import differentRockVersion from './assets/covers/different_rock_version.jpg';
 
 export interface Song {
   id: string;
@@ -56,6 +57,15 @@ export const songs: Song[] = [
     coverUrl: iAmYours,
     url: '/songs/i_am_yours.mp3',
     name: 'i am yours',
+  },
+
+  {
+    id: 'different_rock_version',
+    spotify: 'https://music.apple.com/us/album/different-rock-version-single/1488744586',
+    itunes: 'https://open.spotify.com/album/3piQPdOwEFGQjv9L2ixC9j',
+    coverUrl: differentRockVersion,
+    url: '/songs/different_rock_version.mp3',
+    name: 'different rock version',
   },
 ];
 
