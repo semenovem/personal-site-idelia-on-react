@@ -1,6 +1,6 @@
 .header {
   width: 100vw;
-  height: 80vh;
+  height: 100vh;
   position: relative;
 
   display: flex;
@@ -15,7 +15,7 @@
 }
 
 .bg {
-  background-image: url('./assets/bg--preview.jpg');
+  background-image: url('./assets/bg_mob--preview.jpg');
 }
 
 .title {
@@ -39,6 +39,7 @@
   padding: 10px 15px;
 
   font-size: 30px;
+  visibility: hidden;
 }
 
 .awards {
@@ -59,6 +60,9 @@
 
 /* md */
 @media (min-width: 960px) {
+  .header {
+    /*height: 80vh;*/
+  }
   .awards {
     display: flex;
     align-items: center;
