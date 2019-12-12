@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "56f1da2de86b9fcf25291c86c89616a5",
+    "revision": "31c7d12a34e518301d282ebf789a59c7",
     "url": "/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/3.74ffe571.chunk.css"
   },
   {
-    "revision": "aed0f68ed1ff0b6f3f26",
-    "url": "/static/css/4.39d9327d.chunk.css"
+    "revision": "0daf34541b8fa96461b6",
+    "url": "/static/css/4.17e2a260.chunk.css"
   },
   {
     "revision": "c8b2a2c6956ef6eb368e",
@@ -28,8 +28,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/3.d79d3615.chunk.js"
   },
   {
-    "revision": "aed0f68ed1ff0b6f3f26",
-    "url": "/static/js/4.e1bcc128.chunk.js"
+    "revision": "0daf34541b8fa96461b6",
+    "url": "/static/js/4.cfa9c143.chunk.js"
   },
   {
     "revision": "c8b2a2c6956ef6eb368e",
@@ -44,8 +44,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/main.c147ed6f.chunk.js"
   },
   {
-    "revision": "3c9e9e8a541e7990aff4",
-    "url": "/static/js/runtime-main.fc3847f0.js"
+    "revision": "52a5515b7d9368e64b7d",
+    "url": "/static/js/runtime-main.176478c7.js"
   },
   {
     "revision": "ed332b352ba40cad61ddf846a91fb191",
@@ -1100,16 +1100,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/bg--md.f21de24c.jpg"
   },
   {
-    "revision": "fb251ce9d3fee64fd029b59f7c869506",
-    "url": "/static/media/bg--sm.fb251ce9.jpg"
-  },
-  {
     "revision": "d167f6f06083ad4e5c1290e98c779275",
     "url": "/static/media/bg--xl.d167f6f0.jpg"
-  },
-  {
-    "revision": "02c848dfbaf3480a1960a9475d349af9",
-    "url": "/static/media/bg--xs.02c848df.jpg"
   },
   {
     "revision": "4d44cacfa1067f9ee7761adf0fc4ee95",
@@ -1178,6 +1170,18 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f2547dec1bd8aeaf1f20e4d8c9d71c88",
     "url": "/static/media/bg_md.f2547dec.jpg"
+  },
+  {
+    "revision": "b9ff31bbd81611636697de291933594b",
+    "url": "/static/media/bg_mob--preview.b9ff31bb.jpg"
+  },
+  {
+    "revision": "08514c03bafec627960b827928586607",
+    "url": "/static/media/bg_mob--sm.08514c03.jpg"
+  },
+  {
+    "revision": "a82bbe4588cabf4a165273c0d7c0a8ef",
+    "url": "/static/media/bg_mob--xs.a82bbe45.jpg"
   },
   {
     "revision": "9ea92dfe6ed454c3b568468f395baf7c",
