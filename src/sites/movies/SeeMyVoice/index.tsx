@@ -11,6 +11,8 @@ import Footer from './blocks/Footer';
 import Photos from './blocks/Photos';
 import Bio from './blocks/Bio';
 
+import css from './style.module.css';
+
 function SeeMyVoice() {
   if (hasPreRendering()) {
     return null;
@@ -31,6 +33,9 @@ function SeeMyVoice() {
       <DirectorNote />
 
       <Bio />
+
+      <hr className={css.line} />
+
       <Awards />
 
       <Photos />

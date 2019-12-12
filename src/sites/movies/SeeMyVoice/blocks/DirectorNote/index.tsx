@@ -82,7 +82,6 @@ export default function DirectorNote() {
             )}
           </div>
         </div>
-
       </div>
 
       <div className={css.synopsis}>

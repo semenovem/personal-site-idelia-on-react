@@ -1,2 +1,16 @@
 .seeMyVoice {
 }
+
+.line {
+  width: 200px;
+  background-color: #ccc;
+  border: none;
+  height: 1px;
+}
+
+/* md */
+@media (min-width: 960px) {
+  .line {
+    display: none;
+  }
+}
