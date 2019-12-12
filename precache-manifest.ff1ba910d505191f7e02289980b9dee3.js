@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "31c7d12a34e518301d282ebf789a59c7",
+    "revision": "7627a8e955000ecb7b463d155e959563",
     "url": "/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/3.74ffe571.chunk.css"
   },
   {
-    "revision": "0daf34541b8fa96461b6",
-    "url": "/static/css/4.17e2a260.chunk.css"
+    "revision": "3cacd368ee45f050a9a2",
+    "url": "/static/css/4.4115094e.chunk.css"
   },
   {
     "revision": "c8b2a2c6956ef6eb368e",
@@ -28,8 +28,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/3.d79d3615.chunk.js"
   },
   {
-    "revision": "0daf34541b8fa96461b6",
-    "url": "/static/js/4.cfa9c143.chunk.js"
+    "revision": "3cacd368ee45f050a9a2",
+    "url": "/static/js/4.78f0329e.chunk.js"
   },
   {
     "revision": "c8b2a2c6956ef6eb368e",
@@ -44,8 +44,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/main.c147ed6f.chunk.js"
   },
   {
-    "revision": "52a5515b7d9368e64b7d",
-    "url": "/static/js/runtime-main.176478c7.js"
+    "revision": "9551c748c1f437397d87",
+    "url": "/static/js/runtime-main.4aa843d2.js"
   },
   {
     "revision": "ed332b352ba40cad61ddf846a91fb191",
@@ -1172,16 +1172,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/bg_md.f2547dec.jpg"
   },
   {
-    "revision": "b9ff31bbd81611636697de291933594b",
-    "url": "/static/media/bg_mob--preview.b9ff31bb.jpg"
+    "revision": "f5cc7be7a99d2b20522e233de3e3eb0c",
+    "url": "/static/media/bg_mob_1--sm.f5cc7be7.jpg"
   },
   {
-    "revision": "08514c03bafec627960b827928586607",
-    "url": "/static/media/bg_mob--sm.08514c03.jpg"
-  },
-  {
-    "revision": "a82bbe4588cabf4a165273c0d7c0a8ef",
-    "url": "/static/media/bg_mob--xs.a82bbe45.jpg"
+    "revision": "6bc964d5206440471bbe34a7e036f539",
+    "url": "/static/media/bg_mob_1--xs.6bc964d5.jpg"
   },
   {
     "revision": "9ea92dfe6ed454c3b568468f395baf7c",
