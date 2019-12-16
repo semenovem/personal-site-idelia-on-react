@@ -1,0 +1,96 @@
+.mgr {
+  --animation-duration: 200ms;
+}
+
+.bg,
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.bg {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100000;
+}
+
+.modal {
+  z-index: 100001;
+  display: inline-block;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bgShow,
+.bgHide,
+.hide,
+.show {
+  animation-duration: var(--animation-duration);
+  animation-timing-function: ease-in-out;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+.bgShow {
+  animation-name: animBgShow;
+}
+
+.bgHide {
+  animation-name: animBgHide;
+}
+
+.hide {
+  animation-name: animHide;
+}
+
+.show {
+  animation-name: animShow;
+}
+
+@keyframes animBgShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes animBgHide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes animHide {
+  from {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes animShow {
+  from {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
