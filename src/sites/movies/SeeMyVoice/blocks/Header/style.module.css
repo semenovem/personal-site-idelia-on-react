@@ -77,6 +77,11 @@
   .btnTrailer {
     display: none;
   }
+
+  .bg {
+    background-image: url('./assets/bg--preview.jpg');
+    background-position: center top;
+  }
 }
 
 /* lg */
