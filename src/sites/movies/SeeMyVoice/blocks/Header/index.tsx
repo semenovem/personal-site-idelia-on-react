@@ -26,7 +26,6 @@ export default function Header({ className }: Props) {
   return (
     <div className={cn(css.header, className)}>
       <Bg className={css.bg} />
-      <div />
 
       <div className={css.titleImg} />
 
