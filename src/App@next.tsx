@@ -85,7 +85,9 @@ class App extends React.Component<{}, State> {
 
         {hasPreRendering() && (
           <span style={{ display: 'none' }} className="">
+            {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
             <a href="/music" />
+            {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
             <a href="/see-my-voice" />
           </span>
         )}

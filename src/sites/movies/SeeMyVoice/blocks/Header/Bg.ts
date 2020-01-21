@@ -2,8 +2,8 @@ import { WinSize } from 'ctx/WinSize';
 import { CountdownLevel } from 'ctx/Countdown';
 import { backgroundApplyParams } from 'cnt/ProgressiveImg';
 
-import xs from './assets/bg_mob_3--xs.jpg';
-import sm from './assets/bg_mob_3--sm.jpg';
+import xs from './assets/bg_mob_4--xs.jpg';
+import sm from './assets/bg_mob_4--sm.jpg';
 import md from './assets/bg--md.jpg';
 import lg from './assets/bg--lg.jpg';
 import xl from './assets/bg--xl.jpg';
