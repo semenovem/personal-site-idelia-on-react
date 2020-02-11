@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9d48379e70f459ccc1af9af5717e6065",
+    "revision": "685dda16bcb5a82714a8f34b6a9174bc",
     "url": "/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/3.74ffe571.chunk.css"
   },
   {
-    "revision": "4d4c88b8b70c4e13d0ef",
+    "revision": "661589fa893fd9f625ff",
     "url": "/static/css/4.f690f701.chunk.css"
   },
   {
@@ -28,8 +28,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/3.c7926ae5.chunk.js"
   },
   {
-    "revision": "4d4c88b8b70c4e13d0ef",
-    "url": "/static/js/4.91db108d.chunk.js"
+    "revision": "661589fa893fd9f625ff",
+    "url": "/static/js/4.54f7f41e.chunk.js"
   },
   {
     "revision": "2422cd624bcbfc55d010",
@@ -44,8 +44,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/main.93befd29.chunk.js"
   },
   {
-    "revision": "5edf91ecd4e75ab8b150",
-    "url": "/static/js/runtime-main.257d956c.js"
+    "revision": "6560d437fe019a4d09fa",
+    "url": "/static/js/runtime-main.fb6be370.js"
   },
   {
     "revision": "ed332b352ba40cad61ddf846a91fb191",
@@ -1136,14 +1136,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/bg0--md.de603b86.jpg"
   },
   {
-    "revision": "03511fdc1af0aee90c60e13e1422f158",
-    "url": "/static/media/bg0--sm.03511fdc.jpg"
-  },
-  {
-    "revision": "28776d94c747a5d43a9037e59c8f9a57",
-    "url": "/static/media/bg0--xs.28776d94.jpg"
-  },
-  {
     "revision": "ee460db41f689a82f2371ddece038425",
     "url": "/static/media/bg1--md.ee460db4.jpg"
   },
@@ -1154,6 +1146,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "ed65c71cf0066324535b5049562f8b48",
     "url": "/static/media/bg1--xs.ed65c71c.jpg"
+  },
+  {
+    "revision": "3a8ac8c27b9190af876fb85d869562d8",
+    "url": "/static/media/bg2--sm.3a8ac8c2.jpg"
+  },
+  {
+    "revision": "7ae38263b860ce2e64e09f8da63ae16c",
+    "url": "/static/media/bg2--xs.7ae38263.jpg"
   },
   {
     "revision": "3817e9a7fe24db77e33a96bf68a3402f",
