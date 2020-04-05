@@ -11,6 +11,7 @@ export interface Song {
   itunes: string;
   coverUrl: string;
   url: string;
+  urlFreeDownload?: string;
   name: string;
 }
 
@@ -29,6 +30,7 @@ export const songs: Song[] = [
     itunes: 'https://music.apple.com/us/album/my-voice-from-see-my-voice/1447994568?i=1447994576',
     coverUrl: myVoice,
     url: '/songs/my_voice.mp3',
+    urlFreeDownload: '/download_free/my_voice.mp3',
     name: 'my voice',
   },
 

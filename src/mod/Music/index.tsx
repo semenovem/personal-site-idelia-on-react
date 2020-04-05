@@ -101,7 +101,20 @@ class Music extends React.Component<Props, State> {
               {...(!hasUserInteraction && { tabIndex: -1 })}
             />
           )}
-          {!song.spotify && !song.itunes && (
+          {song.urlFreeDownload && (
+            // eslint-disable-next-line jsx-a11y/anchor-has-content
+            <a
+              href={song.urlFreeDownload}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(css.store, css.downloadFree)}
+              // style={{ backgroundImage: `url(${spotify})` }}
+              {...(!hasUserInteraction && { tabIndex: -1 })}
+            >
+              download for&nbsp;free
+            </a>
+          )}
+          {!song.spotify && !song.itunes && !song.urlFreeDownload && (
             <div className={cn(css.store, css.comingSoon)}>Coming soon</div>
           )}
         </div>
