@@ -4,6 +4,7 @@ import iWould from './assets/covers/i_would_2.jpg';
 import bomb from './assets/covers/bomb.jpg';
 import iAmYours from './assets/covers/i_am_yours.jpg';
 import differentRockVersion from './assets/covers/different_rock_version.jpg';
+import mysticalMelody from './assets/covers/mystical_melody.jpg';
 
 export interface Song {
   id: string;
@@ -63,11 +64,20 @@ export const songs: Song[] = [
 
   {
     id: 'different_rock_version',
-    spotify: 'https://music.apple.com/us/album/different-rock-version-single/1488744586',
-    itunes: 'https://open.spotify.com/album/3piQPdOwEFGQjv9L2ixC9j',
+    spotify: 'https://open.spotify.com/album/3piQPdOwEFGQjv9L2ixC9j',
+    itunes: 'https://music.apple.com/us/album/different-rock-version-single/1488744586',
     coverUrl: differentRockVersion,
     url: '/songs/different_rock_version.mp3',
     name: 'different rock version',
+  },
+
+  {
+    id: 'mystical_melody',
+    spotify: 'https://open.spotify.com/album/5kjFmRvfOtDGRP86jffkBG',
+    itunes: 'https://music.apple.com/us/album/mystical-melody-feat-prince-dean-single/1511167483',
+    coverUrl: mysticalMelody,
+    url: '/songs/mystical_melody.mp3',
+    name: 'Mystical Melody',
   },
 ];
 
