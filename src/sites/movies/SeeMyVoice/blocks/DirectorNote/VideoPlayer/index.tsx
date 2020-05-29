@@ -13,7 +13,7 @@ export default function VideoPlayer({ className }: Props) {
       title="youtube"
       id="movie-see-my-voice-player"
       className={cn(css.player, className)}
-      src="https://www.youtube.com/embed/YQtG0hpHb2Y?controls=0&modestbranding=1&enablejsapi=1"
+      src="https://www.youtube.com/embed/DsfS2N6NHcc?controls=0&modestbranding=1&enablejsapi=1"
       frameBorder="0"
       allow="accelerometer; autoplay; encrypted-media; picture-in-picture"
       allowFullScreen
