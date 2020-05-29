@@ -1,6 +1,7 @@
 import different from './assets/covers/different.jpg';
 import myVoice from './assets/covers/my_voice.jpg';
 import iWould from './assets/covers/i_would_2.jpg';
+import iWouldPiano from './assets/covers/i_would_piano.jpg';
 import bomb from './assets/covers/bomb.jpg';
 import iAmYours from './assets/covers/i_am_yours.jpg';
 import differentRockVersion from './assets/covers/different_rock_version.jpg';
@@ -32,7 +33,7 @@ export const songs: Song[] = [
     coverUrl: myVoice,
     url: '/songs/my_voice.mp3',
     urlFreeDownload: '/download_free/my_voice.mp3',
-    name: 'my voice',
+    name: 'My voice',
   },
 
   {
@@ -41,7 +42,16 @@ export const songs: Song[] = [
     itunes: 'https://music.apple.com/us/album/i-would/1469663093?i=1469663094',
     coverUrl: iWould,
     url: '/songs/i_would.mp3',
-    name: 'i would',
+    name: 'I would',
+  },
+
+  {
+    id: 'iWouldPianoBalladVersion',
+    spotify: 'https://open.spotify.com/album/28Na1niVu3g1pAxGQWqhvm',
+    itunes: 'https://music.apple.com/us/album/i-would-piano-ballad-version/1484169949',
+    coverUrl: iWouldPiano,
+    url: '/songs/i_would_piano.mp3',
+    name: 'I Would (Piano Ballad Version)',
   },
 
   {
@@ -59,7 +69,7 @@ export const songs: Song[] = [
     itunes: 'https://music.apple.com/us/album/im-yours-i-m/1471635967?i=1471635973',
     coverUrl: iAmYours,
     url: '/songs/i_am_yours.mp3',
-    name: 'i am yours',
+    name: 'I am yours',
   },
 
   {
