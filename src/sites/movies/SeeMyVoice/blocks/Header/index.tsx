@@ -1,12 +1,13 @@
 import React from 'react';
 import cn from 'classnames';
 
-import award1 from 'sites/movies/SeeMyVoice/assets/awards/aof_2019/sm.png';
-import award2 from 'sites/movies/SeeMyVoice/assets/awards/kino_duel/sm.png';
-import award0 from 'sites/movies/SeeMyVoice/assets/awards/mfmk_kazan_2019/sm.png';
+// import award1 from 'sites/movies/SeeMyVoice/assets/awards/aof_2019/sm.png';
+// import award2 from 'sites/movies/SeeMyVoice/assets/awards/kino_duel/sm.png';
+// import award0 from 'sites/movies/SeeMyVoice/assets/awards/mfmk_kazan_2019/sm.png';
 import amazonIcon from 'assets/icons/social/amazon.png';
 
 import Bg from './Bg';
+import Awards from './Awards';
 
 import css from './style.module.css';
 
@@ -44,9 +45,12 @@ export default function Header({ className }: Props) {
       </button>
 
       <div className={css.awards}>
-        <img src={award0} alt="" className={css.awardImg} />
-        <img src={award1} alt="" className={css.awardImg} />
-        <img src={award2} alt="" className={css.awardImg} />
+        {/* todo - temporarily, asks the customer */}
+        {/*<img src={award0} alt="" className={css.awardImg} />*/}
+        {/*<img src={award1} alt="" className={css.awardImg} />*/}
+        {/*<img src={award2} alt="" className={css.awardImg} />*/}
+
+        <Awards />
       </div>
     </div>
   );
