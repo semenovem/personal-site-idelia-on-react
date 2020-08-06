@@ -28,7 +28,7 @@
 
 .titleImg {
   width: 60%;
-  max-width: 300px;
+  max-width: 400px;
   height: 120px;
   margin-top: 60px;
 
@@ -119,12 +119,17 @@
 
   .titleImg {
     margin-top: 10px;
+    position: absolute;
+    top: 50px;
+    right: 40px;
   }
 
   .amazon {
     flex-direction: column;
     position: static;
     height: auto;
+    align-items: flex-end;
+    width: 100%;
   }
 
   .amazonAvailable {
