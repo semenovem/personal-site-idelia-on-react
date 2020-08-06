@@ -24,11 +24,16 @@ interface OwnProps extends PageMgrUserInteractionProps {
   className?: string;
 }
 
-interface Props extends OwnProps {}
+interface Props extends OwnProps {
+  instagram?: {
+    URL: string;
+    ALT: string;
+  };
+}
 
 class Footer extends React.Component<Props> {
   private renderContentFooter() {
-    const { hasUserInteraction } = this.props;
+    const { hasUserInteraction, instagram = SOCIAL.INSTAGRAM } = this.props;
 
     return (
       <>
@@ -43,12 +48,12 @@ class Footer extends React.Component<Props> {
           </a>
 
           <a
-            href={SOCIAL.INSTAGRAM.URL}
+            href={instagram.URL}
             target="_blank"
             rel="noopener noreferrer"
             {...(!hasUserInteraction && { tabIndex: -1 })}
           >
-            <img src={iconInstagram} alt={SOCIAL.INSTAGRAM.ALT} />
+            <img src={iconInstagram} alt={instagram.ALT} />
           </a>
 
           <a

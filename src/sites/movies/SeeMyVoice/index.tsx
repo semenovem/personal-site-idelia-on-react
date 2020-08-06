@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import './styles/global.css';
 
 import { hasPreRendering } from 'sys/prerender';
+import { SOCIAL } from 'types/social';
 import Header from './blocks/Header';
 import Awards from './blocks/Awards';
 import DirectorNote from './blocks/DirectorNote';
@@ -39,7 +40,7 @@ function SeeMyVoice() {
       <Awards />
 
       <Photos />
-      <Footer />
+      <Footer instagram={SOCIAL.INSTAGRAM_SEE_MY_VOICE} />
     </>
   );
 }

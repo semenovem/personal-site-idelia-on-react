@@ -11,6 +11,11 @@ export const SOCIAL = {
     ALT: 'Idelia Mars',
   },
 
+  INSTAGRAM_SEE_MY_VOICE: {
+    URL: 'https://www.instagram.com/i.m.production/',
+    ALT: 'Instagram',
+  },
+
   SPOTIFY: {
     URL: 'https://open.spotify.com/artist/5xoqIxx3V5qjlEU6nDqpH3',
     ALT: 'Idelia Mars',
