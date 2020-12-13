@@ -76,6 +76,7 @@ class Music extends React.Component<Props, State> {
           isPlayed={isPlayed}
           hasUserInteraction={hasUserInteraction}
           nameTrack={song.name}
+          showPlayer={!!song.url}
         />
 
         <div className={css.buy}>

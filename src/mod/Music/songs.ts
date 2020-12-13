@@ -1,11 +1,12 @@
 import different from './assets/covers/different.jpg';
 import myVoice from './assets/covers/my_voice.jpg';
 import iWould from './assets/covers/i_would_2.jpg';
-import iWouldPiano from './assets/covers/i_would_piano.jpg';
+// import iWouldPiano from './assets/covers/i_would_piano.jpg';
 import bomb from './assets/covers/bomb.jpg';
 import iAmYours from './assets/covers/i_am_yours.jpg';
-import differentRockVersion from './assets/covers/different_rock_version.jpg';
-import mysticalMelody from './assets/covers/mystical_melody.jpg';
+// import differentRockVersion from './assets/covers/different_rock_version.jpg';
+// import mysticalMelody from './assets/covers/mystical_melody.jpg';
+import galamha from './assets/covers/galamha.jpg';
 
 export interface Song {
   id: string;
@@ -46,14 +47,14 @@ export const songs: Song[] = [
     name: 'I would',
   },
 
-  {
-    id: 'iWouldPianoBalladVersion',
-    spotify: 'https://open.spotify.com/album/28Na1niVu3g1pAxGQWqhvm',
-    itunes: 'https://music.apple.com/us/album/i-would-piano-ballad-version/1484169949',
-    coverUrl: iWouldPiano,
-    url: '/songs/i_would_piano.mp3',
-    name: 'I Would (Piano Ballad Version)',
-  },
+  // {
+  //   id: 'iWouldPianoBalladVersion',
+  //   spotify: 'https://open.spotify.com/album/28Na1niVu3g1pAxGQWqhvm',
+  //   itunes: 'https://music.apple.com/us/album/i-would-piano-ballad-version/1484169949',
+  //   coverUrl: iWouldPiano,
+  //   url: '/songs/i_would_piano.mp3',
+  //   name: 'I Would (Piano Ballad Version)',
+  // },
 
   {
     id: 'bomb',
@@ -73,21 +74,30 @@ export const songs: Song[] = [
     name: 'I am yours',
   },
 
-  {
-    id: 'different_rock_version',
-    spotify: 'https://open.spotify.com/album/3piQPdOwEFGQjv9L2ixC9j',
-    itunes: 'https://music.apple.com/us/album/different-rock-version-single/1488744586',
-    coverUrl: differentRockVersion,
-    url: '/songs/different_rock_version.mp3',
-    name: 'different rock version',
-  },
+  // {
+  //   id: 'different_rock_version',
+  //   spotify: 'https://open.spotify.com/album/3piQPdOwEFGQjv9L2ixC9j',
+  //   itunes: 'https://music.apple.com/us/album/different-rock-version-single/1488744586',
+  //   coverUrl: differentRockVersion,
+  //   url: '/songs/different_rock_version.mp3',
+  //   name: 'different rock version',
+  // },
+
+  // {
+  //   id: 'mystical_melody',
+  //   spotify: 'https://open.spotify.com/album/5kjFmRvfOtDGRP86jffkBG',
+  //   itunes: 'https://music.apple.com/us/album/mystical-melody-feat-prince-dean-single/1511167483',
+  //   coverUrl: mysticalMelody,
+  //   url: '/songs/mystical_melody.mp3',
+  //   name: 'Mystical Melody',
+  // },
 
   {
-    id: 'mystical_melody',
-    spotify: 'https://open.spotify.com/album/5kjFmRvfOtDGRP86jffkBG',
-    itunes: 'https://music.apple.com/us/album/mystical-melody-feat-prince-dean-single/1511167483',
-    coverUrl: mysticalMelody,
-    url: '/songs/mystical_melody.mp3',
+    id: 'galamge',
+    spotify: 'https://open.spotify.com/album/5qSf64epyvmpsxX8uCIx0D',
+    itunes: 'https://music.apple.com/us/album/%D0%B3%D0%B0%D0%BB%D3%99%D0%BC%D0%B3%D3%99/1538749817',
+    coverUrl: galamha,
+    url: '',
     name: 'Mystical Melody',
   },
 ];
