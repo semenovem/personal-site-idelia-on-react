@@ -39,7 +39,8 @@ export const songs: Song[] = [
   {
     id: 'iWould',
     spotify: 'https://open.spotify.com/album/4ZqxSKQ7yG8sS16gimiwy4',
-    itunes: 'https://music.apple.com/us/album/i-would/1469663093?i=1469663094',
+    // itunes: 'https://music.apple.com/us/album/i-would/1469663093?i=1469663094',
+    itunes: 'https://music.apple.com/us/album/i-would/1543774939?i=1543774941',
     coverUrl: iWould,
     url: '/songs/i_would.mp3',
     name: 'I would',
