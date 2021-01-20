@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 
 import { CountdownLevel, CountdownProps, withCtxCountdown } from 'ctx/Countdown';
-import imgQr from 'assets/qr.svg';
+import imgQr from 'assets/qr-code.png';
 
 import css from './style.module.css';
 
