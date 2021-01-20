@@ -1,51 +1,51 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b924abe878d49c53c8ba60522a610875",
+    "revision": "bacd58ff60c58a2ef19d7488da550807",
     "url": "/index.html"
   },
   {
-    "revision": "da9f9f01fb3efa51f0e1",
+    "revision": "0e57a16efd0185048fba",
     "url": "/static/css/3.bedab7b5.chunk.css"
   },
   {
-    "revision": "593d22c331f3bdf5627a",
+    "revision": "c8c8e1b2a2ab8ffc7871",
     "url": "/static/css/4.bac76ad3.chunk.css"
   },
   {
-    "revision": "a353577f76758fba0962",
+    "revision": "b90409dc1ca22f2862c0",
     "url": "/static/css/5.ecf8ddd0.chunk.css"
   },
   {
-    "revision": "aae8143dbe2a015e7107",
+    "revision": "ebdf179108b73969dfd6",
     "url": "/static/css/main.58a197ed.chunk.css"
   },
   {
-    "revision": "5b8bbc9e91b5ae93eab6",
-    "url": "/static/js/0.ee95516c.chunk.js"
+    "revision": "94609e86eb14f1bdeb4a",
+    "url": "/static/js/0.eec96cc2.chunk.js"
   },
   {
-    "revision": "da9f9f01fb3efa51f0e1",
-    "url": "/static/js/3.ff943ff5.chunk.js"
+    "revision": "0e57a16efd0185048fba",
+    "url": "/static/js/3.766ba002.chunk.js"
   },
   {
-    "revision": "593d22c331f3bdf5627a",
-    "url": "/static/js/4.d5d3c9fc.chunk.js"
+    "revision": "c8c8e1b2a2ab8ffc7871",
+    "url": "/static/js/4.039c6929.chunk.js"
   },
   {
-    "revision": "a353577f76758fba0962",
-    "url": "/static/js/5.cb5824db.chunk.js"
+    "revision": "b90409dc1ca22f2862c0",
+    "url": "/static/js/5.7a8e2722.chunk.js"
   },
   {
     "revision": "06daa88d5c99f0ee6bf4",
     "url": "/static/js/6.d7c5c038.chunk.js"
   },
   {
-    "revision": "aae8143dbe2a015e7107",
-    "url": "/static/js/main.1324b465.chunk.js"
+    "revision": "ebdf179108b73969dfd6",
+    "url": "/static/js/main.8989c3f3.chunk.js"
   },
   {
-    "revision": "5da3ca86cb089801d1b7",
-    "url": "/static/js/runtime-main.313d5809.js"
+    "revision": "7077e67f40dd7fc9d0b5",
+    "url": "/static/js/runtime-main.a81b6626.js"
   },
   {
     "revision": "ed332b352ba40cad61ddf846a91fb191",
@@ -1358,6 +1358,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "8793f0cc04a67b43b2f4eb0b69b92b36",
     "url": "/static/media/spotify_white.8793f0cc.svg"
+  },
+  {
+    "revision": "5953f71330ec8f81373d1a57153d7efd",
+    "url": "/static/media/tatar_girl.5953f713.jpg"
   },
   {
     "revision": "9b0152452aff0830071a08759223aa95",
