@@ -7,6 +7,7 @@ import iAmYours from './assets/covers/i_am_yours.jpg';
 // import differentRockVersion from './assets/covers/different_rock_version.jpg';
 // import mysticalMelody from './assets/covers/mystical_melody.jpg';
 import galamha from './assets/covers/galamha.jpg';
+import tatarGirl from './assets/covers/tatar_girl.jpg';
 
 export interface Song {
   id: string;
@@ -99,6 +100,14 @@ export const songs: Song[] = [
     coverUrl: galamha,
     url: '',
     name: 'Mystical Melody',
+  },
+  {
+    id: 'tatar_girl',
+    spotify: 'https://open.spotify.com/album/2xzsmnTtPnx4KAeqstmebw',
+    itunes: 'https://music.apple.com/us/album/tatar-girl/1549154358',
+    coverUrl: tatarGirl,
+    url: '',
+    name: 'Tatar Girl',
   },
 ];
 
