@@ -1,25 +1,25 @@
 {
   "files": {
-    "static/js/0.eec96cc2.chunk.js": "/static/js/0.eec96cc2.chunk.js",
-    "static/js/0.eec96cc2.chunk.js.map": "/static/js/0.eec96cc2.chunk.js.map",
+    "static/js/0.bb24824a.chunk.js": "/static/js/0.bb24824a.chunk.js",
+    "static/js/0.bb24824a.chunk.js.map": "/static/js/0.bb24824a.chunk.js.map",
     "main.css": "/static/css/main.58a197ed.chunk.css",
-    "main.js": "/static/js/main.8989c3f3.chunk.js",
-    "main.js.map": "/static/js/main.8989c3f3.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.667a3442.js",
-    "runtime-main.js.map": "/static/js/runtime-main.667a3442.js.map",
+    "main.js": "/static/js/main.2e6e6e2a.chunk.js",
+    "main.js.map": "/static/js/main.2e6e6e2a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6a76728b.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6a76728b.js.map",
     "static/css/3.bedab7b5.chunk.css": "/static/css/3.bedab7b5.chunk.css",
-    "static/js/3.157f7b39.chunk.js": "/static/js/3.157f7b39.chunk.js",
-    "static/js/3.157f7b39.chunk.js.map": "/static/js/3.157f7b39.chunk.js.map",
+    "static/js/3.154c25c1.chunk.js": "/static/js/3.154c25c1.chunk.js",
+    "static/js/3.154c25c1.chunk.js.map": "/static/js/3.154c25c1.chunk.js.map",
     "static/css/4.bac76ad3.chunk.css": "/static/css/4.bac76ad3.chunk.css",
-    "static/js/4.039c6929.chunk.js": "/static/js/4.039c6929.chunk.js",
-    "static/js/4.039c6929.chunk.js.map": "/static/js/4.039c6929.chunk.js.map",
+    "static/js/4.83f4cb31.chunk.js": "/static/js/4.83f4cb31.chunk.js",
+    "static/js/4.83f4cb31.chunk.js.map": "/static/js/4.83f4cb31.chunk.js.map",
     "static/css/5.ecf8ddd0.chunk.css": "/static/css/5.ecf8ddd0.chunk.css",
-    "static/js/5.7a8e2722.chunk.js": "/static/js/5.7a8e2722.chunk.js",
-    "static/js/5.7a8e2722.chunk.js.map": "/static/js/5.7a8e2722.chunk.js.map",
+    "static/js/5.bc34c16d.chunk.js": "/static/js/5.bc34c16d.chunk.js",
+    "static/js/5.bc34c16d.chunk.js.map": "/static/js/5.bc34c16d.chunk.js.map",
     "static/js/6.d7c5c038.chunk.js": "/static/js/6.d7c5c038.chunk.js",
     "static/js/6.d7c5c038.chunk.js.map": "/static/js/6.d7c5c038.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.9a20ca8a8ef952a31100371e34632ed7.js": "/precache-manifest.9a20ca8a8ef952a31100371e34632ed7.js",
+    "precache-manifest.31c03f501fd3a8dc3dbd5677364cfded.js": "/precache-manifest.31c03f501fd3a8dc3dbd5677364cfded.js",
     "service-worker.js": "/service-worker.js",
     "static/css/3.bedab7b5.chunk.css.map": "/static/css/3.bedab7b5.chunk.css.map",
     "static/css/4.bac76ad3.chunk.css.map": "/static/css/4.bac76ad3.chunk.css.map",
@@ -320,6 +320,7 @@
     "static/media/google_music_with_sign.svg": "/static/media/google_music_with_sign.0581150e.svg",
     "static/media/i_am_yours.jpg": "/static/media/i_am_yours.cb02a1f4.jpg",
     "static/media/i_would_2.jpg": "/static/media/i_would_2.73cc7219.jpg",
+    "static/media/i_would_piano.jpg": "/static/media/i_would_piano.5a6385b3.jpg",
     "static/media/instagram_bw.svg": "/static/media/instagram_bw.e0e50725.svg",
     "static/media/itunes_buy.png": "/static/media/itunes_buy.3b86b4d1.png",
     "static/media/love_bizarre.jpg": "/static/media/love_bizarre.09968792.jpg",
@@ -334,9 +335,9 @@
     "static/media/yandex_music_white.svg": "/static/media/yandex_music_white.9e2c2a44.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.667a3442.js",
+    "static/js/runtime-main.6a76728b.js",
     "static/js/6.d7c5c038.chunk.js",
     "static/css/main.58a197ed.chunk.css",
-    "static/js/main.8989c3f3.chunk.js"
+    "static/js/main.2e6e6e2a.chunk.js"
   ]
 }
