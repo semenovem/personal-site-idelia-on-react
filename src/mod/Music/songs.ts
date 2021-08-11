@@ -59,7 +59,8 @@ export const songs: Song[] = [
   {
     id: 'bomb',
     spotify: 'https://open.spotify.com/album/1Wteh2Cc2Lytd30aa5ZU08',
-    itunes: 'https://music.apple.com/us/album/bomb-single/1472177996',
+    // itunes: 'https://music.apple.com/us/album/bomb-single/1472177996',
+    itunes: 'https://music.apple.com/us/album/bomb-single/1579621720',
     coverUrl: bomb,
     url: '/songs/bomb.mp3',
     name: 'bomb',
@@ -68,7 +69,8 @@ export const songs: Song[] = [
   {
     id: 'i_am_yours',
     spotify: 'https://open.spotify.com/album/3piQPdOwEFGQjv9L2ixC9j',
-    itunes: 'https://music.apple.com/us/album/im-yours-i-m/1471635967?i=1471635973',
+    itunes: 'https://music.apple.com/us/album/im-yours-i-m-single/1579549542',
+    // itunes: 'https://music.apple.com/us/album/im-yours-i-m/1471635967?i=1471635973',
     coverUrl: iAmYours,
     url: '/songs/i_am_yours.mp3',
     name: 'I am yours',
