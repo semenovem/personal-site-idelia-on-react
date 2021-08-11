@@ -1,18 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ff6dbd6e87dd0b1f0749dc3ec9b09d5b",
+    "revision": "2372d2884908a924a65ff3cdca3a6beb",
     "url": "/index.html"
   },
   {
-    "revision": "179888d52b802070f8bc",
+    "revision": "9efb7f595cbc03d12b96",
     "url": "/static/css/3.bedab7b5.chunk.css"
   },
   {
-    "revision": "e71b7be12ce72560b9e3",
+    "revision": "fa5ae10f36020ab9ac8a",
     "url": "/static/css/4.bac76ad3.chunk.css"
   },
   {
-    "revision": "40b83011d32527e5ff4f",
+    "revision": "bc8db0670f04533d2f3f",
     "url": "/static/css/5.ecf8ddd0.chunk.css"
   },
   {
@@ -24,16 +24,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/0.bb24824a.chunk.js"
   },
   {
-    "revision": "179888d52b802070f8bc",
-    "url": "/static/js/3.154c25c1.chunk.js"
+    "revision": "9efb7f595cbc03d12b96",
+    "url": "/static/js/3.1426f513.chunk.js"
   },
   {
-    "revision": "e71b7be12ce72560b9e3",
-    "url": "/static/js/4.83f4cb31.chunk.js"
+    "revision": "fa5ae10f36020ab9ac8a",
+    "url": "/static/js/4.fefa6b76.chunk.js"
   },
   {
-    "revision": "40b83011d32527e5ff4f",
-    "url": "/static/js/5.bc34c16d.chunk.js"
+    "revision": "bc8db0670f04533d2f3f",
+    "url": "/static/js/5.e1b5d1e2.chunk.js"
   },
   {
     "revision": "06daa88d5c99f0ee6bf4",
@@ -44,8 +44,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/main.2e6e6e2a.chunk.js"
   },
   {
-    "revision": "b46138972bb7426f3a24",
-    "url": "/static/js/runtime-main.6a76728b.js"
+    "revision": "670fe6d4475404fd23cf",
+    "url": "/static/js/runtime-main.569c1ed7.js"
   },
   {
     "revision": "ed332b352ba40cad61ddf846a91fb191",
@@ -1308,14 +1308,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/galamha.b00fbee6.jpg"
   },
   {
-    "revision": "e9dec76d6637a3ad1cccfad72c484e08",
-    "url": "/static/media/google_music.e9dec76d.svg"
-  },
-  {
-    "revision": "0581150e43da8868edb7e375a9ac745a",
-    "url": "/static/media/google_music_with_sign.0581150e.svg"
-  },
-  {
     "revision": "cb02a1f40792c55d77f0d749e5fc994d",
     "url": "/static/media/i_am_yours.cb02a1f4.jpg"
   },
@@ -1382,5 +1374,13 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "9e2c2a44f8b27d194c27c489592d2148",
     "url": "/static/media/yandex_music_white.9e2c2a44.svg"
+  },
+  {
+    "revision": "46eb9721e587eaf3a0a9093cdf8b9a95",
+    "url": "/static/media/youtube_music.46eb9721.svg"
+  },
+  {
+    "revision": "cccb116a44148fa80785c1f178370fa6",
+    "url": "/static/media/youtube_music_with_sign.cccb116a.svg"
   }
 ]);
