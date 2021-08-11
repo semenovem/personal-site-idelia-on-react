@@ -32,7 +32,7 @@ export const SOCIAL = {
   },
 
   GOOGLE_MUSIC: {
-    URL: 'https://music.youtube.com/channel/UCMLcnRZtOPo-AhJv0hdrOSw',
+    URL: 'https://youtube.com/user/IdeliaM',
     ALT: 'Idelia Mars',
   },
 };
