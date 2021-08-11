@@ -11,10 +11,8 @@ import iconITunesMob from 'assets/icons/shops/itunes_icon_white.png';
 import iconITunes from 'assets/icons/shops/itunes_white.png';
 import iconYandexMusicMob from 'assets/icons/shops/yandex_music_icon.svg';
 import iconYandexMusic from 'assets/icons/shops/yandex_music_white.svg';
-// import iconGoogleMusic from 'assets/icons/shops/google_music.svg';
 import iconGoogleMusic from 'assets/icons/shops/youtube_music.svg';
-import iconGoogleMusicWithSign from 'assets/icons/shops/google_music_with_sign.svg';
-import iconGoogleMusicWithSign from 'assets/icons/shops/google_music_with_sign.svg';
+import iconGoogleMusicWithSign from 'assets/icons/shops/youtube_music_with_sign.svg';
 
 import { SOCIAL } from 'types/social';
 
