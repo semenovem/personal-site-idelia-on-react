@@ -3,6 +3,7 @@ import myVoice from './assets/covers/my_voice.jpg';
 import iWould from './assets/covers/i_would_2.jpg';
 import iWouldPiano from './assets/covers/i_would_piano.jpg';
 import bomb from './assets/covers/bomb.jpg';
+import bombRemix from './assets/covers/bomb_remix.jpg';
 import iAmYours from './assets/covers/i_am_yours.jpg';
 // import differentRockVersion from './assets/covers/different_rock_version.jpg';
 // import mysticalMelody from './assets/covers/mystical_melody.jpg';
@@ -21,6 +22,15 @@ export interface Song {
 
 export const songs: Song[] = [
   {
+    id: 'bomb_remix',
+    spotify: 'https://open.spotify.com/track/3cfGbSpm9CjDOrJsK9fI7x?si=c320b63c1f3041f1',
+    itunes: 'https://music.apple.com/us/album/bomb-big-money-like-sauce-remix-single/1585487406',
+    coverUrl: bombRemix,
+    url: '/songs/bomb_remix.mp3',
+    name: 'Bomb (Big Money Like Sauce Remix)',
+  },
+
+  {
     id: 'different',
     spotify: 'https://open.spotify.com/album/4VY70aiWv6YMzJeCIBBVF1',
     itunes: 'https://music.apple.com/us/album/different/1443586279?i=1443586280',
@@ -28,6 +38,7 @@ export const songs: Song[] = [
     url: '/songs/different.mp3',
     name: 'different',
   },
+
   {
     id: 'myVoice',
     spotify: 'https://open.spotify.com/album/3SOvjES7pbP2ovIduUHD8w',
