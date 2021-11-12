@@ -1,5 +1,5 @@
 .item {
-  text-decoration: none;
+  text-decoration: #E4E4E4 underline;
   transition: color 200ms;
 
   font-size: calc(8vw);
@@ -36,4 +36,17 @@
     opacity: 1;
   }
 }
+
+/* sm */
+@media (min-width: 576px) {}
+
+
+
+/* md */
+@media (min-width: 768px) {
+  .item {
+    text-decoration: none;
+  }
+}
+
 
