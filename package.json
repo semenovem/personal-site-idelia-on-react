@@ -61,7 +61,7 @@
     "make-dir": "^3.0.0",
     "prettier": "^1.18.2",
     "react-snap": "^1.23.0",
-    "shelljs": "^0.8.3",
+    "shelljs": "^0.8.5",
     "svgo": "^1.2.2"
   },
   "husky": {
