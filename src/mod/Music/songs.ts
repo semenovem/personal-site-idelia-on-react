@@ -9,6 +9,7 @@ import iAmYours from './assets/covers/i_am_yours.jpg';
 // import mysticalMelody from './assets/covers/mystical_melody.jpg';
 import galamha from './assets/covers/galamha.jpg';
 import tatarGirl from './assets/covers/tatar_girl.jpg';
+import differentRemix from './assets/covers/different_remix.jpg';
 
 export interface Song {
   id: string;
@@ -21,6 +22,14 @@ export interface Song {
 }
 
 export const songs: Song[] = [
+  {
+    id: 'different-remix',
+    spotify: 'https://open.spotify.com/track/49BxBZdQldcmpwNF4zkUGO?si=7cc98ae83d024623',
+    itunes: 'https://music.apple.com/us/album/different-remix/1609667369?i=1609667370',
+    coverUrl: differentRemix,
+    url: '/songs/diff_remix.m4a',
+    name: 'different (remix)',
+  },
   {
     id: 'bomb_remix',
     spotify: 'https://open.spotify.com/track/3cfGbSpm9CjDOrJsK9fI7x?si=c320b63c1f3041f1',
