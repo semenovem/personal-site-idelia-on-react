@@ -13,11 +13,8 @@ export function defWinSize(w: number): WinSize {
   if (w < WinSize.XL) {
     return WinSize.LG;
   }
-  if (w < WinSize.XXL) {
-    return WinSize.XL;
-  }
 
-  return WinSize.XXL;
+  return WinSize.XL;
 }
 
 export function canBeUsed(target: WinSize, winSize: WinSize): boolean {
@@ -37,9 +34,6 @@ export function howRelevant(target: WinSize, winSize: WinSize | null): number | 
 }
 
 export function getSmaller(w: WinSize): WinSize | null {
-  if (w === WinSize.XXL) {
-    return WinSize.XL;
-  }
   if (w === WinSize.XL) {
     return WinSize.LG;
   }

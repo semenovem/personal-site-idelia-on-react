@@ -7,6 +7,9 @@ interface State {
   pageMgr: PageMgrValue;
 }
 
+/**
+ * @deprecated
+ */
 class PageMgr extends React.Component<{}, State> {
   public static Page = Page;
   private static handlerOpen: ((p: Page) => void) | null = null;

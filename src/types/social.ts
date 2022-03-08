@@ -11,6 +11,11 @@ export const SOCIAL = {
     ALT: 'Idelia Mars',
   },
 
+  INSTAGRAM_SEE_MY_VOICE: {
+    URL: 'https://www.instagram.com/i.m.production/',
+    ALT: 'Instagram',
+  },
+
   SPOTIFY: {
     URL: 'https://open.spotify.com/artist/5xoqIxx3V5qjlEU6nDqpH3',
     ALT: 'Idelia Mars',
@@ -27,7 +32,7 @@ export const SOCIAL = {
   },
 
   GOOGLE_MUSIC: {
-    URL: 'https://play.google.com/music/listen?u=0#/artist/Acbuqc7fna7xyei4sb3xxbjz4ja/Idelia+Mars',
+    URL: 'https://youtube.com/user/IdeliaM',
     ALT: 'Idelia Mars',
   },
 };

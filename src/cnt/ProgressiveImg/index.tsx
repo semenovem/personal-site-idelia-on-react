@@ -6,9 +6,9 @@ import * as T from './types';
 export { Background, Image, backgroundApplyParams };
 
 function backgroundApplyParams(params: T.IProgressiveImgParams) {
-  function BackgroundApplyParams(props: IOwnPropsBackground) {
-    return <Background params={params} {...props} />;
-  }
+  const BackgroundApplyParams = (props: IOwnPropsBackground) => (
+    <Background params={params} {...props} />
+  );
 
   BackgroundApplyParams.displayName = `Background(${Background.displayName ||
     Background.name ||

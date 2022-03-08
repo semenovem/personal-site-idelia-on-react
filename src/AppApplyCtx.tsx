@@ -4,17 +4,20 @@ import { WinSizeCtxCmp } from 'ctx/WinSize';
 import { MusicPlayerCtxCmp } from 'ctx/MusicPlayer';
 import { CountdownCtxCmp } from 'ctx/Countdown';
 import { PageMgr } from 'ctx/PageMgr';
+import { MenuCtxCmp } from 'ctx/Menu';
 
-import App from './App';
+import AppNext from './App@next';
 
 const AppApplyCtx = () => (
   <WinSizeCtxCmp>
     <CountdownCtxCmp>
-      <MusicPlayerCtxCmp>
-        <PageMgr>
-          <App />
-        </PageMgr>
-      </MusicPlayerCtxCmp>
+      <MenuCtxCmp>
+        <MusicPlayerCtxCmp>
+          <PageMgr>
+            <AppNext />
+          </PageMgr>
+        </MusicPlayerCtxCmp>
+      </MenuCtxCmp>
     </CountdownCtxCmp>
   </WinSizeCtxCmp>
 );

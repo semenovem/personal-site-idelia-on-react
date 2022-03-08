@@ -1,0 +1,46 @@
+.awards {
+  margin-top: 20px;
+  padding-bottom: 40px;
+}
+
+.title {
+  font-size: 28px;
+  text-align: center;
+}
+
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 0 auto;
+  text-align: center;
+}
+
+.item {
+  width: 40%;
+  max-width: 80px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 30px;
+}
+
+/* sm */
+@media (min-width: 600px) {
+}
+
+/* md */
+@media (min-width: 960px) {
+  .item {
+    width: 200px;
+  }
+}
+
+/* lg */
+@media (min-width: 1280px) {
+}
+
+/* xl */
+@media (min-width: 1920px) {
+}
+

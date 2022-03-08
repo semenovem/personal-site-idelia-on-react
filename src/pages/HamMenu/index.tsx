@@ -5,18 +5,37 @@ import { ROUTES } from 'types/routes';
 import { findValueByAttr } from 'utils/dom/findValueByAttr';
 import BtnClose from 'cmp/BtnClose';
 
-import cssTypography from 'styles/typography.module.css';
-import cssCommon from 'styles/common.module.css';
-import { withCtxPageMgr, Page, PageMgrProps, PageMgr } from 'ctx/PageMgr';
+import cssTypography from 'sites/Music/styles/typography.module.css';
+import cssCommon from 'sites/Music/styles/common.module.css';
+import { withCtxMenu, MenuProps } from 'ctx/Menu';
+
 import css from './style.module.css';
 
 interface OwnProps {
   className?: string;
 }
 
-type Props = OwnProps & PageMgrProps;
+type Props = OwnProps & MenuProps;
 
 class HamMenu extends React.Component<Props> {
+  private static renderItems() {
+    const style = cssTypography.hamMenuItem;
+
+    const { hash } = window.location;
+    const routeItem = ROUTES.ALL.find(it => it.HASH === hash) || ROUTES.HEADER;
+
+    return ROUTES.ORDER_HAM_MENU.map(it => (
+      <a
+        href={it.HASH}
+        className={cn(style, routeItem.ID === it.ID && css.selected)}
+        data-id={it.ID}
+        key={it.ID}
+      >
+        {it.MENU_ITEM_NAME}
+      </a>
+    ));
+  }
+
   private handleSelect = (event: React.MouseEvent) => {
     const id = findValueByAttr(
       event.target as HTMLElement,
@@ -32,32 +51,13 @@ class HamMenu extends React.Component<Props> {
   };
 
   private handleClose = () => {
-    PageMgr.close(PageMgr.Page.HAM_MENU);
+    this.props.menu.close();
   };
 
-  private renderItems() {
-    const style = cssTypography.hamMenuItem;
-
-    const hash = window.location.hash;
-    const routeItem = ROUTES.ALL.find(it => it.HASH === hash) || ROUTES.HEADER;
-
-    return ROUTES.ORDER_HAM_MENU.map(it => (
-      <a
-        href={it.HASH}
-        className={cn(style, routeItem.ID === it.ID && css.selected)}
-        data-id={it.ID}
-        key={it.ID}
-      >
-        {it.MENU_ITEM_NAME}
-      </a>
-    ));
-  }
-
   public render() {
-    const {
-      className,
-      pageMgr: { hasUserInteraction },
-    } = this.props;
+    const { className, menu } = this.props;
+
+    const hasUserInteraction = menu.isOpen;
 
     return (
       <div className={cn(css.hamMenu, className, hasUserInteraction && css.visible)}>
@@ -69,11 +69,11 @@ class HamMenu extends React.Component<Props> {
         />
 
         <nav className={cn(css.items)} onClick={this.handleSelect} aria-hidden>
-          {this.renderItems()}
+          {HamMenu.renderItems()}
         </nav>
       </div>
     );
   }
 }
 
-export default withCtxPageMgr<OwnProps>(Page.HAM_MENU, HamMenu);
+export default withCtxMenu(HamMenu);

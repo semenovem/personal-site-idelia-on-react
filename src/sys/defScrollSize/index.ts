@@ -21,7 +21,7 @@ export function defScrollSze(): { x: number; y: number } {
     const x = elem.offsetWidth - elem.clientWidth;
     const y = elem.offsetHeight - elem.clientHeight;
 
-    document.removeChild(elem);
+    document.body.removeChild(elem);
 
     return {
       x: x < 0 ? 0 : x,

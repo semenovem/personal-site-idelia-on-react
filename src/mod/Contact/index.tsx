@@ -4,8 +4,8 @@ import cn from 'classnames';
 import { ROUTES } from 'types/routes';
 import { withUserInteraction, PageMgrUserInteractionProps } from 'ctx/PageMgr';
 
-import cssCommon from 'styles/common.module.css';
-import cssTypography from 'styles/typography.module.css';
+import cssCommon from 'sites/Music/styles/common.module.css';
+import cssTypography from 'sites/Music/styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import Bg from './Background';
 import css from './style.module.css';

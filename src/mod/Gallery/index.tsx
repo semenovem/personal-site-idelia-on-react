@@ -7,8 +7,8 @@ import { withCtxWinSize, WinSizeProps } from 'ctx/WinSize';
 import Portal from 'portals/PhotosViewer';
 import ScrollX from 'cmp/ScrollX';
 
-import cssTypography from 'styles/typography.module.css';
-import { isPreRendering } from 'sys/prerender';
+import cssTypography from 'sites/Music/styles/typography.module.css';
+import { hasPreRendering } from 'sys/prerender';
 import Bg from './Background';
 import { getPhoto } from './getPhoto';
 import { photos } from './importPhotos';
@@ -31,7 +31,7 @@ class Gallery extends React.Component<Props> {
   };
 
   private renderPhotos() {
-    if (isPreRendering()) {
+    if (hasPreRendering()) {
       return null;
     }
 

@@ -10,7 +10,7 @@ import { Status } from 'types/player';
 import itunes from 'assets/icons/shops/itunes_buy.png';
 import spotify from 'assets/icons/shops/spotify_buy.png';
 
-import cssTypography from 'styles/typography.module.css';
+import cssTypography from 'sites/Music/styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import { findUrl, Song, songs } from './songs';
 import Bg from './Background';
@@ -76,6 +76,7 @@ class Music extends React.Component<Props, State> {
           isPlayed={isPlayed}
           hasUserInteraction={hasUserInteraction}
           nameTrack={song.name}
+          showPlayer={!!song.url}
         />
 
         <div className={css.buy}>
@@ -101,7 +102,20 @@ class Music extends React.Component<Props, State> {
               {...(!hasUserInteraction && { tabIndex: -1 })}
             />
           )}
-          {!song.spotify && !song.itunes && (
+          {song.urlFreeDownload && (
+            // eslint-disable-next-line jsx-a11y/anchor-has-content
+            <a
+              href={song.urlFreeDownload}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(css.store, css.downloadFree)}
+              // style={{ backgroundImage: `url(${spotify})` }}
+              {...(!hasUserInteraction && { tabIndex: -1 })}
+            >
+              download for&nbsp;free
+            </a>
+          )}
+          {!song.spotify && !song.itunes && !song.urlFreeDownload && (
             <div className={cn(css.store, css.comingSoon)}>Coming soon</div>
           )}
         </div>

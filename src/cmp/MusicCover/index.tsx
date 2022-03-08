@@ -5,6 +5,7 @@ import css from './style.module.css';
 
 interface OwnProps {
   className: string;
+  showPlayer: boolean;
   urlCover: string;
   active?: boolean;
   isPlayed?: boolean;
@@ -48,7 +49,7 @@ class MusicCover extends React.Component<OwnProps> {
   private clearTimer = () => this.timer && clearTimeout(this.timer);
 
   public render() {
-    const { urlCover, className, isPlayed, hasUserInteraction, nameTrack } = this.props;
+    const { urlCover, className, isPlayed, hasUserInteraction, nameTrack, showPlayer } = this.props;
     const styleBtn = isPlayed ? css.pause : css.play;
 
     return (
@@ -56,13 +57,13 @@ class MusicCover extends React.Component<OwnProps> {
       <div className={cn(css.musicCover, className)} onClick={this.handleClick}>
         <img src={urlCover} className={cn(css.img, !isPlayed && css.grayscale)} alt="" />
 
-        <button
+        {showPlayer && <button
           className={cn(css.btn, styleBtn)}
           onClick={this.handleBtnClick}
           {...(!hasUserInteraction && { tabIndex: -1 })}
           aria-label={isPlayed ? `Stop track ${nameTrack}` : `Play track ${nameTrack}`}
           type="button"
-        />
+        />}
       </div>
     );
   }

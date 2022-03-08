@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 interface Props {
-  children: React.ReactChild;
+  children: React.ReactNode;
 }
 
 const domNode = document.getElementById('splash-pages');

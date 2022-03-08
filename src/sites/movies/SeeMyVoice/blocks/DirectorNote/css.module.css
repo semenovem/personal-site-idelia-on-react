@@ -1,0 +1,143 @@
+.directorNote {
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+}
+
+.bgNote {
+  background-image: url('./assets/bg/bg2--preview.jpg');
+}
+
+.bgSynopsis {
+  background-image : url('./assets/bg/bg1--preview.jpg');
+}
+
+.note, .synopsis {
+  position: relative;
+}
+
+.note {
+  padding: 60px 36px;
+}
+
+.noteLayout {
+  position: relative;
+}
+
+.noteText {
+  text-indent: 1.5em;
+  margin-top: 32px;
+  min-height: 30vh;
+  overflow: auto;
+  font-size: 18px;
+  line-height: 1.3em;
+  text-align: justify;
+}
+
+.noteTextReadMore {
+  border: 1px solid white;
+  padding: 0 var(--indent-s);
+  cursor: pointer;
+  color: white;
+  font-size: 22px;
+  letter-spacing: 3px;
+  margin-top: 24px;
+}
+
+.notePlayer {
+  display: none;
+}
+
+
+
+
+.synopsis {
+  padding: 36px 36px;
+}
+
+.synopsisTitle {
+  margin-bottom: 48px;
+}
+
+.synopsisText {
+  text-indent: 1.5em;
+  max-height: 70vh;
+  overflow: auto;
+  font-size: 16px;
+  line-height: 1.7em;
+  text-align: justify;
+}
+
+.synopsisPlayer {
+  width: 80vw;
+  height: calc(80vw / 3 * 2);
+  display: block;
+  margin: 36px auto 180px;
+}
+
+
+
+
+
+/* LG */
+@media (min-width: 1280px) {
+  .directorNote {
+    flex-direction: column-reverse;
+  }
+
+  .synopsis {
+    padding: 18px 36px;
+  }
+
+  .synopsisLayout {
+    display: flex;
+    justify-content: space-between;
+    max-width: var(--max-width-limit);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .synopsisText {
+    margin-left: 48px;
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+
+  .note {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .noteTitle {
+    text-align: left;
+  }
+
+  .noteWrapText {
+    text-align: left;
+    width: 40vw;
+    height: calc(40vw / 3 * 2);
+    margin-left: 24px;
+    overflow: auto;
+  }
+
+  .noteText {
+    min-height: initial;
+  }
+
+  .notePlayer {
+    display: block;
+    width: 40vw;
+    height: calc(40vw / 3 * 2);
+    margin-right: 24px;
+  }
+
+  .synopsisPlayer {
+    display: none;
+  }
+}

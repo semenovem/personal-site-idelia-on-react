@@ -5,8 +5,8 @@
 
 BRANCH='gh-pages'
 COMMIT=$(git rev-parse HEAD)
-SMALL_HASH_COMMIT=${COMMIT:0:6}
-FILE='_config.yml'
+#SMALL_HASH_COMMIT=${COMMIT:0:6}
+#FILE='_config.yml'
 
 #
 yarn install

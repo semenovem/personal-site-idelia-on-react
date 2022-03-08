@@ -1,9 +1,12 @@
 import React from 'react';
+import cn from 'classnames';
 
 import { CountdownProps, withCtxCountdown } from 'ctx/Countdown';
 import { canBeUsed, WinSizeProps, WinSize, withCtxWinSize } from 'ctx/WinSize';
 
 import { ProgressiveImgProps } from './types';
+
+import css from './style.module.css';
 
 // TODO decide component props
 export interface OwnProps extends React.ComponentProps<any> {
@@ -94,7 +97,7 @@ class Background extends React.Component<Props> {
     const { children, className, winSize, params, countdown, ...rest } = this.props;
 
     return (
-      <div className={className} ref={this.ref} style={this.style} {...rest}>
+      <div className={cn(css.bg, className)} ref={this.ref} style={this.style} {...rest}>
         {children}
       </div>
     );

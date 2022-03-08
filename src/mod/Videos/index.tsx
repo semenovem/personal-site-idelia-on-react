@@ -7,7 +7,7 @@ import { withUserInteraction, PageMgrUserInteractionProps } from 'ctx/PageMgr';
 import ScrollX from 'cmp/ScrollX';
 import { musicPlayerControl } from 'ctx/MusicPlayer';
 
-import cssTypography from 'styles/typography.module.css';
+import cssTypography from 'sites/Music/styles/typography.module.css';
 import cssMod from 'mod/style.module.css';
 import { videos } from './videos';
 import Bg from './Background';

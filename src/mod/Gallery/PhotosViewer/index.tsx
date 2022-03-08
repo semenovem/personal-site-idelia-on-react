@@ -4,7 +4,7 @@ import cn from 'classnames';
 import { withCtxPageMgr, Page, PageMgrProps } from 'ctx/PageMgr';
 import BtnClose from 'cmp/BtnClose';
 
-import cssCommon from 'styles/common.module.css';
+import cssCommon from 'sites/Music/styles/common.module.css';
 import Photos from './Photos';
 
 import css from './style.module.css';

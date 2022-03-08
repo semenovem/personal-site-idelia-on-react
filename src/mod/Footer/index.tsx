@@ -11,23 +11,29 @@ import iconITunesMob from 'assets/icons/shops/itunes_icon_white.png';
 import iconITunes from 'assets/icons/shops/itunes_white.png';
 import iconYandexMusicMob from 'assets/icons/shops/yandex_music_icon.svg';
 import iconYandexMusic from 'assets/icons/shops/yandex_music_white.svg';
-import iconGoogleMusic from 'assets/icons/shops/google_music.svg';
-import iconGoogleMusicWithSign from 'assets/icons/shops/google_music_with_sign.svg';
+import iconGoogleMusic from 'assets/icons/shops/youtube_music.svg';
+import iconGoogleMusicWithSign from 'assets/icons/shops/youtube_music_with_sign.svg';
 
 import { SOCIAL } from 'types/social';
 
-import cssTypography from 'styles/typography.module.css';
+import cssTypography from 'sites/Music/styles/typography.module.css';
 import css from './style.module.css';
 
 interface OwnProps extends PageMgrUserInteractionProps {
   disableTagFooter?: true;
+  className?: string;
 }
 
-interface Props extends OwnProps {}
+interface Props extends OwnProps {
+  instagram?: {
+    URL: string;
+    ALT: string;
+  };
+}
 
 class Footer extends React.Component<Props> {
   private renderContentFooter() {
-    const { hasUserInteraction } = this.props;
+    const { hasUserInteraction, instagram = SOCIAL.INSTAGRAM } = this.props;
 
     return (
       <>
@@ -42,12 +48,12 @@ class Footer extends React.Component<Props> {
           </a>
 
           <a
-            href={SOCIAL.INSTAGRAM.URL}
+            href={instagram.URL}
             target="_blank"
             rel="noopener noreferrer"
             {...(!hasUserInteraction && { tabIndex: -1 })}
           >
-            <img src={iconInstagram} alt={SOCIAL.INSTAGRAM.ALT} />
+            <img src={iconInstagram} alt={instagram.ALT} />
           </a>
 
           <a
@@ -101,14 +107,15 @@ class Footer extends React.Component<Props> {
   }
 
   public render() {
-    const { disableTagFooter } = this.props;
+    const { disableTagFooter, className } = this.props;
 
     return disableTagFooter ? (
-      <div className={css.footer}>{this.renderContentFooter()}</div>
+      <div className={cn(css.footer, className)}>{this.renderContentFooter()}</div>
     ) : (
-      <footer className={css.footer}>{this.renderContentFooter()}</footer>
+      <footer className={cn(css.footer, className)}>{this.renderContentFooter()}</footer>
     );
   }
 }
 
-export default withUserInteraction(Footer);
+// FIXME any
+export default withUserInteraction<any>(Footer);
