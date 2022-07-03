@@ -1,3 +1,4 @@
+import worldIm from './assets/covers/world_im.jpeg';
 import different from './assets/covers/different.jpg';
 import myVoice from './assets/covers/my_voice.jpg';
 import iWould from './assets/covers/i_would_2.jpg';
@@ -22,6 +23,14 @@ export interface Song {
 }
 
 export const songs: Song[] = [
+  {
+    id: 'world_im',
+    spotify: 'https://open.spotify.com/album/67QSALrNCz1vTu5Y0WcRAH?si=6z_jglWWQiCEule2_udjxQ',
+    itunes: 'https://music.apple.com/us/album/the-world-of-idelia-mars-intro/1631588025?i=1631588026',
+    coverUrl: worldIm,
+    url: '/songs/world_im_intro.m4a',
+    name: 'The World of Idelia Mars (Intro)',
+  },
   {
     id: 'different-remix',
     spotify: 'https://open.spotify.com/track/49BxBZdQldcmpwNF4zkUGO?si=7cc98ae83d024623',
