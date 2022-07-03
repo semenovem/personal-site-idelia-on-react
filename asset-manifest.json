@@ -1,25 +1,25 @@
 {
   "files": {
-    "static/js/0.58469868.chunk.js": "/static/js/0.58469868.chunk.js",
-    "static/js/0.58469868.chunk.js.map": "/static/js/0.58469868.chunk.js.map",
+    "static/js/0.a37d80e1.chunk.js": "/static/js/0.a37d80e1.chunk.js",
+    "static/js/0.a37d80e1.chunk.js.map": "/static/js/0.a37d80e1.chunk.js.map",
     "main.css": "/static/css/main.58a197ed.chunk.css",
-    "main.js": "/static/js/main.274b590d.chunk.js",
-    "main.js.map": "/static/js/main.274b590d.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.d2375435.js",
-    "runtime-main.js.map": "/static/js/runtime-main.d2375435.js.map",
+    "main.js": "/static/js/main.e3f5acd8.chunk.js",
+    "main.js.map": "/static/js/main.e3f5acd8.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d09dedfb.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d09dedfb.js.map",
     "static/css/3.bedab7b5.chunk.css": "/static/css/3.bedab7b5.chunk.css",
-    "static/js/3.0a71e73b.chunk.js": "/static/js/3.0a71e73b.chunk.js",
-    "static/js/3.0a71e73b.chunk.js.map": "/static/js/3.0a71e73b.chunk.js.map",
+    "static/js/3.66de6656.chunk.js": "/static/js/3.66de6656.chunk.js",
+    "static/js/3.66de6656.chunk.js.map": "/static/js/3.66de6656.chunk.js.map",
     "static/css/4.bac76ad3.chunk.css": "/static/css/4.bac76ad3.chunk.css",
-    "static/js/4.c621a293.chunk.js": "/static/js/4.c621a293.chunk.js",
-    "static/js/4.c621a293.chunk.js.map": "/static/js/4.c621a293.chunk.js.map",
+    "static/js/4.2c587453.chunk.js": "/static/js/4.2c587453.chunk.js",
+    "static/js/4.2c587453.chunk.js.map": "/static/js/4.2c587453.chunk.js.map",
     "static/css/5.31580ed3.chunk.css": "/static/css/5.31580ed3.chunk.css",
-    "static/js/5.afc2bfb4.chunk.js": "/static/js/5.afc2bfb4.chunk.js",
-    "static/js/5.afc2bfb4.chunk.js.map": "/static/js/5.afc2bfb4.chunk.js.map",
+    "static/js/5.bb4f4190.chunk.js": "/static/js/5.bb4f4190.chunk.js",
+    "static/js/5.bb4f4190.chunk.js.map": "/static/js/5.bb4f4190.chunk.js.map",
     "static/js/6.d7c5c038.chunk.js": "/static/js/6.d7c5c038.chunk.js",
     "static/js/6.d7c5c038.chunk.js.map": "/static/js/6.d7c5c038.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.fdab033811a6d69e573966f8942b4de8.js": "/precache-manifest.fdab033811a6d69e573966f8942b4de8.js",
+    "precache-manifest.398cbd3a848b8e09032fa155137bc9ba.js": "/precache-manifest.398cbd3a848b8e09032fa155137bc9ba.js",
     "service-worker.js": "/service-worker.js",
     "static/css/3.bedab7b5.chunk.css.map": "/static/css/3.bedab7b5.chunk.css.map",
     "static/css/4.bac76ad3.chunk.css.map": "/static/css/4.bac76ad3.chunk.css.map",
@@ -331,6 +331,7 @@
     "static/media/tatar_girl.jpg": "/static/media/tatar_girl.5953f713.jpg",
     "static/media/the_road_before_me.jpg": "/static/media/the_road_before_me.9b015245.jpg",
     "static/media/tv_tatar_girl.jpg": "/static/media/tv_tatar_girl.dedbb195.jpg",
+    "static/media/world_im.jpeg": "/static/media/world_im.43be4d6d.jpeg",
     "static/media/yandex_music_icon.svg": "/static/media/yandex_music_icon.c231b3ec.svg",
     "static/media/yandex_music_white.svg": "/static/media/yandex_music_white.9e2c2a44.svg",
     "static/media/youtube.svg": "/static/media/youtube.695488db.svg",
@@ -338,9 +339,9 @@
     "static/media/youtube_music_with_sign.svg": "/static/media/youtube_music_with_sign.cccb116a.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d2375435.js",
+    "static/js/runtime-main.d09dedfb.js",
     "static/js/6.d7c5c038.chunk.js",
     "static/css/main.58a197ed.chunk.css",
-    "static/js/main.274b590d.chunk.js"
+    "static/js/main.e3f5acd8.chunk.js"
   ]
 }

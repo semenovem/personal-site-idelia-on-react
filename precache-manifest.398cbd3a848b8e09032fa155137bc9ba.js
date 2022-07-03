@@ -1,51 +1,51 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "868625ce686fdc93b94cdebc10de4e9b",
+    "revision": "fa08e1f21fed64eda1fdba9cccc70dfb",
     "url": "/index.html"
   },
   {
-    "revision": "d4afe3c6f33ace0e7ad6",
+    "revision": "1ca35f9df61b891d8f84",
     "url": "/static/css/3.bedab7b5.chunk.css"
   },
   {
-    "revision": "2eb041e19f4ae568d8fa",
+    "revision": "09a82bc3e58fce1af98f",
     "url": "/static/css/4.bac76ad3.chunk.css"
   },
   {
-    "revision": "ab1a178c0a210a551600",
+    "revision": "909cf683d3359dc0a404",
     "url": "/static/css/5.31580ed3.chunk.css"
   },
   {
-    "revision": "60f76c9e58b9ca99d36e",
+    "revision": "a447c702f6eff319978a",
     "url": "/static/css/main.58a197ed.chunk.css"
   },
   {
-    "revision": "05b5eb3403ffa6351e2f",
-    "url": "/static/js/0.58469868.chunk.js"
+    "revision": "ec1551785022c0d9433b",
+    "url": "/static/js/0.a37d80e1.chunk.js"
   },
   {
-    "revision": "d4afe3c6f33ace0e7ad6",
-    "url": "/static/js/3.0a71e73b.chunk.js"
+    "revision": "1ca35f9df61b891d8f84",
+    "url": "/static/js/3.66de6656.chunk.js"
   },
   {
-    "revision": "2eb041e19f4ae568d8fa",
-    "url": "/static/js/4.c621a293.chunk.js"
+    "revision": "09a82bc3e58fce1af98f",
+    "url": "/static/js/4.2c587453.chunk.js"
   },
   {
-    "revision": "ab1a178c0a210a551600",
-    "url": "/static/js/5.afc2bfb4.chunk.js"
+    "revision": "909cf683d3359dc0a404",
+    "url": "/static/js/5.bb4f4190.chunk.js"
   },
   {
     "revision": "06daa88d5c99f0ee6bf4",
     "url": "/static/js/6.d7c5c038.chunk.js"
   },
   {
-    "revision": "60f76c9e58b9ca99d36e",
-    "url": "/static/js/main.274b590d.chunk.js"
+    "revision": "a447c702f6eff319978a",
+    "url": "/static/js/main.e3f5acd8.chunk.js"
   },
   {
-    "revision": "5719ae676d78da6c1021",
-    "url": "/static/js/runtime-main.d2375435.js"
+    "revision": "3f0de335fb13043e9a53",
+    "url": "/static/js/runtime-main.d09dedfb.js"
   },
   {
     "revision": "ed332b352ba40cad61ddf846a91fb191",
@@ -1374,6 +1374,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "dedbb195052cdec1e342c628e4ad4921",
     "url": "/static/media/tv_tatar_girl.dedbb195.jpg"
+  },
+  {
+    "revision": "43be4d6d566d32669ba663fa0983abd4",
+    "url": "/static/media/world_im.43be4d6d.jpeg"
   },
   {
     "revision": "c231b3ec498e6188cc3222fc23224e29",
