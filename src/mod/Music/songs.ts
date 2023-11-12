@@ -6,6 +6,8 @@ import iWouldPiano from './assets/covers/i_would_piano.jpg';
 import bomb from './assets/covers/bomb.jpg';
 import bombRemix from './assets/covers/bomb_remix.jpg';
 import iAmYours from './assets/covers/i_am_yours.jpg';
+import power_of_now from './assets/covers/power_of_now.webp';
+import naughty from './assets/covers/naughty.webp';
 // import differentRockVersion from './assets/covers/different_rock_version.jpg';
 // import mysticalMelody from './assets/covers/mystical_melody.jpg';
 import galamha from './assets/covers/galamha.jpg';
@@ -23,6 +25,22 @@ export interface Song {
 }
 
 export const songs: Song[] = [
+  {
+    id: 'power_of_now',
+    spotify: 'https://open.spotify.com/album/3yegTf5owTidKewP7xiw2V?si=ajPqgwI5Qe6dL9esOLDxrg',
+    itunes: 'https://music.apple.com/us/album/power-of-now-single/1715086291',
+    coverUrl: power_of_now,
+    url: '/songs/world_im_intro.m4a',
+    name: 'Power of Now',
+  },
+  {
+    id: 'naughty',
+    spotify: 'https://open.spotify.com/album/7GCxhsuSFlACbVOlFVHUwB?si=JiBM--_-QgyG1x9Tj9rbOA',
+    itunes: 'https://music.apple.com/us/album/naughty/1685084985?i=1685085076',
+    coverUrl: naughty,
+    url: '/songs/world_im_intro.m4a',
+    name: 'Naughty',
+  },
   {
     id: 'world_im',
     spotify: 'https://open.spotify.com/album/67QSALrNCz1vTu5Y0WcRAH?si=6z_jglWWQiCEule2_udjxQ',

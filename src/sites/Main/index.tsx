@@ -24,6 +24,10 @@ export default function MainSinglePage() {
         <Item href="/see-my-voice" className={css.itemIndent}>
           See My Voice film
         </Item>
+
+        {/*<Item href="/see-my-voice" className={css.itemIndent}>*/}
+        {/*  Book: по ту сторону двери*/}
+        {/*</Item>*/}
       </main>
 
       <Footer className={css.footer} />
