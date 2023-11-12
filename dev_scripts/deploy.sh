@@ -9,7 +9,7 @@ COMMIT=$(git rev-parse HEAD)
 #FILE='_config.yml'
 
 #
-yarn install
+#yarn install
 
 # добавить hash коммита в переменные
 #find $FILE -type f -exec sed -i "" "s/short_hash_commit:.*/short_hash_commit: $SMALL_HASH_COMMIT/" {} \;
