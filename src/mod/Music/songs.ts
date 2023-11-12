@@ -30,7 +30,7 @@ export const songs: Song[] = [
     spotify: 'https://open.spotify.com/album/3yegTf5owTidKewP7xiw2V?si=ajPqgwI5Qe6dL9esOLDxrg',
     itunes: 'https://music.apple.com/us/album/power-of-now-single/1715086291',
     coverUrl: power_of_now,
-    url: '/songs/world_im_intro.m4a',
+    url: '/songs/power_of_now.wav',
     name: 'Power of Now',
   },
   {
@@ -38,7 +38,7 @@ export const songs: Song[] = [
     spotify: 'https://open.spotify.com/album/7GCxhsuSFlACbVOlFVHUwB?si=JiBM--_-QgyG1x9Tj9rbOA',
     itunes: 'https://music.apple.com/us/album/naughty/1685084985?i=1685085076',
     coverUrl: naughty,
-    url: '/songs/world_im_intro.m4a',
+    url: '/songs/naugty.wav',
     name: 'Naughty',
   },
   {
