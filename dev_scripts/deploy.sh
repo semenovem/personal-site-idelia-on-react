@@ -15,7 +15,7 @@ yarn install
 #find $FILE -type f -exec sed -i "" "s/short_hash_commit:.*/short_hash_commit: $SMALL_HASH_COMMIT/" {} \;
 
 ### сборка проекта
-yarn build
+#yarn build
 
 #git checkout -- _config.yml
 
